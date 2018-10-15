@@ -15,6 +15,7 @@ namespace WeinRechnerApp
 
         protected override void OnCreate(Bundle savedInstanceState)
         {
+            //ToDO Methoden anlegen
             base.OnCreate(savedInstanceState);
             SetContentView(Resource.Layout.activity_main);
 
