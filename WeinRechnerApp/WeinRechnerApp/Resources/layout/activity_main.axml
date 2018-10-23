@@ -12,7 +12,7 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/Rote-ber"
+        android:id="@+id/Roteber"
         android:text="Rote Berechnungen" />
     <Button
         android:text="Analyse"

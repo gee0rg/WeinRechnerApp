@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+	    <TextView
+        android:text="1. Verschnittberechnung: Basiswein + Verschnittwein"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titelber" />
+	    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/sueßeid"
+        android:hint="Wie hoch ist die Menge des Grundweines?" />
+		<TextView
+        android:text="max. mögliche Menge an Verschnittwein: "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/maxVerschnitt" />
+	<TextView
+        android:text="2. Verschnittberechnung: Basiswein + Süßreserve"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/verschnittber2" />
+		<TextView
+        android:text="Grundweinmenge: "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/verschnittber2" />
+
+			<TextView
+        android:text="max. mögliche Menge an Süßreserve: "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/verschnittber2sueße" />
+
+		<TextView
+        android:text="3. Verschnittberechnung: Basiswein + Verschnittwein + Süßreserve "
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/verschnittber3" />
+
+</LinearLayout>

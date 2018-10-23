@@ -9,26 +9,32 @@ using Android.Widget;
 
 namespace WeinRechnerApp
 {
-    [Activity(Label = "WeinRechnerlel", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+    [Activity(Label = "WeinRechnerlel", Theme = "@style/AppTheme", MainLauncher = true)]
     public class MainActivity : Activity
     {
         private Button _gotoVerschnitt;
+        private Button _gotoRoteber;
 
         protected override void OnCreate(Bundle bundle)
         {
             base.OnCreate(bundle);
 
-            // Set our view from the "main" layout resource
+           
             SetContentView(Resource.Layout.activity_main);
+
             _gotoVerschnitt = FindViewById<Button>(Resource.Id.gotoVerschnitt);
 
+            _gotoRoteber = FindViewById<Button>(Resource.Id.Roteber);
             _gotoVerschnitt.Click += GotoButton_Clicked;
         }
 
-        private void GotoButton_Clicked(object sender, EventArgs e)
-        {
-            SetContentView(Resource.Layout.activity_Verschnitt);
-        }
+
+    
+
+     private void GotoButton_Clicked(object sender, EventArgs e)
+    {
+       SetContentView(Resource.Layout.activity_Verschnitt);
     }
+}
 }
 
