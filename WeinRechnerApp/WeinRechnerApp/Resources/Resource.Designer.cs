@@ -2331,7 +2331,7 @@ namespace WeinRechnerApp
 			public const int ALT = 2131230770;
 			
 			// aapt resource value: 0x7f08008d
-			public const int Anal = 2131230861;
+			public const int Analyse = 2131230861;
 			
 			// aapt resource value: 0x7f080033
 			public const int CTRL = 2131230771;
@@ -2344,6 +2344,9 @@ namespace WeinRechnerApp
 			
 			// aapt resource value: 0x7f080035
 			public const int META = 2131230773;
+			
+			// aapt resource value: 0x7f08008c
+			public const int Rote-ber = 2131230860;
 			
 			// aapt resource value: 0x7f080036
 			public const int SHIFT = 2131230774;
@@ -2491,9 +2494,6 @@ namespace WeinRechnerApp
 			
 			// aapt resource value: 0x7f080060
 			public const int default_activity_button = 2131230816;
-			
-			// aapt resource value: 0x7f08008c
-			public const int descriptionTextField = 2131230860;
 			
 			// aapt resource value: 0x7f080094
 			public const int design_bottom_sheet = 2131230868;
