@@ -1,21 +1,21 @@
-<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+﻿<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:minWidth="25px"
     android:minHeight="25px">
     <Button
-        android:text="Verschnittsberechnungen"
+        android:text="Verschnitt generell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/gotoVerschnitt" />
+        android:id="@+id/textView1" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/descriptionTextField"
-        android:text="Rote Berechnungen" />
+        android:text="Verschnitt-Basiswein" />
     <Button
-        android:text="Analyse"
+        android:text="Verschnitt - Gesamtmenge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/textView2" />
@@ -23,7 +23,11 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/personTextField"
-        android:text="Berechnung des Gesamthektarertrages" />
-
+        android:text="Verschnitt - Austausch" />
+    <Button
+        android:text="Verschnitt Rückrechnung"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/textView3" />
 
 </LinearLayout>

@@ -9,46 +9,26 @@ using Android.Widget;
 
 namespace WeinRechnerApp
 {
-    [Activity(Label = "@string/app_name", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
-    public class MainActivity : AppCompatActivity
+    [Activity(Label = "WeinRechnerlel", Theme = "@style/AppTheme.NoActionBar", MainLauncher = true)]
+    public class MainActivity : Activity
     {
+        private Button _gotoVerschnitt;
 
-        protected override void OnCreate(Bundle savedInstanceState)
+        protected override void OnCreate(Bundle bundle)
         {
-            //ToDO Methoden anlegen
-            base.OnCreate(savedInstanceState);
+            base.OnCreate(bundle);
+
+            // Set our view from the "main" layout resource
             SetContentView(Resource.Layout.activity_main);
+            _gotoVerschnitt = FindViewById<Button>(Resource.Id.gotoVerschnitt);
 
-            Android.Support.V7.Widget.Toolbar toolbar = FindViewById<Android.Support.V7.Widget.Toolbar>(Resource.Id.toolbar);
-            SetSupportActionBar(toolbar);
-
-            FloatingActionButton fab = FindViewById<FloatingActionButton>(Resource.Id.fab);
-            fab.Click += FabOnClick;
+            _gotoVerschnitt.Click += GotoButton_Clicked;
         }
 
-        public override bool OnCreateOptionsMenu(IMenu menu)
+        private void GotoButton_Clicked(object sender, EventArgs e)
         {
-            MenuInflater.Inflate(Resource.Menu.menu_main, menu);
-            return true;
+            SetContentView(Resource.Layout.activity_Verschnitt);
         }
-
-        public override bool OnOptionsItemSelected(IMenuItem item)
-        {
-            int id = item.ItemId;
-            if (id == Resource.Id.action_settings)
-            {
-                return true;
-            }
-
-            return base.OnOptionsItemSelected(item);
-        }
-
-        private void FabOnClick(object sender, EventArgs eventArgs)
-        {
-            View view = (View) sender;
-            Snackbar.Make(view, "Replace with your own action", Snackbar.LengthLong)
-                .SetAction("Action", (Android.Views.View.IOnClickListener)null).Show();
-        }
-	}
+    }
 }
 
