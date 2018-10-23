@@ -12,17 +12,17 @@
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/descriptionTextField"
+        android:id="@+id/Rote-ber"
         android:text="Rote Berechnungen" />
     <Button
         android:text="Analyse"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2" />
+        android:id="@+id/Analyse" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/personTextField"
+        android:id="@+id/Gesamt"
         android:text="Berechnung des Gesamthektarertrages" />
 
 

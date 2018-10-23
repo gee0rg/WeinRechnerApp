@@ -2330,11 +2330,17 @@ namespace WeinRechnerApp
 			// aapt resource value: 0x7f080032
 			public const int ALT = 2131230770;
 			
+			// aapt resource value: 0x7f08008d
+			public const int Anal = 2131230861;
+			
 			// aapt resource value: 0x7f080033
 			public const int CTRL = 2131230771;
 			
 			// aapt resource value: 0x7f080034
 			public const int FUNCTION = 2131230772;
+			
+			// aapt resource value: 0x7f08008e
+			public const int Gesamt = 2131230862;
 			
 			// aapt resource value: 0x7f080035
 			public const int META = 2131230773;
@@ -2645,9 +2651,6 @@ namespace WeinRechnerApp
 			// aapt resource value: 0x7f08000b
 			public const int parent_matrix = 2131230731;
 			
-			// aapt resource value: 0x7f08008e
-			public const int personTextField = 2131230862;
-			
 			// aapt resource value: 0x7f08004d
 			public const int pin = 2131230797;
 			
@@ -2797,9 +2800,6 @@ namespace WeinRechnerApp
 			
 			// aapt resource value: 0x7f080069
 			public const int textSpacerNoTitle = 2131230825;
-			
-			// aapt resource value: 0x7f08008d
-			public const int textView2 = 2131230861;
 			
 			// aapt resource value: 0x7f08009c
 			public const int text_input_password_toggle = 2131230876;

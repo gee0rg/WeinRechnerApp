@@ -8,26 +8,26 @@
         android:text="Verschnitt generell"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView1" />
+        android:id="@+id/Verschnitt_Generell" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/descriptionTextField"
+        android:id="@+id/Verschnitt-Basiswein"
         android:text="Verschnitt-Basiswein" />
     <Button
         android:text="Verschnitt - Gesamtmenge"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView2" />
+        android:id="@+id/Verschnitt-Gesamtmenge" />
     <Button
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/personTextField"
+        android:id="@+id/Verschnitt-Austausch"
         android:text="Verschnitt - Austausch" />
     <Button
         android:text="Verschnitt Rückrechnung"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:id="@+id/textView3" />
+        android:id="@+id/Verschnitt_rückrechnung" />
 
 </LinearLayout>
