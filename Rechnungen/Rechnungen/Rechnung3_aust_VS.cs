@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rechnungen
+/*namespace Rechnungen
 {
     public class Ergebnis_aust_VS
     {
@@ -68,4 +68,4 @@ namespace Rechnungen
 
         }
     }
-}
+}*/
