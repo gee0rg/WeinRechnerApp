@@ -43,9 +43,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Rechnung2.cs" />
+    <Compile Include="Rechnung2_ges_VS.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Rechnung1.cs" />
+    <Compile Include="Rechnung1_gen_VS.cs" />
+    <Compile Include="Rechnung3_aust_VS.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />

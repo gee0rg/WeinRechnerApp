@@ -7,20 +7,20 @@ using System.Threading.Tasks;
 /*namespace Rechnungen
 {
 
-    public class test
+    public class Ergebnis_gen_Vs
     {
 
         public int max_vw { get; set; }
         public int max_sr1 { get; set; }
         public int max_sr2 { get; set; }
     }
-    class Rechnung1
+    class Rechnung1_gen_VS
     {
         static void Main(string[] args)
         {
-            test ergebnis = new test() { };
+            Ergebnis_gen_Vs ergebnis = new Ergebnis_gen_Vs() { };
 
-            test Gen_VS(String liter_gw)
+            Ergebnis_gen_Vs Gen_VS(String liter_gw)
             {
                 //1. Berechnung
                 double a;
@@ -43,7 +43,7 @@ using System.Threading.Tasks;
 
                 return ergebnis;
             }
-            test s = new test() { };
+            Ergebnis_gen_Vs s = new Ergebnis_gen_Vs() { };
             s = Gen_VS("5000");
             Console.WriteLine(s.max_vw);
             Console.WriteLine(s.max_sr1);

@@ -4,18 +4,18 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rechnungen
+/*namespace Rechnungen
 {
 
 
-   public class Ergebnis {
+   public class Ergebnis1_ges_VS {
     public int liter_gw { get; set; }
         public int liter_vw { get; set; }
         public double liter_gw_prozent { get; set; }
         public double liter_vw_prozent { get; set; }
     }
 
-    public class Ergebnis2
+    public class Ergebnis2_ges_VS
     {
         public double verb_liter1;
         public double verb_liter075;
@@ -26,15 +26,15 @@ namespace Rechnungen
     }
 
 
-    class Rechnung2
+    class Rechnung2_ges_VS
     {
         
         static void Main(string[] args)
         {
 
-            Ergebnis ergebnis = new Ergebnis() { };
+            Ergebnis1_ges_VS ergebnis = new Ergebnis1_ges_VS() { };
 
-            Ergebnis Ges_VS(String liter_gv, String restzucker_gw, String restzucker_vw, String restzucker_verschnitt)
+            Ergebnis1_ges_VS Ges_VS(String liter_gv, String restzucker_gw, String restzucker_vw, String restzucker_verschnitt)
             {
                 //1. Berechnung
                 double x1 = Convert.ToDouble(restzucker_vw) - Convert.ToDouble(restzucker_verschnitt);
@@ -124,9 +124,9 @@ namespace Rechnungen
                 return ergebnis;
             }
 
-            Ergebnis2 ergebnis2 = new Ergebnis2();
+            Ergebnis2_ges_VS ergebnis2 = new Ergebnis2_ges_VS();
 
-            Ergebnis2 Ges_VS2 (String liter_gv, String verw_liter1, String verw_liter075, String verw_liter05, String verw_liter0375){
+            Ergebnis2_ges_VS Ges_VS2 (String liter_gv, String verw_liter1, String verw_liter075, String verw_liter05, String verw_liter0375){
                 Console.WriteLine("ergibt Flaschen: ");
                 Console.WriteLine(liter_gv);
                 double x = Convert.ToDouble(liter_gv) / 0.75;
@@ -155,10 +155,10 @@ namespace Rechnungen
 
             }
 
-            Ergebnis s = new Ergebnis() { };
+            Ergebnis1_ges_VS s = new Ergebnis1_ges_VS() { };
             s = Ges_VS("5000", "0,4", "10", "1,2");
 
-            Ergebnis2 t = new Ergebnis2() { };
+            Ergebnis2_ges_VS t = new Ergebnis2_ges_VS() { };
             t = Ges_VS2("5000", "3225", "2000", "400", "200");
 
             
@@ -168,4 +168,4 @@ namespace Rechnungen
             Console.ReadKey();
         }
     }
-}
+}*/
