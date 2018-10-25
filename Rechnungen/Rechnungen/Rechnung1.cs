@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-/*namespace Rechnungen
+namespace Rechnungen
 {
 
     public class test
@@ -53,4 +53,4 @@ using System.Threading.Tasks;
             Console.ReadKey();
         }
     }
-}*/
+}
