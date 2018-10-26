@@ -92,8 +92,8 @@ using System.Threading.Tasks;
                     double b = x6 / (Convert.ToDouble(liter_gv) / 100);
                     ergebnis.liter_gw_prozent = Math.Round(a, 1);
                     ergebnis.liter_vw_prozent = Math.Round(b, 1);
-                    Console.WriteLine(ergebnis.liter_gw_prozent);
-                    Console.WriteLine(ergebnis.liter_vw_prozent);
+                    Console.WriteLine(ergebnis.liter_gw_prozent + " %");
+                    Console.WriteLine(ergebnis.liter_vw_prozent + " %");
                     return ergebnis;
                 }
                 else if (x8 > 15.00 && x8 <= 25.00)
@@ -102,8 +102,8 @@ using System.Threading.Tasks;
                     double b = x6 / (Convert.ToDouble(liter_gv) / 100);
                     ergebnis.liter_gw_prozent = Math.Round(a, 1);
                     ergebnis.liter_vw_prozent = Math.Round(b, 1);
-                    Console.WriteLine(ergebnis.liter_gw_prozent);
-                    Console.WriteLine(ergebnis.liter_vw_prozent);
+                    Console.WriteLine(ergebnis.liter_gw_prozent + " %");
+                    Console.WriteLine(ergebnis.liter_vw_prozent + " %");
                     Console.WriteLine("15% Meldung");
                     return ergebnis;
 
@@ -114,8 +114,8 @@ using System.Threading.Tasks;
                     double b = x6 / (Convert.ToDouble(liter_gv) / 100);
                     ergebnis.liter_gw_prozent = Math.Round(a, 1);
                     ergebnis.liter_vw_prozent = Math.Round(b, 1);
-                    Console.WriteLine(ergebnis.liter_gw_prozent);
-                    Console.WriteLine(ergebnis.liter_vw_prozent);
+                    Console.WriteLine(ergebnis.liter_gw_prozent + " %");
+                    Console.WriteLine(ergebnis.liter_vw_prozent + " %");
                     Console.WriteLine("25% Meldung");
                     return ergebnis;
 

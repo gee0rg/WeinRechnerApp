@@ -48,6 +48,7 @@
     <Compile Include="Rechnung1_gen_VS.cs" />
     <Compile Include="Rechnung3_aust_VS.cs" />
     <Compile Include="Rechnung4_rueck_VS.cs" />
+    <Compile Include="Rechnung5_grw_VS.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
