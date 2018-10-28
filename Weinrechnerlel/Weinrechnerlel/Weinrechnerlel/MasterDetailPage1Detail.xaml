@@ -1,0 +1,20 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weinrechnerlel.MasterDetailPage1Detail"
+             Title="Verschnitt allgmein"
+             BackgroundColor="white"
+             >
+  <StackLayout Padding="10">
+    <Label Text="Eingabe der Menge." TextColor="Black" FontSize="Small"/>
+        
+        <Label Text="Wie hoch ist die Menge des Grundweins ?" TextColor="Black" ></Label>
+        <Entry  x:Name="test" Placeholder="Wert" TextColor="Black" ></Entry>
+        <Button Text="Berechnen" Clicked="losrechne"></Button>
+        <Label x:Name="max_vwe"  ></Label>
+        <Label x:Name="max_sr1e"  ></Label>
+        <Label x:Name="max_sr2e"  ></Label>
+
+
+    </StackLayout>
+</ContentPage>

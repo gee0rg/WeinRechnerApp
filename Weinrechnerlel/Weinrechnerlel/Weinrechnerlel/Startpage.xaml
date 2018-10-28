@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weinrechnerlel.Startpage">
+    <ContentPage.Content>
+        <StackLayout BackgroundColor="White">
+            <Label Text="Herzlich Willkommen"  TextColor="Black" FontSize="Large" FontAttributes="Bold" BackgroundColor="Aqua" HorizontalTextAlignment="Center" />
+
+
+            <Label Text="Mithilfe dieser App können diverse Berechnungen im Zusammenhang mit der Weinerstellung durchgeführt werden" 
+                  HorizontalOptions="Center" TextColor="Black" HorizontalTextAlignment="Center"
+           VerticalOptions="CenterAndExpand" />
+
+            <Button Text="Los" TextColor="Black"   HorizontalOptions="Center" Clicked="StartButton_Clicked"
+           VerticalOptions="CenterAndExpand" />
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
