@@ -20,7 +20,7 @@ namespace Weinrechnerlel
         void StartButton_Clicked(object sender, EventArgs e)
         {
 
-            Navigation.PushAsync(new MainPage());
+            Navigation.PushModalAsync(new MainPage());
             
         }
     }

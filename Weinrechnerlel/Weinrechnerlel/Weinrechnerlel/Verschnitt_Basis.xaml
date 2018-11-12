@@ -3,10 +3,22 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Weinrechnerlel.Verschnitt_Basis">
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text="Welcome to Xamarin.Forms!"
-                VerticalOptions="CenterAndExpand" 
-                HorizontalOptions="CenterAndExpand" />
-        </StackLayout>
+        <ScrollView>
+        <StackLayout Padding="10">
+
+                
+
+
+                <Label Text="Wie hoch ist die Menge des Basisweines:" TextColor="Black" FontSize="Small"></Label>
+            <Entry  x:Name="liter_gv" Placeholder="Wert" TextColor="Black" ></Entry>
+            <Label Text="Wie hoch ist der Restzucker des Basisweines:" TextColor="Black" FontSize="Small"></Label>
+            <Entry  x:Name="restzucker_gw" Placeholder="Wert" TextColor="Black" ></Entry>
+            <Label Text="Wie hoch ist der Restzucker der Süßreserve:" TextColor="Black"  FontSize="Small"></Label>
+            <Entry  x:Name="restzucker_vw" Placeholder="Wert" TextColor="Black" ></Entry>
+            <Label Text="Wieviel Restzucker soll der fertige Verschnitt haben?" TextColor="Black" FontSize="Small" ></Label>
+            <Entry  x:Name="restzucker_verschnitt" Placeholder="Wert" TextColor="Black" ></Entry>
+            <Button Text="Berechnen" Clicked="Berechnen"></Button>
+           </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

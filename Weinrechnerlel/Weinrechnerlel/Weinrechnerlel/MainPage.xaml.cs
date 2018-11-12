@@ -19,7 +19,7 @@ namespace Weinrechnerlel
         void bt_Clicked(object sender, EventArgs e)
         {
 
-            Navigation.PushAsync(new MasterDetailPage1());
+            Navigation.PushModalAsync(new MasterDetailPage1());
 
         }
        

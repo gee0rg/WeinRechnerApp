@@ -5,7 +5,7 @@ using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading.Tasks;
-
+using Weinrechnerlel.Models;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -17,22 +17,19 @@ namespace Weinrechnerlel
     {
         
 
+
+
         public MasterDetailPage1Detail()
         {
             InitializeComponent();
             liter_gw = test.Text;
         }
-        public class Ergebnis_gen_Vs
-        {
-
-            public int max_vw { get; set; }
-            public int max_sr1 { get; set; }
-            public int max_sr2 { get; set; }
-        }
+     
 
         Ergebnis_gen_Vs ergebnis = new Ergebnis_gen_Vs() { };
 
         string liter_gw { get; set; }
+        
 
         void losrechne(object sender, EventArgs e)
         {
@@ -55,11 +52,16 @@ namespace Weinrechnerlel
             z = Math.Floor(z);
             ergebnis.max_sr2 = Convert.ToInt32(z);
 
-            max_vwe.Text = Convert.ToString(ergebnis.max_vw);
-            max_sr1e.Text = Convert.ToString(ergebnis.max_sr1);
-            max_sr2e.Text = Convert.ToString(ergebnis.max_sr2);
+          
+
             
-         }
+
+
+
+            NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Gen(ergebnis)) { BarBackgroundColor = Color.DarkRed };
+            Navigation.PushAsync(nav);
+
+        }
    
 
     }
