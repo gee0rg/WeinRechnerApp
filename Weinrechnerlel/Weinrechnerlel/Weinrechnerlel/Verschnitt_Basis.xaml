@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weinrechnerlel.Verschnitt_Basis">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Wie hoch ist die Menge des BAsisweines:" TextColor="Black" FontSize="Small"></Label>
+            <Entry  x:Name="liter_gw" Placeholder="Wert" TextColor="Black" ></Entry>
+            <Label Text="Wie hoch ist der Restzucker des Basisweines:" TextColor="Black" FontSize="Small"></Label>
+            <Entry  x:Name="restzucker_gw" Placeholder="Wert" TextColor="Black" ></Entry>
+            <Label Text="Wie hoch ist der Restzucker der Süßreserve:" TextColor="Black"  FontSize="Small"></Label>
+            <Entry  x:Name="restzucker_sr" Placeholder="Wert" TextColor="Black" ></Entry>
+            <Label Text="Wieviel Restzucker soll der fertige Verschnitt haben?" TextColor="Black" FontSize="Small" ></Label>
+            <Entry  x:Name="restzucker_verschnitt" Placeholder="Wert" TextColor="Black" ></Entry>
+            <Button Text="Berechnen" Clicked="berechnen"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

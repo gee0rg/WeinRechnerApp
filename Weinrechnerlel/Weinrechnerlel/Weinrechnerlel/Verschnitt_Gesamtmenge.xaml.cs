@@ -98,7 +98,7 @@ namespace Weinrechnerlel
                 // Console.WriteLine(ergebnis.liter_gw_prozent + " %");
                 //Console.WriteLine(ergebnis.liter_vw_prozent + " %");
                 
-               NavigationPage nav = new NavigationPage(new Page1(ergebnis)) {BarBackgroundColor=Color.DarkRed };
+               NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Ges(ergebnis)) {BarBackgroundColor=Color.DarkRed };
                 Navigation.PushAsync(nav);
 
             }
@@ -113,7 +113,7 @@ namespace Weinrechnerlel
                 //Console.WriteLine("15% Meldung");
 
                
-                NavigationPage nav = new NavigationPage(new Page1(ergebnis)) { BarBackgroundColor = Color.DarkRed };
+                NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Ges(ergebnis)) { BarBackgroundColor = Color.DarkRed };
                 Navigation.PushAsync(nav);
 
             }
@@ -126,7 +126,7 @@ namespace Weinrechnerlel
                 //Console.WriteLine(ergebnis.liter_gw_prozent + " %");
                 //Console.WriteLine(ergebnis.liter_vw_prozent + " %");
                 //Console.WriteLine("25% Meldung");
-                NavigationPage nav = new NavigationPage(new Page1(ergebnis)) { BarBackgroundColor = Color.DarkRed };
+                NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Ges(ergebnis)) { BarBackgroundColor = Color.DarkRed };
                 Navigation.PushAsync(nav);
 
             }
