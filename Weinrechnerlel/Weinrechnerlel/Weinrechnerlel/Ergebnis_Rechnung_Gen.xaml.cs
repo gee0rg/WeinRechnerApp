@@ -17,12 +17,13 @@ namespace Weinrechnerlel
         Ergebnis_gen_Vs test = new Ergebnis_gen_Vs();
         public Ergebnis_Rechnung_Gen(Ergebnis_gen_Vs ergebnis)
         {
-            test = ergebnis;
-            füllen();
+            
             
             //max_sr1e = zwei;
             //max_sr2e = drei;
             InitializeComponent();
+            test = ergebnis;
+            füllen();
         }
         void füllen()
         {

@@ -20,9 +20,15 @@
     <Compile Update="Startpage.xaml.cs">
       <DependentUpon>Startpage.xaml</DependentUpon>
     </Compile>
+    <Compile Update="Verschnitt_Gesamtmenge.xaml.cs">
+      <DependentUpon>Verschnitt_Gesamtmenge.xaml</DependentUpon>
+    </Compile>
   </ItemGroup>
 
   <ItemGroup>
+    <EmbeddedResource Update="Ergebnis_Rechnung_Aust.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Ergebnis_Rechnung_Gen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
@@ -38,13 +44,16 @@
     <EmbeddedResource Update="menulist.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
+    <EmbeddedResource Update="Nav_Aust_VS.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
     <EmbeddedResource Update="Page1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Startpage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Verschnitt_Basis.xaml">
+    <EmbeddedResource Update="Verschnitt_Gesamtmenge.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
   </ItemGroup>

@@ -19,16 +19,17 @@ namespace Weinrechnerlel
 
         public Page1(Ergebnis1_ges_VS ergebnis)
         {
-            liter_gw.Text = Convert.ToString(ergebnis.liter_gw);
-            //liter_vw.Text = Convert.ToString(ergebnis.liter_vw);
-            //liter_gw_prozent.Text = Convert.ToString(ergebnis.liter_gw_prozent);
-            //liter_vw_prozent.Text = Convert.ToString(ergebnis.liter_vw_prozent);
+       
            
 
             InitializeComponent();
+            liter_gw.Text = Convert.ToString(ergebnis.liter_gw);
+            liter_vw.Text = Convert.ToString(ergebnis.liter_vw);
+            liter_gw_prozent.Text = Convert.ToString(ergebnis.liter_gw_prozent);
+            liter_vw_prozent.Text = Convert.ToString(ergebnis.liter_vw_prozent);
         }
-      
-        
+
+
 
     }
 }

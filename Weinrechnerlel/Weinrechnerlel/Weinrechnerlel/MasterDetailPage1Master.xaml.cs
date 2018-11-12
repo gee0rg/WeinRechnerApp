@@ -35,7 +35,7 @@ namespace Weinrechnerlel
                 {
                     new MasterDetailPage1MenuItem { Id = 0, Title = "Verschnitt generell", TargetType= typeof(MasterDetailPage1Detail) },
                     new MasterDetailPage1MenuItem { Id = 1, Title = "Verschnitt basis" , TargetType= typeof(Verschnitt_Basis) },
-             
+                    new MasterDetailPage1MenuItem { Id = 2, Title = "Verschnitt Austausch", TargetType = typeof(Ergebnis_Rechnung_Aust)}
                 });
             }
 

@@ -11,9 +11,9 @@ using Weinrechnerlel.Models;
 namespace Weinrechnerlel
 {
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class Verschnitt_Basis : ContentPage
+    public partial class Verschnitt_Gesamtmenge : ContentPage
     {
-        public Verschnitt_Basis()
+        public Verschnitt_Gesamtmenge()
         {
             InitializeComponent();
 
