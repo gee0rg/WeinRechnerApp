@@ -8,5 +8,6 @@
             <Entry x:Name="liter_gw" Placeholder="Wert" TextColor="Black"></Entry>
             <Label Text="Verwendeter Verschnittwein:"></Label>
             <Entry x:Name="verw_vw" Placeholder="Wert" TextColor="Black"></Entry>
+            <Button Text="Berechnen" Clicked="Berechnen_Austausch"></Button>
     </StackLayout>
 </ContentPage>

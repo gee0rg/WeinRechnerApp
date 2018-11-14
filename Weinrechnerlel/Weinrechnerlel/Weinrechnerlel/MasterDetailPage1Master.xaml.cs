@@ -34,8 +34,9 @@ namespace Weinrechnerlel
                 MenuItems = new ObservableCollection<MasterDetailPage1MenuItem>(new[]
                 {
                     new MasterDetailPage1MenuItem { Id = 0, Title = "Verschnitt generell", TargetType= typeof(MasterDetailPage1Detail) },
-                    new MasterDetailPage1MenuItem { Id = 1, Title = "Verschnitt basis" , TargetType= typeof(Verschnitt_Gesamtmenge) },
-                    new MasterDetailPage1MenuItem { Id = 2, Title = "Verschnitt Austausch", TargetType = typeof(Ergebnis_Rechnung_Aust)}
+                    new MasterDetailPage1MenuItem { Id = 1, Title = "Verschnitt Basis" , TargetType= typeof(Verschnitt_Basis) },
+                    new MasterDetailPage1MenuItem {Id = 2, Title = "Verschnitt Gesamtmenge", TargetType = typeof(Verschnitt_Gesamtmenge)},
+                    new MasterDetailPage1MenuItem { Id = 3, Title = "Verschnitt Austausch", TargetType = typeof(Ergebnis_Rechnung_Aust)},
                 });
             }
 
