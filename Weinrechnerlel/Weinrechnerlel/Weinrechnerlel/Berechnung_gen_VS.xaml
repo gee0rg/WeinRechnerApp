@@ -1,8 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Weinrechnerlel.MasterDetailPage1Detail"
-             Title="test"
+             x:Class="Weinrechnerlel.Berechnung_gen_VS"
+            
              NavigationPage.HasBackButton="False"
              BackgroundColor="white"
              >
@@ -13,7 +13,7 @@
         
         <Label Text="Wie hoch ist die Menge des Grundweins ?" TextColor="Black" ></Label>
         <Entry  x:Name="test" Placeholder="Wert" TextColor="Black" ></Entry>
-        <Button Text="Berechnen" Clicked="losrechne"></Button>
+        <Button Text="Berechnen" Clicked="berechnung_gen"></Button>
    
 
 

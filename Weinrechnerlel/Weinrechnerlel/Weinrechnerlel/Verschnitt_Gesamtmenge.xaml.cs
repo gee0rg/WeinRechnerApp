@@ -19,21 +19,7 @@ namespace Weinrechnerlel
 
         }
 
-     
-
-
-        public class Ergebnis2_ges_VS
-        {
-
-            public double verb_liter1 { get; set; }
-            public double verb_liter075 { get; set; }
-            public double verb_liter05 { get; set; }
-            public double verb_liter0375 { get; set; }
-            public double rest_liter { get; set; }
-
-
-        }
-        Ergebnis1_ges_VS ergebnis = new Ergebnis1_ges_VS() { };
+        Ergebnis_ges_VS ergebnis = new Ergebnis_ges_VS() { };
 
         void Berechnen(object sender, EventArgs e)
 

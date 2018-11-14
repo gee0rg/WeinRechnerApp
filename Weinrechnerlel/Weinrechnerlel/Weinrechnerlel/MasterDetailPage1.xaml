@@ -9,7 +9,7 @@
   <MasterDetailPage.Detail>
     <NavigationPage>
       <x:Arguments>
-       <pages:MasterDetailPage1Detail />
+       <pages:Berechnung_gen_VS />
        </x:Arguments>
     </NavigationPage>
   </MasterDetailPage.Detail>

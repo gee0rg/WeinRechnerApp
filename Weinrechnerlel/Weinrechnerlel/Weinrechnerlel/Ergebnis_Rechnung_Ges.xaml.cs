@@ -14,7 +14,7 @@ namespace Weinrechnerlel
     public partial class Ergebnis_Rechnung_Ges : ContentPage
     {
        
-        public Ergebnis_Rechnung_Ges(Ergebnis1_ges_VS ergebnis)
+        public Ergebnis_Rechnung_Ges(Ergebnis_ges_VS ergebnis)
         {
        
           

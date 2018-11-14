@@ -11,9 +11,9 @@ using Weinrechnerlel.Models;
 namespace Weinrechnerlel
 {
 	[XamlCompilation(XamlCompilationOptions.Compile)]
-	public partial class Ergebnis_Rechnung_Grw : ContentPage
+	public partial class Ergebnis_Rechnung_Basis : ContentPage
 	{
-		public Ergebnis_Rechnung_Grw (Ergebnis_grw_VS ergebnis)
+		public Ergebnis_Rechnung_Basis (Ergebnis_grw_VS ergebnis)
 		{
 			InitializeComponent ();
             liter_gw.Text = Convert.ToString(ergebnis.liter_gw);

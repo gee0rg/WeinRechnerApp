@@ -19,18 +19,14 @@ namespace Weinrechnerlel
         {
             
             
-            //max_sr1e = zwei;
-            //max_sr2e = drei;
-            InitializeComponent();
-            test = ergebnis;
-            füllen();
-        }
-        void füllen()
-        {
-            String x;
             
-        x = Convert.ToString(test.max_vw);
-            max_vwe.Text = x;
-               }
+            InitializeComponent();
+            max_vwe.Text = Convert.ToString(ergebnis.max_vw);
+            max_sr1e.Text = Convert.ToString(ergebnis.max_sr1);
+            max_sr2e.Text = Convert.ToString(ergebnis.max_sr2);
+
+           
+        }
+        
     }
 }

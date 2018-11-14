@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Weinrechnerlel.Models
 {
-    public class Ergebnis1_ges_VS
+    public class Ergebnis_ges_VS
     {
         public int liter_gw { get; set; }
         public int liter_vw { get; set; }

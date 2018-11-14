@@ -13,13 +13,13 @@ namespace Weinrechnerlel
 {
 
     [XamlCompilation(XamlCompilationOptions.Compile)]
-    public partial class MasterDetailPage1Detail : ContentPage
+    public partial class Berechnung_gen_VS : ContentPage
     {
         
 
 
 
-        public MasterDetailPage1Detail()
+        public Berechnung_gen_VS()
         {
             InitializeComponent();
             liter_gw = test.Text;
@@ -31,7 +31,7 @@ namespace Weinrechnerlel
         string liter_gw { get; set; }
         
 
-        void losrechne(object sender, EventArgs e)
+        void berechnung_gen(object sender, EventArgs e)
         {
             //1. Berechnung
             double a;

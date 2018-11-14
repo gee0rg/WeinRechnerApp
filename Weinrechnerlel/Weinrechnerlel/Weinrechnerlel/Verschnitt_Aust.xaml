@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weinrechnerlel.Verschnitt_Aust"
+             Title="Verschnittberechnung - Austausch">
+    <StackLayout>
+            <Label Text="Grundwein GW:"></Label>
+            <Entry x:Name="liter_gw" Placeholder="Wert" TextColor="Black"></Entry>
+            <Label Text="Verwendeter Verschnittwein:"></Label>
+            <Entry x:Name="verw_vw" Placeholder="Wert" TextColor="Black"></Entry>
+            <Button Text="Berechnen" Clicked="Berechnen_Austausch"></Button>
+    </StackLayout>
+</ContentPage>

@@ -14,11 +14,20 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Ergebnis_Rechnung_Basis.xaml.cs">
+      <DependentUpon>Ergebnis_Rechnung_Basis.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Berechnung_gen_VS.xaml.cs">
+      <DependentUpon>Berechnung_gen_VS.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Verschnitt_Aust.xaml.cs">
+      <DependentUpon>Verschnitt_Aust.xaml</DependentUpon>
+    </Compile>
     <Compile Update="MasterDetailPage1MenuItem.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="Nav_Aust_VS.xaml.cs">
-      <DependentUpon>Nav_Aust_VS.xaml</DependentUpon>
+    <Compile Update="Ergebnis_Rechnung_Aust.xaml.cs">
+      <DependentUpon>Ergebnis_Rechnung_Aust.xaml</DependentUpon>
     </Compile>
     <Compile Update="Ergebnis_Rechnung_Ges.xaml.cs">
       <DependentUpon>Ergebnis_Rechnung_Ges.xaml</DependentUpon>
@@ -32,28 +41,25 @@
   </ItemGroup>
 
   <ItemGroup>
-    <EmbeddedResource Update="Ergebnis_Rechnung_Aust.xaml">
+    <EmbeddedResource Update="Verschnitt_Aust.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Ergebnis_Rechnung_Gen.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="Ergebnis_Rechnung_Grw.xaml">
+    <EmbeddedResource Update="Ergebnis_Rechnung_Basis.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MasterDetailPage1.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="MasterDetailPage1Detail.xaml">
+    <EmbeddedResource Update="Berechnung_gen_VS.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="MasterDetailPage1Master.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
-    <EmbeddedResource Update="menulist.xaml">
-      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
-    </EmbeddedResource>
-    <EmbeddedResource Update="Nav_Aust_VS.xaml">
+    <EmbeddedResource Update="Ergebnis_Rechnung_Aust.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
     </EmbeddedResource>
     <EmbeddedResource Update="Ergebnis_Rechnung_Ges.xaml">
