@@ -63,6 +63,8 @@ namespace Weinrechnerlel
             ergebnis.max_vw_ohneSr_3 = Convert.ToInt32(Math.Floor(x12));
 
 
+            NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Rueck(ergebnis)) { BarBackgroundColor = Color.DarkRed };
+            Navigation.PushAsync(nav);
         }
 
        
