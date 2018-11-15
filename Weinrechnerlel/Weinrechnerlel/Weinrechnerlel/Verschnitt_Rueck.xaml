@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weinrechnerlel.Verschnitt_Rueck">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="Verschnittweinmenge: "></Label>
+            <Entry x:Name="liter_vw" Placeholder="Wert" TextColor="Black"></Entry>
+            <Label Text="Süßreservemenge: "></Label>
+            <Entry x:Name="liter_sr" Placeholder="Wert" TextColor="Black"></Entry>
+            <Label Text="Gesamtverschnittmenge "></Label>
+            <Entry x:Name="liter_ges_vw" Placeholder="Wert" TextColor="Black"></Entry>
+           
+            <Button Text="Berechnen" Clicked="berechnen"></Button>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

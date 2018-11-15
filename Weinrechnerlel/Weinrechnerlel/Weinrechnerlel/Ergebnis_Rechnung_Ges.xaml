@@ -2,7 +2,7 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Weinrechnerlel.Ergebnis_Rechnung_Ges"
-             Title="GNeoTRIgM  issithil">
+             Title="Verschnitt Gesamtmenge">
 
 
     
@@ -11,8 +11,11 @@
             <Label x:Name="liter_vw"  ></Label>
             <Label x:Name="liter_gw_prozent"  ></Label>
             <Label x:Name="liter_vw_prozent"  ></Label>
-            
-
-        </StackLayout>
+            <Label x:Name="verb_liter1" Text="" ></Label>
+            <Label x:Name="verb_liter075"  ></Label>
+            <Label x:Name="verb_liter05"  ></Label>
+            <Label x:Name="verb_liter0375"  ></Label>
+            <Label x:Name="rest_liter"  ></Label>
+    </StackLayout>
     
 </ContentPage>

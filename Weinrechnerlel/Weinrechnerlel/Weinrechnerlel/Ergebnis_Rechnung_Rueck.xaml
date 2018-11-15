@@ -1,0 +1,24 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weinrechnerlel.Ergebnis_Rechnung_Rueck">
+    <ContentPage.Content>
+        <StackLayout>
+            <Label x:Name="be_gw_mitSr_1"  ></Label>
+            <Label x:Name="max_sr1"    ></Label>
+            <Label x:Name="ges_menge_mitSr_1"   ></Label>
+            <Label x:Name="be_gw_ohneSr_1"   ></Label>
+            <Label x:Name="ges_menge_ohneSr_1"   ></Label>
+            
+            <Label x:Name="be_gw_2"   ></Label>
+            <Label x:Name="ges_menge_2"   ></Label>
+            
+            <Label x:Name="be_gw_mitSr_3"   ></Label>
+            <Label x:Name="max_sr3"   ></Label>
+            <Label x:Name="max_vw_mitSr_3"   ></Label>
+            <Label x:Name="be_gw_ohneSr_3"   ></Label>
+            <Label x:Name="max_vw_ohneSr_3"   ></Label>
+
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

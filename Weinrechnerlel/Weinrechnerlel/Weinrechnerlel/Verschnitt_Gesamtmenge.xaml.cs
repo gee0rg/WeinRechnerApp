@@ -20,6 +20,7 @@ namespace Weinrechnerlel
         }
 
         Ergebnis_ges_VS ergebnis = new Ergebnis_ges_VS() { };
+        Ergebnis_Flaschen ergebnis2 = new Ergebnis_Flaschen() { };
 
         void Berechnen(object sender, EventArgs e)
 
@@ -119,6 +120,35 @@ namespace Weinrechnerlel
 
 
           
+        }
+
+        void berechnen2(Object sender, EventArgs e)
+        {
+
+            // Console.WriteLine("ergibt Flaschen: ");
+            //Console.WriteLine(ergebnis.liter_gw);
+            double x = Convert.ToDouble(ergebnis.liter_gw) / 0.75;
+            // Console.WriteLine(Convert.ToInt32(x));
+            double y = Convert.ToDouble(ergebnis.liter_gw) / 0.5;
+            //Console.WriteLine(Convert.ToInt32(y));
+            double z = Convert.ToDouble(ergebnis.liter_gw) / 0.375;
+            // Console.WriteLine(Convert.ToInt32(z));
+
+
+            double a = Convert.ToDouble(ergebnis.liter_gw) - (Convert.ToDouble(verw_liter1.Text) + Convert.ToDouble(verw_liter075.Text) * 0.75 + Convert.ToDouble(verw_liter05.Text) * 0.5 + Convert.ToDouble(verw_liter0375.Text) * 0.375);
+            ergebnis2.rest_liter = a;
+            ergebnis2.verb_liter1 = ergebnis2.rest_liter;
+            ergebnis2.verb_liter075 = ergebnis2.rest_liter / 0.75;
+            ergebnis2.verb_liter05 = ergebnis2.rest_liter / 0.5;
+            ergebnis2.verb_liter0375 = ergebnis2.rest_liter / 0.375;
+
+            /* Console.WriteLine("verbleibende Flaschen: ");
+             Console.WriteLine(Convert.ToInt32(ergebnis2.verb_liter1));
+             Console.WriteLine(Convert.ToInt32(ergebnis2.verb_liter075));
+             Console.WriteLine(Convert.ToInt32(ergebnis2.verb_liter05));
+             Console.WriteLine(Convert.ToInt32(ergebnis2.verb_liter0375));
+             Console.WriteLine("Restmenge in Litern: " + Convert.ToInt32(ergebnis2.rest_liter));*/
+
         }
 
     }

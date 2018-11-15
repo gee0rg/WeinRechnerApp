@@ -18,7 +18,16 @@
             <Label Text="Wie hoch soll der Restzucker des Verschnittes sein:" TextColor="Black" FontSize="Small" ></Label>
             <Entry  x:Name="restzucker_verschnitt" Placeholder="Wert" TextColor="Black" ></Entry>
             <Button Text="Berechnen" Clicked="Berechnen"></Button>
-           </StackLayout>
+                <Label Text="1" TextColor="Black" FontSize="Small"></Label>
+                <Entry  x:Name="verw_liter1" Placeholder="Wert" TextColor="Black" ></Entry>
+                <Label Text="0,75" TextColor="Black" FontSize="Small"></Label>
+                <Entry  x:Name="verw_liter075" Placeholder="Wert" TextColor="Black" ></Entry>
+                <Label Text="0,5" TextColor="Black" FontSize="Small"></Label>
+                <Entry  x:Name="verw_liter05" Placeholder="Wert" TextColor="Black" ></Entry>
+                <Label Text="0,375" TextColor="Black" FontSize="Small"></Label>
+                <Entry  x:Name="verw_liter0375" Placeholder="Wert" TextColor="Black" ></Entry>
+                <Button Text="Berechnen_Flaschen" Clicked="berechnen2"></Button>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
