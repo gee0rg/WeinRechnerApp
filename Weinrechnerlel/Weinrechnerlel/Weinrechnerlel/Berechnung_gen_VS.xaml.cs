@@ -42,7 +42,7 @@ namespace Weinrechnerlel
             RESTConnector rconn = new RESTConnector();
             Ergebnis_gen_Vs ergebnis1 = new Ergebnis_gen_Vs() { };
             String answer;
-            String adress = "test";
+            String adress = "http://localhost:50088/api/gen_Vs";
            
 
             answer = rconn.HTTP_POST(adress,request,5,false);
