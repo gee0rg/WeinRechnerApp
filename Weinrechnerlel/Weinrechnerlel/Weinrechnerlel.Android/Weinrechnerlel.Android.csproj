@@ -48,26 +48,7 @@
     </Reference>
     <Reference Include="Mono.Android" />
     <Reference Include="System" />
-    <Reference Include="System.Configuration">
-      <HintPath>..\..\..\dlls\System.Configuration.dll</HintPath>
-    </Reference>
     <Reference Include="System.Core" />
-    <Reference Include="System.Design">
-      <HintPath>..\..\..\dlls\System.Design.dll</HintPath>
-    </Reference>
-    <Reference Include="System.DirectoryServices">
-      <HintPath>..\..\..\dlls\System.DirectoryServices.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Drawing">
-      <HintPath>..\..\..\dlls\System.Drawing.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web">
-      <HintPath>..\..\..\dlls\System.Web.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.RegularExpressions">
-      <HintPath>..\..\..\dlls\System.Web.RegularExpressions.dll</HintPath>
-    </Reference>
-    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Xml" />
     <Reference Include="WeinrechnerCommon, Version=1.0.0.0, Culture=neutral, processorArchitecture=MSIL">
