@@ -110,6 +110,7 @@ namespace Weinrechnerlel
                     // Console.WriteLine(ergebnis.liter_gw_prozent + " %");
                     // Console.WriteLine(ergebnis.liter_vw_prozent + " %");
                     //Console.WriteLine("15% Meldung");
+                    DisplayAlert("Alert", "Falls es sich beim Verschnittpartner um Wein handelt, ist der max. Verschnitt von 15% überschritten", "OK");
 
 
                     NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Ges(ergebnis)) { BarBackgroundColor = Color.DarkRed };
@@ -125,6 +126,7 @@ namespace Weinrechnerlel
                     //Console.WriteLine(ergebnis.liter_gw_prozent + " %");
                     //Console.WriteLine(ergebnis.liter_vw_prozent + " %");
                     //Console.WriteLine("25% Meldung");
+                    DisplayAlert("Alert", "Falls es sich beim Verschnittpartner um Süßreserve handelt, ist der max. Verschnitt von 25% überschritten", "OK");
                     NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Ges(ergebnis)) { BarBackgroundColor = Color.DarkRed };
                     Navigation.PushAsync(nav);
 

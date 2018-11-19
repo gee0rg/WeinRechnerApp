@@ -67,7 +67,7 @@ namespace Weinrechnerlel
                 }
                 else
                 {
-                    DisplayAlert("Alert", "Menge überschritten :(", "OK");
+                    DisplayAlert("Alert", "Verschnittweinanteil übersteigt maximale Menge", "OK");
                     return;
 
                 }
