@@ -90,7 +90,8 @@ namespace WebApplication1.Controllers
                 double b = o6 / (e1 / 100);
                 ergebnis.liter_gw_prozent = 100;
                 ergebnis.liter_vw_prozent = Math.Round(b, 1);
-            
+                ergebnis.EventMessage = "Falls es sich bei dem Verschnittpartner um Wein handelt, ist der max. Verschnitt von 15% überschritten";
+
                 return ergebnis;
 
             }
@@ -99,7 +100,8 @@ namespace WebApplication1.Controllers
                 double b = o6 / (e1 / 100);
                 ergebnis.liter_gw_prozent = 100;
                 ergebnis.liter_vw_prozent = Math.Round(b, 1);
-             
+                ergebnis.EventMessage = "Falls es sich bei dem Verschnittpartner um Süßreserve handelt, ist der max. Verschnitt von 25% überschritten";
+
                 return ergebnis;
 
             }
