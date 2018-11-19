@@ -22,7 +22,7 @@
                          kleeneKlitsche&#x0a;
                          Tim Wirzius, Hendrik Schindler,&#x0a;
                          Marvin Lokay, Georg Schwarz&#x0a;
-                         -------------------------------------------------"/>
+                         -------------------------------------------------" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

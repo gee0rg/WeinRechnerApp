@@ -4,7 +4,7 @@
              x:Class="Weinrechnerlel.Startpage">
     <ContentPage.Content>
         <StackLayout BackgroundColor="White">
-            <Label Text="Herzlich Willkommen"  TextColor="Black" FontSize="Large" FontAttributes="Bold" BackgroundColor="Red" HorizontalTextAlignment="Center" />
+            <Label Text="Herzlich Willkommen"  TextColor="Black" FontSize="Large" FontAttributes="Bold" BackgroundColor="DarkRed" HorizontalTextAlignment="Center" />
 
 
             <Label Text="Berechnungen rund um den Wein." 
