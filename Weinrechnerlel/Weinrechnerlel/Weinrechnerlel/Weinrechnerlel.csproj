@@ -15,12 +15,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Reference Include="WeinrechnerCommon">
-      <HintPath>..\..\..\ClassLibrary1\ClassLibrary1\bin\Debug\netstandard2.0\WeinrechnerCommon.dll</HintPath>
-    </Reference>
-  </ItemGroup>
-
-  <ItemGroup>
     <Compile Update="Ergebnis_Rechnung_Basis.xaml.cs">
       <DependentUpon>Ergebnis_Rechnung_Basis.xaml</DependentUpon>
     </Compile>

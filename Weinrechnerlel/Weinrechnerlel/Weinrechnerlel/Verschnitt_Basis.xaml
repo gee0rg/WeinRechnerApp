@@ -3,6 +3,7 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Weinrechnerlel.Verschnitt_Basis">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout>
             <Label Text="Wie hoch ist die Menge des Basisweines:" TextColor="Black" FontSize="Small"></Label>
             <Entry  x:Name="liter_gw" Placeholder="Wert" TextColor="Black" ></Entry>
@@ -24,5 +25,6 @@
             <Button Text="Berechnen_Flaschen" Clicked="berechnen2"></Button>
             
         </StackLayout>
+            </ScrollView>
     </ContentPage.Content>
 </ContentPage>

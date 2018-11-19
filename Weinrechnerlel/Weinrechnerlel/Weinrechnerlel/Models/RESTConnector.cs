@@ -5,7 +5,7 @@ using System.Net;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
 
-namespace WeinrechnerCommon
+namespace Weinrechnerlel
 {
     public class RESTConnector
     {
@@ -17,8 +17,8 @@ namespace WeinrechnerCommon
         public X509Certificate Certificate { get; set; }
 
 
-        private static readonly ILogger _log =
-    LoggingFactory.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
+      //  private static readonly ILogger _log =
+   // LoggingFactory.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         private HttpWebRequest req;
         public RESTConnector()
@@ -41,7 +41,7 @@ namespace WeinrechnerCommon
             string Out = String.Empty;
             try
             {
-                _log.Info(string.Format("HTTP_GET, URL={0} timeout={1} ssl={2}.", ServerURL, timeout, useCertificate));
+               // _log.Info(string.Format("HTTP_GET, URL={0} timeout={1} ssl={2}.", ServerURL, timeout, useCertificate));
 
                 HttpWebRequest request = (HttpWebRequest)WebRequest.Create(ServerURL);
                 //request.Credentials = new NetworkCredential(ConnectionUsername, ConnectionUserPwd);
@@ -65,19 +65,19 @@ namespace WeinrechnerCommon
                 string responseFromServer = reader.ReadToEnd();
                 reader.Close();
                 response.Close();
-                _log.Info(string.Format("HTTP_GET, URL={0} Respone=OK.", ServerURL));
-                _log.Debug(string.Format("HTTP_GET, URL={0} Respone={1}.", ServerURL, responseFromServer));
+                //_log.Info(string.Format("HTTP_GET, URL={0} Respone=OK.", ServerURL));
+                ////_log.Debug(string.Format("HTTP_GET, URL={0} Respone={1}.", ServerURL, responseFromServer));
                 return responseFromServer;
             }
             catch (ArgumentException ex)
             {
-                _log.Error("ArgumentException: ", ex);
+                //_log.Error("ArgumentException: ", ex);
                 Out = string.Format("REST_HTTP_ERROR ::  Ungültiger Parameter in HTTP GET Request :: {0}", ex.Message);
                 //return string.Format("REST_HTTP_ERROR ::  Ungültiger Parameter in HTTP GET Request :: {0}", ex.Message);
             }
             catch (WebException ex)
             {
-                _log.Error("WebException: ", ex);
+                //_log.Error("WebException: ", ex);
                 if (ex.Response != null)
                 {
                     Stream dataStream = ex.Response.GetResponseStream();
@@ -96,10 +96,10 @@ namespace WeinrechnerCommon
             }
             catch (Exception ex)
             {
-                _log.Error("Exception: ", ex);
+                //_log.Error("Exception: ", ex);
                 Out = string.Format("REST_HTTP_ERROR :: Exception beim HTTP GET Request :: {0}", ex.Message);
             }
-            _log.Debug(string.Format("HTTP_POST, URL={0} ErrorText={1}.", ServerURL, Out));
+            //_log.Debug(string.Format("HTTP_POST, URL={0} ErrorText={1}.", ServerURL, Out));
             //return (JsonConvert.SerializeObject(new BioShareError((int)BioShareEventStatus.HttpRequestError, Out)));
             return Out;
 
@@ -119,7 +119,7 @@ namespace WeinrechnerCommon
         #############################################################################################################################*/
         {
 
-            _log.Info(string.Format("HTTP_POST, URL={0} timeout={1} ssl={2} Data={3}.", ServerURL, timeout, useCertificate, Data));
+            //_log.Info(string.Format("HTTP_POST, URL={0} timeout={1} ssl={2} Data={3}.", ServerURL, timeout, useCertificate, Data));
 
             string Out = String.Empty;
             req = (HttpWebRequest)WebRequest.Create(ServerURL);
@@ -167,12 +167,12 @@ namespace WeinrechnerCommon
             }
             catch (ArgumentException ex)
             {
-                _log.Error("ArgumentException: ", ex);
+                //_log.Error("ArgumentException: ", ex);
                 Out = string.Format("REST_HTTP_ERROR :: Ungültiger Parameter in HTTP POST Request :: {0}", ex.Message);
             }
             catch (WebException ex)
             {
-                _log.Error("WebException: ", ex);
+                //_log.Error("WebException: ", ex);
                 Out = string.Format("REST_HTTP_ERROR :: WebException beim HTTP POST Request :: {0}", ex.Message);
                 if (ex.Response != null)
                 {
@@ -190,10 +190,10 @@ namespace WeinrechnerCommon
             }
             catch (Exception ex)
             {
-                _log.Error("Exception: ", ex);
+                //_log.Error("Exception: ", ex);
                 Out = string.Format("REST_HTTP_ERROR :: Exception beim HTTP POST Request :: {0}", ex.Message);
             }
-            _log.Debug(string.Format("HTTP_POST, URL={0} ErrorText={1}.", ServerURL, Out));
+            //_log.Debug(string.Format("HTTP_POST, URL={0} ErrorText={1}.", ServerURL, Out));
             //return (JsonConvert.SerializeObject(new BioShareError((int)BioShareEventStatus.HttpRequestError, Out)));
             return Out;
         }
@@ -217,7 +217,7 @@ namespace WeinrechnerCommon
         #############################################################################################################################*/
         {
 
-            _log.Info(string.Format("HTTP_DELETE, URL={0} timeout={1} ssl={2} .", ServerURL, timeout, useCertificate));
+            //_log.Info(string.Format("HTTP_DELETE, URL={0} timeout={1} ssl={2} .", ServerURL, timeout, useCertificate));
 
             string Out = String.Empty;
             req = (HttpWebRequest)WebRequest.Create(ServerURL);
@@ -248,21 +248,21 @@ namespace WeinrechnerCommon
             }
             catch (ArgumentException ex)
             {
-                _log.Error("ArgumentException: ", ex);
+                //_log.Error("ArgumentException: ", ex);
                 Out = string.Format("REST_HTTP_ERROR :: Ungültiger Parameter in HTTP DELETE Request :: {0}", ex.Message);
             }
             catch (WebException ex)
             {
-                _log.Error("WebException: ", ex);
+                //_log.Error("WebException: ", ex);
                 Out = string.Format("REST_HTTP_ERROR :: WebException beim HTTP DELETE Request :: {0}", ex.Message);
             }
             catch (Exception ex)
             {
-                _log.Error("Exception: ", ex);
+                //_log.Error("Exception: ", ex);
                 Out = string.Format("REST_HTTP_ERROR :: Exception beim HTTP DELETE Request :: {0}", ex.Message);
             }
 
-            _log.Info(string.Format("HTTP_DELETE, URL={0} Response={1}.", ServerURL, Out));
+            //_log.Info(string.Format("HTTP_DELETE, URL={0} Response={1}.", ServerURL, Out));
             return Out;
         }
 

@@ -5,7 +5,7 @@ VisualStudioVersion = 15.0.28010.2041
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weinrechnerlel.Android", "Weinrechnerlel\Weinrechnerlel.Android\Weinrechnerlel.Android.csproj", "{69481660-F023-424A-9C7E-47F9867B6E43}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Weinrechnerlel", "Weinrechnerlel\Weinrechnerlel\Weinrechnerlel.csproj", "{F8977DB9-1B94-4B49-93A1-2CB210B3833E}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Weinrechnerlel", "Weinrechnerlel\Weinrechnerlel\Weinrechnerlel.csproj", "{F8977DB9-1B94-4B49-93A1-2CB210B3833E}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

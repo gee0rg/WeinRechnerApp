@@ -8,7 +8,7 @@ using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 using Weinrechnerlel.Models;
 using Newtonsoft.Json;
-using WeinrechnerCommon;
+
 
 namespace Weinrechnerlel
 {
