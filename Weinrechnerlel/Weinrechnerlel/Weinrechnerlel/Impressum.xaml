@@ -2,11 +2,18 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Weinrechnerlel.Impressum"
-             Title="Impressum">
-            
+             Title="Impressum"
+             BackgroundImage="weinrebe.jpg"
+             
+             
+            >
+    
     <ContentPage.Content>
-        <StackLayout>
-            <Label Text=" &#x0a;
+        
+        <AbsoluteLayout>
+
+            
+            <Label AbsoluteLayout.LayoutBounds="-30,150,400,400" Text=" &#x0a;
                          (C) Dienstleistungszentrum Ländlicher Raum&#x0a;
                          Rheinhessen-Nahe-Hunsrück&#x0a;
                          Rüdesheimer Str. 60-68&#x0a;
@@ -15,14 +22,14 @@
                          Entwicklung:&#x0a;
                          Achim Schick&#x0a;
                          Abt. Weinbau, Fachgruppe Önologie&#x0a;
-                         Kontakt: achim.schick@dlr-rlp.de&#x0a;
+                         Kontakt: achim.schick@dlr-rlp.de&#x0a; 
                          www.dlr-rnh.rlp.de&#x0a;
                          -------------------------------------------------&#x0a;
                          Programmierung:&#x0a;
                          kleeneKlitsche&#x0a;
                          Tim Wirzius, Hendrik Schindler,&#x0a;
                          Marvin Lokay, Georg Schwarz&#x0a;
-                         -------------------------------------------------" HorizontalTextAlignment="Center" VerticalOptions="Center"/>
-        </StackLayout>
+                         -------------------------------------------------" HorizontalTextAlignment="Center" />
+        </AbsoluteLayout>
     </ContentPage.Content>
 </ContentPage>
