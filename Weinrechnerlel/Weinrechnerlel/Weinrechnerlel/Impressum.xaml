@@ -1,0 +1,17 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weinrechnerlel.Impressum"
+             Title="Impressum">
+            
+    <ContentPage.Content>
+        <StackLayout>
+            <Label Text="(C) Dienstleistungszentrum Ländlicher 
+                         Raum Rheinhessen-Nahe-Hunsrück
+                         Rüdesheimer Str. 60-68 
+                         55545 Bad Kreuznach - 
+                         Entwicklung: Achim Schick - 
+                         Programmierung: kleeneKlitsche"/>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

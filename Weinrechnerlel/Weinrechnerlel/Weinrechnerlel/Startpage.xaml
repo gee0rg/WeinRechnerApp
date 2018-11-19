@@ -7,7 +7,7 @@
             <Label Text="Herzlich Willkommen"  TextColor="Black" FontSize="Large" FontAttributes="Bold" BackgroundColor="Red" HorizontalTextAlignment="Center" />
 
 
-            <Label Text="Mithilfe dieser App können diverse Berechnungen im Zusammenhang mit der Weinerstellung durchgeführt werden" 
+            <Label Text="Berechnungen rund um den Wein." 
                   HorizontalOptions="Center" TextColor="Black" HorizontalTextAlignment="Center"
            VerticalOptions="CenterAndExpand" />
 
