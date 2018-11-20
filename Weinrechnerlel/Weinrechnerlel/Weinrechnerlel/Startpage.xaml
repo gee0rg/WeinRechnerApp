@@ -14,7 +14,7 @@
                   HorizontalOptions="Center" TextColor="Black" HorizontalTextAlignment="Center"
            VerticalOptions="CenterAndExpand" />
 
-            <Button Text="Los" TextColor="Black"   HorizontalOptions="Center" Clicked="StartButton_Clicked"
+            <Button Text="Los" TextColor="Black" HorizontalOptions="Center" Clicked="StartButton_Clicked"
            VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>

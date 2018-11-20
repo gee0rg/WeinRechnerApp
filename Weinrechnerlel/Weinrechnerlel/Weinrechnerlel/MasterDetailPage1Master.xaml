@@ -25,7 +25,7 @@
           <Label 
               Grid.Column="1"
               Grid.Row="2"
-              Text="Weinrechnerlel"
+              Text="WeinRechnerApp"
               TextColor="White"
               Style="{DynamicResource SubtitleStyle}"/>
         </Grid>
