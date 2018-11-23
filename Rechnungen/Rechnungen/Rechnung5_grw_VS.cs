@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rechnungen
+/*namespace Rechnungen
 {
     
     public class Ergebnis1_grw_VS
@@ -165,4 +165,4 @@ namespace Rechnungen
         Console.ReadKey();
         }
     }
-}
+}*/
