@@ -9,24 +9,26 @@
                 
 
 
-                <Label Text="Welche Menge soll der Gesamtverschnitt darstellen:" TextColor="Black" FontSize="Small"></Label>
+                <Label Text="Welche Menge soll der Gesamtverschnitt darstellen?" TextColor="Black" FontSize="Small"></Label>
             <Entry  x:Name="liter_gv" Placeholder="Wert" TextColor="Black" ></Entry>
-            <Label Text="Restzuckergehalt des Basisweines:" TextColor="Black" FontSize="Small"></Label>
+            <Label Text="Restzuckergehalt des Basisweines" TextColor="Black" FontSize="Small"></Label>
             <Entry  x:Name="restzucker_gw" Placeholder="Wert" TextColor="Black" ></Entry>
-            <Label Text="Restzuckergehalt des Verschnittwein/Süßreserve:" TextColor="Black"  FontSize="Small"></Label>
+            <Label Text="Restzuckergehalt des Verschnittwein/Süßreserve" TextColor="Black"  FontSize="Small"></Label>
             <Entry  x:Name="restzucker_vw" Placeholder="Wert" TextColor="Black" ></Entry>
-            <Label Text="Wie hoch soll der Restzucker des Verschnittes sein:" TextColor="Black" FontSize="Small" ></Label>
+            <Label Text="Wie hoch soll der Restzucker des Verschnittes sein?" TextColor="Black" FontSize="Small" ></Label>
             <Entry  x:Name="restzucker_verschnitt" Placeholder="Wert" TextColor="Black" ></Entry>
             <Button Text="Berechnen" Clicked="Berechnen"></Button>
-                <Label Text="1" TextColor="Black" FontSize="Small"></Label>
+               
+                <Label Text="Anzahl verwendeter Flaschen eintragen" ></Label>
+                <Label Text="1,0 Liter Flaschen" TextColor="Black" FontSize="Small"></Label>
                 <Entry  x:Name="verw_liter1" Placeholder="Wert" TextColor="Black" ></Entry>
-                <Label Text="0,75" TextColor="Black" FontSize="Small"></Label>
+                <Label Text="0,75 Liter Flaschen" TextColor="Black" FontSize="Small"></Label>
                 <Entry  x:Name="verw_liter075" Placeholder="Wert" TextColor="Black" ></Entry>
-                <Label Text="0,5" TextColor="Black" FontSize="Small"></Label>
+                <Label Text="0,5 Liter Flaschen" TextColor="Black" FontSize="Small"></Label>
                 <Entry  x:Name="verw_liter05" Placeholder="Wert" TextColor="Black" ></Entry>
-                <Label Text="0,375" TextColor="Black" FontSize="Small"></Label>
+                <Label Text="0,375 Liter Flaschen" TextColor="Black" FontSize="Small"></Label>
                 <Entry  x:Name="verw_liter0375" Placeholder="Wert" TextColor="Black" ></Entry>
-                <Button Text="Berechnen_Flaschen" Clicked="berechnen2"></Button>
+                <Button Text="Berechne Flaschen" Clicked="berechnen2"></Button>
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

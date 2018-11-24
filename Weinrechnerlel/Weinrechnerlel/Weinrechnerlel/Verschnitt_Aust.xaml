@@ -3,11 +3,14 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Weinrechnerlel.Verschnitt_Aust"
              Title="Verschnittberechnung - Austausch">
+    <ScrollView>
     <StackLayout>
-            <Label Text="Grundwein GW:"></Label>
+        <Label Text="Menge des Grundweines" TextColor="Black"></Label>
             <Entry x:Name="liter_gw" Placeholder="Wert" TextColor="Black"></Entry>
-            <Label Text="Verwendeter Verschnittwein:"></Label>
+        <Label Text="Hier können Sie die Verschnittweinmenge zugunsten der Süßreserve reduzieren." TextColor="DarkRed" ></Label>
+        <Label Text="Wieviel Verschnittwein möchten Sie verwenden?" TextColor="Black"></Label>
             <Entry x:Name="verw_vw" Placeholder="Wert" TextColor="Black"></Entry>
             <Button Text="Berechnen" Clicked="Berechnen_Austausch"></Button>
     </StackLayout>
+    </ScrollView>
 </ContentPage>

@@ -55,8 +55,8 @@ using System.Threading.Tasks;
                 string e4 = pa;
                 double e5 = pa_zahl * asp * 100 / 1000;
                 double e6 = e5 * (maisch_menge / 100);
-                double e7 = Math.Round(e6 * 0.6); //Runden notwendig?
-                double e8 = Math.Round(maisch_menge + e7);  //Runden notwendig?
+                double e7 = Math.Floor(e6 * 0.6); //Runden notwendig?
+                double e8 = Math.Floor(maisch_menge + e7);  //Runden notwendig?
 
                 //Ausgabe Ergebnisse
                 ergebnis.mg_e = e1;

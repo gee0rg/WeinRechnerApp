@@ -71,7 +71,7 @@ namespace Rechnungen
                         double e2 = zg1 - ag1;
                         double e3 = zg1;
                         double e4 = Math.Ceiling((maisch_menge * zg - maisch_menge * ag) / zg);// oder durch zg1 -> erfragen!
-                        double e5 = Math.Round(maisch_menge - e4);
+                        double e5 = Math.Floor(maisch_menge - e4);
 
                         //Ausgabe Ergebnisse
                         ergebnis.mg_e = e1;

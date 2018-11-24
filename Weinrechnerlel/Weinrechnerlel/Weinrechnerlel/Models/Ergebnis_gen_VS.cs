@@ -8,6 +8,7 @@ namespace Weinrechnerlel.Models
     {
 
         public int max_vw { get; set; }
+        public int max_vw1 { get; set; }
         public int max_sr1 { get; set; }
         public int max_sr2 { get; set; }
     }

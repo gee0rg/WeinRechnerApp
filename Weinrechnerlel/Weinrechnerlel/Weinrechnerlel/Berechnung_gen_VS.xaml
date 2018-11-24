@@ -7,15 +7,16 @@
              BackgroundColor="white"
              >
 
-    
+  <ScrollView>
     <StackLayout Padding="10">
-    <Label Text="Eingabe der Menge." TextColor="Black" FontSize="Small"/>
+    
         
-        <Label Text="Wie hoch ist die Menge des Grundweins ?" TextColor="Black" ></Label>
+        <Label Text="Menge des Grundweines" TextColor="Black" ></Label>
         <Entry  x:Name="test" Placeholder="Wert" TextColor="Black" ></Entry>
         <Button Text="Berechnen" Clicked="berechnung_gen"></Button>
    
 
 
     </StackLayout>
+  </ScrollView>
 </ContentPage>

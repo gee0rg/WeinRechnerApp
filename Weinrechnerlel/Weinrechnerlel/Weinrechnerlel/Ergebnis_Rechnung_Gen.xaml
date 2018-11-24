@@ -7,11 +7,23 @@
              BackgroundColor="white"
              >
 
-    
+    <ScrollView>
         <StackLayout>
-            <Label x:Name="max_vwe"  ></Label>
-            <Label x:Name="max_sr1e"    ></Label>
-            <Label x:Name="max_sr2e"   ></Label>
+        <Label Text = "1. Verschnittberechnung: Basiswein + Verschnittwein"></Label>
+        <Label Text="max. mögliche Menge an Verschnittwein" TextColor="Black" ></Label>
+        <Entry  x:Name="max_vwe" Placeholder="Wert" TextColor="Black" ></Entry>
+
+        <Label Text = "2. Verschnittberechnung: Basiswein + Süßreserve"></Label>
+        <Label Text="max. mögliche Menge an Süßreserve" TextColor="Black" ></Label>
+        <Entry  x:Name="max_sr1e" Placeholder="Wert" TextColor="Black" ></Entry>
+
+        <Label Text= "3. Verschnittberechnung: Basiswein + Verschnittwein + Süßreserve"></Label>
+        <Label Text="max. mögliche Menge an Verschnittwein" TextColor="Black" ></Label>
+        <Entry  x:Name="max_vwe1" Placeholder="Wert" TextColor="Black" ></Entry>
+        <Label Text="max. mögliche Menge an Süßreserve" TextColor="Black" ></Label>
+        <Entry  x:Name="max_sr2e" Placeholder="Wert" TextColor="Black" ></Entry>
+            
         </StackLayout>
-        
+    </ScrollView>
+
 </ContentPage>

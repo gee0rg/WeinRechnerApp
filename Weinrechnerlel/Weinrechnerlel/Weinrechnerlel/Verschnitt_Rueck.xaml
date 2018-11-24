@@ -3,15 +3,20 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Weinrechnerlel.Verschnitt_Rueck">
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout>
-            <Label Text="Verschnittweinmenge: "></Label>
+            <Label Text=" 1. Ausgehend vom Verschnittwein"></Label>
+            <Label Text="Verschnittweinmenge " TextColor="Black"></Label>
             <Entry x:Name="liter_vw" Placeholder="Wert" TextColor="Black"></Entry>
-            <Label Text="Süßreservemenge: "></Label>
+            <Label Text=" 2. Ausgehend von der Süßreserve"></Label>
+            <Label Text="Süßreservemenge " TextColor="Black"></Label>
             <Entry x:Name="liter_sr" Placeholder="Wert" TextColor="Black"></Entry>
-            <Label Text="Gesamtverschnittmenge "></Label>
+            <Label Text=" 3. Ausgehend von der Gesamtmenge"></Label>
+            <Label Text="Gesamtverschnittmenge" TextColor="Black"></Label>
             <Entry x:Name="liter_ges_vw" Placeholder="Wert" TextColor="Black"></Entry>
            
             <Button Text="Berechnen" Clicked="berechnen"></Button>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

@@ -22,6 +22,7 @@ namespace Weinrechnerlel
             
             InitializeComponent();
             max_vwe.Text = Convert.ToString(ergebnis.max_vw);
+            max_vwe1.Text = Convert.ToString(ergebnis.max_vw1);
             max_sr1e.Text = Convert.ToString(ergebnis.max_sr1);
             max_sr2e.Text = Convert.ToString(ergebnis.max_sr2);
 

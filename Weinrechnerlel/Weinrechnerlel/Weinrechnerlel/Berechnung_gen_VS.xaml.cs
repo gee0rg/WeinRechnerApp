@@ -66,6 +66,7 @@ namespace Weinrechnerlel
                 z = (Convert.ToDouble(test.Text) / 0.75) - (Convert.ToDouble(ergebnis.max_vw) + Convert.ToDouble(test.Text));
                 z = Math.Floor(z);
                 ergebnis.max_sr2 = Convert.ToInt32(z);
+                ergebnis.max_vw1 = ergebnis.max_vw;
             }
             else
             {
@@ -80,6 +81,7 @@ namespace Weinrechnerlel
                 ergebnis.max_sr1 = erg.max_sr1;
                 ergebnis.max_sr2 = erg.max_sr2;
                 ergebnis.max_vw = erg.max_vw;
+                ergebnis.max_vw1 = erg.max_vw1;
 
                     
 
