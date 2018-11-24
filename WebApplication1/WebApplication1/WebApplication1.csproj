@@ -45,6 +45,12 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="log4net">
       <HintPath>..\..\dlls\log4net.dll</HintPath>
     </Reference>
@@ -52,6 +58,7 @@
     <Reference Include="System" />
     <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Web.Entity" />
     <Reference Include="System.Web.ApplicationServices" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
@@ -154,8 +161,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="App_Start\BundleConfig.cs" />
+    <Compile Include="App_Start\BundleConfig2.cs" />
     <Compile Include="App_Start\FilterConfig.cs" />
+    <Compile Include="App_Start\FilterConfig2.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
+    <Compile Include="App_Start\RouteConfig2.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
@@ -191,6 +201,7 @@
     <Compile Include="Controllers\grw_VSController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\rueck_VSController.cs" />
+    <Compile Include="Controllers\UsersController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -203,11 +214,20 @@
     <Compile Include="Models\gen_VsErgebnisResponse.cs" />
     <Compile Include="Models\ges_VSErgebnisResponse.cs" />
     <Compile Include="Models\grw_VSErgebnisResponse.cs" />
+    <Compile Include="Models\LoginResponseModel.cs" />
+    <Compile Include="Models\WeinrechnerAppDB.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>WeinrechnerAppDB.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Models\request_grw_VS.cs" />
+    <Compile Include="Models\request_login.cs" />
     <Compile Include="Models\request_rueck_Vs.cs" />
     <Compile Include="Models\request_aust_Vs.cs" />
     <Compile Include="Models\request_gen_vs.cs" />
     <Compile Include="Models\request_ges_VS.cs" />
+    <Compile Include="Models\User.cs" />
+    <Compile Include="Models\WeinrechnerAppDB\Context.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -243,11 +263,23 @@
     <Content Include="ApplicationInsights.config">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
+    <EntityDeploy Include="Models\WeinrechnerAppDB.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>WeinrechnerAppDB.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <Content Include="Models\WeinrechnerAppDB.edmx.diagram">
+      <DependentUpon>WeinrechnerAppDB.edmx</DependentUpon>
+    </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.js" />
     <Content Include="Scripts\jquery-3.3.1.slim.min.js" />
+    <None Include="Scripts\jquery.validate-vsdoc.js" />
+    <Content Include="Scripts\jquery.validate.js" />
+    <Content Include="Scripts\jquery.validate.min.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
@@ -263,9 +295,15 @@
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Shared\Error.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
+    <Content Include="Views\Users\Create.cshtml" />
+    <Content Include="Views\Users\Delete.cshtml" />
+    <Content Include="Views\Users\Details.cshtml" />
+    <Content Include="Views\Users\Edit.cshtml" />
+    <Content Include="Views\Users\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="Views\Login\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff2" />
