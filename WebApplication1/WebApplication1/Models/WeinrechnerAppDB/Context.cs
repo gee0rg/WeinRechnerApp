@@ -15,6 +15,6 @@ namespace WebApplication1.Models.WeinrechnerAppDB
         {
         }
 
-        public System.Data.Entity.DbSet<WebApplication1.Models.User> Users { get; set; }
+        public System.Data.Entity.DbSet<WebApplication1.Models.User> User { get; set; }
     }
 }

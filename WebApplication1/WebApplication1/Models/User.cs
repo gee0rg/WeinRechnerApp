@@ -7,8 +7,10 @@ namespace WebApplication1.Models
 {
     public class User
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public bool Nutzungsbedingungen { get; set; }
+
+        public DateTime CreateDate { get; set; }
    
 
     }
