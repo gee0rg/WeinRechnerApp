@@ -74,7 +74,7 @@ namespace Weinrechnerlel
                 erg = JsonConvert.DeserializeObject<genVSRestResponse>(answer);
                 if (erg.EventStatus != 0)
                 {
-                    DisplayAlert("Alert", erg.EventMessage, "OK");
+                    DisplayAlert ("Hinweis", erg.EventMessage, "OK");
                       
                     return;
                 }

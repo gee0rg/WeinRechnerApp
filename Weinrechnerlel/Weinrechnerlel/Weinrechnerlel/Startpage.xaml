@@ -10,7 +10,7 @@
             
 
 
-            <Label Text="Berechnungen rund um den Wein." 
+            <Label Text="Berechnungen rund um den Wein" 
                   HorizontalOptions="Center" TextColor="Black" HorizontalTextAlignment="Center"
            VerticalOptions="CenterAndExpand" />
 

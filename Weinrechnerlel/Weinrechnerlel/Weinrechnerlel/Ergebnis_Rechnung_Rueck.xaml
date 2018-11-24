@@ -7,41 +7,41 @@
         <ScrollView>
         <StackLayout>
 
-                <Label Text=" 1. Ausgehend vom Verschnittwein:"></Label>
-                <Label Text="mit Süßreserve"></Label>
+                <Label Text=" 1. Ausgehend vom Verschnittwein:" TextColor="DarkRed"></Label>
+                <Label Text="mit Süßreserve" TextColor="DarkGreen"></Label>
                 <Label Text="Benötigte Basisweinmenge" TextColor="Black" ></Label>
-                <Entry  x:Name="be_gw_mitSr_1" Placeholder="Wert" TextColor="Black" ></Entry>
+                <Entry  x:Name="be_gw_mitSr_1" Placeholder="-" TextColor="Black" ></Entry>
                 <Label Text="max. mögliche Menge an Süßreserve" TextColor="Black" ></Label>
-                <Entry  x:Name="max_sr1" Placeholder="Wert" TextColor="Black" ></Entry>
+                <Entry  x:Name="max_sr1" Placeholder="-" TextColor="Black" ></Entry>
                 <Label Text="Gesamtmenge" TextColor="Black" ></Label>
-                <Entry  x:Name="ges_menge_mitSr_1" Placeholder="Wert" TextColor="Black" ></Entry>
-                <Label Text="ohne Süßreserve"></Label>
+                <Entry  x:Name="ges_menge_mitSr_1" Placeholder="-" TextColor="Black" ></Entry>
+                <Label Text="ohne Süßreserve" TextColor="DarkGreen"></Label>
                 <Label Text="Benötigte Basisweinmenge" TextColor="Black" ></Label>
-                <Entry  x:Name="be_gw_ohneSr_1" Placeholder="Wert" TextColor="Black" ></Entry>
+                <Entry  x:Name="be_gw_ohneSr_1" Placeholder="-" TextColor="Black" ></Entry>
                 <Label Text="Gesamtmenge" TextColor="Black" ></Label>
-                <Entry  x:Name="ges_menge_ohneSr_1" Placeholder="Wert" TextColor="Black" ></Entry>
+                <Entry  x:Name="ges_menge_ohneSr_1" Placeholder="-" TextColor="Black" ></Entry>
 
 
-                <Label Text=" 2. Ausgehend von der Süßreserve:"></Label>
+                <Label Text=" 2. Ausgehend von der Süßreserve:" TextColor="DarkRed"></Label>
                 <Label Text="Benötigte Basisweinmenge" TextColor="Black" ></Label>
-                <Entry  x:Name="be_gw_2" Placeholder="Wert" TextColor="Black" ></Entry>
+                <Entry  x:Name="be_gw_2" Placeholder="-" TextColor="Black" ></Entry>
                 <Label Text="Gesamtmenge" TextColor="Black" ></Label>
-                <Entry  x:Name="ges_menge_2" Placeholder="Wert" TextColor="Black" ></Entry>
+                <Entry  x:Name="ges_menge_2" Placeholder="-" TextColor="Black" ></Entry>
 
 
-                <Label Text=" 3. Ausgehend von der Gesamtmenge:"></Label>
-                <Label Text="mit Süßreserve"></Label>
+                <Label Text=" 3. Ausgehend von der Gesamtmenge:" TextColor="DarkRed"></Label>
+                <Label Text="mit Süßreserve" TextColor="DarkGreen"></Label>
                 <Label Text="Benötigte Basisweinmenge" TextColor="Black" ></Label>
-                <Entry  x:Name="be_gw_mitSr_3" Placeholder="Wert" TextColor="Black" ></Entry>
+                <Entry  x:Name="be_gw_mitSr_3" Placeholder="-" TextColor="Black" ></Entry>
                 <Label Text="max. mögliche Menge an Süßreserve" TextColor="Black" ></Label>
-                <Entry  x:Name="max_sr3" Placeholder="Wert" TextColor="Black" ></Entry>
-                <Label Text="Gesamtmenge" TextColor="Black" ></Label>
-                <Entry  x:Name="max_vw_mitSr_3" Placeholder="Wert" TextColor="Black" ></Entry>
-                <Label Text="ohne Süßreserve"></Label>
+                <Entry  x:Name="max_sr3" Placeholder="-" TextColor="Black" ></Entry>
+                <Label Text="max. mögliche Menge an Verschnittwein" TextColor="Black" ></Label>
+                <Entry  x:Name="max_vw_mitSr_3" Placeholder="-" TextColor="Black" ></Entry>
+                <Label Text="ohne Süßreserve" TextColor="DarkGreen"></Label>
                 <Label Text="Benötigte Basisweinmenge" TextColor="Black" ></Label>
-                <Entry  x:Name="be_gw_ohneSr_3" Placeholder="Wert" TextColor="Black" ></Entry>
-                <Label Text="Gesamtmenge" TextColor="Black" ></Label>
-                <Entry  x:Name="max_vw_ohneSr_3" Placeholder="Wert" TextColor="Black" ></Entry>
+                <Entry  x:Name="be_gw_ohneSr_3" Placeholder="-" TextColor="Black" ></Entry>
+                <Label Text="max. mögliche Menge an Verschnittwein" TextColor="Black" ></Label>
+                <Entry  x:Name="max_vw_ohneSr_3" Placeholder="-" TextColor="Black" ></Entry>
 
               </StackLayout>
         </ScrollView>

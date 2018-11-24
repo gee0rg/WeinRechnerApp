@@ -67,7 +67,7 @@ namespace Weinrechnerlel
                 }
                 else
                 {
-                    DisplayAlert("Alert", "Verschnittweinanteil übersteigt maximale Menge", "OK");
+                    DisplayAlert("Hinweis", "Verschnittweinanteil übersteigt maximale Menge", "OK");
                     return;
 
                 }
@@ -78,7 +78,7 @@ namespace Weinrechnerlel
                 erg = JsonConvert.DeserializeObject<AustVSRestResponse>(answer);
                 if (erg.EventStatus != 0)
                 {
-                    DisplayAlert("Alert", erg.EventMessage, "OK");
+                    DisplayAlert("Hinweis", erg.EventMessage, "OK");
 
                     return;
                 }
