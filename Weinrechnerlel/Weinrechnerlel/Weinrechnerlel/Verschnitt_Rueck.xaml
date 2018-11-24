@@ -5,15 +5,15 @@
     <ContentPage.Content>
         <ScrollView>
         <StackLayout>
-            <Label Text=" 1. Ausgehend vom Verschnittwein"></Label>
+            <Label Text=" 1. Ausgehend vom Verschnittwein" TextColor="DarkRed"></Label>
             <Label Text="Verschnittweinmenge " TextColor="Black"></Label>
-            <Entry x:Name="liter_vw" Placeholder="Wert" TextColor="Black"></Entry>
-            <Label Text=" 2. Ausgehend von der Süßreserve"></Label>
+            <Entry x:Name="liter_vw" Placeholder="Menge in Liter" TextColor="Black"></Entry>
+                <Label Text=" 2. Ausgehend von der Süßreserve" TextColor="DarkRed"></Label>
             <Label Text="Süßreservemenge " TextColor="Black"></Label>
-            <Entry x:Name="liter_sr" Placeholder="Wert" TextColor="Black"></Entry>
-            <Label Text=" 3. Ausgehend von der Gesamtmenge"></Label>
+            <Entry x:Name="liter_sr" Placeholder="Menge in Liter" TextColor="Black"></Entry>
+                <Label Text=" 3. Ausgehend von der Gesamtmenge" TextColor="DarkRed"></Label>
             <Label Text="Gesamtverschnittmenge" TextColor="Black"></Label>
-            <Entry x:Name="liter_ges_vw" Placeholder="Wert" TextColor="Black"></Entry>
+            <Entry x:Name="liter_ges_vw" Placeholder="Menge in Liter" TextColor="Black"></Entry>
            
             <Button Text="Berechnen" Clicked="berechnen"></Button>
         </StackLayout>

@@ -12,7 +12,7 @@
     
         
         <Label Text="Menge des Grundweines" TextColor="Black" ></Label>
-        <Entry  x:Name="test" Placeholder="Wert" TextColor="Black" ></Entry>
+        <Entry  x:Name="test" Placeholder="Menge in Liter" TextColor="Black" ></Entry>
         <Button Text="Berechnen" Clicked="berechnung_gen"></Button>
    
 

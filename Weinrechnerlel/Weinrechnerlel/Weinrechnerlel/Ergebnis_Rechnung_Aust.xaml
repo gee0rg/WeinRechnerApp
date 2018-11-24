@@ -9,12 +9,12 @@
         <StackLayout>
 
             <Label Text="max. mögliche Menge an Verschnittwein" TextColor="Black" ></Label>
-            <Entry  x:Name="max_vwe" Placeholder="Wert" TextColor="Black" ></Entry>
+            <Entry  x:Name="max_vwe" Placeholder="-" TextColor="Black" ></Entry>
             <Label Text="max. mögliche Menge an bezeichnungsungleicher SR" TextColor="Black" ></Label>
-            <Entry  x:Name="max_sr1e" Placeholder="Wert" TextColor="Black" ></Entry>
+            <Entry  x:Name="max_sr1e" Placeholder="-" TextColor="Black" ></Entry>
             <Label Text="Reduktion der Verschnittweinmenge zugunsten der Süßreserve" TextColor="DarkRed"></Label>
             <Label Text="max. mögliche Menge an bezeichnungsungleicher SR" TextColor="Black" ></Label>
-            <Entry  x:Name="max_sr2e" Placeholder="Wert" TextColor="Black" ></Entry>
+            <Entry  x:Name="max_sr2e" Placeholder="-" TextColor="Black" ></Entry>
             
             
        

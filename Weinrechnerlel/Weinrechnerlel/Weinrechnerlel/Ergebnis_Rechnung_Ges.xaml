@@ -8,26 +8,26 @@
     <ScrollView>
         <StackLayout>
         <Label Text="Benötigte Basisweinmenge" TextColor="Black" ></Label>
-        <Entry  x:Name="liter_gw" Placeholder="Wert" TextColor="Black" ></Entry>
+        <Entry  x:Name="liter_gw" Placeholder="-" TextColor="Black" ></Entry>
         <Label Text="Benötigte Basisweinmenge in Prozent" TextColor="Black" ></Label>
-        <Entry  x:Name="liter_gw_prozent" Placeholder="Wert" TextColor="Black" ></Entry>
+        <Entry  x:Name="liter_gw_prozent" Placeholder="-" TextColor="Black" ></Entry>
         <Label Text="Benötigte Menge an Verschnittwein/Süßreserve" TextColor="Black" ></Label>
-        <Entry  x:Name="liter_vw" Placeholder="Wert" TextColor="Black" ></Entry>
+        <Entry  x:Name="liter_vw" Placeholder="-" TextColor="Black" ></Entry>
         <Label Text="Benötigte Menge an Verschnittwein/Süßreserve in Prozent" TextColor="Black" ></Label>
-        <Entry  x:Name="liter_vw_prozent" Placeholder="Wert" TextColor="Black" ></Entry>
+        <Entry  x:Name="liter_vw_prozent" Placeholder="-" TextColor="Black" ></Entry>
 
 
             <Label Text="Verbleibende Flaschen" TextColor="Black"></Label>
             <Label Text="1,0 Liter Flaschen" TextColor="Black" ></Label>
-            <Entry  x:Name="verb_liter1" Placeholder="Wert" TextColor="Black" ></Entry>
+            <Entry  x:Name="verb_liter1" Placeholder="-" TextColor="Black" ></Entry>
             <Label Text="0,75 Liter Flaschen" TextColor="Black" ></Label>
-            <Entry  x:Name="verb_liter075" Placeholder="Wert" TextColor="Black" ></Entry>
+            <Entry  x:Name="verb_liter075" Placeholder="-" TextColor="Black" ></Entry>
             <Label Text="0,5 Liter Flaschen" TextColor="Black" ></Label>
-            <Entry  x:Name="verb_liter05" Placeholder="Wert" TextColor="Black" ></Entry>
+            <Entry  x:Name="verb_liter05" Placeholder="-" TextColor="Black" ></Entry>
             <Label Text="0,375 Liter Flaschen" TextColor="Black" ></Label>
-            <Entry  x:Name="verb_liter0375" Placeholder="Wert" TextColor="Black" ></Entry>
+            <Entry  x:Name="verb_liter0375" Placeholder="-" TextColor="Black" ></Entry>
             <Label Text="Restmenge in Litern" TextColor="Black" ></Label>
-            <Entry  x:Name="rest_liter" Placeholder="Wert" TextColor="Black" ></Entry>
+            <Entry  x:Name="rest_liter" Placeholder="-" TextColor="Black" ></Entry>
         </StackLayout>
     </ScrollView>
 </ContentPage>
