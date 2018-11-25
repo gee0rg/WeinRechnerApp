@@ -62,6 +62,7 @@ namespace WebApplication1.Controllers
             {
                 lr.EventStatus = -1;
                 lr.EventMessage = string.Format("Exception: {0}", ex.Message);
+               
 
 
                 return lr;
