@@ -8,7 +8,7 @@ namespace WebApplication1.Models
     public class LoginResponseModel
     {
         public bool Nutzung{ get; set; }
-        public int id { get; set; }
+        public string id { get; set; }
         public int EventStatus { get; set; }
         public string EventMessage { get; set; }
     }

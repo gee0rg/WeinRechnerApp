@@ -7,6 +7,6 @@ namespace WebApplication1.Models
 {
     public class request_login
     {
-        public  int Id  { get; set; }
+        public  string Id  { get; set; }
     }
 }

@@ -2,19 +2,20 @@
 using System.Collections.Generic;
 using System.Data;
 using System.Data.Entity;
+using System.Data.Entity.Infrastructure;
 using System.Linq;
 using System.Net;
-using System.Web;
-using System.Web.Mvc;
-using WebApplication1.Models;
-using WebApplication1.Models.WeinrechnerAppDB;
+using System.Net.Http;
 using System.Web.Http;
+using System.Web.Http.Description;
+using WebApplication1.Models;
 
 namespace WebApplication1.Controllers
 {
-    public class UsersController : ApiController
+    public class UsersManagmentController : ApiController
     {
-        private Context db = new Context();
+        private guterContext db = new guterContext();
+
 
 
 
@@ -29,7 +30,7 @@ namespace WebApplication1.Controllers
             try
             {
 
-                IEnumerable<User> UserIE = db.User.Where(p => p.Id == param.Id);
+                IEnumerable<User> UserIE = db.Users.Where(p => p.Id.ToLower() == param.Id.ToLower());
                 if (UserIE.Any())
                 {
                     u = UserIE.FirstOrDefault();
@@ -40,15 +41,17 @@ namespace WebApplication1.Controllers
                 }
                 else
                 {
+
+
                     u.Nutzungsbedingungen = false;
                     u.CreateDate = DateTime.Now;
-                    db.User.Add(u);
+                    u.Id = Guid.NewGuid().ToString("N");
+                    db.Users.Add(u);
                     db.SaveChanges();
-                    IEnumerable<User> UserIEzwei = db.User.Where(p => p.CreateDate == u.CreateDate);
-                    User uu = new User() { };
-                    uu = UserIEzwei.FirstOrDefault();
-                    lr.id = uu.Id;
-                    lr.Nutzung = uu.Nutzungsbedingungen;
+
+
+                    lr.id = u.Id;
+                    lr.Nutzung = u.Nutzungsbedingungen;
                     lr.EventStatus = 1;
                     return lr;
 
@@ -66,4 +69,3 @@ namespace WebApplication1.Controllers
         }
     }
 }
-
