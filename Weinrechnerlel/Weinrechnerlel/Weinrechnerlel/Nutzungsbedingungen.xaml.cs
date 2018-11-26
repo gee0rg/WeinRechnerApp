@@ -16,5 +16,10 @@ namespace Weinrechnerlel
 		{
 			InitializeComponent ();
 		}
+
+        void NutzungsbedingungenButton_Clicked(object sender, EventArgs e)
+        {
+
+        }
 	}
 }

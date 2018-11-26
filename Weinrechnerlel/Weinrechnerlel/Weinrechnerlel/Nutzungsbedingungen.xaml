@@ -33,6 +33,9 @@
                     &#x0a;
                    Die Copyright-Rechte liegen beim&#x0a;
                    DLR-Rheinhessen-Nahe-Hunsrück." HorizontalTextAlignment="Center" />
-      </AbsoluteLayout>
+
+            <Button AbsoluteLayout.LayoutBounds=".5,1,.5,.20" AbsoluteLayout.LayoutFlags="All" Text="Zustimmen" TextColor="Black" HorizontalOptions="Center" Clicked="NutzungsbedingungenButton_Clicked"
+                   VerticalOptions="CenterAndExpand" />
+        </AbsoluteLayout>
   </ContentPage.Content>
 </ContentPage>
