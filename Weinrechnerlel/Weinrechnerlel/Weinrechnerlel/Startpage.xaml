@@ -15,10 +15,10 @@
                   HorizontalOptions="Center" TextColor="Black" HorizontalTextAlignment="Center"
            VerticalOptions="CenterAndExpand" />
 
-            <Button Text="Los" TextColor="Black" HorizontalOptions="Center" Clicked="StartButton_Clicked" x:Name="los"
-           VerticalOptions="CenterAndExpand" />
+            <Button Text="Los" TextColor="Black" HorizontalOptions="Center"  
+           VerticalOptions="CenterAndExpand" Command="{Binding Command[Go]}" IsVisible="{Binding }"/>
 
-            <ActivityIndicator Color="DarkRed" IsRunning="{Binding}" x:Name="Balken"
+            <ActivityIndicator Color="DarkRed" IsRunning="{Binding StartViewmodel.}" 
             VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>

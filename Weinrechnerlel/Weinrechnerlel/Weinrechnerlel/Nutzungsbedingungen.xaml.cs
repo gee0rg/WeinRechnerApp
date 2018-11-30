@@ -13,6 +13,7 @@ namespace Weinrechnerlel
 	[XamlCompilation(XamlCompilationOptions.Compile)]
 	public partial class Nutzungsbedingungen : ContentPage
 	{
+        string user;
         public Nutzungsbedingungen() {
             InitializeComponent();
             UserManagment.IsVisible = false;
@@ -24,6 +25,7 @@ namespace Weinrechnerlel
 			InitializeComponent ();
             if (user != null) {
                 UserManagment.IsVisible = true;
+                this.user = user.id;
                     }
             else
             {
@@ -33,6 +35,7 @@ namespace Weinrechnerlel
 
         void NutzungsbedingungenButton_Clicked(object sender, EventArgs e)
         {
+            
             Navigation.PushModalAsync(new MasterDetailPage1());
 
         }
