@@ -200,6 +200,7 @@
     <Compile Include="Controllers\ges_VSController.cs" />
     <Compile Include="Controllers\grw_VSController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\NutzungsbedingungsController.cs" />
     <Compile Include="Controllers\rueck_VSController.cs" />
     <Compile Include="Controllers\UsersManagmentController.cs" />
     <Compile Include="Controllers\ValuesController.cs" />
@@ -294,6 +295,7 @@
     <Content Include="Models\Model1.edmx.diagram">
       <DependentUpon>Model1.edmx</DependentUpon>
     </Content>
+    <None Include="Properties\PublishProfiles\FolderProfile.pubxml" />
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
     <Content Include="Scripts\jquery-3.3.1.min.js" />

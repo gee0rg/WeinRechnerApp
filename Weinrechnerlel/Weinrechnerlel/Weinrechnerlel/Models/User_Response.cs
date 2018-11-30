@@ -4,7 +4,7 @@ using System.Text;
 
 namespace Weinrechnerlel.Models
 {
-    class User_Response
+    public class User_Response
     {
         public bool Nutzung { get; set; }
         public string id { get; set; }

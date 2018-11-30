@@ -38,14 +38,14 @@ namespace Weinrechnerlel
         {
 
             request_gen_VS param= new request_gen_VS(){liter_gw =test.Text };
-            String request = JsonConvert.SerializeObject(param);
+            string request = JsonConvert.SerializeObject(param);
             RESTConnector rconn = new RESTConnector();
             Ergebnis_gen_Vs ergebnis1 = new Ergebnis_gen_Vs() { };
-            String answer;
-            String adress = "http://localhost:50088/api/gen_Vs";
-           
+            string answer;
+            string adress = "http://10.141.77.226:4438/api/gen_Vs";
+            //string adress = "http://localhost:50088/api/aust_Vs";
 
-            answer = rconn.HTTP_POST(adress,request,5,false);
+            answer = rconn.HTTP_POST(adress,request,50);
             if (answer.Contains("REST_HTTP_ERROR"))
             {
                 //1. Berechnung
@@ -81,7 +81,7 @@ namespace Weinrechnerlel
                 ergebnis.max_sr1 = erg.max_sr1;
                 ergebnis.max_sr2 = erg.max_sr2;
                 ergebnis.max_vw = erg.max_vw;
-                ergebnis.max_vw1 = erg.max_vw1;
+                ergebnis.max_vw1 = erg.max_vw;
 
                     
 

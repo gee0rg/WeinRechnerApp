@@ -6,6 +6,7 @@
              BackgroundImage="weinrebe.jpg"
              >
     <ContentPage.Content>
+       
         <StackLayout>
             
 
@@ -14,8 +15,11 @@
                   HorizontalOptions="Center" TextColor="Black" HorizontalTextAlignment="Center"
            VerticalOptions="CenterAndExpand" />
 
-            <Button Text="Los" TextColor="Black" HorizontalOptions="Center" Clicked="StartButton_Clicked"
+            <Button Text="Los" TextColor="Black" HorizontalOptions="Center" Clicked="StartButton_Clicked" x:Name="los"
            VerticalOptions="CenterAndExpand" />
+
+            <ActivityIndicator Color="DarkRed" IsRunning="{Binding}" x:Name="Balken"
+            VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
