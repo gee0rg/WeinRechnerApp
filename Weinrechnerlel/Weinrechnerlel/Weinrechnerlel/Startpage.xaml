@@ -16,9 +16,9 @@
            VerticalOptions="CenterAndExpand" />
 
             <Button Text="Los" TextColor="Black" HorizontalOptions="Center"  
-           VerticalOptions="CenterAndExpand" Command="{Binding Command[Go]}" IsVisible="{Binding }"/>
+           VerticalOptions="CenterAndExpand" IsVisible="{Binding Los, Mode=TwoWay}" Command="{Binding Go}" x:Name="los"/>
 
-            <ActivityIndicator Color="DarkRed" IsRunning="{Binding StartViewmodel.}" 
+            <ActivityIndicator Color="DarkRed"   IsRunning="{Binding Balken, Mode=TwoWay}" x:Name="balken"
             VerticalOptions="CenterAndExpand" />
         </StackLayout>
     </ContentPage.Content>

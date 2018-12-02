@@ -1,4 +1,5 @@
 ﻿using System;
+using Weinrechnerlel.ViedwModels;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -10,7 +11,7 @@ namespace Weinrechnerlel
         public App()
         {
             InitializeComponent();
-
+            //StartViewModel sv = new StartViewModel() { };
             MainPage = new NavigationPage(new Startpage());
         }
 

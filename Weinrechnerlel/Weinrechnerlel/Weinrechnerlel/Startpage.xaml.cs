@@ -17,15 +17,23 @@ namespace Weinrechnerlel
     {
         public Startpage()
         {
+
             InitializeComponent();
-            BindingContext = new StartViewModel();
+          
+            BindingContext = new StartViewModel(Navigation);
+         
+            balken.IsRunning = false;
+            los.IsVisible = true;
 
         }
+       
         //void StartButton_Clicked(object sender, EventArgs e)
         //{
 
         //    //Balken.IsRunning = true;
-        //   // los.IsVisible = false;
+        //    // los.IsVisible = false;
+        //    balkenfalse();
+        //    unsichtbar();
 
         //    InitializeComponent();
         //    string ids;
@@ -42,8 +50,8 @@ namespace Weinrechnerlel
         //    request_User param = new request_User() { Id = ids };
         //    String request = JsonConvert.SerializeObject(param);
         //    RESTConnector rconn = new RESTConnector();
-        //    User_Response erg = new User_Response() { };
-        //    string answer;
+        //  User_Response erg = new User_Response() { };
+        //  string answer;
         //    string adress = "http://10.141.77.226:4438/api/UsersManagment";
         //    //string adress = "http://localhost:50088/api/Usermanagment";
         //    bool a = Online.OnlineStatus(adress);
@@ -94,7 +102,7 @@ namespace Weinrechnerlel
         //        //kein Antwort vom Webservice user muss Nutzungsbedingungen zustimmen
         //        //Navigation.PushModalAsync(new Nutzungsbedingungen());
         //        erg.id = "";
-        //        Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
+        //     Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
         //    }
 
 
