@@ -200,7 +200,6 @@
     <Compile Include="Controllers\ges_VSController.cs" />
     <Compile Include="Controllers\grw_VSController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
-    <Compile Include="Controllers\NutzungsbedingungsController.cs" />
     <Compile Include="Controllers\NutzungsbedinungenController.cs" />
     <Compile Include="Controllers\rueck_VSController.cs" />
     <Compile Include="Controllers\UsersManagmentController.cs" />
