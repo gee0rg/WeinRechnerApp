@@ -16,10 +16,11 @@
            VerticalOptions="CenterAndExpand" />
 
             <Button Text="Los" TextColor="Black" HorizontalOptions="Center"  
-           VerticalOptions="CenterAndExpand" IsVisible="{Binding Los, Mode=TwoWay}" Command="{Binding Go}" x:Name="los"/>
+           VerticalOptions="CenterAndExpand"  Clicked="StartButton_Clicked"  x:Name="los"/>
 
-            <ActivityIndicator Color="DarkRed"   IsRunning="{Binding Balken, Mode=TwoWay}" x:Name="balken"
+            <ActivityIndicator Color="DarkRed"  x:Name="balken"
             VerticalOptions="CenterAndExpand" />
+            
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
