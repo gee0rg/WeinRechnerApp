@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weinrechnerlel.Ergebnis_Rechnung_Anreich">
+    <ContentPage.Content>
+        <ScrollView>
+            <StackLayout>
+                
+                <Entry  x:Name="mg_e" Placeholder="-" TextColor="Black" ></Entry>
+                <Entry  x:Name="asp_e" Placeholder="-" TextColor="Black" ></Entry>
+                <Entry  x:Name="sach" Placeholder="-" TextColor="Black" ></Entry>
+                <Entry  x:Name="sach_ges" Placeholder="-" TextColor="Black" ></Entry>
+                <Entry  x:Name="pa_e" Placeholder="-" TextColor="Black" ></Entry>
+                <Entry  x:Name="auf_alk" Placeholder="-" TextColor="Black" ></Entry>
+                <Entry  x:Name="menge_an" Placeholder="-" TextColor="Black" ></Entry>
+                <Entry  x:Name="mehr_an" Placeholder="-" TextColor="Black" ></Entry>
+                </StackLayout>
+                
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>
