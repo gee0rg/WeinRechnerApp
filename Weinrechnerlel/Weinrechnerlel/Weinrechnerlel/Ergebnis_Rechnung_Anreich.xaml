@@ -5,15 +5,22 @@
     <ContentPage.Content>
         <ScrollView>
             <StackLayout>
-                
+                <Label Text="Mostgewicht in g/l Alkohol" TextColor="Black" ></Label>
                 <Entry  x:Name="mg_e" Placeholder="-" TextColor="Black" ></Entry>
+                <Label Text="Anreicherungsspanne um g/l Alkohol" TextColor="Black" ></Label>
                 <Entry  x:Name="asp_e" Placeholder="-" TextColor="Black" ></Entry>
-                <Entry  x:Name="sach" Placeholder="-" TextColor="Black" ></Entry>
-                <Entry  x:Name="sach_ges" Placeholder="-" TextColor="Black" ></Entry>
-                <Entry  x:Name="pa_e" Placeholder="-" TextColor="Black" ></Entry>
+                <Label Text="auf g/l Alkohol" TextColor="Black" ></Label>
                 <Entry  x:Name="auf_alk" Placeholder="-" TextColor="Black" ></Entry>
-                <Entry  x:Name="menge_an" Placeholder="-" TextColor="Black" ></Entry>
+                <Label Text="Produktart" TextColor="Black" ></Label>
+                <Entry  x:Name="pa_e" Placeholder="-" TextColor="Black" ></Entry>
+                <Label Text="Saccharosebedarf in kg pro hl" TextColor="Black" ></Label>
+                <Entry  x:Name="sach" Placeholder="-" TextColor="Black" ></Entry>
+                <Label Text="Saccharosebedarf in kg gesamt" TextColor="Black" ></Label>
+                <Entry  x:Name="sach_ges" Placeholder="-" TextColor="Black" ></Entry>
+                <Label Text="Mehrung durch Anreicherung in Liter" TextColor="Black" ></Label>
                 <Entry  x:Name="mehr_an" Placeholder="-" TextColor="Black" ></Entry>
+                <Label Text="Menge nach Anreicherung in Liter" TextColor="Black" ></Label>
+                <Entry  x:Name="menge_an" Placeholder="-" TextColor="Black" ></Entry>
                 </StackLayout>
                 
         </ScrollView>

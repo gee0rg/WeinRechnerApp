@@ -14,7 +14,6 @@ namespace Weinrechnerlel
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Ergebnis_Rechnung_Anreich : ContentPage
     {
-        Ergebnis_gen_Vs test = new Ergebnis_gen_Vs();
         public Ergebnis_Rechnung_Anreich(Ergebnis_anreich ergebnis)
         {
 
