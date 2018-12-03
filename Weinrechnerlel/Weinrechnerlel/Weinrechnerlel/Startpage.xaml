@@ -16,10 +16,10 @@
            VerticalOptions="CenterAndExpand" />
 
             <Button Text="Los" TextColor="Black" HorizontalOptions="Center"  
-           VerticalOptions="CenterAndExpand"  Clicked="StartButton_Clicked"  x:Name="los"/>
+           VerticalOptions="CenterAndExpand"  Clicked="StartButton_Clicked" PropertyChanged="los_PropertyChanged" PropertyChanging="los_PropertyChanging"  x:Name="los"/>
 
             <ActivityIndicator Color="DarkRed"  x:Name="balken"
-            VerticalOptions="CenterAndExpand" />
+            VerticalOptions="CenterAndExpand"   />
             
         </StackLayout>
     </ContentPage.Content>

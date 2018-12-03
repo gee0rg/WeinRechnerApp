@@ -27,12 +27,11 @@ namespace Weinrechnerlel
 
         }
 
-        async void StartButton_Clicked (object sender, EventArgs e)
+         void StartButton_Clicked (object sender, EventArgs e)
        {
 
 
-           balken.IsRunning = true;
-           los.IsVisible = false;
+           
            
 
             string ids;
@@ -56,13 +55,13 @@ namespace Weinrechnerlel
             bool a = Online.OnlineStatus(adress);
             if (a == true)
             {
-                answer = rconn.HTTP_POST(adress, request, 5, false);
+                answer =  rconn.HTTP_POST(adress, request, 5, false);
                 if (answer.Contains("REST_HTTP_ERROR"))
                 {
                     //kein Antwort vom Webservice user muss Nutzungsbedingungen zustimmen
                     //Navigation.PushModalAsync(new Nutzungsbedingungen());
                     erg.id = "";
-                    await Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
+                     Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
                 }
 
 
@@ -75,23 +74,23 @@ namespace Weinrechnerlel
                 {
                     Application.Current.Properties.Clear();
                     Application.Current.Properties.Add("id", erg.id);
-                    await Application.Current.SavePropertiesAsync();
+                     Application.Current.SavePropertiesAsync();
                 }
                 if (erg.EventStatus == -1)
                 {
                     //gab einen Fehler User wurde nicht gefunden oder in DB eingetragen --muss daher Nutzerbedignugen zustimmen
-                    await Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
+                     Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
 
                 }
                 if (erg.Nutzung == true)
                 {
                     //User wurd erkannt und hat bereits den Bedingeunen zusgestimmt er kann die App sofort nutzen
-                   await  Navigation.PushModalAsync(new MasterDetailPage1());
+                     Navigation.PushModalAsync(new MasterDetailPage1());
                 }
                 else
                 {
                     //User wurde erkannt oder neu angelegt und hat den Nutzerbedignugen noch nicht zusgtstimmt und muss dies erst machen bevor er die App nutzen kann
-                   await  Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
+                     Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
                 }
 
 
@@ -101,7 +100,7 @@ namespace Weinrechnerlel
                 //kein Antwort vom Webservice user muss Nutzungsbedingungen zustimmen
                 //Navigation.PushModalAsync(new Nutzungsbedingungen());
                 erg.id = "";
-            await  Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
+              Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
             }
 
 
@@ -109,12 +108,22 @@ namespace Weinrechnerlel
 
 
 
-           balken.IsRunning = false;
-            los.IsVisible = true;
+          
 
 
         }
 
+        private void los_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        {
+          
+            balken.IsRunning = false;
+            los.IsVisible = true;
+        }
 
+        private void los_PropertyChanging(object sender, PropertyChangingEventArgs e)
+        {
+            balken.IsRunning = true;
+            los.IsVisible = false;
+        }
     }
 }
