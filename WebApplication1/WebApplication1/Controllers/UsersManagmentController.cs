@@ -30,7 +30,7 @@ namespace WebApplication1.Controllers
             try
             {
 
-                IEnumerable<User> UserIE = db.Users.Where(p => p.Id.ToLower() == param.Id.ToLower());
+                IEnumerable<User> UserIE = db.Users.Where(p =>  p.Id.ToLower() == param.Id.ToLower());
                 if (UserIE.Any())
                 {
                     u = UserIE.FirstOrDefault();
