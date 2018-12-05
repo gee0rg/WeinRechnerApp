@@ -16,7 +16,7 @@
            VerticalOptions="CenterAndExpand" />
 
             <Button Text="Los" TextColor="Black" HorizontalOptions="Center"  
-           VerticalOptions="CenterAndExpand"  Clicked="StartButton_Clicked"   x:Name="los"/>
+           VerticalOptions="CenterAndExpand"  Clicked="StartButton_Clicked"  IsVisible="{Binding Source={x:Reference start}, Path=IsVisible}"  x:Name="los"/>
 
             <ActivityIndicator IsVisible="{Binding Source={x:Reference start}, Path=IsBusy}" IsRunning="{Binding Source={x:Reference start}, Path=IsBusy}" />
 

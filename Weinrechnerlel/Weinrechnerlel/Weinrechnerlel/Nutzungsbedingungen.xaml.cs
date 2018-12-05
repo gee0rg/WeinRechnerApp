@@ -63,21 +63,23 @@ namespace Weinrechnerlel
             {
                 //kein Antwort vom Webservice user muss Nutzungsbedingungen zustimmen
                 //Navigation.PushModalAsync(new Nutzungsbedingungen());
-                erg.id = "";
-                Navigation.PushModalAsync(new MasterDetailPage1());
-            }
-
-            Navigation.PushModalAsync(new MasterDetailPage1());
-
-            erg = JsonConvert.DeserializeObject<User_Response>(answer);
-            if (erg.EventStatus == -1)
-            {
-                //rest aufruf war fail
+               
                 Navigation.PushModalAsync(new MasterDetailPage1());
             }
             else
             {
                 Navigation.PushModalAsync(new MasterDetailPage1());
+
+                erg = JsonConvert.DeserializeObject<User_Response>(answer);
+                if (erg.EventStatus == -1)
+                {
+                    //rest aufruf war fail
+                    Navigation.PushModalAsync(new MasterDetailPage1());
+                }
+                else
+                {
+                    Navigation.PushModalAsync(new MasterDetailPage1());
+                }
             }
         }
     }
