@@ -113,17 +113,17 @@ namespace Weinrechnerlel
 
         }
 
-        private void los_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
-        {
+        //private void los_PropertyChanged(object sender, System.ComponentModel.PropertyChangedEventArgs e)
+        //{
           
-            balken.IsRunning = false;
-            los.IsVisible = true;
-        }
+        //    balken.IsRunning = false;
+        //    los.IsVisible = true;
+        //}
 
-        private void los_PropertyChanging(object sender, PropertyChangingEventArgs e)
-        {
-            balken.IsRunning = true;
-            los.IsVisible = false;
-        }
+        //private void los_PropertyChanging(object sender, PropertyChangingEventArgs e)
+        //{
+        //    balken.IsRunning = true;
+        //    los.IsVisible = false;
+        //}
     }
 }
