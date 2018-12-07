@@ -61,7 +61,7 @@ namespace Weinrechnerlel
                         RESTConnector rconn = new RESTConnector();
                         User_Response erg = new User_Response() { };
                         string answer;
-                        string adress = "http://10.141.77.226:4438/api/UsersManagment";
+                        string adress = "http://10.1.2.173:4438/api/UsersManagment";
                         //string adress = "http://localhost:50088/api/Usermanagment";
 
 

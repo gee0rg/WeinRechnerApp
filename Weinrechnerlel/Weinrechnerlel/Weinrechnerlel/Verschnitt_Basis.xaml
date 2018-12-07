@@ -24,7 +24,7 @@
             <Entry  x:Name="verw_liter05" Placeholder="0,5 Liter" TextColor="Black" ></Entry>
             <Label Text="0,375 Liter Flaschen" TextColor="Black" FontSize="Small"></Label>
             <Entry  x:Name="verw_liter0375" Placeholder="0,375 Liter" TextColor="Black" ></Entry>
-            <Button Text="Berechne Flaschen" Clicked="berechnen2"></Button>
+            
             
         </StackLayout>
             </ScrollView>
