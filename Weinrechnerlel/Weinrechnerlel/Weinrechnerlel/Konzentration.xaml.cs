@@ -27,7 +27,7 @@ namespace Weinrechnerlel
             request_konz param = new request_konz() { ag = ag.Text, zg = zg.Text, maisch_menge = maisch_menge.Text };
             String request = JsonConvert.SerializeObject(param);
             RESTConnector rconn = new RESTConnector();
-            Ergebnis_gen_Vs ergebnis1 = new Ergebnis_gen_Vs() { };
+            
             String answer;
             String adress = "http://localhost:50088/api/basis_Vs";
 
@@ -296,7 +296,8 @@ namespace Weinrechnerlel
 
                 if (ag != null && zg != null && maisch_menge != null)
                 {
-                    if (Convert.ToInt32(ag.Text) > Convert.ToInt32(zg.Text)) {
+                    if (Convert.ToInt32(ag.Text) > Convert.ToInt32(zg.Text))
+                    {
                         DisplayAlert("Hinweis", "Zielmostgewicht niedriger als Ausgangsmostgewicht!", "OK");
                     }
 
@@ -315,13 +316,13 @@ namespace Weinrechnerlel
                         ergebnis.mg_e = e1;
                         ergebnis.asp_e = e2;
                         ergebnis.auf_alk = e3;
-                        int e4_int = (int)e4;     
+                        int e4_int = (int)e4;
                         ergebnis.perm_entzug = e4_int;
-                        int e5_int = (int)e5;     
+                        int e5_int = (int)e5;
                         ergebnis.menge_konz = e5_int;
 
                     }
-                   /* else // else-Berechnung ,macht keinen Sinn 
+                    else // else-Berechnung ,macht keinen Sinn 
                     {
                         //Ergebnisse berechnnen
                         double e1 = ag1;
@@ -342,39 +343,40 @@ namespace Weinrechnerlel
 
                         int e5_int = (int)e5;
                         ergebnis.menge_konz = e5_int;
-                    } */ 
-                        
-                     else
-                    {
-                        KonzRestResponse erg = new KonzRestResponse() { };
-                        erg = JsonConvert.DeserializeObject<KonzRestResponse>(answer);
-                        if (erg.EventStatus != 0)
-                        {
-                            DisplayAlert("Hinweis", erg.EventMessage, "OK");
-
-                            return;
-                        }
-
-                        ergebnis.mg_e = erg.mg_e;
-                        ergebnis.asp_e = erg.asp_e;
-                        ergebnis.auf_alk = erg.auf_alk;
-                        ergebnis.perm_entzug = erg.perm_entzug;
-                        ergebnis.menge_konz = erg.menge_konz;
-
-
                     }
+                }
+
+                else
+                {
+                    KonzRestResponse erg = new KonzRestResponse() { };
+                    erg = JsonConvert.DeserializeObject<KonzRestResponse>(answer);
+                    if (erg.EventStatus != 0)
+                    {
+                        DisplayAlert("Hinweis", erg.EventMessage, "OK");
+
+                        return;
+                    }
+
+                    ergebnis.mg_e = erg.mg_e;
+                    ergebnis.asp_e = erg.asp_e;
+                    ergebnis.auf_alk = erg.auf_alk;
+                    ergebnis.perm_entzug = erg.perm_entzug;
+                    ergebnis.menge_konz = erg.menge_konz;
+
+
+                }
                     NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Konz(ergebnis)) { BarBackgroundColor = Color.DarkRed };
                     Navigation.PushAsync(nav);
 
 
-                }
-
-
-
             }
+
+
+
         }
     }
 }
+
 
 
 

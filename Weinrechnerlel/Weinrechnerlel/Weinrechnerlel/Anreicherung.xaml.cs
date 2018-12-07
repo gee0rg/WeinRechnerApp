@@ -26,7 +26,7 @@ namespace Weinrechnerlel
             request_anreich param = new request_anreich() { mg = mg.Text, asp = asp.Text, pa = pa.Text, maisch_menge = maisch_menge.Text };
             String request = JsonConvert.SerializeObject(param);
             RESTConnector rconn = new RESTConnector();
-            Ergebnis_gen_Vs ergebnis1 = new Ergebnis_gen_Vs() { };
+            
             String answer;
             String adress = "http://localhost:50088/api/basis_Vs";
 
