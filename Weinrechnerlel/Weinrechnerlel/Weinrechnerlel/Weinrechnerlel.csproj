@@ -15,6 +15,12 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Compile Update="Ergebnis_Rechnung_Konz.xaml.cs">
+      <DependentUpon>Ergebnis_Rechnung_Konz.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Konzentration.xaml.cs">
+      <DependentUpon>Konzentration.xaml</DependentUpon>
+    </Compile>
     <Compile Update="Ergebnis_Rechnung_Basis.xaml.cs">
       <DependentUpon>Ergebnis_Rechnung_Basis.xaml</DependentUpon>
     </Compile>

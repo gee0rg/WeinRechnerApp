@@ -4,32 +4,40 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rechnungen
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+using Weinrechnerlel.Models;
+using Newtonsoft.Json;
+
+namespace Weinrechnerlel
 {
-    public class Ergebnis_konz
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Konzentration : ContentPage
     {
-        public double mg_e { get; set; }
-        public double asp_e { get; set; }
-        public double auf_alk { get; set; }
-        public int perm_entzug { get; set; }
-        public int menge_konz { get; set; }
-
-    }
-    class Rechnung7_konz
-    {
-        
-
-        static void Main(string[] args)
+        public Konzentration()
         {
-            
-            Ergebnis_konz ergebnis = new Ergebnis_konz();
+            InitializeComponent();
+        }
+        double ag1 = 0;
+        double zg1 = 0;
+        Ergebnis_konz ergebnis = new Ergebnis_konz() { };
+        void berechnen_Konz(object sender, EventArgs e)
+        {
 
-            Ergebnis_konz konzentration(double ag, double zg, double maisch_menge)
+            request_konz param = new request_konz() { ag = ag.Text, zg = zg.Text, maisch_menge = maisch_menge.Text };
+            String request = JsonConvert.SerializeObject(param);
+            RESTConnector rconn = new RESTConnector();
+            
+            String answer;
+            String adress = "http://localhost:50088/api/basis_Vs";
+
+            answer = rconn.HTTP_POST(adress, request, 5, false);
+            if (answer.Contains("REST_HTTP_ERROR"))
             {
-                double ag1 = 0;
-                switch (ag)
+
+                switch (Convert.ToInt32(ag.Text))
                 {
-                 case 60:
+                    case 60:
                         ag1 = 59.2;
                         break;
                     case 61:
@@ -152,13 +160,16 @@ namespace Rechnungen
                     case 100:
                         ag1 = 108.9;
                         break;
+                    default:
+                        DisplayAlert("Hinweis", "ungültiger Wert für das Ausgangsmostgewicht!", "OK");
+                        break;
 
                 }
 
-                double zg1 = 0;
-                switch (zg)
+
+                switch (Convert.ToInt32(zg.Text))
                 {
-                     case 60:
+                    case 60:
                         zg1 = 59.2;
                         break;
                     case 61:
@@ -281,74 +292,99 @@ namespace Rechnungen
                     case 100:
                         zg1 = 108.9;
                         break;
+                    default:
+                        DisplayAlert("Hinweis", "ungültiger Wert für das Zielmostgewicht!", "OK");
+                        break;
+
+
                 }
                 //hier muss ein Zugriff auf die Datenbank mit der entsprechenden Tabelle implementiert werden!
-                if (Convert.ToString(ag) != null && Convert.ToString(zg) != null && Convert.ToString(maisch_menge) != null)
+                // ComboBox
+
+                if (ag != null && zg != null && maisch_menge != null)
                 {
-                    if (ag > zg)
-                        Console.WriteLine("Alert: Zielmostgewicht niedriger als Ausgangsmostgewicht!");
+                    if (Convert.ToInt32(ag.Text) > Convert.ToInt32(zg.Text))
+                    {
+                        DisplayAlert("Hinweis", "Zielmostgewicht niedriger als Ausgangsmostgewicht!", "OK");
+                    }
+
                     else if ((zg1 - ag1) > 16)
                     {
-                        Console.WriteLine("Alert: Anreicherungsspanne von 16 g/l ist überschritten!");
+                        DisplayAlert("Hinweis", "Anreicherungsspanne von 16 g/l ist überschritten!", "OK");
+
                         //Ergebnisse berechnnen
                         double e1 = ag1;
                         double e2 = zg1 - ag1;
                         double e3 = zg1;
-                        double e4 = Math.Round((maisch_menge * zg - maisch_menge * ag) / zg);// oder durch zg1 -> erfragen!
-                        double e5 = Math.Round(maisch_menge - e4);
+                        double e4 = Math.Round((Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(zg.Text) - Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(ag.Text)) / Convert.ToDouble(zg.Text));// oder durch zg1 -> erfragen!
+                        double e5 = Math.Round(Convert.ToDouble(maisch_menge.Text) - e4);
 
                         //Ausgabe Ergebnisse
                         ergebnis.mg_e = e1;
-                        Console.WriteLine(ergebnis.mg_e);
                         ergebnis.asp_e = e2;
-                        Console.WriteLine(ergebnis.asp_e);
                         ergebnis.auf_alk = e3;
-                        Console.WriteLine(ergebnis.auf_alk);
                         int e4_int = (int)e4;
                         ergebnis.perm_entzug = e4_int;
-                        Console.WriteLine(ergebnis.perm_entzug);
                         int e5_int = (int)e5;
                         ergebnis.menge_konz = e5_int;
-                        Console.WriteLine(ergebnis.menge_konz);
+
                     }
-                    else
+                    else // else-Berechnung ,macht keinen Sinn 
                     {
                         //Ergebnisse berechnnen
                         double e1 = ag1;
                         double e2 = zg1 - ag1;
                         double e3 = zg1;
-                        double e4 = Math.Round((maisch_menge * zg - maisch_menge * ag) / zg);// oder durch zg1 -> erfragen!
-                        double e5 = Math.Round(maisch_menge - e4);
+                        double e4 = Math.Round((Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(zg.Text) - Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(ag.Text)) / Convert.ToDouble(zg.Text));// oder durch zg1 -> erfragen!
+                        double e5 = Math.Round(Convert.ToDouble(maisch_menge.Text) - e4);
 
                         //Ausgabe Ergebnisse
                         ergebnis.mg_e = e1;
-                        Console.WriteLine(ergebnis.mg_e);
+
                         ergebnis.asp_e = e2;
-                        Console.WriteLine(ergebnis.asp_e);
+
                         ergebnis.auf_alk = e3;
-                        Console.WriteLine(ergebnis.auf_alk);
+
                         int e4_int = (int)e4;
                         ergebnis.perm_entzug = e4_int;
-                        Console.WriteLine(ergebnis.perm_entzug);
+
                         int e5_int = (int)e5;
                         ergebnis.menge_konz = e5_int;
-                        Console.WriteLine(ergebnis.menge_konz);
-                    }                                                                           
+                    }
                 }
-                return null;
-            }
-            Ergebnis_konz test = new Ergebnis_konz() { };
-            test = konzentration(78, 83, 96445);
-            Console.WriteLine();
 
-           /* Ergebnis_konz test2 = new Ergebnis_konz() { };
-            test2 = konzentration(65, 150, 730);
-            Console.WriteLine();
-            
-            Ergebnis_konz test3 = new Ergebnis_konz() { };
-            test3 = konzentration(65, 60, 200);*/
-                
-            Console.ReadKey();
+                else
+                {
+                    KonzRestResponse erg = new KonzRestResponse() { };
+                    erg = JsonConvert.DeserializeObject<KonzRestResponse>(answer);
+                    if (erg.EventStatus != 0)
+                    {
+                        DisplayAlert("Hinweis", erg.EventMessage, "OK");
+
+                        return;
+                    }
+
+                    ergebnis.mg_e = erg.mg_e;
+                    ergebnis.asp_e = erg.asp_e;
+                    ergebnis.auf_alk = erg.auf_alk;
+                    ergebnis.perm_entzug = erg.perm_entzug;
+                    ergebnis.menge_konz = erg.menge_konz;
+
+
+                }
+                    NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Konz(ergebnis)) { BarBackgroundColor = Color.DarkRed };
+                    Navigation.PushAsync(nav);
+
+
+            }
+
+
+
         }
     }
 }
+
+
+
+
+           

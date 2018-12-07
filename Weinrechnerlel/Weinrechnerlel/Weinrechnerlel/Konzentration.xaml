@@ -1,0 +1,16 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weinrechnerlel.Konzentration">
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Ausgangsmostgewicht auswählen" TextColor="Black"></Label>
+            <Entry x:Name="ag" Placeholder="in °OE" TextColor="Black"></Entry>
+            <Label Text="Zielmostgewicht auswählen" TextColor="Black"></Label>
+            <Entry x:Name="zg" Placeholder="in °OE" TextColor="Black"></Entry>
+            <Label Text="Most/ Maischmenge die angereichert werden soll" TextColor="Black"></Label>
+            <Entry x:Name="maisch_menge" Placeholder="Menge in Liter" TextColor="Black"></Entry>
+            <Button Text="Berechnen" Clicked="berechnen_Konz"></Button>
+        </StackLayout>
+    </ScrollView>
+</ContentPage>
