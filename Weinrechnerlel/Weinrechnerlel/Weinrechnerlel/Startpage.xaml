@@ -4,7 +4,7 @@
              x:Class="Weinrechnerlel.Startpage"
              Title="Herzlich Willkommen" 
              BackgroundImage="weinrebe.jpg"
-             >
+             x:Name="start">
     <ContentPage.Content>
        
         <StackLayout>
@@ -16,11 +16,10 @@
            VerticalOptions="CenterAndExpand" />
 
             <Button Text="Los" TextColor="Black" HorizontalOptions="Center"  
-           VerticalOptions="CenterAndExpand"  Clicked="StartButton_Clicked" PropertyChanged="los_PropertyChanged" PropertyChanging="los_PropertyChanging"  x:Name="los"/>
+           VerticalOptions="CenterAndExpand"  Clicked="StartButton_Clicked"  IsVisible="{Binding Source={x:Reference start}, Path=IsVisible}"  x:Name="los"/>
 
-            <ActivityIndicator Color="DarkRed"  x:Name="balken"
-            VerticalOptions="CenterAndExpand"   />
-            
+            <ActivityIndicator IsVisible="{Binding Source={x:Reference start}, Path=IsBusy}" IsRunning="{Binding Source={x:Reference start}, Path=IsBusy}" />
+
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>
