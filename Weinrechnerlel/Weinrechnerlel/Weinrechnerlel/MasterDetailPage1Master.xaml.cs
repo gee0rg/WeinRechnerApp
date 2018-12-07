@@ -40,8 +40,9 @@ namespace Weinrechnerlel
                     new MasterDetailPage1MenuItem { Id = 3, Title = "Verschnitt Austausch", TargetType = typeof(Verschnitt_Aust)},
                     new MasterDetailPage1MenuItem { Id = 4, Title = "Verschnitt Rückrechnung", TargetType = typeof (Verschnitt_Rueck)},
                     new MasterDetailPage1MenuItem { Id = 5, Title = "Anreicherung", TargetType = typeof (Anreicherung)},
-                    new MasterDetailPage1MenuItem { Id = 6, Title = "Impressum", TargetType= typeof(Impressum) },
-                    new MasterDetailPage1MenuItem { Id = 7, Title = "Nutzungsbedingungen", TargetType=typeof(Nutzungsbedingungen) },
+                    new MasterDetailPage1MenuItem { Id = 6, Title = "Konzentration", TargetType = typeof (Konzentration)},
+                    new MasterDetailPage1MenuItem { Id = 7, Title = "Impressum", TargetType= typeof(Impressum) },
+                    new MasterDetailPage1MenuItem { Id = 8, Title = "Nutzungsbedingungen", TargetType=typeof(Nutzungsbedingungen) },
                 });
             }
 
