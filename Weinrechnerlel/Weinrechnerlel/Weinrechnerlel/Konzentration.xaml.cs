@@ -18,8 +18,8 @@ namespace Weinrechnerlel
         {
             InitializeComponent();
         }
-        double ag1;
-        double zg1;
+        double ag1 = 0;
+        double zg1 = 0;
         Ergebnis_konz ergebnis = new Ergebnis_konz() { };
         void berechnen_Konz(object sender, EventArgs e)
         {
@@ -308,16 +308,16 @@ namespace Weinrechnerlel
                         double e1 = ag1;
                         double e2 = zg1 - ag1;
                         double e3 = zg1;
-                        double e4 = Math.Ceiling((Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(zg.Text) - Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(ag.Text)) / Convert.ToDouble(zg.Text));// oder durch zg1 -> erfragen!
-                        double e5 = Math.Floor(Convert.ToDouble(maisch_menge.Text) - e4);
+                        double e4 = Math.Round((Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(zg.Text) - Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(ag.Text)) / Convert.ToDouble(zg.Text));// oder durch zg1 -> erfragen!
+                        double e5 = Math.Round(Convert.ToDouble(maisch_menge.Text) - e4);
 
                         //Ausgabe Ergebnisse
                         ergebnis.mg_e = e1;
                         ergebnis.asp_e = e2;
                         ergebnis.auf_alk = e3;
-                        int e4_int = (int)e4;     //notwendig?
+                        int e4_int = (int)e4;     
                         ergebnis.perm_entzug = e4_int;
-                        int e5_int = (int)e5;     //notwendig?
+                        int e5_int = (int)e5;     
                         ergebnis.menge_konz = e5_int;
 
                     }
@@ -327,8 +327,8 @@ namespace Weinrechnerlel
                         double e1 = ag1;
                         double e2 = zg1 - ag1;
                         double e3 = zg1;
-                        double e4 = Math.Ceiling((Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(zg.Text) - Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(ag.Text)) / Convert.ToDouble(zg.Text));// oder durch zg1 -> erfragen!
-                        double e5 = Math.Floor(Convert.ToDouble(maisch_menge.Text) - e4);
+                        double e4 = Math.Round((Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(zg.Text) - Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(ag.Text)) / Convert.ToDouble(zg.Text));// oder durch zg1 -> erfragen!
+                        double e5 = Math.Round(Convert.ToDouble(maisch_menge.Text) - e4);
 
                         //Ausgabe Ergebnisse
                         ergebnis.mg_e = e1;

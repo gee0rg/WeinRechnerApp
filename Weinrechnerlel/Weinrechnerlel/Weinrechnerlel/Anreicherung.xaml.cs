@@ -238,8 +238,10 @@ namespace Weinrechnerlel
                 string e4 = pa.Text;
                 double e5 = pa_zahl * Convert.ToDouble(asp.Text) * 100 / 1000;
                 double e6 = e5 * (Convert.ToDouble(maisch_menge.Text) / 100);
-                double e7 = Math.Floor(e6 * 0.6); //Runden notwendig?
-                double e8 = Math.Floor(Convert.ToDouble(maisch_menge.Text) + e7);  //Runden notwendig?
+                double e7 = Math.Round(e6 * 0.6);
+                int e7_int = (int)e7;
+                double e8 = Math.Round(Convert.ToDouble(maisch_menge.Text) + e7);
+                int e8_int = (int)e8;
 
                 ergebnis.mg_e = e1;
                 ergebnis.asp_e = e2;
@@ -247,8 +249,8 @@ namespace Weinrechnerlel
                 ergebnis.pa_e = e4;
                 ergebnis.sach = e5;
                 ergebnis.sach_ges = e6;
-                ergebnis.mehr_an = e7;
-                ergebnis.menge_an = e8;
+                ergebnis.mehr_an = e7_int;
+                ergebnis.menge_an = e8_int;
 
             }
 
