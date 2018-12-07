@@ -160,6 +160,9 @@ namespace Weinrechnerlel
                     case 100:
                         ag1 = 108.9;
                         break;
+                    default:
+                        DisplayAlert("Hinweis", "ungültiger Wert für das Ausgangsmostgewicht!", "OK");
+                        break;
 
                 }
 
@@ -289,6 +292,10 @@ namespace Weinrechnerlel
                     case 100:
                         zg1 = 108.9;
                         break;
+                    default:
+                        DisplayAlert("Hinweis", "ungültiger Wert für das Zielmostgewicht!", "OK");
+                        break;
+
 
                 }
                 //hier muss ein Zugriff auf die Datenbank mit der entsprechenden Tabelle implementiert werden!

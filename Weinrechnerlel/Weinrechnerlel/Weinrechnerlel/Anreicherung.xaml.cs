@@ -207,6 +207,10 @@ namespace Weinrechnerlel
                     case 100:
                         mg1 = 108.9;
                         break;
+                    default:
+                        DisplayAlert("Hinweis", "ungültiger Wert für das Mostgewicht!", "OK");
+                        break;
+
 
                 }
                 //hier muss ein Zugriff auf die Datenbank mit der entsprechenden Tabelle implementiert werden!
@@ -228,6 +232,10 @@ namespace Weinrechnerlel
                     case "Wein":
                         pa_zahl = 2.15;
                         break;
+                    default:
+                        DisplayAlert("Hinweis", "ungültige Produktart!", "OK");
+                        break;
+
                 }
                 // ComboBox
 
