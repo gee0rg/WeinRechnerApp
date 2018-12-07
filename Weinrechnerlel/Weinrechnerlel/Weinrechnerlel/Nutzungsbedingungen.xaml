@@ -32,7 +32,7 @@
                    genutzt werden.&#x0a;
                     &#x0a;
                    Die Copyright-Rechte liegen beim&#x0a;
-                   DLR-Rheinhessen-Nahe-Hunsrück." HorizontalTextAlignment="Center" />
+                   DLR-Rheinhessen-Nahe-Hunsrück." HorizontalTextAlignment="Center"/>
 
             <Button x:Name="UserManagment" AbsoluteLayout.LayoutBounds=".5,1,.5,.20" AbsoluteLayout.LayoutFlags="All" Text="Zustimmen" TextColor="Black" HorizontalOptions="Center" Clicked="NutzungsbedingungenButton_Clicked"
                    VerticalOptions="CenterAndExpand" />
