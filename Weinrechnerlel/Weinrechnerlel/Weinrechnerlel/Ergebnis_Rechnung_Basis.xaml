@@ -7,26 +7,30 @@
         <ScrollView>
         <StackLayout>
             <Label Text="Gesamtmenge" TextColor="Black" ></Label>
-            <Entry  x:Name="liter_gw" Placeholder="-" TextColor="Black" ></Entry>
+            <Label  x:Name="liter_gw"  TextColor="Black" ></Label>
             <Label Text="Gesamtmenge in Prozent" TextColor="Black" ></Label>
-            <Entry  x:Name="liter_gw_prozent" Placeholder="-" TextColor="Black" ></Entry>
+            <Label  x:Name="liter_gw_prozent" TextColor="Black" ></Label>
             <Label Text="Benötigte Menge an Verschnittwein/Süßreserve" TextColor="Black" ></Label>
-            <Entry  x:Name="liter_vw" Placeholder="-" TextColor="Black" ></Entry>
+            <Label  x:Name="liter_vw"  TextColor="Black" ></Label>
             <Label Text="Benötigte Menge an Verschnittwein/Süßreserve in Prozent" TextColor="Black" ></Label>
-            <Entry  x:Name="liter_vw_prozent" Placeholder="-" TextColor="Black" ></Entry>
+            <Label  x:Name="liter_vw_prozent"  TextColor="Black" ></Label>
 
 
 
                 <Label Text="Anzahl verwendeter Flaschen eintragen" ></Label>
                 <Label Text="1,0 Liter Flaschen" TextColor="Black" FontSize="Small"></Label>
                 <Entry  x:Name="verw_liter1" Placeholder="1,0 Liter" TextColor="Black" TextChanged="verw_liter1_TextChanged" ></Entry>
+                <Label x:Name="verw_liter1_erg" ></Label>
                 
                 <Label Text="0,75 Liter Flaschen" TextColor="Black" FontSize="Small"></Label>
                 <Entry  x:Name="verw_liter075" Placeholder="0,75 Liter" TextColor="Black" TextChanged="verw_liter1_TextChanged" ></Entry>
+                <Label x:Name="verw_liter075_erg" ></Label>
                 <Label Text="0,5 Liter Flaschen" TextColor="Black" FontSize="Small"></Label>
                 <Entry  x:Name="verw_liter05" Placeholder="0,5 Liter" TextColor="Black" TextChanged="verw_liter1_TextChanged"></Entry>
+                <Label x:Name="verw_liter05_erg" ></Label>
                 <Label Text="0,375 Liter Flaschen" TextColor="Black" FontSize="Small" ></Label>
                 <Entry  x:Name="verw_liter0375" Placeholder="0,375 Liter" TextColor="Black" TextChanged="verw_liter1_TextChanged"></Entry>
+                <Label x:Name="verw_liter0375_erg" ></Label>
             
              
 
