@@ -19,8 +19,25 @@ namespace WebApplication1.Controllers
         {
             gen_VsErgebnisResponse ergebnis = new gen_VsErgebnisResponse();
 
+            double eingabe_user;
             try
             {
+                try
+                {
+                   eingabe_user= Convert.ToDouble(param.liter_gw);
+                }
+                catch
+                {
+                    ergebnis.EventStatus = 1;
+                    ergebnis.EventMessage = "Fehler: Es dürfen nur Zahlen eingegeben werden.";
+                    return ergebnis;
+                }
+                if (eingabe_user<0)
+                {
+                    ergebnis.EventStatus = 2;
+                    ergebnis.EventMessage = "Fehler: Es darf kein negativer Wert eingegeben werden.";
+                    return ergebnis;
+                }
 
                 //1. Berechnung
                 double a;

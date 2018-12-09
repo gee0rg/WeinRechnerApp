@@ -42,28 +42,43 @@ namespace Weinrechnerlel
             RESTConnector rconn = new RESTConnector();
             Ergebnis_gen_Vs ergebnis1 = new Ergebnis_gen_Vs() { };
             string answer;
-            string adress = "http://10.141.77.226:4438/api/gen_Vs";
-            //string adress = "http://localhost:50088/api/aust_Vs";
+           // string adress = "http://10.141.77.226:4438/api/gen_Vs";
+            string adress = "http://localhost:50088/api/aust_Vs";
 
             answer = rconn.HTTP_POST(adress,request,50);
             if (answer.Contains("REST_HTTP_ERROR"))
             {
+                double eingabe_user;
+                try
+                {
+                    eingabe_user = Convert.ToDouble(test.Text);
+                }
+                catch 
+                {
+                    DisplayAlert("Hinweis", "Es sind Zahlen einzugeben", "OK");
+                    return;
+                }
+                if (eingabe_user<0)
+                {
+                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
+                    return;
+                }
                 //1. Berechnung
                 double a;
-                a = Convert.ToDouble(test.Text) / 0.85 - Convert.ToDouble(test.Text);
+                a = Convert.ToDouble(test.Text) / 0.85 - Convert.ToDouble(eingabe_user);
                 double b = Math.Floor(a);
                 ergebnis.max_vw = Convert.ToInt32(a);
 
                 //2. Berechnung
                 double x;
-                x = Convert.ToDouble(test.Text) / 0.75 - Convert.ToDouble(test.Text);
+                x = Convert.ToDouble(test.Text) / 0.75 - Convert.ToDouble(eingabe_user);
                 x = Math.Floor(x);
                 ergebnis.max_sr1 = Convert.ToInt32(x);
 
                 //3. Berechnung
                 //Ausgabe max_sr2
                 double z;
-                z = (Convert.ToDouble(test.Text) / 0.75) - (Convert.ToDouble(ergebnis.max_vw) + Convert.ToDouble(test.Text));
+                z = (Convert.ToDouble(test.Text) / 0.75) - (Convert.ToDouble(ergebnis.max_vw) + Convert.ToDouble(eingabe_user));
                 z = Math.Floor(z);
                 ergebnis.max_sr2 = Convert.ToInt32(z);
                 ergebnis.max_vw1 = ergebnis.max_vw;
