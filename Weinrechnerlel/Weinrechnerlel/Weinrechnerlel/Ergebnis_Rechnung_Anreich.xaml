@@ -6,21 +6,21 @@
         <ScrollView>
             <StackLayout>
                 <Label Text="Mostgewicht in g/l Alkohol" TextColor="Black" ></Label>
-                <Entry  x:Name="mg_e" Placeholder="-" TextColor="Black" ></Entry>
+                <Label  x:Name="mg_e" TextColor="Black" ></Label>
                 <Label Text="Anreicherungsspanne um g/l Alkohol" TextColor="Black" ></Label>
-                <Entry  x:Name="asp_e" Placeholder="-" TextColor="Black" ></Entry>
+                <Label  x:Name="asp_e" TextColor="Black" ></Label>
                 <Label Text="auf g/l Alkohol" TextColor="Black" ></Label>
-                <Entry  x:Name="auf_alk" Placeholder="-" TextColor="Black" ></Entry>
+                <Label  x:Name="auf_alk" TextColor="Black" ></Label>
                 <Label Text="Produktart" TextColor="Black" ></Label>
-                <Entry  x:Name="pa_e" Placeholder="-" TextColor="Black" ></Entry>
+                <Label  x:Name="pa_e" TextColor="Black" ></Label>
                 <Label Text="Saccharosebedarf in kg pro hl" TextColor="Black" ></Label>
-                <Entry  x:Name="sach" Placeholder="-" TextColor="Black" ></Entry>
+                <Label  x:Name="sach" TextColor="Black" ></Label>
                 <Label Text="Saccharosebedarf in kg gesamt" TextColor="Black" ></Label>
-                <Entry  x:Name="sach_ges" Placeholder="-" TextColor="Black" ></Entry>
+                <Label  x:Name="sach_ges" TextColor="Black" ></Label>
                 <Label Text="Mehrung durch Anreicherung in Liter" TextColor="Black" ></Label>
-                <Entry  x:Name="mehr_an" Placeholder="-" TextColor="Black" ></Entry>
+                <Label  x:Name="mehr_an" TextColor="Black" ></Label>
                 <Label Text="Menge nach Anreicherung in Liter" TextColor="Black" ></Label>
-                <Entry  x:Name="menge_an" Placeholder="-" TextColor="Black" ></Entry>
+                <Label  x:Name="menge_an" TextColor="Black" ></Label>
                 </StackLayout>
                 
         </ScrollView>

@@ -6,10 +6,10 @@
     <ScrollView>
     <StackLayout>
         <Label Text="Menge des Grundweines" TextColor="Black"></Label>
-            <Entry x:Name="liter_gw" Placeholder="Menge in Liter" TextColor="Black"></Entry>
+            <Entry x:Name="liter_gw" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
         <Label Text="Hier können Sie die Verschnittweinmenge zugunsten der Süßreserve reduzieren." TextColor="DarkRed" ></Label>
         <Label Text="Wieviel Verschnittwein möchten Sie verwenden?" TextColor="Black"></Label>
-            <Entry x:Name="verw_vw" Placeholder="Menge in Liter" TextColor="Black"></Entry>
+            <Entry x:Name="verw_vw" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
             <Button Text="Berechnen" Clicked="Berechnen_Austausch"></Button>
     </StackLayout>
     </ScrollView>

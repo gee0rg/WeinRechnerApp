@@ -38,7 +38,6 @@ namespace Weinrechnerlel
                 {
                     eingabe_user = Convert.ToDouble(mg.Text);
                     eingabe_user = Convert.ToDouble(asp.Text);
-                    eingabe_user = Convert.ToDouble(pa.Text);
                     eingabe_user = Convert.ToDouble(maisch_menge.Text);
                 }
                 catch

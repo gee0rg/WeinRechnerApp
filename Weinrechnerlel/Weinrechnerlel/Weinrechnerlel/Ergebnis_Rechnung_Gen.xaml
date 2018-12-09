@@ -11,17 +11,17 @@
         <StackLayout>
         <Label Text = "1. Verschnittberechnung: Basiswein + Verschnittwein" TextColor="DarkRed"></Label>
         <Label Text="max. mögliche Menge an Verschnittwein" TextColor="Black" ></Label>
-        <Entry  x:Name="max_vwe" Placeholder="-" TextColor="Black" ></Entry>
+        <Label  x:Name="max_vwe" TextColor="Black" ></Label>
 
-            <Label Text = "2. Verschnittberechnung: Basiswein + Süßreserve" TextColor="DarkRed"></Label>
+        <Label Text = "2. Verschnittberechnung: Basiswein + Süßreserve" TextColor="DarkRed"></Label>
         <Label Text="max. mögliche Menge an Süßreserve" TextColor="Black" ></Label>
-        <Entry  x:Name="max_sr1e" Placeholder="-" TextColor="Black" ></Entry>
+        <Label  x:Name="max_sr1e" TextColor="Black" ></Label>
 
-            <Label Text= "3. Verschnittberechnung: Basiswein + Verschnittwein + Süßreserve" TextColor="DarkRed"></Label>
+        <Label Text= "3. Verschnittberechnung: Basiswein + Verschnittwein + Süßreserve" TextColor="DarkRed"></Label>
         <Label Text="max. mögliche Menge an Verschnittwein" TextColor="Black" ></Label>
-        <Entry  x:Name="max_vwe1" Placeholder="-" TextColor="Black" ></Entry>
+        <Label  x:Name="max_vwe1" TextColor="Black" ></Label>
         <Label Text="max. mögliche Menge an Süßreserve" TextColor="Black" ></Label>
-        <Entry  x:Name="max_sr2e" Placeholder="-" TextColor="Black" ></Entry>
+        <Label  x:Name="max_sr2e" TextColor="Black" ></Label>
             
         </StackLayout>
     </ScrollView>

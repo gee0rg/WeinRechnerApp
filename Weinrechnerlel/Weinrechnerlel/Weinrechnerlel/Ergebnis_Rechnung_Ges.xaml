@@ -8,13 +8,13 @@
     <ScrollView>
         <StackLayout>
         <Label Text="Benötigte Basisweinmenge" TextColor="Black" ></Label>
-        <Entry  x:Name="liter_gw" Placeholder="-" TextColor="Black" ></Entry>
+        <Label  x:Name="liter_gw" TextColor="Black" ></Label>
         <Label Text="Benötigte Basisweinmenge in Prozent" TextColor="Black" ></Label>
-        <Entry  x:Name="liter_gw_prozent" Placeholder="-" TextColor="Black" ></Entry>
+        <Label  x:Name="liter_gw_prozent" TextColor="Black" ></Label>
         <Label Text="Benötigte Menge an Verschnittwein/Süßreserve" TextColor="Black" ></Label>
-        <Entry  x:Name="liter_vw" Placeholder="-" TextColor="Black" ></Entry>
+        <Label  x:Name="liter_vw" TextColor="Black" ></Label>
         <Label Text="Benötigte Menge an Verschnittwein/Süßreserve in Prozent" TextColor="Black" ></Label>
-        <Entry  x:Name="liter_vw_prozent" Placeholder="-" TextColor="Black" ></Entry>
+        <Label  x:Name="liter_vw_prozent" TextColor="Black" ></Label>
 
 
             <Label Text="Verbleibende Flaschen" TextColor="Black"></Label>

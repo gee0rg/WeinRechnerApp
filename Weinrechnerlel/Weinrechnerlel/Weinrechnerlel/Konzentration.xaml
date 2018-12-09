@@ -5,11 +5,11 @@
     <ScrollView>
         <StackLayout>
             <Label Text="Ausgangsmostgewicht auswählen" TextColor="Black"></Label>
-            <Entry x:Name="ag" Placeholder="in °OE" TextColor="Black"></Entry>
+            <Entry x:Name="ag" Placeholder="in °OE" TextColor="Black" Keyboard="Numeric"></Entry>
             <Label Text="Zielmostgewicht auswählen" TextColor="Black"></Label>
-            <Entry x:Name="zg" Placeholder="in °OE" TextColor="Black"></Entry>
+            <Entry x:Name="zg" Placeholder="in °OE" TextColor="Black" Keyboard="Numeric"></Entry>
             <Label Text="Most/ Maischmenge die angereichert werden soll" TextColor="Black"></Label>
-            <Entry x:Name="maisch_menge" Placeholder="Menge in Liter" TextColor="Black"></Entry>
+            <Entry x:Name="maisch_menge" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
             <Button Text="Berechnen" Clicked="berechnen_Konz"></Button>
         </StackLayout>
     </ScrollView>

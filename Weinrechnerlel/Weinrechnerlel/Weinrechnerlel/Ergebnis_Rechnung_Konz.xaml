@@ -6,15 +6,15 @@
         <ScrollView>
             <StackLayout>
                 <Label Text="Mostgewicht in g/l Alkohol" TextColor="Black" ></Label>
-                <Entry  x:Name="mg_e" Placeholder="-" TextColor="Black" ></Entry>
+                <Label  x:Name="mg_e" TextColor="Black" ></Label>
                 <Label Text="Anreicherungsspanne um g/l Alkohol" TextColor="Black" ></Label>
-                <Entry  x:Name="asp_e" Placeholder="-" TextColor="Black" ></Entry>
+                <Label  x:Name="asp_e" TextColor="Black" ></Label>
                 <Label Text="auf g/l Alkohol" TextColor="Black" ></Label>
-                <Entry  x:Name="auf_alk" Placeholder="-" TextColor="Black" ></Entry>
+                <Label  x:Name="auf_alk" TextColor="Black" ></Label>
                 <Label Text="Permeatentzug in" TextColor="Black" ></Label>
-                <Entry  x:Name="perm_entzug" Placeholder="-" TextColor="Black" ></Entry>
+                <Label  x:Name="perm_entzug" TextColor="Black" ></Label>
                 <Label Text="Menge nach Konzentration in Liter" TextColor="Black" ></Label>
-                <Entry  x:Name="menge_konz" Placeholder="-" TextColor="Black" ></Entry>
+                <Label  x:Name="menge_konz" TextColor="Black" ></Label>
                 </StackLayout>
                 
         </ScrollView>
