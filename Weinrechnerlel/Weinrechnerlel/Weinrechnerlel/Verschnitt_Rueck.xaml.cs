@@ -36,6 +36,24 @@ namespace Weinrechnerlel
             if (answer.Contains("REST_HTTP_ERROR"))
             {
 
+                double eingabe_user;
+                try
+                {
+                    eingabe_user = Convert.ToDouble(liter_vw.Text);
+                    eingabe_user = Convert.ToDouble(liter_sr.Text);
+                    eingabe_user = Convert.ToDouble(liter_ges_vw.Text);
+                }
+                catch
+                {
+                    DisplayAlert("Hinweis", "Es sind Zahlen einzugeben", "OK");
+                    return;
+                }
+                if (eingabe_user < 0)
+                {
+                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
+                    return;
+                }
+
                 //Teil1
                 double x1 = (Convert.ToDouble(liter_vw.Text) / 15) * 85;
                 ergebnis.be_gw_mitSr_1 = Convert.ToInt32(Math.Floor(x1));
