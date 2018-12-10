@@ -13,20 +13,8 @@
                 <Entry  x:Name="restzucker_sr" Placeholder="Wert in g/l" TextColor="Black" Keyboard="Numeric"></Entry>
             <Label Text="Wieviel Restzucker soll der fertige Verschnitt haben?" TextColor="Black" FontSize="Small" ></Label>
                 <Entry  x:Name="restzucker_verschnitt" Placeholder="Wert in g/l" TextColor="Black" Keyboard="Numeric"></Entry>
-            <Button Text="Berechnen" Clicked="berechnen"></Button>
-                
-                <Label Text="Anzahl verwendeter Flaschen eintragen" ></Label>
-                <Label Text="1,0 Liter Flaschen" TextColor="Black" FontSize="Small"></Label>
-                <Entry  x:Name="verw_liter1" Placeholder="1,0 Liter" TextColor="Black" Keyboard="Numeric"></Entry>
-            <Label Text="0,75 Liter Flaschen" TextColor="Black" FontSize="Small"></Label>
-                <Entry  x:Name="verw_liter075" Placeholder="0,75 Liter" TextColor="Black" Keyboard="Numeric"></Entry>
-            <Label Text="0,5 Liter Flaschen" TextColor="Black" FontSize="Small"></Label>
-                <Entry  x:Name="verw_liter05" Placeholder="0,5 Liter" TextColor="Black" Keyboard="Numeric"></Entry>
-            <Label Text="0,375 Liter Flaschen" TextColor="Black" FontSize="Small"></Label>
-                <Entry  x:Name="verw_liter0375" Placeholder="0,375 Liter" TextColor="Black" Keyboard="Numeric"></Entry>
-            
-            
-        </StackLayout>
+                <Button Text="Berechnen" Clicked="berechnen"></Button>
+            </StackLayout>
             </ScrollView>
     </ContentPage.Content>
 </ContentPage>
