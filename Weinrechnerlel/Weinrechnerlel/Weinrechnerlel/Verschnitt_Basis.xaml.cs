@@ -188,19 +188,8 @@ namespace Weinrechnerlel
 
 
         }
-        void berechnen2 (Object sender, EventArgs e)
+        /*void berechnen2 (Object sender, EventArgs e)
         {
-           
-               // Console.WriteLine("ergibt Flaschen: ");
-               //Console.WriteLine(ergebnis.liter_gw);
-                //double x = Convert.ToDouble(ergebnis.liter_gw) / 0.75;
-               // Console.WriteLine(Convert.ToInt32(x));
-               // double y = Convert.ToDouble(ergebnis.liter_gw) / 0.5;
-                //Console.WriteLine(Convert.ToInt32(y));
-               // double z = Convert.ToDouble(ergebnis.liter_gw) / 0.375;
-               // Console.WriteLine(Convert.ToInt32(z));
-
-
                 double a = Convert.ToDouble(ergebnis.liter_gw) - (Convert.ToDouble(verw_liter1.Text) + Convert.ToDouble(verw_liter075.Text) * 0.75 + Convert.ToDouble(verw_liter05.Text) * 0.5 + Convert.ToDouble(verw_liter0375.Text) * 0.375);
                 ergebnis.rest_liter = Math.Floor(a);
                 ergebnis.verb_liter1 = Math.Floor(ergebnis.rest_liter);
@@ -210,15 +199,7 @@ namespace Weinrechnerlel
 
             NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Basis(ergebnis)) { BarBackgroundColor = Color.DarkRed };
             Navigation.PushAsync(nav);
-
-            /* Console.WriteLine("verbleibende Flaschen: ");
-             Console.WriteLine(Convert.ToInt32(ergebnis2.verb_liter1));
-             Console.WriteLine(Convert.ToInt32(ergebnis2.verb_liter075));
-             Console.WriteLine(Convert.ToInt32(ergebnis2.verb_liter05));
-             Console.WriteLine(Convert.ToInt32(ergebnis2.verb_liter0375));
-             Console.WriteLine("Restmenge in Litern: " + Convert.ToInt32(ergebnis2.rest_liter));*/
-
-        }
+        }*/
 
           
         
