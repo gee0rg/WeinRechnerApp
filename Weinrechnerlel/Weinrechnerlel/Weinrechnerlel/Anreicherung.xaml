@@ -6,13 +6,19 @@
         <StackLayout>
             <Label Text="Mostgewicht auswählen" TextColor="Black"></Label>
             <Entry x:Name="mg" Placeholder="in °OE" TextColor="Black" Keyboard="Numeric"></Entry>
+           
             <Label Text="Anreicherungsspanne auswählen" TextColor="Black"></Label>
             <Entry x:Name="asp" Placeholder="in g/l" TextColor="Black" Keyboard="Numeric"></Entry>
             <Label Text="Produktart auswählen" TextColor="Black"></Label>
             <Entry x:Name="pa" Placeholder="Produktart" TextColor="Black" ></Entry>
+
+            <Picker x:Name="produktart" SelectedIndexChanged="Produktart_SelectedIndexChanged"></Picker>
+
             <Label Text="Most/ Maischmenge die angereichert werden soll" TextColor="Black"></Label>
             <Entry x:Name="maisch_menge" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
             <Button Text="Berechnen" Clicked="berechnen_Anreich"></Button>
+            
+            
         </StackLayout>
     </ScrollView>
 </ContentPage>

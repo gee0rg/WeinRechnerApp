@@ -17,13 +17,37 @@ namespace Weinrechnerlel
         public Anreicherung()
         {
             InitializeComponent();
+            produktart.Items.Add("Most");
+            produktart.Items.Add("Maische entrappt");
+            produktart.Items.Add("Maische nicht entrappt");
+            produktart.Items.Add("Wein");
         }
         private double pa_zahl;
+
+        /*List<string> produktart = new List<string>
+                 {
+                    "Most",
+                    "Maische entrappt",
+                   "Maische nicht entrappt",
+                    "wein",
+                };
+        //public List<string> Produktart => produktart;*/
+
         Ergebnis_anreich ergebnis = new Ergebnis_anreich() { };
+
+
+        private void Produktart_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            var name = produktart.Items[produktart.SelectedIndex];
+        }
+
+
+
+
         void berechnen_Anreich(object sender, EventArgs e)
         {
 
-            request_anreich param = new request_anreich() { mg = mg.Text, asp = asp.Text, pa = pa.Text, maisch_menge = maisch_menge.Text };
+            request_anreich param = new request_anreich() { mg = mg.Text, asp = asp.Text, pa = Convert.ToString(produktart), maisch_menge = maisch_menge.Text };
             String request = JsonConvert.SerializeObject(param);
             RESTConnector rconn = new RESTConnector();
             
@@ -246,7 +270,10 @@ namespace Weinrechnerlel
                 //hier muss ein Zugriff auf die Datenbank mit der entsprechenden Tabelle implementiert werden!
                 // ComboBox
 
-                String pa1 = Convert.ToString(pa.Text);
+                
+
+                String pa1 = Convert.ToString(produktart);
+                
                 
                 switch (pa1)
                 {
@@ -273,7 +300,8 @@ namespace Weinrechnerlel
                 double e1 = mg1;
                 double e2 = Convert.ToDouble(asp.Text);
                 double e3 = mg1 + Convert.ToDouble(asp.Text);
-                string e4 = pa.Text;
+                string e4 = Convert.ToString(produktart);
+                //string e4 = pa.Text;
                 double e5 = pa_zahl * Convert.ToDouble(asp.Text) * 100 / 1000;
                 double e6 = e5 * (Convert.ToDouble(maisch_menge.Text) / 100);
                 double e7 = Math.Round(e6 * 0.6);
@@ -322,6 +350,8 @@ namespace Weinrechnerlel
 
             
         }
+
+        
     }
 }
 
