@@ -36,20 +36,38 @@ namespace Weinrechnerlel
             answer = rconn.HTTP_POST(adress, request, 5, false);
             if (answer.Contains("REST_HTTP_ERROR"))
             {
-                double eingabe_user;
+                double eingabe_user_liter_gv;
+                double eingabe_user_restzucker_gw;
+                double eingabe_user_restzucker_verschnitt;
+                double eingabe_user_vw;
                 try
                 {
-                    eingabe_user = Convert.ToDouble(liter_gv.Text);
-                    eingabe_user = Convert.ToDouble(restzucker_gw.Text);
-                    eingabe_user = Convert.ToDouble(restzucker_verschnitt.Text);
-                    eingabe_user = Convert.ToDouble(restzucker_vw.Text);
+                    eingabe_user_liter_gv = Convert.ToDouble(liter_gv.Text);
+                    eingabe_user_restzucker_gw = Convert.ToDouble(restzucker_gw.Text);
+                    eingabe_user_restzucker_verschnitt = Convert.ToDouble(restzucker_verschnitt.Text);
+                    eingabe_user_vw = Convert.ToDouble(restzucker_vw.Text);
                 }
                 catch
                 {
                     DisplayAlert("Hinweis", "Es sind Zahlen einzugeben", "OK");
                     return;
                 }
-                if (eingabe_user < 0)
+                if (eingabe_user_liter_gv < 0)
+                {
+                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
+                    return;
+                }
+                if (eingabe_user_restzucker_gw < 0)
+                {
+                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
+                    return;
+                }
+                if (eingabe_user_restzucker_verschnitt < 0)
+                {
+                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
+                    return;
+                }
+                if (eingabe_user_vw < 0)
                 {
                     DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
                     return;

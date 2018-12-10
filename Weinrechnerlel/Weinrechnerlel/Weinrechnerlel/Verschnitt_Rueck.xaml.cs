@@ -36,19 +36,32 @@ namespace Weinrechnerlel
             if (answer.Contains("REST_HTTP_ERROR"))
             {
 
-                double eingabe_user;
+                double eingabe_user_liter_vw;
+                double eingabe_user_liter_sr;
+                double eingabe_user_liter_ge_vw;
+
                 try
                 {
-                    eingabe_user = Convert.ToDouble(liter_vw.Text);
-                    eingabe_user = Convert.ToDouble(liter_sr.Text);
-                    eingabe_user = Convert.ToDouble(liter_ges_vw.Text);
+                    eingabe_user_liter_vw = Convert.ToDouble(liter_vw.Text);
+                    eingabe_user_liter_sr = Convert.ToDouble(liter_sr.Text);
+                    eingabe_user_liter_ge_vw = Convert.ToDouble(liter_ges_vw.Text);
                 }
                 catch
                 {
                     DisplayAlert("Hinweis", "Es sind Zahlen einzugeben", "OK");
                     return;
                 }
-                if (eingabe_user < 0)
+                if (eingabe_user_liter_vw < 0)
+                {
+                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
+                    return;
+                }
+                if (eingabe_user_liter_sr < 0)
+                {
+                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
+                    return;
+                }
+                if (eingabe_user_liter_ge_vw < 0)
                 {
                     DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
                     return;
