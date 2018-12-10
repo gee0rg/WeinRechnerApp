@@ -36,20 +36,38 @@ namespace Weinrechnerlel
             answer = rconn.HTTP_POST(adress, request, 5, false);
             if (answer.Contains("REST_HTTP_ERROR"))
             {
-                double eingabe_user;
+                double eingabe_user_liter_gw;
+                double eingabe_user_restzucker_gw;
+                double eingabe_user_restzucker_sr;
+                double eingabe_user_restzucker_verschnitt;
                 try
                 {
-                    eingabe_user = Convert.ToDouble(liter_gw.Text);
-                    eingabe_user = Convert.ToDouble(restzucker_gw.Text);
-                    eingabe_user = Convert.ToDouble(restzucker_sr.Text);
-                    eingabe_user = Convert.ToDouble(restzucker_verschnitt.Text);
+                    eingabe_user_liter_gw = Convert.ToDouble(liter_gw.Text);
+                    eingabe_user_restzucker_gw = Convert.ToDouble(restzucker_gw.Text);
+                    eingabe_user_restzucker_sr = Convert.ToDouble(restzucker_sr.Text);
+                    eingabe_user_restzucker_verschnitt = Convert.ToDouble(restzucker_verschnitt.Text);
                 }
                 catch
                 {
                     DisplayAlert("Hinweis", "Es sind Zahlen einzugeben", "OK");
                     return;
                 }
-                if (eingabe_user < 0)
+                if (eingabe_user_liter_gw < 0)
+                {
+                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
+                    return;
+                }
+                if (eingabe_user_restzucker_gw < 0)
+                {
+                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
+                    return;
+                }
+                if (eingabe_user_restzucker_sr < 0)
+                {
+                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
+                    return;
+                }
+                if (eingabe_user_restzucker_verschnitt < 0)
                 {
                     DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
                     return;

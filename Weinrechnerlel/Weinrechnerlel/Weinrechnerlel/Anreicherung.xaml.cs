@@ -33,19 +33,31 @@ namespace Weinrechnerlel
             answer = rconn.HTTP_POST(adress, request, 5, false);
             if (answer.Contains("REST_HTTP_ERROR"))
             {
-                double eingabe_user;
+                double eingabe_user_mg;
+                double eingabe_user_asp;
+                double eingabe_user_maisch_menge;
                 try
                 {
-                    eingabe_user = Convert.ToDouble(mg.Text);
-                    eingabe_user = Convert.ToDouble(asp.Text);
-                    eingabe_user = Convert.ToDouble(maisch_menge.Text);
+                    eingabe_user_mg = Convert.ToDouble(mg.Text);
+                    eingabe_user_asp = Convert.ToDouble(asp.Text);
+                    eingabe_user_maisch_menge = Convert.ToDouble(maisch_menge.Text);
                 }
                 catch
                 {
                     DisplayAlert("Hinweis", "Es sind Zahlen einzugeben", "OK");
                     return;
                 }
-                if (eingabe_user < 0)
+                if (eingabe_user_mg < 0)
+                {
+                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
+                    return;
+                }
+                if (eingabe_user_asp < 0)
+                {
+                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
+                    return;
+                }
+                if (eingabe_user_maisch_menge < 0)
                 {
                     DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
                     return;
