@@ -13,9 +13,9 @@ namespace Weinrechnerlel
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Ergebnis_Rechnung_Ges : ContentPage
     {
+        String liter_gv;
 
-
-        public Ergebnis_Rechnung_Ges(Ergebnis_ges_VS ergebnis)
+        public Ergebnis_Rechnung_Ges(Ergebnis_ges_VS ergebnis, String liter_gv)
         {
 
 
@@ -24,6 +24,7 @@ namespace Weinrechnerlel
             liter_vw.Text = Convert.ToString(ergebnis.liter_vw);
             liter_gw_prozent.Text = Convert.ToString(ergebnis.liter_gw_prozent);
             liter_vw_prozent.Text = Convert.ToString(ergebnis.liter_vw_prozent);
+            this.liter_gv = liter_gv;
 
             //verb_liter1.Text = Convert.ToString(ergebnis.verb_liter1);
             //verb_liter075.Text = Convert.ToString(ergebnis.verb_liter075);
@@ -78,13 +79,14 @@ namespace Weinrechnerlel
 
 
 
-            double a = Convert.ToDouble(liter_gw.Text) - (liter1 + liter075 * 0.75 + liter05 * 0.5 + liter0375 * 0.375);
-            rest_liter = Math.Floor(a);
+            double a = Convert.ToDouble(liter_gv) - (liter1 + liter075 * 0.75 + liter05 * 0.5 + liter0375 * 0.375);
+            rest_liter = a;
             double wert1 = Math.Round(rest_liter / 0.75);
             double wert2 = Math.Round(rest_liter / 0.5);
             double wert3 = Math.Round(rest_liter / 0.375);
+           
 
-            verw_liter1_erg.Text = Convert.ToString(rest_liter);
+            verw_liter1_erg.Text = Convert.ToString(Math.Floor(rest_liter));
             verw_liter075_erg.Text = Convert.ToString(wert1);
             verw_liter05_erg.Text = Convert.ToString(wert2);
             verw_liter0375_erg.Text = Convert.ToString(wert3);

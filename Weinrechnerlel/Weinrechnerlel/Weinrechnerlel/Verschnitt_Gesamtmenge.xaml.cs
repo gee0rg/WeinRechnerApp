@@ -133,7 +133,7 @@ namespace Weinrechnerlel
                     // Console.WriteLine(ergebnis.liter_gw_prozent + " %");
                     //Console.WriteLine(ergebnis.liter_vw_prozent + " %");
 
-                    NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Ges(ergebnis)) { BarBackgroundColor = Color.DarkRed };
+                    NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Ges(ergebnis, liter_gv.Text)) { BarBackgroundColor = Color.DarkRed };
                     Navigation.PushAsync(nav);
 
                 }
@@ -149,7 +149,7 @@ namespace Weinrechnerlel
                     DisplayAlert("Hinweis", "Falls es sich beim Verschnittpartner um Wein handelt, ist der max. Verschnitt von 15% überschritten", "OK");
 
 
-                    NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Ges(ergebnis)) { BarBackgroundColor = Color.DarkRed };
+                    NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Ges(ergebnis, liter_gv.Text)) { BarBackgroundColor = Color.DarkRed };
                     Navigation.PushAsync(nav);
 
                 }
@@ -163,7 +163,7 @@ namespace Weinrechnerlel
                     //Console.WriteLine(ergebnis.liter_vw_prozent + " %");
                     //Console.WriteLine("25% Meldung");
                     DisplayAlert("Hinweis", "Falls es sich beim Verschnittpartner um Süßreserve handelt, ist der max. Verschnitt von 25% überschritten", "OK");
-                    NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Ges(ergebnis)) { BarBackgroundColor = Color.DarkRed };
+                    NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Ges(ergebnis, liter_gv.Text)) { BarBackgroundColor = Color.DarkRed };
                     Navigation.PushAsync(nav);
 
                 }
@@ -183,7 +183,7 @@ namespace Weinrechnerlel
                 ergebnis.liter_vw = erg.liter_vw;
                 ergebnis.liter_vw_prozent = erg.liter_vw_prozent;
 
-                NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Ges(ergebnis)) { BarBackgroundColor = Color.DarkRed };
+                NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Ges(ergebnis,liter_gv.Text)) { BarBackgroundColor = Color.DarkRed };
                 Navigation.PushAsync(nav);
 
             }
@@ -191,19 +191,6 @@ namespace Weinrechnerlel
           
         }
 
-        /*void berechnen2(Object sender, EventArgs e)
-        {
-
-            double a = Convert.ToDouble(ergebnis.liter_gw) - (Convert.ToDouble(verw_liter1.Text) + Convert.ToDouble(verw_liter075.Text) * 0.75 + Convert.ToDouble(verw_liter05.Text) * 0.5 + Convert.ToDouble(verw_liter0375.Text) * 0.375);
-            ergebnis.rest_liter = Math.Floor(a);
-            ergebnis.verb_liter1 = Math.Floor(ergebnis.rest_liter);
-            ergebnis.verb_liter075 = Math.Floor(ergebnis.rest_liter / 0.75);
-            ergebnis.verb_liter05 = Math.Floor(ergebnis.rest_liter / 0.5);
-            ergebnis.verb_liter0375 = Math.Floor(ergebnis.rest_liter / 0.375);
-
-            NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Ges(ergebnis)) { BarBackgroundColor = Color.DarkRed };
-            Navigation.PushAsync(nav);
-        }*/
-
+       
     }
 }

@@ -12,8 +12,12 @@
             <Label  x:Name="max_vwe" TextColor="Black" ></Label>
             <Label Text="max. mögliche Menge an bezeichnungsungleicher SR" TextColor="Black" ></Label>
             <Label  x:Name="max_sr1e" TextColor="Black" ></Label>
-            <Label Text="Reduktion der Verschnittweinmenge zugunsten der Süßreserve" TextColor="DarkRed"></Label>
-            <Label Text="max. mögliche Menge an bezeichnungsungleicher SR" TextColor="Black" ></Label>
+
+                <Label Text="Hier können Sie die Verschnittweinmenge zugunsten der Süßreserve reduzieren." TextColor="DarkRed" ></Label>
+                <Label Text="Wieviel Verschnittwein möchten Sie verwenden?" TextColor="Black"></Label>
+                
+                <Entry x:Name="verw_vw" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric" TextChanged="Verw_vw_TextChanged"></Entry>
+                    <Label Text="max. mögliche Menge an bezeichnungsungleicher SR" TextColor="Black" ></Label>
             <Label  x:Name="max_sr2e" TextColor="Black" ></Label>
             
             
