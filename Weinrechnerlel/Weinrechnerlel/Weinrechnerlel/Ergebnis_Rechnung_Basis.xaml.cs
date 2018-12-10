@@ -23,6 +23,11 @@ namespace Weinrechnerlel
 
 
         }
+        double verb_liter1;
+        double verb_liter075;
+        double verb_liter05;
+        double verb_liter0375;
+        double rest_liter;
 
         private void verw_liter1_TextChanged(object sender, TextChangedEventArgs e)
         {
@@ -66,14 +71,18 @@ namespace Weinrechnerlel
                  liter0375 = 0;
             }
 
-         
-            double rest_liter;
-            double a = Convert.ToDouble(liter_gw.Text) - liter1 + liter075 * 0.75 + liter05 * 0.5 + liter0375 * 0.375;
+            
+            
+            double a = Convert.ToDouble(liter_gw.Text) - (liter1 + liter075 * 0.75 + liter05 * 0.5 + liter0375 * 0.375);
             rest_liter = Math.Floor(a);
-            verw_liter1_erg.Text = Convert.ToString(Math.Floor(rest_liter));
-            verw_liter075_erg.Text = Convert.ToString(Math.Floor(rest_liter / 0.75));
-            verw_liter05_erg.Text = Convert.ToString(Math.Floor(rest_liter / 0.5));
-            verw_liter0375_erg.Text = Convert.ToString(Math.Floor(rest_liter / 0.375));
+            double wert1 = rest_liter / 0.75;
+            double wert2 = rest_liter / 0.5;
+            double wert3 = rest_liter / 0.375;
+
+            verw_liter1_erg.Text = Convert.ToString(rest_liter);
+            verw_liter075_erg.Text = Convert.ToString(wert1);
+            verw_liter05_erg.Text = Convert.ToString(wert2);
+            verw_liter0375_erg.Text = Convert.ToString(wert3);
         }
 
 
