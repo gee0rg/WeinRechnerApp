@@ -21,33 +21,132 @@ namespace Weinrechnerlel
             produktart.Items.Add("Maische entrappt");
             produktart.Items.Add("Maische nicht entrappt");
             produktart.Items.Add("Wein");
+            produktart.SelectedIndex=3;
+
+            mostgewicht.Items.Add("44");
+            mostgewicht.Items.Add("45");
+            mostgewicht.Items.Add("46");
+            mostgewicht.Items.Add("47");
+            mostgewicht.Items.Add("48");
+            mostgewicht.Items.Add("49");
+            mostgewicht.Items.Add("50");
+            mostgewicht.Items.Add("51");
+            mostgewicht.Items.Add("52");
+            mostgewicht.Items.Add("53");
+            mostgewicht.Items.Add("54");
+            mostgewicht.Items.Add("55");
+            mostgewicht.Items.Add("56");
+            mostgewicht.Items.Add("57");
+            mostgewicht.Items.Add("58");
+            mostgewicht.Items.Add("59");
+            mostgewicht.Items.Add("60");
+            mostgewicht.Items.Add("61");
+            mostgewicht.Items.Add("62");
+            mostgewicht.Items.Add("63");
+            mostgewicht.Items.Add("64");
+            mostgewicht.Items.Add("65");
+            mostgewicht.Items.Add("66");
+            mostgewicht.Items.Add("67");
+            mostgewicht.Items.Add("68");
+            mostgewicht.Items.Add("69");
+            mostgewicht.Items.Add("70");
+            mostgewicht.Items.Add("71");
+            mostgewicht.Items.Add("72");
+            mostgewicht.Items.Add("73");
+            mostgewicht.Items.Add("74");
+            mostgewicht.Items.Add("75");
+            mostgewicht.Items.Add("76");
+            mostgewicht.Items.Add("77");
+            mostgewicht.Items.Add("78");
+            mostgewicht.Items.Add("79");
+            mostgewicht.Items.Add("80");
+            mostgewicht.Items.Add("81");
+            mostgewicht.Items.Add("82");
+            mostgewicht.Items.Add("83");
+            mostgewicht.Items.Add("84");
+            mostgewicht.Items.Add("85");
+            mostgewicht.Items.Add("86");
+            mostgewicht.Items.Add("87");
+            mostgewicht.Items.Add("88");
+            mostgewicht.Items.Add("89");
+            mostgewicht.Items.Add("90");
+            mostgewicht.Items.Add("91");
+            mostgewicht.Items.Add("92");
+            mostgewicht.Items.Add("93");
+            mostgewicht.Items.Add("94");
+            mostgewicht.Items.Add("95");
+            mostgewicht.Items.Add("96");
+            mostgewicht.Items.Add("97");
+            mostgewicht.Items.Add("98");
+            mostgewicht.Items.Add("99");
+            mostgewicht.Items.Add("100");
+            mostgewicht.SelectedIndex = 0;
+
+            anreicherungsspanne.Items.Add("1");
+            anreicherungsspanne.Items.Add("2");
+            anreicherungsspanne.Items.Add("3");
+            anreicherungsspanne.Items.Add("4");
+            anreicherungsspanne.Items.Add("5");
+            anreicherungsspanne.Items.Add("6");
+            anreicherungsspanne.Items.Add("7");
+            anreicherungsspanne.Items.Add("8");
+            anreicherungsspanne.Items.Add("9");
+            anreicherungsspanne.Items.Add("10");
+            anreicherungsspanne.Items.Add("11");
+            anreicherungsspanne.Items.Add("12");
+            anreicherungsspanne.Items.Add("13");
+            anreicherungsspanne.Items.Add("14");
+            anreicherungsspanne.Items.Add("15");
+            anreicherungsspanne.Items.Add("16");
+            anreicherungsspanne.Items.Add("17");
+            anreicherungsspanne.Items.Add("18");
+            anreicherungsspanne.Items.Add("19");
+            anreicherungsspanne.Items.Add("20");
+            anreicherungsspanne.Items.Add("21");
+            anreicherungsspanne.Items.Add("22");
+            anreicherungsspanne.Items.Add("23");
+            anreicherungsspanne.Items.Add("24");
+            anreicherungsspanne.Items.Add("25");
+            anreicherungsspanne.Items.Add("26");
+            anreicherungsspanne.Items.Add("27");
+            anreicherungsspanne.Items.Add("28");
+            anreicherungsspanne.Items.Add("29");
+            anreicherungsspanne.Items.Add("30");
+            anreicherungsspanne.Items.Add("31");
+            anreicherungsspanne.Items.Add("32");
+            anreicherungsspanne.Items.Add("33");
+            anreicherungsspanne.Items.Add("34");
+            anreicherungsspanne.Items.Add("35");
+            anreicherungsspanne.Items.Add("36");
+            anreicherungsspanne.SelectedIndex = 0;
         }
         private double pa_zahl;
 
-        /*List<string> produktart = new List<string>
-                 {
-                    "Most",
-                    "Maische entrappt",
-                   "Maische nicht entrappt",
-                    "wein",
-                };
-        //public List<string> Produktart => produktart;*/
-
         Ergebnis_anreich ergebnis = new Ergebnis_anreich() { };
 
-
+        string prodart;
+        string mostgew;
+        string anreichspann;
         private void Produktart_SelectedIndexChanged(object sender, EventArgs e)
         {
-            var name = produktart.Items[produktart.SelectedIndex];
+            prodart = produktart.Items[produktart.SelectedIndex];
         }
 
+        private void Mostgewicht_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            mostgew = mostgewicht.Items[mostgewicht.SelectedIndex];
+        }
 
+        private void Anreicherungsspanne_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            anreichspann = anreicherungsspanne.Items[anreicherungsspanne.SelectedIndex];
+        }
 
 
         void berechnen_Anreich(object sender, EventArgs e)
         {
 
-            request_anreich param = new request_anreich() { mg = mg.Text, asp = asp.Text, pa = Convert.ToString(produktart), maisch_menge = maisch_menge.Text };
+            request_anreich param = new request_anreich() { mg = mostgew, asp = anreichspann, pa = prodart, maisch_menge = maisch_menge.Text };
             String request = JsonConvert.SerializeObject(param);
             RESTConnector rconn = new RESTConnector();
             
@@ -57,28 +156,14 @@ namespace Weinrechnerlel
             answer = rconn.HTTP_POST(adress, request, 5, false);
             if (answer.Contains("REST_HTTP_ERROR"))
             {
-                double eingabe_user_mg;
-                double eingabe_user_asp;
                 double eingabe_user_maisch_menge;
                 try
                 {
-                    eingabe_user_mg = Convert.ToDouble(mg.Text);
-                    eingabe_user_asp = Convert.ToDouble(asp.Text);
                     eingabe_user_maisch_menge = Convert.ToDouble(maisch_menge.Text);
                 }
                 catch
                 {
                     DisplayAlert("Hinweis", "Es sind Zahlen einzugeben", "OK");
-                    return;
-                }
-                if (eingabe_user_mg < 0)
-                {
-                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
-                    return;
-                }
-                if (eingabe_user_asp < 0)
-                {
-                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
                     return;
                 }
                 if (eingabe_user_maisch_menge < 0)
@@ -87,7 +172,7 @@ namespace Weinrechnerlel
                     return;
                 }
 
-                double mg1 = Convert.ToDouble(mg.Text);
+                double mg1 = Convert.ToDouble(mostgew);
                 switch (mg1)
                 {
                     case 44:
@@ -261,21 +346,9 @@ namespace Weinrechnerlel
                     case 100:
                         mg1 = 108.9;
                         break;
-                    default:
-                        DisplayAlert("Hinweis", "ungültiger Wert für das Mostgewicht!", "OK");
-                        break;
-
-
                 }
-                //hier muss ein Zugriff auf die Datenbank mit der entsprechenden Tabelle implementiert werden!
-                // ComboBox
-
                 
-
-                String pa1 = Convert.ToString(produktart);
-                
-                
-                switch (pa1)
+                switch (prodart)
                 {
                     case "Most":
                         pa_zahl = 2.4;
@@ -289,20 +362,15 @@ namespace Weinrechnerlel
                     case "Wein":
                         pa_zahl = 2.15;
                         break;
-                    default:
-                        DisplayAlert("Hinweis", "ungültige Produktart!", "OK");
-                        break;
 
                 }
-                // ComboBox
 
                 //Ergebnisse berechnnen
                 double e1 = mg1;
-                double e2 = Convert.ToDouble(asp.Text);
-                double e3 = mg1 + Convert.ToDouble(asp.Text);
-                string e4 = Convert.ToString(produktart);
-                //string e4 = pa.Text;
-                double e5 = pa_zahl * Convert.ToDouble(asp.Text) * 100 / 1000;
+                double e2 = Convert.ToDouble(anreichspann);
+                double e3 = mg1 + Convert.ToDouble(anreichspann);
+                string e4 = prodart;
+                double e5 = pa_zahl * Convert.ToDouble(anreichspann) * 100 / 1000;
                 double e6 = e5 * (Convert.ToDouble(maisch_menge.Text) / 100);
                 double e7 = Math.Round(e6 * 0.6);
                 int e7_int = (int)e7;
@@ -343,15 +411,7 @@ namespace Weinrechnerlel
             }
                 NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Anreich(ergebnis)) { BarBackgroundColor = Color.DarkRed };
                 Navigation.PushAsync(nav);
-
-
-
-
-
-            
         }
-
-        
     }
 }
 

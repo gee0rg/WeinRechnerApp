@@ -20,13 +20,8 @@ namespace Weinrechnerlel
             liter_vw.Text = Convert.ToString(ergebnis.liter_vw);
             liter_gw_prozent.Text = Convert.ToString(ergebnis.liter_gw_prozent);
             liter_vw_prozent.Text = Convert.ToString(ergebnis.liter_vw_prozent);
-
-
+           
         }
-        double verb_liter1;
-        double verb_liter075;
-        double verb_liter05;
-        double verb_liter0375;
         double rest_liter;
 
         private void verw_liter1_TextChanged(object sender, TextChangedEventArgs e)
@@ -75,36 +70,14 @@ namespace Weinrechnerlel
             
             double a = Convert.ToDouble(liter_gw.Text) - (liter1 + liter075 * 0.75 + liter05 * 0.5 + liter0375 * 0.375);
             rest_liter = Math.Floor(a);
-            double wert1 = rest_liter / 0.75;
-            double wert2 = rest_liter / 0.5;
-            double wert3 = rest_liter / 0.375;
+            double wert1 = Math.Round(rest_liter / 0.75);
+            double wert2 = Math.Round(rest_liter / 0.5);
+            double wert3 = Math.Round(rest_liter / 0.375);
 
             verw_liter1_erg.Text = Convert.ToString(rest_liter);
             verw_liter075_erg.Text = Convert.ToString(wert1);
             verw_liter05_erg.Text = Convert.ToString(wert2);
             verw_liter0375_erg.Text = Convert.ToString(wert3);
         }
-
-
-
-
-        /* if (ergebnis2 != null)
-         {
-             Ergebnis_Rechnung2_Basis(ergebnis2);
-         }
-
-     }
-
-
-     public void Ergebnis_Rechnung2_Basis (Ergebnis_Flaschen ergebnis2)
-     {
-         InitializeComponent();
-         verb_liter1.Text = Convert.ToString(ergebnis2.verb_liter1);
-         verb_liter075.Text = Convert.ToString(ergebnis2.verb_liter075);
-         verb_liter05.Text = Convert.ToString(ergebnis2.verb_liter05);
-         verb_liter0375.Text = Convert.ToString(ergebnis2.verb_liter0375);
-         rest_liter.Text = Convert.ToString(ergebnis2.rest_liter);
-     }*/
     }
-
 }

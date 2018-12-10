@@ -7,27 +7,31 @@
 
     <ScrollView>
         <StackLayout>
-        <Label Text="Benötigte Basisweinmenge" TextColor="Black" ></Label>
-        <Label  x:Name="liter_gw" TextColor="Black" ></Label>
-        <Label Text="Benötigte Basisweinmenge in Prozent" TextColor="Black" ></Label>
-        <Label  x:Name="liter_gw_prozent" TextColor="Black" ></Label>
-        <Label Text="Benötigte Menge an Verschnittwein/Süßreserve" TextColor="Black" ></Label>
-        <Label  x:Name="liter_vw" TextColor="Black" ></Label>
-        <Label Text="Benötigte Menge an Verschnittwein/Süßreserve in Prozent" TextColor="Black" ></Label>
-        <Label  x:Name="liter_vw_prozent" TextColor="Black" ></Label>
+            <Label Text="Benötigte Basisweinmenge" TextColor="Black" ></Label>
+            <Label  x:Name="liter_gw" TextColor="Black" ></Label>
+            <Label Text="Benötigte Basisweinmenge in Prozent" TextColor="Black" ></Label>
+            <Label  x:Name="liter_gw_prozent" TextColor="Black" ></Label>
+            <Label Text="Benötigte Menge an Verschnittwein/Süßreserve" TextColor="Black" ></Label>
+            <Label  x:Name="liter_vw" TextColor="Black" ></Label>
+            <Label Text="Benötigte Menge an Verschnittwein/Süßreserve in Prozent" TextColor="Black" ></Label>
+            <Label  x:Name="liter_vw_prozent" TextColor="Black" ></Label>
 
+            
+            <Label Text="Anzahl verwendeter Flaschen eintragen" ></Label>
+            <Label Text="1,0 Liter Flaschen" TextColor="Black" FontSize="Small"></Label>
+            <Entry  x:Name="verw_liter1" Placeholder="1,0 Liter" TextColor="Black" TextChanged="verw_liter1_TextChanged" Keyboard="Numeric"></Entry>
+            <Label x:Name="verw_liter1_erg" ></Label>
 
-            <Label Text="Verbleibende Flaschen" TextColor="Black"></Label>
-            <Label Text="1,0 Liter Flaschen" TextColor="Black" ></Label>
-            <Entry  x:Name="verb_liter1" Placeholder="-" TextColor="Black" ></Entry>
-            <Label Text="0,75 Liter Flaschen" TextColor="Black" ></Label>
-            <Entry  x:Name="verb_liter075" Placeholder="-" TextColor="Black" ></Entry>
-            <Label Text="0,5 Liter Flaschen" TextColor="Black" ></Label>
-            <Entry  x:Name="verb_liter05" Placeholder="-" TextColor="Black" ></Entry>
-            <Label Text="0,375 Liter Flaschen" TextColor="Black" ></Label>
-            <Entry  x:Name="verb_liter0375" Placeholder="-" TextColor="Black" ></Entry>
-            <Label Text="Restmenge in Litern" TextColor="Black" ></Label>
-            <Entry  x:Name="rest_liter" Placeholder="-" TextColor="Black" ></Entry>
+            <Label Text="0,75 Liter Flaschen" TextColor="Black" FontSize="Small"></Label>
+            <Entry  x:Name="verw_liter075" Placeholder="0,75 Liter" TextColor="Black" TextChanged="verw_liter1_TextChanged" Keyboard="Numeric"></Entry>
+            <Label x:Name="verw_liter075_erg" ></Label>
+            <Label Text="0,5 Liter Flaschen" TextColor="Black" FontSize="Small"></Label>
+            <Entry  x:Name="verw_liter05" Placeholder="0,5 Liter" TextColor="Black" TextChanged="verw_liter1_TextChanged" Keyboard="Numeric"></Entry>
+            <Label x:Name="verw_liter05_erg" ></Label>
+            <Label Text="0,375 Liter Flaschen" TextColor="Black" FontSize="Small" ></Label>
+            <Entry  x:Name="verw_liter0375" Placeholder="0,375 Liter" TextColor="Black" TextChanged="verw_liter1_TextChanged" Keyboard="Numeric"></Entry>
+            <Label x:Name="verw_liter0375_erg" ></Label>
+
         </StackLayout>
     </ScrollView>
 </ContentPage>
