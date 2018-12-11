@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rechnungen
+/*namespace Rechnungen
 {
     public class Ergebnis_konz
     {
@@ -346,9 +346,9 @@ namespace Rechnungen
             Console.WriteLine();
             
             Ergebnis_konz test3 = new Ergebnis_konz() { };
-            test3 = konzentration(65, 60, 200);*/
+            test3 = konzentration(65, 60, 200);
                 
             Console.ReadKey();
         }
     }
-}
+}*/
