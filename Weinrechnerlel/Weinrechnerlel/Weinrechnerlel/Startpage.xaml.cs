@@ -71,7 +71,17 @@ namespace Weinrechnerlel
                             //kein Antwort vom Webservice user muss Nutzungsbedingungen zustimmen
                             //Navigation.PushModalAsync(new Nutzungsbedingungen());
                             //erg.id = "";
-                            i = 0;
+                            
+
+
+                            if (Application.Current.Properties.ContainsKey("id"))
+                            {
+                                i = 1;
+                            }
+                            else
+                            {
+                                i = 0;
+                            }
                             //p = new Nutzungsbedingungen(erg);
                             // Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
                         }
