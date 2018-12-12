@@ -54,7 +54,7 @@ namespace Weinrechnerlel
             RESTConnector rconn = new RESTConnector();
             User_Response erg = new User_Response() { };
             string answer;
-            string adress = "http://10.1.2.173/api/Nutzerbendingungen";
+            string adress = "http://10.141.77.226:4438/api/Nutzungsbedinungen";
             //string adress = "http://localhost:50088/api/Usermanagment";
             //bool a = Online.OnlineStatus(adress);
 

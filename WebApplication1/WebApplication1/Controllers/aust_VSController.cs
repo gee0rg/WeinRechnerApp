@@ -55,25 +55,6 @@ namespace WebApplication1.Controllers
             double d = Math.Floor(c);
             ergebnis.max_sr1 = Convert.ToInt32(d);
 
-            //Teil 2
-
-            if (Convert.ToDouble(param.verw_vw) <= Convert.ToDouble(ergebnis.max_vw))
-            {
-                if (param.verw_vw != null)
-                {
-                    double x = c + (b - Convert.ToDouble(param.verw_vw));
-                    double y = Math.Floor(x);
-                    ergebnis.max_sr2 = Convert.ToInt32(y);
-
-                }
-            }
-            else
-            {
-                ergebnis.EventStatus = 500;
-                ergebnis.EventMessage = ("Menge überschriten :)");
-
-                return ergebnis;
-            }
             return ergebnis;
 
 
