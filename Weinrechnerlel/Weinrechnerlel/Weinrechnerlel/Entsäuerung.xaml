@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weinrechnerlel.Entsäuerung">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+                <Label Text="1. Normalentsäuerung" TextColor="DarkRed"></Label>
+                <Label Text="Gesamtsäure von g/l" TextColor="Black"></Label>
+                <Picker x:Name="gesamtsäure_von" SelectedIndexChanged="Gesamtsäure_von_SelectedIndexChanged"></Picker>
+
+                <Label Text="Gesamtsäure auf g/l" TextColor="Black"></Label>
+                <Picker x:Name="gesamtsäure_auf" SelectedIndexChanged="Gesamtsäure_auf_SelectedIndexChanged"></Picker>
+
+                <Label Text="zu entsäuernde Menge" TextColor="Black"></Label>
+                <Entry x:Name="em1" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
+                <Button Text="Berechnen" Clicked="berechnen_Entsäu1"></Button>
+
+                <Label Text="2. Doppelsalzentsäuerung" TextColor="DarkRed"></Label>
+
+                <Label Text="Gesamtsäure in g/l" TextColor="Black"></Label>
+                <Picker x:Name="gesamtsäure_in" SelectedIndexChanged="Gesamtsäure_in_SelectedIndexChanged"></Picker>
+
+                <Label Text="Weinsäure in g/l" TextColor="Black"></Label>
+                <Picker x:Name="weinsäure" SelectedIndexChanged="Weinsäure_SelectedIndexChanged"></Picker>
+
+                <Label Text="zu entsäuernde Menge" TextColor="Black"></Label>
+                <Entry x:Name="em2" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
+
+                <Label Text="entsäuern um g/l" TextColor="Black"></Label>
+                <Entry x:Name="ent_um" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
+                <Button Text="Berechnen" Clicked="berechnen_Entsäu2"></Button>
+
+
+            </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

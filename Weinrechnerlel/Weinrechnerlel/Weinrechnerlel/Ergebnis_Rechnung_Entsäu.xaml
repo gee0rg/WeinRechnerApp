@@ -1,0 +1,27 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Weinrechnerlel.Ergebnis_Rechnung_Entsäu">
+    <ContentPage.Content>
+        <ScrollView>
+        <StackLayout>
+            <Label Text="Menge entsäuerungskalk in kg" TextColor="Black" ></Label>
+            <Label  x:Name="menge_ent1" TextColor="Black" ></Label>
+            <Label Text="um" TextColor="Black" ></Label>
+            <Label  x:Name="um" TextColor="Black" ></Label>
+            <Label Text="Entsäuerungsspanne max. in g/l" TextColor="Black" ></Label>
+            <Label  x:Name="ent_spanne" TextColor="Black" ></Label>
+            <Label Text="Menge Entsäuerungskalk in kg" TextColor="Black" ></Label>
+            <Label  x:Name="menge_ent2" TextColor="Black" ></Label>
+            <Label Text="zu entsäuernde Teilmenge in Liter" TextColor="Black" ></Label>
+            <Label Text="Mostentsäuerung" TextColor="Black" ></Label>
+            <Label  x:Name="most_ent" TextColor="Black" ></Label>
+            <Label Text="Weinentsäuerung" TextColor="Black" ></Label>
+            <Label  x:Name="wein_ent" TextColor="Black" ></Label>
+            <Label Text="auf" TextColor="Black" ></Label>
+            <Label  x:Name="auf" TextColor="Black" ></Label>
+            
+        </StackLayout>
+        </ScrollView>
+    </ContentPage.Content>
+</ContentPage>

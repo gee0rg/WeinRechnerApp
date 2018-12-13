@@ -1,0 +1,592 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+using Xamarin.Forms;
+using Xamarin.Forms.Xaml;
+using Weinrechnerlel.Models;
+using Newtonsoft.Json;
+
+namespace Weinrechnerlel
+{
+    [XamlCompilation(XamlCompilationOptions.Compile)]
+    public partial class Entsäuerung : ContentPage
+    {
+        public Entsäuerung()
+        {
+            InitializeComponent();
+            gesamtsäure_von.Items.Add("5,2");
+            gesamtsäure_von.Items.Add("5,4");
+            gesamtsäure_von.Items.Add("5,6");
+            gesamtsäure_von.Items.Add("5,8");
+            gesamtsäure_von.Items.Add("6,0");
+            gesamtsäure_von.Items.Add("6,2");
+            gesamtsäure_von.Items.Add("6,4");
+            gesamtsäure_von.Items.Add("6,8");
+            gesamtsäure_von.Items.Add("7,0");
+            gesamtsäure_von.Items.Add("7,2");
+            gesamtsäure_von.Items.Add("7,4");
+            gesamtsäure_von.Items.Add("7,8");
+            gesamtsäure_von.Items.Add("8,0");
+            gesamtsäure_von.Items.Add("8,2");
+            gesamtsäure_von.Items.Add("8,4");
+            gesamtsäure_von.Items.Add("8,8");
+            gesamtsäure_von.Items.Add("9,0");
+            gesamtsäure_von.Items.Add("9,2");
+            gesamtsäure_von.Items.Add("9,4");
+            gesamtsäure_von.Items.Add("9,8");
+            gesamtsäure_von.Items.Add("10,0");
+            gesamtsäure_von.Items.Add("10,2");
+            gesamtsäure_von.Items.Add("10,4");
+            gesamtsäure_von.Items.Add("10,8");
+            gesamtsäure_von.Items.Add("11,0");
+            gesamtsäure_von.Items.Add("11,2");
+            gesamtsäure_von.Items.Add("11,4");
+            gesamtsäure_von.Items.Add("11,8");
+            gesamtsäure_von.Items.Add("12,0");
+            gesamtsäure_von.Items.Add("12,2");
+            gesamtsäure_von.Items.Add("12,4");
+            gesamtsäure_von.Items.Add("12,8");
+            gesamtsäure_von.Items.Add("13,0");
+            gesamtsäure_von.Items.Add("13,2");
+            gesamtsäure_von.Items.Add("13,4");
+            gesamtsäure_von.Items.Add("13,8");
+            gesamtsäure_von.Items.Add("14,0");
+            gesamtsäure_von.Items.Add("14,2");
+            gesamtsäure_von.Items.Add("14,4");
+            gesamtsäure_von.Items.Add("14,8");
+            gesamtsäure_von.Items.Add("15,0");
+            gesamtsäure_von.Items.Add("15,2");
+            gesamtsäure_von.Items.Add("15,4");
+            gesamtsäure_von.Items.Add("15,8");
+            gesamtsäure_von.Items.Add("16,0");
+            gesamtsäure_von.Items.Add("16,2");
+            gesamtsäure_von.Items.Add("16,4");
+            gesamtsäure_von.Items.Add("16,8");
+            gesamtsäure_von.Items.Add("17,0");
+            gesamtsäure_von.Items.Add("17,2");
+            gesamtsäure_von.Items.Add("17,4");
+            gesamtsäure_von.Items.Add("17,8");
+            gesamtsäure_von.Items.Add("18,0");
+            gesamtsäure_von.Items.Add("18,2");
+            gesamtsäure_von.Items.Add("18,4");
+            gesamtsäure_von.Items.Add("18,8");
+            gesamtsäure_von.Items.Add("19,0");
+            gesamtsäure_von.SelectedItem = "bitte auswählen";
+
+            gesamtsäure_auf.Items.Add("5,2");
+            gesamtsäure_auf.Items.Add("5,4");
+            gesamtsäure_auf.Items.Add("5,6");
+            gesamtsäure_auf.Items.Add("5,8");
+            gesamtsäure_auf.Items.Add("6,0");
+            gesamtsäure_auf.Items.Add("6,2");
+            gesamtsäure_auf.Items.Add("6,4");
+            gesamtsäure_auf.Items.Add("6,8");
+            gesamtsäure_auf.Items.Add("7,0");
+            gesamtsäure_auf.Items.Add("7,2");
+            gesamtsäure_auf.Items.Add("7,4");
+            gesamtsäure_auf.Items.Add("7,8");
+            gesamtsäure_auf.Items.Add("8,0");
+            gesamtsäure_auf.Items.Add("8,2");
+            gesamtsäure_auf.Items.Add("8,4");
+            gesamtsäure_auf.Items.Add("8,8");
+            gesamtsäure_auf.Items.Add("9,0");
+            gesamtsäure_auf.Items.Add("9,2");
+            gesamtsäure_auf.Items.Add("9,4");
+            gesamtsäure_auf.Items.Add("9,8");
+            gesamtsäure_auf.Items.Add("10,0");
+            gesamtsäure_auf.Items.Add("10,2");
+            gesamtsäure_auf.Items.Add("10,4");
+            gesamtsäure_auf.Items.Add("10,8");
+            gesamtsäure_auf.Items.Add("11,0");
+            gesamtsäure_auf.Items.Add("11,2");
+            gesamtsäure_auf.Items.Add("11,4");
+            gesamtsäure_auf.Items.Add("11,8");
+            gesamtsäure_auf.Items.Add("12,0");
+            gesamtsäure_auf.Items.Add("12,2");
+            gesamtsäure_auf.Items.Add("12,4");
+            gesamtsäure_auf.Items.Add("12,8");
+            gesamtsäure_auf.Items.Add("13,0");
+            gesamtsäure_auf.Items.Add("13,2");
+            gesamtsäure_auf.Items.Add("13,4");
+            gesamtsäure_auf.Items.Add("13,8");
+            gesamtsäure_auf.Items.Add("14,0");
+            gesamtsäure_auf.Items.Add("14,2");
+            gesamtsäure_auf.Items.Add("14,4");
+            gesamtsäure_auf.Items.Add("14,8");
+            gesamtsäure_auf.Items.Add("15,0");
+            gesamtsäure_auf.Items.Add("15,2");
+            gesamtsäure_auf.Items.Add("15,4");
+            gesamtsäure_auf.Items.Add("15,8");
+            gesamtsäure_auf.Items.Add("16,0");
+            gesamtsäure_auf.Items.Add("16,2");
+            gesamtsäure_auf.Items.Add("16,4");
+            gesamtsäure_auf.Items.Add("16,8");
+            gesamtsäure_auf.Items.Add("17,0");
+            gesamtsäure_auf.Items.Add("17,2");
+            gesamtsäure_auf.Items.Add("17,4");
+            gesamtsäure_auf.Items.Add("17,8");
+            gesamtsäure_auf.Items.Add("18,0");
+            gesamtsäure_auf.Items.Add("18,2");
+            gesamtsäure_auf.Items.Add("18,4");
+            gesamtsäure_auf.Items.Add("18,8");
+            gesamtsäure_auf.Items.Add("19,0");
+            gesamtsäure_auf.Items.Add("19,2");
+            gesamtsäure_auf.Items.Add("19,4");
+            gesamtsäure_auf.Items.Add("19,8");
+            gesamtsäure_auf.Items.Add("20,0");
+            gesamtsäure_auf.SelectedItem = "bitte auswählen";
+
+            gesamtsäure_in.Items.Add("5,2");
+            gesamtsäure_in.Items.Add("5,4");
+            gesamtsäure_in.Items.Add("5,6");
+            gesamtsäure_in.Items.Add("5,8");
+            gesamtsäure_in.Items.Add("6,0");
+            gesamtsäure_in.Items.Add("6,2");
+            gesamtsäure_in.Items.Add("6,4");
+            gesamtsäure_in.Items.Add("6,8");
+            gesamtsäure_in.Items.Add("7,0");
+            gesamtsäure_in.Items.Add("7,2");
+            gesamtsäure_in.Items.Add("7,4");
+            gesamtsäure_in.Items.Add("7,8");
+            gesamtsäure_in.Items.Add("8,0");
+            gesamtsäure_in.Items.Add("8,2");
+            gesamtsäure_in.Items.Add("8,4");
+            gesamtsäure_in.Items.Add("8,8");
+            gesamtsäure_in.Items.Add("9,0");
+            gesamtsäure_in.Items.Add("9,2");
+            gesamtsäure_in.Items.Add("9,4");
+            gesamtsäure_in.Items.Add("9,8");
+            gesamtsäure_in.Items.Add("10,0");
+            gesamtsäure_in.Items.Add("10,2");
+            gesamtsäure_in.Items.Add("10,4");
+            gesamtsäure_in.Items.Add("10,8");
+            gesamtsäure_in.Items.Add("11,0");
+            gesamtsäure_in.Items.Add("11,2");
+            gesamtsäure_in.Items.Add("11,4");
+            gesamtsäure_in.Items.Add("11,8");
+            gesamtsäure_in.Items.Add("12,0");
+            gesamtsäure_in.Items.Add("12,2");
+            gesamtsäure_in.Items.Add("12,4");
+            gesamtsäure_in.Items.Add("12,8");
+            gesamtsäure_in.Items.Add("13,0");
+            gesamtsäure_in.Items.Add("13,2");
+            gesamtsäure_in.Items.Add("13,4");
+            gesamtsäure_in.Items.Add("13,8");
+            gesamtsäure_in.Items.Add("14,0");
+            gesamtsäure_in.Items.Add("14,2");
+            gesamtsäure_in.Items.Add("14,4");
+            gesamtsäure_in.Items.Add("14,8");
+            gesamtsäure_in.Items.Add("15,0");
+            gesamtsäure_in.Items.Add("15,2");
+            gesamtsäure_in.Items.Add("15,4");
+            gesamtsäure_in.Items.Add("15,8");
+            gesamtsäure_in.Items.Add("16,0");
+            gesamtsäure_in.Items.Add("16,2");
+            gesamtsäure_in.Items.Add("16,4");
+            gesamtsäure_in.Items.Add("16,8");
+            gesamtsäure_in.Items.Add("17,0");
+            gesamtsäure_in.Items.Add("17,2");
+            gesamtsäure_in.Items.Add("17,4");
+            gesamtsäure_in.Items.Add("17,8");
+            gesamtsäure_in.Items.Add("18,0");
+            gesamtsäure_in.Items.Add("18,2");
+            gesamtsäure_in.Items.Add("18,4");
+            gesamtsäure_in.Items.Add("18,8");
+            gesamtsäure_in.Items.Add("19,0");
+            gesamtsäure_in.SelectedItem = "bitte auswählen";
+
+            weinsäure.Items.Add("1,0");
+            weinsäure.Items.Add("1,1");
+            weinsäure.Items.Add("1,2");
+            weinsäure.Items.Add("1,3");
+            weinsäure.Items.Add("1,4");
+            weinsäure.Items.Add("1,5");
+            weinsäure.Items.Add("1,6");
+            weinsäure.Items.Add("1,7");
+            weinsäure.Items.Add("1,8");
+            weinsäure.Items.Add("1,9");
+            weinsäure.Items.Add("2,0");
+            weinsäure.Items.Add("2,1");
+            weinsäure.Items.Add("2,2");
+            weinsäure.Items.Add("2,3");
+            weinsäure.Items.Add("2,4");
+            weinsäure.Items.Add("2,5");
+            weinsäure.Items.Add("2,6");
+            weinsäure.Items.Add("2,7");
+            weinsäure.Items.Add("2,8");
+            weinsäure.Items.Add("2,9");
+            weinsäure.Items.Add("3,0");
+            weinsäure.Items.Add("3,1");
+            weinsäure.Items.Add("3,2");
+            weinsäure.Items.Add("3,3");
+            weinsäure.Items.Add("3,4");
+            weinsäure.Items.Add("3,5");
+            weinsäure.Items.Add("3,6");
+            weinsäure.Items.Add("3,7");
+            weinsäure.Items.Add("3,8");
+            weinsäure.Items.Add("3,9");
+            weinsäure.Items.Add("4,0");
+            weinsäure.Items.Add("4,1");
+            weinsäure.Items.Add("4,2");
+            weinsäure.Items.Add("4,3");
+            weinsäure.Items.Add("4,4");
+            weinsäure.Items.Add("4,5");
+            weinsäure.Items.Add("4,6");
+            weinsäure.Items.Add("4,7");
+            weinsäure.Items.Add("4,8");
+            weinsäure.Items.Add("4,9");
+            weinsäure.Items.Add("5,0");
+            weinsäure.Items.Add("5,1");
+            weinsäure.Items.Add("5,2");
+            weinsäure.Items.Add("5,3");
+            weinsäure.Items.Add("5,4");
+            weinsäure.Items.Add("5,5");
+            weinsäure.Items.Add("5,6");
+            weinsäure.Items.Add("5,7");
+            weinsäure.Items.Add("5,8");
+            weinsäure.Items.Add("5,9");
+            weinsäure.Items.Add("6,0");
+            weinsäure.Items.Add("6,1");
+            weinsäure.Items.Add("6,2");
+            weinsäure.Items.Add("6,3");
+            weinsäure.Items.Add("6,4");
+            weinsäure.Items.Add("6,5");
+            weinsäure.Items.Add("6,6");
+            weinsäure.Items.Add("6,7");
+            weinsäure.Items.Add("6,8");
+            weinsäure.Items.Add("6,9");
+            weinsäure.Items.Add("7,0");
+            weinsäure.Items.Add("7,1");
+            weinsäure.Items.Add("7,2");
+            weinsäure.Items.Add("7,3");
+            weinsäure.Items.Add("7,4");
+            weinsäure.Items.Add("7,5");
+            weinsäure.Items.Add("7,6");
+            weinsäure.Items.Add("7,7");
+            weinsäure.Items.Add("7,8");
+            weinsäure.Items.Add("7,9");
+            weinsäure.Items.Add("8,0");
+            weinsäure.Items.Add("8,1");
+            weinsäure.Items.Add("8,2");
+            weinsäure.Items.Add("8,3");
+            weinsäure.Items.Add("8,4");
+            weinsäure.Items.Add("8,5");
+            weinsäure.Items.Add("8,6");
+            weinsäure.Items.Add("8,7");
+            weinsäure.Items.Add("8,8");
+            weinsäure.Items.Add("8,9");
+            weinsäure.Items.Add("9,0");
+            weinsäure.Items.Add("9,1");
+            weinsäure.Items.Add("9,2");
+            weinsäure.Items.Add("9,3");
+            weinsäure.Items.Add("9,4");
+            weinsäure.Items.Add("9,5");
+            weinsäure.Items.Add("9,6");
+            weinsäure.Items.Add("9,7");
+            weinsäure.Items.Add("9,8");
+            weinsäure.Items.Add("9,9");
+            weinsäure.Items.Add("10,0");
+            weinsäure.SelectedItem = "bitte auswählen";
+        }
+        string gs_von_1;
+
+        private void Gesamtsäure_von_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            gs_von_1 = gesamtsäure_von.Items[gesamtsäure_von.SelectedIndex];
+        }
+        string gs_auf_1;
+
+        private void Gesamtsäure_auf_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            gs_auf_1 = gesamtsäure_auf.Items[gesamtsäure_auf.SelectedIndex];
+        }
+        string gs2_1;
+        private void Gesamtsäure_in_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            gs2_1 = gesamtsäure_in.Items[gesamtsäure_in.SelectedIndex];
+        }
+        string ws_1;
+        private void Weinsäure_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            ws_1 = weinsäure.Items[weinsäure.SelectedIndex];
+        }
+        Ergebnis_entsäu ergebnis = new Ergebnis_entsäu();
+
+        void berechnen_Entsäu1(object sender, EventArgs e)
+        {
+
+            request_entsäu param = new request_entsäu() { gs_von = gs_von_1, gs_auf = gs_auf_1, em1 = em1.Text };
+            String request = JsonConvert.SerializeObject(param);
+            RESTConnector rconn = new RESTConnector();
+
+            String answer;
+            String adress = "http://localhost:50088/api/basis_Vs";
+
+            answer = rconn.HTTP_POST(adress, request, 5, false);
+            if (answer.Contains("REST_HTTP_ERROR"))
+            {
+                double eingabe_user_em1;
+                try
+                {
+                    eingabe_user_em1 = Convert.ToDouble(em1.Text);
+                }
+                catch
+                {
+                    DisplayAlert("Hinweis", "Es sind Zahlen einzugeben", "OK");
+                    return;
+                }
+                if (eingabe_user_em1 < 0)
+                {
+                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
+                    return;
+                }
+
+                double gs_von_1d = Convert.ToDouble(gs_von_1);
+
+                switch (gs_von_1d)
+                {
+                    case 5.2:
+                        gs_von_1d = 5.2;
+                        break;
+                    case 5.4:
+                        gs_von_1d = 5.4;
+                        break;
+                    case 5.6:
+                        gs_von_1d = 5.6;
+                        break;
+                    case 5.8:
+                        gs_von_1d = 5.8;
+                        break;
+                    case 6.0:
+                        gs_von_1d = 6.0;
+                        break;
+                    case 6.2:
+                        gs_von_1d = 6.2;
+                        break;
+                    case 6.4:
+                        gs_von_1d = 6.4;
+                        break;
+                    case 6.6:
+                        gs_von_1d = 6.6;
+                        break;
+                    case 6.8:
+                        gs_von_1d = 6.8;
+                        break;
+                    case 7.0:
+                        gs_von_1d = 7.0;
+                        break;
+                }
+                //Picker implementieren von 5,2 bis 19,0 in 0,2 Schritten
+                double gs_auf_1d = Convert.ToDouble(gs_auf_1);
+                switch (gs_auf_1d)
+                {
+                    case 5.2:
+                        gs_auf_1d = 5.2;
+                        break;
+                    case 5.4:
+                        gs_auf_1d = 5.4;
+                        break;
+                    case 5.6:
+                        gs_auf_1d = 5.6;
+                        break;
+                    case 5.8:
+                        gs_auf_1d = 5.8;
+                        break;
+                    case 6.0:
+                        gs_auf_1d = 6.0;
+                        break;
+                    case 6.2:
+                        gs_auf_1d = 6.2;
+                        break;
+                    case 6.4:
+                        gs_auf_1d = 6.4;
+                        break;
+                    case 6.6:
+                        gs_auf_1d = 6.6;
+                        break;
+                    case 6.8:
+                        gs_auf_1d = 6.8;
+                        break;
+                    case 7.0:
+                        gs_auf_1d = 7.0;
+                        break;
+                }
+                //Picker implementieren von 5,2 bis 20,0 in 0,2 Schritten
+
+
+                //Ergebnisse berechnnen
+                double e1 = gs_von_1d - gs_auf_1d;
+                double e2 = (Convert.ToDouble(em1.Text) / 100.0) * (67.0 / 1000.0) * e1;
+
+                //Ausgabe Ergebnisse
+                ergebnis.menge_ent1 = e2;
+                ergebnis.um = e1;
+            }
+            else
+            {
+                EntsäuRestResponse erg = new EntsäuRestResponse() { };
+                erg = JsonConvert.DeserializeObject<EntsäuRestResponse>(answer);
+                if (erg.EventStatus != 0)
+                {
+                    DisplayAlert("Hinweis", erg.EventMessage, "OK");
+
+                    return;
+                }
+                ergebnis.menge_ent1 = erg.menge_ent1;
+                ergebnis.um = erg.um;
+
+            }
+            NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Entsäu(ergebnis)) { BarBackgroundColor = Color.DarkRed };
+            Navigation.PushAsync(nav);
+        }
+        void berechnen_Entsäu2(object sender, EventArgs e)
+        {
+
+            request_entsäu param = new request_entsäu() { gs2 = gs2_1, ws = ws_1, em2 = em2.Text, ent_um = ent_um.Text };
+            String request = JsonConvert.SerializeObject(param);
+            RESTConnector rconn = new RESTConnector();
+
+            String answer;
+            String adress = "http://localhost:50088/api/basis_Vs";
+
+            answer = rconn.HTTP_POST(adress, request, 5, false);
+            if (answer.Contains("REST_HTTP_ERROR"))
+            {
+                double eingabe_user_em2;
+                try
+                {
+                    eingabe_user_em2 = Convert.ToDouble(em2.Text);
+                }
+                catch
+                {
+                    DisplayAlert("Hinweis", "Es sind Zahlen einzugeben", "OK");
+                    return;
+                }
+                if (eingabe_user_em2 < 0)
+                {
+                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
+                    return;
+                }
+                // Exception für ent_um einfügen
+
+
+
+                double gs2_1d = Convert.ToDouble(gs2_1);
+                switch (gs2_1d)
+                {
+                    case 5.2:
+                        gs2_1d = 5.2;
+                        break;
+                    case 5.4:
+                        gs2_1d = 5.4;
+                        break;
+                    case 5.6:
+                        gs2_1d = 5.6;
+                        break;
+                    case 5.8:
+                        gs2_1d = 5.8;
+                        break;
+                    case 6.0:
+                        gs2_1d = 6.0;
+                        break;
+                    case 6.2:
+                        gs2_1d = 6.2;
+                        break;
+                    case 6.4:
+                        gs2_1d = 6.4;
+                        break;
+                    case 6.6:
+                        gs2_1d = 6.6;
+                        break;
+                    case 6.8:
+                        gs2_1d = 6.8;
+                        break;
+                    case 7.0:
+                        gs2_1d = 7.0;
+                        break;
+                }
+                //Picker implementieren von 5,2 bis 20,0 in 0,2 Schritten
+                double ws_1d = Convert.ToDouble(ws_1);
+                switch (ws_1d)
+                {
+                    case 1.0:
+                        ws_1d = 1.0;
+                        break;
+                    case 1.1:
+                        ws_1d = 1.1;
+                        break;
+                    case 1.2:
+                        ws_1d = 1.2;
+                        break;
+                    case 1.3:
+                        ws_1d = 1.3;
+                        break;
+                    case 1.4:
+                        ws_1d = 1.4;
+                        break;
+                    case 1.5:
+                        ws_1d = 1.5;
+                        break;
+                    case 1.6:
+                        ws_1d = 1.6;
+                        break;
+                    case 1.7:
+                        ws_1d = 1.7;
+                        break;
+                    case 1.8:
+                        ws_1d = 1.8;
+                        break;
+                    case 1.9:
+                        ws_1d = 1.9;
+                        break;
+                    case 2.0:
+                        ws_1d = 2.0;
+                        break;
+                    case 10.0:
+                        ws_1d = 10.0;
+                        break;
+                }
+                //Picker implementieren von 1,0 bis 10,0 in 0,1 Schritten
+
+                //ergebnisse berechnen
+                double e3 = gs2_1d * (ws_1d - 0.5) / (gs2_1d - ws_1d);                      //E1
+                double e4 = gs2_1d - Convert.ToDouble(ent_um.Text);                         //E5
+                double e5 = ((gs2_1d - e4) * Convert.ToDouble(em2.Text) * 0.67) / 1000;     //E2
+                double e6 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 2));    //E3
+                double e7 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 3));    //E4
+
+                //Ausgabe Ergebnisse
+                ergebnis.ent_spanne = e3;
+                ergebnis.menge_ent2 = e5;
+                ergebnis.most_ent = Convert.ToInt32(e6);
+                ergebnis.wein_ent = Convert.ToInt32(e7);
+                ergebnis.auf = Convert.ToInt32(e4);
+
+            }
+            else
+            {
+                EntsäuRestResponse erg = new EntsäuRestResponse() { };
+                erg = JsonConvert.DeserializeObject<EntsäuRestResponse>(answer);
+                if (erg.EventStatus != 0)
+                {
+                    DisplayAlert("Hinweis", erg.EventMessage, "OK");
+
+                    return;
+                }
+                ergebnis.ent_spanne = erg.ent_spanne;
+                ergebnis.menge_ent2 = erg.menge_ent2;
+                ergebnis.most_ent = erg.most_ent;
+                ergebnis.wein_ent = erg.wein_ent;
+                ergebnis.auf = erg.auf;
+
+            }
+            NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Entsäu(ergebnis)) { BarBackgroundColor = Color.DarkRed };
+            Navigation.PushAsync(nav);
+        }
+
+
+    }
+}
