@@ -17,12 +17,14 @@ namespace Weinrechnerlel
         public Anreicherung()
         {
             InitializeComponent();
+            produktart.Items.Add("bitte auswählen");
             produktart.Items.Add("Most");
             produktart.Items.Add("Maische entrappt");
             produktart.Items.Add("Maische nicht entrappt");
             produktart.Items.Add("Wein");
-            produktart.SelectedIndex=3;
+            produktart.SelectedIndex=0;
 
+            mostgewicht.Items.Add("bitte auswählen");
             mostgewicht.Items.Add("44");
             mostgewicht.Items.Add("45");
             mostgewicht.Items.Add("46");
@@ -82,6 +84,7 @@ namespace Weinrechnerlel
             mostgewicht.Items.Add("100");
             mostgewicht.SelectedIndex = 0;
 
+            anreicherungsspanne.Items.Add("bitte auswählen");
             anreicherungsspanne.Items.Add("1");
             anreicherungsspanne.Items.Add("2");
             anreicherungsspanne.Items.Add("3");

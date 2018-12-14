@@ -17,6 +17,7 @@ namespace Weinrechnerlel
         public Konzentration()
         {
             InitializeComponent();
+            ausgangsmostgewicht.Items.Add("bitte auswählen");
             ausgangsmostgewicht.Items.Add("60");
             ausgangsmostgewicht.Items.Add("61");
             ausgangsmostgewicht.Items.Add("62");
@@ -110,6 +111,7 @@ namespace Weinrechnerlel
             //ausgangsmostgewicht.Items.Add("150");
             ausgangsmostgewicht.SelectedIndex = 0;
 
+            zielmostgewicht.Items.Add("bitte auswählen");
             zielmostgewicht.Items.Add("60");
             zielmostgewicht.Items.Add("61");
             zielmostgewicht.Items.Add("62");
@@ -524,16 +526,17 @@ namespace Weinrechnerlel
                         double e1 = ag1;
                         double e2 = zg1 - ag1;
                         double e3 = zg1;
-                        double e4 = Math.Round((Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(zielmostgew) - Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(ausgangsmostgew)) / Convert.ToDouble(zielmostgew));// oder durch zg1 -> erfragen!
-                        double e5 = Math.Round(Convert.ToDouble(maisch_menge.Text) - e4);
+                        double e4 = Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(zielmostgew) - (Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(ausgangsmostgew));
+                        double e4_1 = Math.Round(e4 / Convert.ToDouble(zielmostgew));
+                        double e5 = Math.Round(Convert.ToDouble(maisch_menge.Text) - e4_1);
 
                         //Ausgabe Ergebnisse
                         ergebnis.mg_e = e1;
                         ergebnis.asp_e = e2;
                         ergebnis.auf_alk = e3;
-                        int e4_int = (int)e4;
+                        int e4_int = Convert.ToInt32(e4_1);
                         ergebnis.perm_entzug = e4_int;
-                        int e5_int = (int)e5;
+                        int e5_int = Convert.ToInt32(e5);
                         ergebnis.menge_konz = e5_int;
 
                     }
@@ -543,8 +546,9 @@ namespace Weinrechnerlel
                         double e1 = ag1;
                         double e2 = zg1 - ag1;
                         double e3 = zg1;
-                        double e4 = Math.Round((Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(zielmostgew) - Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(zielmostgew)) / Convert.ToDouble(zielmostgew));// oder durch zg1 -> erfragen!
-                        double e5 = Math.Round(Convert.ToDouble(maisch_menge.Text) - e4);
+                        double e4 = Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(zielmostgew) - (Convert.ToDouble(maisch_menge.Text) * Convert.ToDouble(ausgangsmostgew));
+                        double e4_1 = Math.Round(e4 / Convert.ToDouble(zielmostgew));
+                        double e5 = Math.Round(Convert.ToDouble(maisch_menge.Text) - e4_1);
 
                         //Ausgabe Ergebnisse
                         ergebnis.mg_e = e1;
@@ -553,10 +557,10 @@ namespace Weinrechnerlel
 
                         ergebnis.auf_alk = e3;
 
-                        int e4_int = (int)e4;
+                        int e4_int = Convert.ToInt32(e4_1);
                         ergebnis.perm_entzug = e4_int;
 
-                        int e5_int = (int)e5;
+                        int e5_int = Convert.ToInt32(e5);
                         ergebnis.menge_konz = e5_int;
                     }
                 }

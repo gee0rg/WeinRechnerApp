@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Rechnungen
+/*namespace Rechnungen
 {
     public class Ergebnis_entsäu
     {
@@ -122,4 +122,4 @@ namespace Rechnungen
             Console.ReadKey();
         }
     }
-}
+}*/
