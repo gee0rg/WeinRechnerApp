@@ -22,10 +22,13 @@
                 <Picker x:Name="gesamtsäure_in" SelectedIndexChanged="Gesamtsäure_in_SelectedIndexChanged"></Picker>
 
                 <Label Text="Weinsäure in g/l" TextColor="Black"></Label>
-                <Picker x:Name="weinsäure" SelectedIndexChanged="Weinsäure_SelectedIndexChanged"></Picker>
+                <Picker x:Name="weinsäure" SelectedIndexChanged="Weinsäure_SelectedIndexChanged" ></Picker>
 
                 <Label Text="zu entsäuernde Menge" TextColor="Black"></Label>
                 <Entry x:Name="em2" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
+
+                <Label Text="Entsäuerungsspanne max. in g/l" TextColor="Black" ></Label>
+                <Label  x:Name="ent_spanne" TextColor="Black" ></Label>
 
                 <Label Text="entsäuern um g/l" TextColor="Black"></Label>
                 <Entry x:Name="ent_um" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>

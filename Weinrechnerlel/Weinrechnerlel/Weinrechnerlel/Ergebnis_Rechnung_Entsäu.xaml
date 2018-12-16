@@ -5,24 +5,46 @@
              Title="Entsäuerung">
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout>
-            <Label Text="Menge entsäuerungskalk in kg" TextColor="Black" ></Label>
-            <Label  x:Name="menge_ent1" TextColor="Black" ></Label>
-            <Label Text="um" TextColor="Black" ></Label>
-            <Label  x:Name="um" TextColor="Black" ></Label>
-            <Label Text="Entsäuerungsspanne max. in g/l" TextColor="Black" ></Label>
-            <Label  x:Name="ent_spanne" TextColor="Black" ></Label>
-            <Label Text="Menge Entsäuerungskalk in kg" TextColor="Black" ></Label>
-            <Label  x:Name="menge_ent2" TextColor="Black" ></Label>
-            <Label Text="zu entsäuernde Teilmenge in Liter" TextColor="Black" ></Label>
-            <Label Text="Mostentsäuerung" TextColor="Black" ></Label>
-            <Label  x:Name="most_ent" TextColor="Black" ></Label>
-            <Label Text="Weinentsäuerung" TextColor="Black" ></Label>
-            <Label  x:Name="wein_ent" TextColor="Black" ></Label>
-            <Label Text="auf" TextColor="Black" ></Label>
-            <Label  x:Name="auf" TextColor="Black" ></Label>
-            
-        </StackLayout>
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Menge entsäuerungskalk in kg" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="menge_ent1" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="um" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="um" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Menge Entsäuerungskalk in kg" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="menge_ent2" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <Label Text="zu entsäuernde Teilmenge in Liter" TextColor="Black" ></Label>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Mostentsäuerung" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="most_ent" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Weinentsäuerung" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="wein_ent" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="auf" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="auf" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

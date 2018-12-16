@@ -17,6 +17,7 @@ namespace Weinrechnerlel
         public Entsäuerung()
         {
             InitializeComponent();
+           
             gesamtsäure_von.Items.Add("bitte auswählen");
             gesamtsäure_von.Items.Add("5,2");
             gesamtsäure_von.Items.Add("5,4");
@@ -306,16 +307,56 @@ namespace Weinrechnerlel
         private void Gesamtsäure_auf_SelectedIndexChanged(object sender, EventArgs e)
         {
             gs_auf_1 = gesamtsäure_auf.Items[gesamtsäure_auf.SelectedIndex];
+            
         }
+
         string gs2_1;
+        string ws_1;
         private void Gesamtsäure_in_SelectedIndexChanged(object sender, EventArgs e)
         {
             gs2_1 = gesamtsäure_in.Items[gesamtsäure_in.SelectedIndex];
+            
+
+
+            if (weinsäure.SelectedIndex == 0 || ws_1 == null)
+            {
+                return;
+            }
+            else
+            {
+                change_ent_spanne();
+            }
         }
-        string ws_1;
+
+        private void change_ent_spanne()
+        {
+            gs2_1 = gs2_1.Replace(',', '.');
+            double gs2_1d = Convert.ToDouble(gs2_1);
+
+            ws_1 = ws_1.Replace(',', '.');
+            double ws_1d = Convert.ToDouble(ws_1);
+            
+           
+           
+
+            //ergebnisse berechnen
+            double e3 = Math.Round(gs2_1d * (ws_1d - 0.5) / (gs2_1d - ws_1d), 1);
+            ent_spanne.Text = Convert.ToString(e3);
+
+        }
+
         private void Weinsäure_SelectedIndexChanged(object sender, EventArgs e)
         {
             ws_1 = weinsäure.Items[weinsäure.SelectedIndex];
+
+            if (gesamtsäure_in.SelectedIndex == 0 || gs2_1 == null )
+            {
+                return;
+            }
+            else
+            {
+                change_ent_spanne();
+            }
         }
         Ergebnis_entsäu ergebnis = new Ergebnis_entsäu();
 
@@ -348,476 +389,22 @@ namespace Weinrechnerlel
                     return;
                 }
 
+                gs_von_1= gs_von_1.Replace(',', '.');
                 double gs_von_1d = Convert.ToDouble(gs_von_1);
 
-                switch (gs_von_1d)
-                {
-                    case 5.2:
-                        gs_von_1d = 5.2;
-                        break;
-                    case 5.4:
-                        gs_von_1d = 5.4;
-                        break;
-                    case 5.6:
-                        gs_von_1d = 5.6;
-                        break;
-                    case 5.8:
-                        gs_von_1d = 5.8;
-                        break;
-                    case 6.0:
-                        gs_von_1d = 6.0;
-                        break;
-                    case 6.2:
-                        gs_von_1d = 6.2;
-                        break;
-                    case 6.4:
-                        gs_von_1d = 6.4;
-                        break;
-                    case 6.6:
-                        gs_von_1d = 6.6;
-                        break;
-                    case 6.8:
-                        gs_von_1d = 6.8;
-                        break;
-                    case 7.0:
-                        gs_von_1d = 7.0;
-                        break;
-                    case 7.2:
-                        gs_von_1d = 7.2;
-                        break;
-                    case 7.4:
-                        gs_von_1d = 7.4;
-                        break;
-                    case 7.6:
-                        gs_von_1d = 7.6;
-                        break;
-                    case 7.8:
-                        gs_von_1d = 7.8;
-                        break;
-                    case 8.0:
-                        gs_von_1d = 8.0;
-                        break;
-                    case 8.2:
-                        gs_von_1d = 8.2;
-                        break;
-                    case 8.4:
-                        gs_von_1d = 8.4;
-                        break;
-                    case 8.6:
-                        gs_von_1d = 8.6;
-                        break;
-                    case 8.8:
-                        gs_von_1d = 8.8;
-                        break;
-                    case 9.0:
-                        gs_von_1d = 9.0;
-                        break;
-                    case 9.2:
-                        gs_von_1d = 9.2;
-                        break;
-                    case 9.4:
-                        gs_von_1d = 9.4;
-                        break;
-                    case 9.6:
-                        gs_von_1d = 9.6;
-                        break;
-                    case 9.8:
-                        gs_von_1d = 9.8;
-                        break;
-                    case 10.0:
-                        gs_von_1d = 10.0;
-                        break;
-                    case 10.2:
-                        gs_von_1d = 10.2;
-                        break;
-                    case 10.4:
-                        gs_von_1d = 10.4;
-                        break;
-                    case 10.6:
-                        gs_von_1d = 10.6;
-                        break;
-                    case 10.8:
-                        gs_von_1d = 10.8;
-                        break;
-                    case 11.0:
-                        gs_von_1d = 11.0;
-                        break;
-                    case 11.2:
-                        gs_von_1d = 11.2;
-                        break;
-                    case 11.4:
-                        gs_von_1d = 11.4;
-                        break;
-                    case 11.6:
-                        gs_von_1d = 11.6;
-                        break;
-                    case 11.8:
-                        gs_von_1d = 11.8;
-                        break;
-                    case 12.0:
-                        gs_von_1d = 12.0;
-                        break;
-                    case 12.2:
-                        gs_von_1d = 12.2;
-                        break;
-                    case 12.4:
-                        gs_von_1d = 12.4;
-                        break;
-                    case 12.6:
-                        gs_von_1d = 12.6;
-                        break;
-                    case 12.8:
-                        gs_von_1d = 12.8;
-                        break;
-                    case 13.0:
-                        gs_von_1d = 13.0;
-                        break;
-                    case 13.2:
-                        gs_von_1d = 13.2;
-                        break;
-                    case 13.4:
-                        gs_von_1d = 13.4;
-                        break;
-                    case 13.6:
-                        gs_von_1d = 13.6;
-                        break;
-                    case 13.8:
-                        gs_von_1d = 13.8;
-                        break;
-                    case 14.0:
-                        gs_von_1d = 14.0;
-                        break;
-                    case 14.2:
-                        gs_von_1d = 14.2;
-                        break;
-                    case 14.4:
-                        gs_von_1d = 14.4;
-                        break;
-                    case 14.6:
-                        gs_von_1d = 14.6;
-                        break;
-                    case 14.8:
-                        gs_von_1d = 14.8;
-                        break;
-                    case 15.0:
-                        gs_von_1d = 15.0;
-                        break;
-                    case 15.2:
-                        gs_von_1d = 15.2;
-                        break;
-                    case 15.4:
-                        gs_von_1d = 15.4;
-                        break;
-                    case 15.6:
-                        gs_von_1d =15.6;
-                        break;
-                    case 15.8:
-                        gs_von_1d = 15.8;
-                        break;
-                    case 16.0:
-                        gs_von_1d = 16.0;
-                        break;
-                    case 16.2:
-                        gs_von_1d = 16.2;
-                        break;
-                    case 16.4:
-                        gs_von_1d = 16.4;
-                        break;
-                    case 16.6:
-                        gs_von_1d = 16.6;
-                        break;
-                    case 16.8:
-                        gs_von_1d = 16.8;
-                        break;
-                    case 17.0:
-                        gs_von_1d = 17.0;
-                        break;
-                    case 17.2:
-                        gs_von_1d = 17.2;
-                        break;
-                    case 17.4:
-                        gs_von_1d = 17.4;
-                        break;
-                    case 17.6:
-                        gs_von_1d = 17.6;
-                        break;
-                    case 17.8:
-                        gs_von_1d = 17.8;
-                        break;
-                    case 18.0:
-                        gs_von_1d = 18.0;
-                        break;
-                    case 18.2:
-                        gs_von_1d = 18.2;
-                        break;
-                    case 18.4:
-                        gs_von_1d = 18.4;
-                        break;
-                    case 18.6:
-                        gs_von_1d = 18.6;
-                        break;
-                    case 18.8:
-                        gs_von_1d = 18.8;
-                        break;
-                    case 19.0:
-                        gs_von_1d = 19.0;
-                        break;
-                    case 19.2:
-                        gs_von_1d = 19.2;
-                        break;
-                    case 19.4:
-                        gs_von_1d = 19.4;
-                        break;
-                    case 19.6:
-                        gs_von_1d = 19.6;
-                        break;
-                    case 19.8:
-                        gs_von_1d = 19.8;
-                        break;
-                    case 20.0:
-                        gs_von_1d = 20.0;
-                        break;
-                   
-                }
-                
+
+                gs_auf_1 = gs_auf_1.Replace(',', '.');
                 double gs_auf_1d = Convert.ToDouble(gs_auf_1);
-                switch (gs_auf_1d)
-                {
-                    case 5.2:
-                        gs_auf_1d = 5.2;
-                        break;
-                    case 5.4:
-                        gs_auf_1d = 5.4;
-                        break;
-                    case 5.6:
-                        gs_auf_1d = 5.6;
-                        break;
-                    case 5.8:
-                        gs_auf_1d = 5.8;
-                        break;
-                    case 6.0:
-                        gs_auf_1d = 6.0;
-                        break;
-                    case 6.2:
-                        gs_auf_1d = 6.2;
-                        break;
-                    case 6.4:
-                        gs_auf_1d = 6.4;
-                        break;
-                    case 6.6:
-                        gs_auf_1d = 6.6;
-                        break;
-                    case 6.8:
-                        gs_auf_1d = 6.8;
-                        break;
-                    case 7.0:
-                        gs_auf_1d = 7.0;
-                        break;
-                    case 7.2:
-                        gs_auf_1d = 7.2;
-                        break;
-                    case 7.4:
-                        gs_auf_1d = 7.4;
-                        break;
-                    case 7.6:
-                        gs_auf_1d = 7.6;
-                        break;
-                    case 7.8:
-                        gs_auf_1d = 7.8;
-                        break;
-                    case 8.0:
-                        gs_auf_1d = 8.0;
-                        break;
-                    case 8.2:
-                        gs_auf_1d = 8.2;
-                        break;
-                    case 8.4:
-                        gs_auf_1d = 8.4;
-                        break;
-                    case 8.6:
-                        gs_auf_1d = 8.6;
-                        break;
-                    case 8.8:
-                        gs_auf_1d = 8.8;
-                        break;
-                    case 9.0:
-                        gs_auf_1d = 9.0;
-                        break;
-                    case 9.2:
-                        gs_auf_1d = 9.2;
-                        break;
-                    case 9.4:
-                        gs_auf_1d = 9.4;
-                        break;
-                    case 9.6:
-                        gs_auf_1d = 9.6;
-                        break;
-                    case 9.8:
-                        gs_auf_1d = 9.8;
-                        break;
-                    case 10.0:
-                        gs_auf_1d = 10.0;
-                        break;
-                    case 10.2:
-                        gs_auf_1d = 10.2;
-                        break;
-                    case 10.4:
-                        gs_auf_1d = 10.4;
-                        break;
-                    case 10.6:
-                        gs_auf_1d = 10.6;
-                        break;
-                    case 10.8:
-                        gs_auf_1d = 10.8;
-                        break;
-                    case 11.0:
-                        gs_auf_1d = 11.0;
-                        break;
-                    case 11.2:
-                        gs_auf_1d = 11.2;
-                        break;
-                    case 11.4:
-                        gs_auf_1d = 11.4;
-                        break;
-                    case 11.6:
-                        gs_auf_1d = 11.6;
-                        break;
-                    case 11.8:
-                        gs_auf_1d = 11.8;
-                        break;
-                    case 12.0:
-                        gs_auf_1d = 12.0;
-                        break;
-                    case 12.2:
-                        gs_auf_1d = 12.2;
-                        break;
-                    case 12.4:
-                        gs_auf_1d = 12.4;
-                        break;
-                    case 12.6:
-                        gs_auf_1d = 12.6;
-                        break;
-                    case 12.8:
-                        gs_auf_1d = 12.8;
-                        break;
-                    case 13.0:
-                        gs_auf_1d = 13.0;
-                        break;
-                    case 13.2:
-                        gs_auf_1d = 13.2;
-                        break;
-                    case 13.4:
-                        gs_auf_1d = 13.4;
-                        break;
-                    case 13.6:
-                        gs_auf_1d = 13.6;
-                        break;
-                    case 13.8:
-                        gs_auf_1d = 13.8;
-                        break;
-                    case 14.0:
-                        gs_auf_1d = 14.0;
-                        break;
-                    case 14.2:
-                        gs_auf_1d = 14.2;
-                        break;
-                    case 14.4:
-                        gs_auf_1d = 14.4;
-                        break;
-                    case 14.6:
-                        gs_auf_1d = 14.6;
-                        break;
-                    case 14.8:
-                        gs_auf_1d = 14.8;
-                        break;
-                    case 15.0:
-                        gs_auf_1d = 15.0;
-                        break;
-                    case 15.2:
-                        gs_auf_1d = 15.2;
-                        break;
-                    case 15.4:
-                        gs_auf_1d = 15.4;
-                        break;
-                    case 15.6:
-                        gs_auf_1d = 15.6;
-                        break;
-                    case 15.8:
-                        gs_auf_1d = 15.8;
-                        break;
-                    case 16.0:
-                        gs_auf_1d = 16.0;
-                        break;
-                    case 16.2:
-                        gs_auf_1d = 16.2;
-                        break;
-                    case 16.4:
-                        gs_auf_1d = 16.4;
-                        break;
-                    case 16.6:
-                        gs_auf_1d = 16.6;
-                        break;
-                    case 16.8:
-                        gs_auf_1d = 16.8;
-                        break;
-                    case 17.0:
-                        gs_auf_1d = 17.0;
-                        break;
-                    case 17.2:
-                        gs_auf_1d = 17.2;
-                        break;
-                    case 17.4:
-                        gs_auf_1d = 17.4;
-                        break;
-                    case 17.6:
-                        gs_auf_1d = 17.6;
-                        break;
-                    case 17.8:
-                        gs_auf_1d = 17.8;
-                        break;
-                    case 18.0:
-                        gs_auf_1d = 18.0;
-                        break;
-                    case 18.2:
-                        gs_auf_1d = 18.2;
-                        break;
-                    case 18.4:
-                        gs_auf_1d = 18.4;
-                        break;
-                    case 18.6:
-                        gs_auf_1d = 18.6;
-                        break;
-                    case 18.8:
-                        gs_auf_1d = 18.8;
-                        break;
-                    case 19.0:
-                        gs_auf_1d = 19.0;
-                        break;
-                    case 19.2:
-                        gs_auf_1d = 19.2;
-                        break;
-                    case 19.4:
-                        gs_auf_1d = 19.4;
-                        break;
-                    case 19.6:
-                        gs_auf_1d = 19.6;
-                        break;
-                    case 19.8:
-                        gs_auf_1d = 19.8;
-                        break;
-                    case 20.0:
-                        gs_auf_1d = 20.0;
-                        break;
-                }
-                
 
 
+
+               
                 //Ergebnisse berechnnen
                 double e1 = gs_von_1d - gs_auf_1d;
                 double e2 = (Convert.ToDouble(em1.Text) / 100.0) * (67.0 / 1000.0) * e1;
 
                 //Ausgabe Ergebnisse
-                ergebnis.menge_ent1 = e2;
+                ergebnis.menge_ent1 = Math.Round(e2,3);
                 ergebnis.um = e1;
             }
             else
@@ -867,526 +454,19 @@ namespace Weinrechnerlel
                 }
                 // Exception für ent_um einfügen
 
-
-
+                gs2_1 = gs2_1.Replace(',', '.');
                 double gs2_1d = Convert.ToDouble(gs2_1);
-                switch (gs2_1d)
-                {
-                    case 5.2:
-                        gs2_1d = 5.2;
-                        break;
-                    case 5.4:
-                        gs2_1d = 5.4;
-                        break;
-                    case 5.6:
-                        gs2_1d = 5.6;
-                        break;
-                    case 5.8:
-                        gs2_1d = 5.8;
-                        break;
-                    case 6.0:
-                        gs2_1d = 6.0;
-                        break;
-                    case 6.2:
-                        gs2_1d = 6.2;
-                        break;
-                    case 6.4:
-                        gs2_1d = 6.4;
-                        break;
-                    case 6.6:
-                        gs2_1d = 6.6;
-                        break;
-                    case 6.8:
-                        gs2_1d = 6.8;
-                        break;
-                    case 7.0:
-                        gs2_1d = 7.0;
-                        break;
-                    case 7.2:
-                        gs2_1d = 7.2;
-                        break;
-                    case 7.4:
-                        gs2_1d = 7.4;
-                        break;
-                    case 7.6:
-                        gs2_1d = 7.6;
-                        break;
-                    case 7.8:
-                        gs2_1d = 7.8;
-                        break;
-                    case 8.0:
-                        gs2_1d = 8.0;
-                        break;
-                    case 8.2:
-                        gs2_1d = 8.2;
-                        break;
-                    case 8.4:
-                        gs2_1d = 8.4;
-                        break;
-                    case 8.6:
-                        gs2_1d = 8.6;
-                        break;
-                    case 8.8:
-                        gs2_1d = 8.8;
-                        break;
-                    case 9.0:
-                        gs2_1d = 9.0;
-                        break;
-                    case 9.2:
-                        gs2_1d = 9.2;
-                        break;
-                    case 9.4:
-                        gs2_1d = 9.4;
-                        break;
-                    case 9.6:
-                        gs2_1d = 9.6;
-                        break;
-                    case 9.8:
-                        gs2_1d = 9.8;
-                        break;
-                    case 10.0:
-                        gs2_1d = 10.0;
-                        break;
-                    case 10.2:
-                        gs2_1d = 10.2;
-                        break;
-                    case 10.4:
-                        gs2_1d = 10.4;
-                        break;
-                    case 10.6:
-                        gs2_1d = 10.6;
-                        break;
-                    case 10.8:
-                        gs2_1d = 10.8;
-                        break;
-                    case 11.0:
-                        gs2_1d = 11.0;
-                        break;
-                    case 11.2:
-                        gs2_1d = 11.2;
-                        break;
-                    case 11.4:
-                        gs2_1d = 11.4;
-                        break;
-                    case 11.6:
-                        gs2_1d = 11.6;
-                        break;
-                    case 11.8:
-                        gs2_1d = 11.8;
-                        break;
-                    case 12.0:
-                        gs2_1d = 12.0;
-                        break;
-                    case 12.2:
-                        gs2_1d = 12.2;
-                        break;
-                    case 12.4:
-                        gs2_1d = 12.4;
-                        break;
-                    case 12.6:
-                        gs2_1d = 12.6;
-                        break;
-                    case 12.8:
-                        gs2_1d = 12.8;
-                        break;
-                    case 13.0:
-                        gs2_1d = 13.0;
-                        break;
-                    case 13.2:
-                        gs2_1d = 13.2;
-                        break;
-                    case 13.4:
-                        gs2_1d = 13.4;
-                        break;
-                    case 13.6:
-                        gs2_1d = 13.6;
-                        break;
-                    case 13.8:
-                        gs2_1d = 13.8;
-                        break;
-                    case 14.0:
-                        gs2_1d = 14.0;
-                        break;
-                    case 14.2:
-                        gs2_1d = 14.2;
-                        break;
-                    case 14.4:
-                        gs2_1d = 14.4;
-                        break;
-                    case 14.6:
-                        gs2_1d = 14.6;
-                        break;
-                    case 14.8:
-                        gs2_1d = 14.8;
-                        break;
-                    case 15.0:
-                        gs2_1d = 15.0;
-                        break;
-                    case 15.2:
-                        gs2_1d = 15.2;
-                        break;
-                    case 15.4:
-                        gs2_1d = 15.4;
-                        break;
-                    case 15.6:
-                        gs2_1d = 15.6;
-                        break;
-                    case 15.8:
-                        gs2_1d = 15.8;
-                        break;
-                    case 16.0:
-                        gs2_1d = 16.0;
-                        break;
-                    case 16.2:
-                        gs2_1d = 16.2;
-                        break;
-                    case 16.4:
-                        gs2_1d = 16.4;
-                        break;
-                    case 16.6:
-                        gs2_1d = 16.6;
-                        break;
-                    case 16.8:
-                        gs2_1d = 16.8;
-                        break;
-                    case 17.0:
-                        gs2_1d = 17.0;
-                        break;
-                    case 17.2:
-                        gs2_1d = 17.2;
-                        break;
-                    case 17.4:
-                        gs2_1d = 17.4;
-                        break;
-                    case 17.6:
-                        gs2_1d = 17.6;
-                        break;
-                    case 17.8:
-                        gs2_1d = 17.8;
-                        break;
-                    case 18.0:
-                        gs2_1d = 18.0;
-                        break;
-                    case 18.2:
-                        gs2_1d = 18.2;
-                        break;
-                    case 18.4:
-                        gs2_1d = 18.4;
-                        break;
-                    case 18.6:
-                        gs2_1d = 18.6;
-                        break;
-                    case 18.8:
-                        gs2_1d = 18.8;
-                        break;
-                    case 19.0:
-                        gs2_1d = 19.0;
-                        break;
-                    case 19.2:
-                        gs2_1d = 19.2;
-                        break;
-                    case 19.4:
-                        gs2_1d = 19.4;
-                        break;
-                    case 19.6:
-                        gs2_1d = 19.6;
-                        break;
-                    case 19.8:
-                        gs2_1d = 19.8;
-                        break;
-                    case 20.0:
-                        gs2_1d = 20.0;
-                        break;
-                }
+
                 
-                double ws_1d = Convert.ToDouble(ws_1);
-                switch (ws_1d)
-                {
-                    case 1.0:
-                        ws_1d = 1.0;
-                        break;
-                    case 1.1:
-                        ws_1d = 1.1;
-                        break;
-                    case 1.2:
-                        ws_1d = 1.2;
-                        break;
-                    case 1.3:
-                        ws_1d = 1.3;
-                        break;
-                    case 1.4:
-                        ws_1d = 1.4;
-                        break;
-                    case 1.5:
-                        ws_1d = 1.5;
-                        break;
-                    case 1.6:
-                        ws_1d = 1.6;
-                        break;
-                    case 1.7:
-                        ws_1d = 1.7;
-                        break;
-                    case 1.8:
-                        ws_1d = 1.8;
-                        break;
-                    case 1.9:
-                        ws_1d = 1.9;
-                        break;
-                    case 2.0:
-                        ws_1d = 2.0;
-                        break;
-                    case 2.1:
-                        ws_1d = 2.1;
-                        break;
-                    case 2.2:
-                        ws_1d = 2.2;
-                        break;
-                    case 2.3:
-                        ws_1d = 2.3;
-                        break;
-                    case 2.4:
-                        ws_1d = 2.4;
-                        break;
-                    case 2.5:
-                        ws_1d = 2.5;
-                        break;
-                    case 2.6:
-                        ws_1d = 2.6;
-                        break;
-                    case 2.7:
-                        ws_1d = 2.7;
-                        break;
-                    case 2.8:
-                        ws_1d = 2.8;
-                        break;
-                    case 2.9:
-                        ws_1d = 2.9;
-                        break;
-                    case 3.0:
-                        ws_1d = 3.0;
-                        break;
-                    case 3.1:
-                        ws_1d = 3.1;
-                        break;
-                    case 3.2:
-                        ws_1d = 3.2;
-                        break;
-                    case 3.3:
-                        ws_1d = 3.3;
-                        break;
-                    case 3.4:
-                        ws_1d = 3.4;
-                        break;
-                    case 3.5:
-                        ws_1d = 3.5;
-                        break;
-                    case 3.6:
-                        ws_1d = 3.6;
-                        break;
-                    case 3.7:
-                        ws_1d = 3.7;
-                        break;
-                    case 3.8:
-                        ws_1d = 3.8;
-                        break;
-                    case 3.9:
-                        ws_1d = 3.9;
-                        break;
-                    case 4.0:
-                        ws_1d = 4.0;
-                        break;
-                    case 4.1:
-                        ws_1d = 4.1;
-                        break;
-                    case 4.2:
-                        ws_1d = 4.2;
-                        break;
-                    case 4.3:
-                        ws_1d = 4.3;
-                        break;
-                    case 4.4:
-                        ws_1d = 4.4;
-                        break;
-                    case 4.5:
-                        ws_1d = 4.5;
-                        break;
-                    case 4.6:
-                        ws_1d = 4.6;
-                        break;
-                    case 4.7:
-                        ws_1d = 4.7;
-                        break;
-                    case 4.8:
-                        ws_1d = 4.8;
-                        break;
-                    case 4.9:
-                        ws_1d = 4.9;
-                        break;
-                    case 5.0:
-                        ws_1d = 5.0;
-                        break;
-                    case 5.1:
-                        ws_1d = 5.1;
-                        break;
-                    case 5.2:
-                        ws_1d = 5.2;
-                        break;
-                    case 5.3:
-                        ws_1d = 5.3;
-                        break;
-                    case 5.4:
-                        ws_1d = 5.4;
-                        break;
-                    case 5.5:
-                        ws_1d = 5.5;
-                        break;
-                    case 5.6:
-                        ws_1d = 5.6;
-                        break;
-                    case 5.7:
-                        ws_1d = 5.7;
-                        break;
-                    case 5.8:
-                        ws_1d = 5.8;
-                        break;
-                    case 5.9:
-                        ws_1d = 5.9;
-                        break;
-                    case 6.0:
-                        ws_1d = 6.0;
-                        break;
-                    case 6.1:
-                        ws_1d = 6.1;
-                        break;
-                    case 6.2:
-                        ws_1d = 6.2;
-                        break;
-                    case 6.3:
-                        ws_1d = 6.3;
-                        break;
-                    case 6.4:
-                        ws_1d = 6.4;
-                        break;
-                    case 6.5:
-                        ws_1d = 6.5;
-                        break;
-                    case 6.6:
-                        ws_1d = 6.6;
-                        break;
-                    case 6.7:
-                        ws_1d = 6.7;
-                        break;
-                    case 6.8:
-                        ws_1d = 6.8;
-                        break;
-                    case 6.9:
-                        ws_1d = 6.9;
-                        break;
-                    case 7.0:
-                        ws_1d = 7.0;
-                        break;
-                    case 7.1:
-                        ws_1d = 7.1;
-                        break;
-                    case 7.2:
-                        ws_1d = 7.2;
-                        break;
-                    case 7.3:
-                        ws_1d = 7.3;
-                        break;
-                    case 7.4:
-                        ws_1d = 7.4;
-                        break;
-                    case 7.5:
-                        ws_1d = 7.5;
-                        break;
-                    case 7.6:
-                        ws_1d = 7.6;
-                        break;
-                    case 7.7:
-                        ws_1d = 7.7;
-                        break;
-                    case 7.8:
-                        ws_1d = 7.8;
-                        break;
-                    case 7.9:
-                        ws_1d = 7.9;
-                        break;
-                    case 8.0:
-                        ws_1d = 8.0;
-                        break;
-                    case 8.1:
-                        ws_1d = 8.1;
-                        break;
-                    case 8.2:
-                        ws_1d = 8.2;
-                        break;
-                    case 8.3:
-                        ws_1d = 8.3;
-                        break;
-                    case 8.4:
-                        ws_1d = 8.4;
-                        break;
-                    case 8.5:
-                        ws_1d = 8.5;
-                        break;
-                    case 8.6:
-                        ws_1d = 8.6;
-                        break;
-                    case 8.7:
-                        ws_1d = 8.7;
-                        break;
-                    case 8.8:
-                        ws_1d = 8.8;
-                        break;
-                    case 8.9:
-                        ws_1d = 8.9;
-                        break;
-                    case 9.0:
-                        ws_1d = 9.0;
-                        break;
-                    case 9.1:
-                        ws_1d = 9.1;
-                        break;
-                    case 9.2:
-                        ws_1d = 9.2;
-                        break;
-                    case 9.3:
-                        ws_1d = 9.3;
-                        break;
-                    case 9.4:
-                        ws_1d = 9.4;
-                        break;
-                    case 9.5:
-                        ws_1d = 9.5;
-                        break;
-                    case 9.6:
-                        ws_1d = 9.6;
-                        break;
-                    case 9.7:
-                        ws_1d = 9.7;
-                        break;
-                    case 9.8:
-                        ws_1d = 9.8;
-                        break;
-                    case 9.9:
-                        ws_1d = 9.9;
-                        break;
-                    case 10.0:
-                        ws_1d = 10.0;
-                        break;
-                }
-                //Picker implementieren von 1,0 bis 10,0 in 0,1 Schritten
 
                 //ergebnisse berechnen
-                double e3 = gs2_1d * (ws_1d - 0.5) / (gs2_1d - ws_1d);                      //E1
                 double e4 = gs2_1d - Convert.ToDouble(ent_um.Text);                         //E5
                 double e5 = ((gs2_1d - e4) * Convert.ToDouble(em2.Text) * 0.67) / 1000;     //E2
                 double e6 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 2));    //E3
                 double e7 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 3));    //E4
 
                 //Ausgabe Ergebnisse
-                ergebnis.ent_spanne = e3;
+               
                 ergebnis.menge_ent2 = e5;
                 ergebnis.most_ent = Convert.ToInt32(e6);
                 ergebnis.wein_ent = Convert.ToInt32(e7);
@@ -1403,7 +483,7 @@ namespace Weinrechnerlel
 
                     return;
                 }
-                ergebnis.ent_spanne = erg.ent_spanne;
+                
                 ergebnis.menge_ent2 = erg.menge_ent2;
                 ergebnis.most_ent = erg.most_ent;
                 ergebnis.wein_ent = erg.wein_ent;
@@ -1414,6 +494,6 @@ namespace Weinrechnerlel
             Navigation.PushAsync(nav);
         }
 
-
+       
     }
 }

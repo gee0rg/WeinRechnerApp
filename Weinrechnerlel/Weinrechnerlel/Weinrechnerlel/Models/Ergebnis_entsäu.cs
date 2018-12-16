@@ -11,7 +11,6 @@ namespace Weinrechnerlel.Models
         public double um { get; set; }
 
         //Teil 2
-        public double ent_spanne { get; set; }
         public double menge_ent2 { get; set; }
         public int most_ent { get; set; }
         public int wein_ent { get; set; }

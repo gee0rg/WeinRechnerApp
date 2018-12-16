@@ -21,7 +21,6 @@ namespace Weinrechnerlel
         um.Text = Convert.ToString(ergebnis.um);
 
         //Teil 2
-        ent_spanne.Text = Convert.ToString(ergebnis.ent_spanne);
         menge_ent2.Text = Convert.ToString(ergebnis.menge_ent2);
         most_ent.Text = Convert.ToString(ergebnis.most_ent);
         wein_ent.Text = Convert.ToString(ergebnis.wein_ent);
