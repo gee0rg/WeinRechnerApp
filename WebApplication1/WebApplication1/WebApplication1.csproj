@@ -195,6 +195,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\SampleDirection.cs" />
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
+    <Compile Include="Controllers\AnreicherungsController.cs" />
     <Compile Include="Controllers\aust_VSController.cs" />
     <Compile Include="Controllers\gen_VsController.cs" />
     <Compile Include="Controllers\ges_VSController.cs" />
@@ -210,6 +211,7 @@
     <Compile Include="Logging\ILogger.cs" />
     <Compile Include="Logging\Log4NetAdapter.cs" />
     <Compile Include="Logging\LoggingFactory.cs" />
+    <Compile Include="Models\AnreicherungsResponse.cs" />
     <Compile Include="Models\aust_VsErgebnisResponse.cs" />
     <Compile Include="Models\Ergebnis_rueck_VS_Response.cs" />
     <Compile Include="Models\gen_VsErgebnisResponse.cs" />
@@ -232,6 +234,9 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
+    <Compile Include="Models\Mostgw.cs" />
+    <Compile Include="Models\prodart.cs" />
+    <Compile Include="Models\request_Anreicherung.cs" />
     <Compile Include="Models\request_grw_VS.cs" />
     <Compile Include="Models\request_login.cs" />
     <Compile Include="Models\request_rueck_Vs.cs" />

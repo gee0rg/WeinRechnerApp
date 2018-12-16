@@ -20,5 +20,9 @@ namespace WebApplication1.Models
         }
 
         public System.Data.Entity.DbSet<WebApplication1.Models.User> Users { get; set; }
+        public System.Data.Entity.DbSet<WebApplication1.Models.Mostgw> Mostgws { get; set; }
+        public System.Data.Entity.DbSet<WebApplication1.Models.prodart> Prodarts  { get; set; }
+        public System.Data.Entity.DbSet<WebApplication1.Models.Ausgangsmostgew> Ausgangsmostgews { get; set; }
+        public System.Data.Entity.DbSet<WebApplication1.Models.Zielmostgew> Zielmostgews { get; set; }
     }
 }
