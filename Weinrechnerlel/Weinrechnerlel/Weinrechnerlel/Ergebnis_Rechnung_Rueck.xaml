@@ -5,45 +5,92 @@
              Title="Verschnitt - Rückrechnung">
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout>
-
+            <StackLayout Orientation="Vertical">
                 <Label Text=" 1. Ausgehend vom Verschnittwein:" TextColor="DarkRed"></Label>
-                <Label Text="mit Süßreserve" TextColor="DarkGreen"></Label>
-                <Label Text="Benötigte Basisweinmenge" TextColor="Black" ></Label>
-                <Label  x:Name="be_gw_mitSr_1" TextColor="Black" ></Label>
-                <Label Text="max. mögliche Menge an Süßreserve" TextColor="Black" ></Label>
-                <Label  x:Name="max_sr1" TextColor="Black" ></Label>
-                <Label Text="Gesamtmenge" TextColor="Black" ></Label>
-                <Label  x:Name="ges_menge_mitSr_1" TextColor="Black" ></Label>
-                <Label Text="ohne Süßreserve" TextColor="DarkGreen"></Label>
-                <Label Text="Benötigte Basisweinmenge" TextColor="Black" ></Label>
-                <Label  x:Name="be_gw_ohneSr_1" TextColor="Black" ></Label>
-                <Label Text="Gesamtmenge" TextColor="Black" ></Label>
-                <Label  x:Name="ges_menge_ohneSr_1" TextColor="Black" ></Label>
+                <Label Text="mit Süßreserve:" TextColor="DarkGreen"></Label>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Benötigte Basisweinmenge:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="be_gw_mitSr_1" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="max. mögliche Menge an Süßreserve:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="max_sr1" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Gesamtmenge:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="ges_menge_mitSr_1" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <Label Text="ohne Süßreserve:" TextColor="DarkGreen"></Label>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Benötigte Basisweinmenge:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="be_gw_ohneSr_1" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Gesamtmenge:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="ges_menge_ohneSr_1" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
 
 
                 <Label Text=" 2. Ausgehend von der Süßreserve:" TextColor="DarkRed"></Label>
-                <Label Text="Benötigte Basisweinmenge" TextColor="Black" ></Label>
-                <Label  x:Name="be_gw_2" TextColor="Black" ></Label>
-                <Label Text="Gesamtmenge" TextColor="Black" ></Label>
-                <Label  x:Name="ges_menge_2" TextColor="Black" ></Label>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Benötigte Basisweinmenge:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="be_gw_2" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Gesamtmenge:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="ges_menge_2" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
 
 
                 <Label Text=" 3. Ausgehend von der Gesamtmenge:" TextColor="DarkRed"></Label>
-                <Label Text="mit Süßreserve" TextColor="DarkGreen"></Label>
-                <Label Text="Benötigte Basisweinmenge" TextColor="Black" ></Label>
-                <Label  x:Name="be_gw_mitSr_3" TextColor="Black" ></Label>
-                <Label Text="max. mögliche Menge an Süßreserve" TextColor="Black" ></Label>
-                <Label  x:Name="max_sr3" TextColor="Black" ></Label>
-                <Label Text="max. mögliche Menge an Verschnittwein" TextColor="Black" ></Label>
-                <Label  x:Name="max_vw_mitSr_3" TextColor="Black" ></Label>
-                <Label Text="ohne Süßreserve" TextColor="DarkGreen"></Label>
-                <Label Text="Benötigte Basisweinmenge" TextColor="Black" ></Label>
-                <Label  x:Name="be_gw_ohneSr_3" TextColor="Black" ></Label>
-                <Label Text="max. mögliche Menge an Verschnittwein" TextColor="Black" ></Label>
-                <Label  x:Name="max_vw_ohneSr_3" TextColor="Black" ></Label>
+                <Label Text="mit Süßreserve:" TextColor="DarkGreen"></Label>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Benötigte Basisweinmenge:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="be_gw_mitSr_3" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="max. mögliche Menge an Süßreserve:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="max_sr3" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="max. mögliche Menge an Verschnittwein:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="max_vw_mitSr_3" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <Label Text="ohne Süßreserve:" TextColor="DarkGreen"></Label>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Benötigte Basisweinmenge:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="be_gw_ohneSr_3" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="max. mögliche Menge an Verschnittwein:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="max_vw_ohneSr_3" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
 
-              </StackLayout>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

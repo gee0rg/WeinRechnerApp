@@ -6,20 +6,20 @@
              BackgroundImage="weinrebe.jpg"
              x:Name="start">
     <ContentPage.Content>
-       
-        <StackLayout>
-            
+
+        <StackLayout Orientation="Vertical" Margin="10,10,10,20">
+
 
 
             <Label Text="Berechnungen rund um den Wein" 
                   HorizontalOptions="Center" TextColor="Black" HorizontalTextAlignment="Center"
            VerticalOptions="CenterAndExpand" />
-
-            <Button Text="Los" TextColor="Black" HorizontalOptions="Center"  
+            <StackLayout>
+                <Button Text="Los" TextColor="Black" HorizontalOptions="Center"  
            VerticalOptions="CenterAndExpand"  Clicked="StartButton_Clicked"  IsVisible="{Binding Source={x:Reference start}, Path=IsVisible}"  x:Name="los"/>
 
-            <ActivityIndicator IsVisible="{Binding Source={x:Reference start}, Path=IsBusy}" IsRunning="{Binding Source={x:Reference start}, Path=IsBusy}" />
-
+                <ActivityIndicator IsVisible="{Binding Source={x:Reference start}, Path=IsBusy}" IsRunning="{Binding Source={x:Reference start}, Path=IsBusy}" />
+            </StackLayout>
         </StackLayout>
     </ContentPage.Content>
 </ContentPage>

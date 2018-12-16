@@ -42,6 +42,10 @@ namespace Weinrechnerlel
             double liter05;
             double liter0375;
 
+            fr4.IsVisible = true;
+            fr5.IsVisible = true;
+            fr6.IsVisible = true;
+            fr7.IsVisible = true;
 
             try
             {

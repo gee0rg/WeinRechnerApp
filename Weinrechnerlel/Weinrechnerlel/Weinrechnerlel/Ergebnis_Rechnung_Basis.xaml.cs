@@ -13,6 +13,7 @@ namespace Weinrechnerlel
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Ergebnis_Rechnung_Basis : ContentPage
     {
+       
         public Ergebnis_Rechnung_Basis(Ergebnis_grw_VS ergebnis)
         {
             InitializeComponent();
@@ -24,6 +25,8 @@ namespace Weinrechnerlel
         }
         double rest_liter;
 
+ 
+
         private void verw_liter1_TextChanged(object sender, TextChangedEventArgs e)
         {
             double liter1;
@@ -31,6 +34,11 @@ namespace Weinrechnerlel
             double liter05;
             double liter0375;
 
+
+            fr0.IsVisible = true;
+            fr1.IsVisible = true;
+            fr2.IsVisible = true;
+            fr3.IsVisible = true;
 
             try
             {

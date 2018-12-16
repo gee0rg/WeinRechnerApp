@@ -4,38 +4,14 @@
              x:Class="Weinrechnerlel.Nutzungsbedingungen"
              Title="Nutzungsbedingungen"
              BackgroundImage="weinrebe.jpg">
-    
-    <ContentPage.Content>
-      <AbsoluteLayout>
-            <Label AbsoluteLayout.LayoutBounds="-30,80,420,430" Text=" &#x0a;
-                   Die Anwendung beruht auf Erfahrungen aus dem&#x0a;
-                   Bereich der staatlichen kellerwirtschaftlichen&#x0a;
-                   Beratung innerhalb der Fachgruppe Önologie&#x0a;
-                   des DLR Rheinhessen-Nahe-Hunsrück Bad Kreuznach.&#x0a;
-                   Sie stellt eine Hilfe zu diversen&#x0a;
-                   Berechnungen rund um den Wein dar.&#x0a;
-                    &#x0a;
-                   Die Nutzung ist freiwillig und auf eigene Gefahr.&#x0a;
-                   Rechtliche Ansprüche aufgrund falscher Eingaben,&#x0a;
-                   Bedienungsfehlern oder der generellen Nutzung&#x0a;
-                   dieser Anwendung, können gegenüber dem DLR-RNH&#x0a;
-                   und der kleenen Klitsche nicht geltend gemacht&#x0a;
-                   werden.&#x0a;
-                    &#x0a;
-                   Die Anwendung und Nutzung ist kostenlos.&#x0a;
-                   Weitergabe oder Vervielfältigung erlaubt.&#x0a;
-                   Hinsichtlich der gesetzlichen Vorschriften&#x0a;
-                   hat sie keinen amtlichen Charakter.&#x0a;
-                    &#x0a;
-                   Die Anwendung darf nicht verändert, verkauft,&#x0a;
-                   vermietet oder in anderer Form komerziell&#x0a;
-                   genutzt werden.&#x0a;
-                    &#x0a;
-                   Die Copyright-Rechte liegen beim&#x0a;
-                   DLR-Rheinhessen-Nahe-Hunsrück." HorizontalTextAlignment="Center"/>
 
-            <Button x:Name="UserManagment" AbsoluteLayout.LayoutBounds=".5,1,.5,.20" AbsoluteLayout.LayoutFlags="All" Text="Zustimmen" TextColor="Black" HorizontalOptions="Center" Clicked="NutzungsbedingungenButton_Clicked"
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" Margin="60,20,60,25">
+            <Label Text="Die Anwendung beruht auf Erfahrungen aus dem Bereich der staatlichen kellerwirtschaftlichen Beratung innerhalb der Fachgruppe Önologie des DLR Rheinhessen-Nahe-Hunsrück Bad Kreuznach. Sie stellt eine Hilfe zu diversen Berechnungen rund um den Wein dar.&#x0a;&#x0a;Die Nutzung ist freiwillig und auf eigene Gefahr. Rechtliche Ansprüche aufgrund falscher Eingaben, Bedienungsfehlern oder der generellen Nutzung dieser Anwendung, können gegenüber dem DLR-RNH und der kleenen Klitsche nicht geltend gemacht werden.&#x0a;&#x0a;Die Anwendung und Nutzung ist kostenlos. Weitergabe oder Vervielfältigung erlaubt. Hinsichtlich der gesetzlichen Vorschriften hat sie keinen amtlichen Charakter.&#x0a;&#x0a;Die Anwendung darf nicht verändert, verkauft, vermietet oder in anderer Form komerziellbngenutzt werden.Die Copyright-Rechte liegen beim DLR-Rheinhessen-Nahe-Hunsrück." HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
+            <StackLayout>
+                <Button x:Name="UserManagment" Text="Zustimmen" TextColor="Black" HorizontalOptions="Center" Clicked="NutzungsbedingungenButton_Clicked"
                    VerticalOptions="CenterAndExpand" />
-        </AbsoluteLayout>
-  </ContentPage.Content>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
 </ContentPage>

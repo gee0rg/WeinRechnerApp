@@ -24,6 +24,7 @@ namespace Weinrechnerlel
 
         private void Verw_vw_TextChanged(object sender, TextChangedEventArgs e)
         {
+            fr8.IsVisible = true;
             if (Convert.ToDouble(verw_vw.Text) <= Convert.ToDouble(max_sr1e.Text))
             {
                 

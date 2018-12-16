@@ -1,22 +1,42 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Weinrechnerlel.Ergebnis_Rechnung_Konz">
+             x:Class="Weinrechnerlel.Ergebnis_Rechnung_Konz"
+             Title="Konzentration">
     <ContentPage.Content>
         <ScrollView>
-            <StackLayout>
-                <Label Text="Mostgewicht in g/l Alkohol" TextColor="Black" ></Label>
-                <Label  x:Name="mg_e" TextColor="Black" ></Label>
-                <Label Text="Anreicherungsspanne um g/l Alkohol" TextColor="Black" ></Label>
-                <Label  x:Name="asp_e" TextColor="Black" ></Label>
-                <Label Text="auf g/l Alkohol" TextColor="Black" ></Label>
-                <Label  x:Name="auf_alk" TextColor="Black" ></Label>
-                <Label Text="Permeatentzug in" TextColor="Black" ></Label>
-                <Label  x:Name="perm_entzug" TextColor="Black" ></Label>
-                <Label Text="Menge nach Konzentration in Liter" TextColor="Black" ></Label>
-                <Label  x:Name="menge_konz" TextColor="Black" ></Label>
+            <StackLayout Orientation="Vertical">
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Mostgewicht in g/l Alkohol:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="mg_e" TextColor="Black" ></Label>
+                    </Frame>
                 </StackLayout>
-                
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Anreicherungsspanne um g/l Alkohol:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="asp_e" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="auf g/l Alkohol:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="auf_alk" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Permeatentzug in:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="perm_entzug" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Orientation="Horizontal">
+                    <Label Text="Menge nach Konzentration in Liter:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="menge_konz" TextColor="Black" ></Label>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
