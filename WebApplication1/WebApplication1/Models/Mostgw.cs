@@ -8,7 +8,7 @@ namespace WebApplication1.Models
     public class Mostgw
     {
         public int Id { get; set; }
-       public  double mg { get; set; }
+       public  string mg { get; set; }
         
     }
 }

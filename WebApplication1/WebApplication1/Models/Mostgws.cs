@@ -12,10 +12,9 @@ namespace WebApplication1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class Mostgws
     {
-        public string Id { get; set; }
-        public bool Nutzungsbedingungen { get; set; }
-        public Nullable<System.DateTime> CreateDate { get; set; }
+        public int Id { get; set; }
+        public string mg { get; set; }
     }
 }

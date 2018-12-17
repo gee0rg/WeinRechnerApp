@@ -14,15 +14,15 @@ namespace WebApplication1.Models
         // automatically whenever you change your model schema, please use data migrations.
         // For more information refer to the documentation:
         // http://msdn.microsoft.com/en-us/data/jj591621.aspx
-    
+
         public guterContext() : base("name=guterContext")
         {
         }
 
         public System.Data.Entity.DbSet<WebApplication1.Models.User> Users { get; set; }
         public System.Data.Entity.DbSet<WebApplication1.Models.Mostgw> Mostgws { get; set; }
-        public System.Data.Entity.DbSet<WebApplication1.Models.prodart> Prodarts  { get; set; }
-        public System.Data.Entity.DbSet<WebApplication1.Models.Ausgangsmostgew> Ausgangsmostgews { get; set; }
-        public System.Data.Entity.DbSet<WebApplication1.Models.Zielmostgew> Zielmostgews { get; set; }
+        public System.Data.Entity.DbSet<WebApplication1.Models.prodart> Prodarts { get; set; }
+
+       
     }
 }
