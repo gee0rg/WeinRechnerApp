@@ -28,6 +28,7 @@ namespace Weinrechnerlel
         class MasterDetailPage1MasterViewModel : INotifyPropertyChanged
         {
             public ObservableCollection<MasterDetailPage1MenuItem> MenuItems { get; set; }
+            public Xamarin.Forms.SeparatorVisibility SeparatorVisibility { get; set; }
 
             public MasterDetailPage1MasterViewModel()
             {
