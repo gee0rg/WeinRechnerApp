@@ -39,6 +39,9 @@
                         <Label  x:Name="ges_menge_ohneSr_1" TextColor="Black" ></Label>
                     </Frame>
                 </StackLayout>
+                <StackLayout>
+                    <BoxView HeightRequest="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand"/>
+                </StackLayout>
 
 
                 <Label Text=" 2. Ausgehend von der Süßreserve:" TextColor="DarkRed"></Label>
@@ -53,6 +56,9 @@
                     <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
                         <Label  x:Name="ges_menge_2" TextColor="Black" ></Label>
                     </Frame>
+                </StackLayout>
+                <StackLayout>
+                    <BoxView HeightRequest="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand"/>
                 </StackLayout>
 
 
