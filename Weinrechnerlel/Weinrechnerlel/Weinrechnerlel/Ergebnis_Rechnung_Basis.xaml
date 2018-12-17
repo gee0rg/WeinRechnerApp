@@ -35,7 +35,7 @@
                 </StackLayout>
 
 
-                <Label Text="Anzahl verwendeter Flaschen eintragen:" ></Label>
+                <Label Text="Anzahl verwendeter Flaschen eintragen:" TextColor="DarkRed" ></Label>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="1,0 Liter Flaschen:" TextColor="Black" FontSize="Small"></Label>
                     <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand" x:Name="fr0" IsVisible="False">

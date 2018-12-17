@@ -4,16 +4,16 @@
              x:Class="Weinrechnerlel.Anreicherung">
     <ScrollView>
         <StackLayout>
-            <Label Text="Mostgewicht (in °Oe) auswählen" TextColor="Black"></Label>
+            <Label Text="Mostgewicht (in °Oe)" TextColor="Black"></Label>
             <Picker x:Name="mostgewicht" SelectedIndexChanged="Mostgewicht_SelectedIndexChanged"></Picker>
 
-            <Label Text="Anreicherungsspanne (in g/l) auswählen" TextColor="Black"></Label>
+            <Label Text="Anreicherungsspanne (in g/l)" TextColor="Black"></Label>
             <Picker x:Name="anreicherungsspanne" SelectedIndexChanged="Anreicherungsspanne_SelectedIndexChanged"></Picker>
 
-            <Label Text="Produktart auswählen" TextColor="Black"></Label>
+            <Label Text="Produktart" TextColor="Black"></Label>
             <Picker x:Name="produktart" SelectedIndexChanged="Produktart_SelectedIndexChanged"></Picker>
 
-            <Label Text="Most/ Maischmenge die angereichert werden soll" TextColor="Black"></Label>
+            <Label Text="Most/Maischmenge die angereichert werden soll" TextColor="Black"></Label>
             <Entry x:Name="maisch_menge" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
             <Button Text="Berechnen" Clicked="berechnen_Anreich"></Button>
             

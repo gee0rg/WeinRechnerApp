@@ -4,11 +4,11 @@
              x:Class="Weinrechnerlel.Konzentration">
     <ScrollView>
         <StackLayout>
-            <Label Text="Ausgangsmostgewicht (in °OE) auswählen" TextColor="Black"></Label>
+            <Label Text="Ausgangsmostgewicht (in °OE)" TextColor="Black"></Label>
             <Picker x:Name="ausgangsmostgewicht" SelectedIndexChanged="Ausgangsmostgewicht_SelectedIndexChanged"></Picker>
-            <Label Text="Zielmostgewicht (in °OE) auswählen" TextColor="Black"></Label>
+            <Label Text="Zielmostgewicht (in °OE)" TextColor="Black"></Label>
             <Picker x:Name="zielmostgewicht" SelectedIndexChanged="Zielmostgewicht_SelectedIndexChanged"></Picker>
-            <Label Text="Most/ Maischmenge die angereichert werden soll" TextColor="Black"></Label>
+            <Label Text="Most/Maischmenge die angereichert werden soll" TextColor="Black"></Label>
             <Entry x:Name="maisch_menge" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
             <Button Text="Berechnen" Clicked="berechnen_Konz"></Button>
         </StackLayout>
