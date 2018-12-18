@@ -12,10 +12,9 @@ namespace WebApplication1.Models
     using System;
     using System.Collections.Generic;
     
-    public partial class Users
+    public partial class Prodarts
     {
         public string Id { get; set; }
-        public bool Nutzungsbedingungen { get; set; }
-        public Nullable<System.DateTime> CreateDate { get; set; }
+        public string pa_zahl { get; set; }
     }
 }

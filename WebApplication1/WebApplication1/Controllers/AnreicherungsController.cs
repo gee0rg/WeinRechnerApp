@@ -11,10 +11,13 @@ namespace WebApplication1.Controllers
     public class AnreicherungsController : ApiController
     {
         private guterContext db = new guterContext();
+       
         public AnreicherungsResponse Post([FromBody] request_Anreicherung param)
         {
             AnreicherungsResponse ergebnis = new AnreicherungsResponse();
-            double pa_zahl = 0;
+            prodart paa = new prodart();
+            Mostgw mg = new Mostgw();
+
 
 
             double eingabe_user_maisch_menge;
@@ -35,47 +38,24 @@ namespace WebApplication1.Controllers
                 return ergebnis;
             }
 
-            double mg1 = Convert.ToDouble(param.mg);
+            
 
             try
             {
-                Mostgw mg = new Mostgw();
+                
                 int i = Convert.ToInt32(param.mg);
 
                 IEnumerable<Mostgw> mgIE = db.Mostgws.Where(p => p.Id == i);
                 if (mgIE.Any())
                 {
                     mg = mgIE.FirstOrDefault();
-                    mg1 = mg.mg;
+                    
+                    
 
 
                 }
             }
-            catch (Exception)
-            {
-                ergebnis.EventStatus=-1;
-
-                return ergebnis;
-
-            }
-
-
-            try
-            {
-                prodart paa = new prodart();
-                int i = Convert.ToInt32(param.pa);
-
-                IEnumerable<prodart> paIE = db.Prodarts.Where(p => p.pa == i);
-               
-                if (paIE.Any())
-                {
-                    paa = paIE.FirstOrDefault();
-                    pa_zahl = paa.pa_zahl;
-
-
-                }
-            }
-            catch (Exception)
+            catch (Exception ex)
             {
                 ergebnis.EventStatus = -1;
 
@@ -84,14 +64,42 @@ namespace WebApplication1.Controllers
             }
 
 
+            try
+            {
+                
 
 
-   
-            double e1 = mg1;
+                IEnumerable<prodart> paIE = db.Prodarts.Where(p => p.Id.ToLower() == param.pa.ToLower());
+
+                if (paIE.Any())
+                {
+                    paa = paIE.FirstOrDefault();
+                   
+                    
+
+
+                }
+            }
+            catch (Exception ex)
+            {
+                ergebnis.EventStatus = -1;
+
+                return ergebnis;
+
+            }
+
+          
+
+
+
+            double e1 = Convert.ToDouble(mg.mg);
+            param.asp=param.asp.Replace(',','.');
             double e2 = Convert.ToDouble(param.asp);
-            double e3 = mg1 + Convert.ToDouble(param.asp);
+            double e3 = e1 + Convert.ToDouble(param.asp);
             string e4 = param.pa;
-            double e5 = pa_zahl * Convert.ToDouble(param.asp) * 100 / 1000;
+            string test = paa.pa_zahl;
+            double e5 = Convert.ToDouble(test, new System.Globalization.CultureInfo("en-US")) * Convert.ToDouble(param.asp) * 100 / 1000;
+            param.maisch_menge = param.maisch_menge.Replace(',','.');
             double e6 = e5 * (Convert.ToDouble(param.maisch_menge) / 100);
             double e7 = Math.Round(e6 * 0.6);
             int e7_int = (int)e7;
@@ -102,11 +110,11 @@ namespace WebApplication1.Controllers
             ergebnis.asp_e = e2;
             ergebnis.auf_alk = e3;
             ergebnis.pa_e = e4;
-            ergebnis.sach = e5;
-            ergebnis.sach_ges = e6;
+            ergebnis.sach = Math.Round(e5,2,MidpointRounding.AwayFromZero);
+            ergebnis.sach_ges = Math.Round(e6,1);
             ergebnis.mehr_an = e7_int;
             ergebnis.menge_an = e8_int;
             return ergebnis;
-            }
         }
     }
+}

@@ -7,7 +7,7 @@ namespace WebApplication1.Models
 {
     public class prodart
     {
-      public  int pa { get; set; }
-       public double  pa_zahl { get; set; }
+      public  string Id { get; set; }
+       public string  pa_zahl { get; set; }
     }
 }

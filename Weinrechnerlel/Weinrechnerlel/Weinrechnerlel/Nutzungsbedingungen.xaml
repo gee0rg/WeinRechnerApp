@@ -7,6 +7,7 @@
              x:Name ="start">
 
     <ContentPage.Content>
+        <ScrollView>
         <StackLayout Orientation="Vertical" Margin="60,20,60,25">
             <Label Text="Die Anwendung beruht auf Erfahrungen aus dem Bereich der staatlichen kellerwirtschaftlichen Beratung innerhalb der Fachgruppe Önologie des DLR Rheinhessen-Nahe-Hunsrück Bad Kreuznach. Sie stellt eine Hilfe zu diversen Berechnungen rund um den Wein dar.&#x0a;&#x0a;Die Nutzung ist freiwillig und auf eigene Gefahr. Rechtliche Ansprüche aufgrund falscher Eingaben, Bedienungsfehlern oder der generellen Nutzung dieser Anwendung, können gegenüber dem DLR-RNH und der kleenen Klitsche nicht geltend gemacht werden. &#x0a;&#x0a;Die Anwendung und Nutzung ist kostenlos. Weitergabe oder Vervielfältigung erlaubt. Hinsichtlich der gesetzlichen Vorschriften hat sie keinen amtlichen Charakter.&#x0a;&#x0a;Die Anwendung darf nicht verändert, verkauft, vermietet oder in anderer Form komerziellbngenutzt werden.&#x0a;&#x0a;Die Copyright-Rechte liegen beim DLR-Rheinhessen-Nahe-Hunsrück." HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"/>
             <StackLayout>
@@ -16,5 +17,6 @@
                 <ActivityIndicator IsVisible="{Binding Source={x:Reference start}, Path=IsBusy}" IsRunning="{Binding Source={x:Reference start}, Path=IsBusy}" />
             </StackLayout>
         </StackLayout>
+        </ScrollView>
     </ContentPage.Content>
 </ContentPage>

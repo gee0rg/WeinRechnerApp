@@ -21,11 +21,11 @@ namespace WebApplication1.Controllers
             aust_VsErgebnisResponse ergebnis = new aust_VsErgebnisResponse();
 
             double eingabe_user_liter_gw; ;
-            double eingabe_user_verw_vw;
+           
             try
             {
                 eingabe_user_liter_gw = Convert.ToDouble(param.liter_gw);
-                eingabe_user_verw_vw = Convert.ToDouble(param.verw_vw);
+                
             }
             catch
             {
@@ -39,12 +39,7 @@ namespace WebApplication1.Controllers
                 ergebnis.EventMessage = "Fehler: Es darf kein negativer Wert eingegeben werden.";
                 return ergebnis;
             }
-            if (eingabe_user_verw_vw < 0)
-            {
-                ergebnis.EventStatus = 2;
-                ergebnis.EventMessage = "Fehler: Es darf kein negativer Wert eingegeben werden.";
-                return ergebnis;
-            }
+          
 
             //Teil 1
             double a = Convert.ToDouble(param.liter_gw) / 0.85 - Convert.ToDouble(param.liter_gw);

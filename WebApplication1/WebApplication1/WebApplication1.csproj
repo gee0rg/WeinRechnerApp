@@ -196,6 +196,7 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AnreicherungsController.cs" />
+    <Compile Include="Controllers\KonzentrationController.cs" />
     <Compile Include="Controllers\aust_VSController.cs" />
     <Compile Include="Controllers\gen_VsController.cs" />
     <Compile Include="Controllers\ges_VSController.cs" />
@@ -212,6 +213,14 @@
     <Compile Include="Logging\Log4NetAdapter.cs" />
     <Compile Include="Logging\LoggingFactory.cs" />
     <Compile Include="Models\AnreicherungsResponse.cs" />
+    <Compile Include="Models\KonzentrationResponse.cs" />
+    <Compile Include="Models\Mostgws.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\Prodarts.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\request_Konzentration.cs" />
     <Compile Include="Models\aust_VsErgebnisResponse.cs" />
     <Compile Include="Models\Ergebnis_rueck_VS_Response.cs" />
     <Compile Include="Models\gen_VsErgebnisResponse.cs" />

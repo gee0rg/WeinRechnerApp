@@ -26,5 +26,7 @@ namespace WebApplication1.Models
         }
     
         public virtual DbSet<Users> Users { get; set; }
+        public virtual DbSet<Mostgws> Mostgws { get; set; }
+        public virtual DbSet<Prodarts> Prodarts { get; set; }
     }
 }
