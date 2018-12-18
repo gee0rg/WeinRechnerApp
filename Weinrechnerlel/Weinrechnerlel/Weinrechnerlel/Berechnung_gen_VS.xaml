@@ -5,7 +5,7 @@
             
              NavigationPage.HasBackButton="False"
              BackgroundColor="white"
-             >
+             x:Name="start">
 
   <ScrollView>
     <StackLayout Padding="10">
@@ -13,10 +13,10 @@
         
         <Label Text="Menge des Grundweines" TextColor="Black" ></Label>
             <Entry  x:Name="test" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
-        <Button Text="Berechnen" Clicked="berechnung_gen"></Button>
-   
+            <Button Text="Berechnen" Clicked="berechnung_gen" IsVisible="{Binding Source={x:Reference start}, Path=IsVisible}" x:Name="berechnen"></Button>
 
+            <ActivityIndicator IsVisible="{Binding Source={x:Reference start}, Path=IsBusy}" IsRunning="{Binding Source={x:Reference start}, Path=IsBusy}" />
 
-    </StackLayout>
+        </StackLayout>
   </ScrollView>
 </ContentPage>

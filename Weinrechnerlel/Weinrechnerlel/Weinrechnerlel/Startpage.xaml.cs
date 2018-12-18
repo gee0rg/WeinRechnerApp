@@ -19,12 +19,6 @@ namespace Weinrechnerlel
         {
 
             InitializeComponent();
-
-            //BindingContext = new StartViewModel(Navigation);
-
-            //balken.IsRunning = false;
-            //los.IsVisible = true;
-
         }
         
 

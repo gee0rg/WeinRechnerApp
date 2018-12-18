@@ -2,14 +2,14 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="Weinrechnerlel.Verschnitt_Aust"
-             Title="Verschnittberechnung - Austausch">
+             Title="Verschnittberechnung - Austausch"
+             x:Name="start">
     <ScrollView>
     <StackLayout>
         <Label Text="Menge des Grundweines" TextColor="Black"></Label>
             <Entry x:Name="liter_gw" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
-       
-            
-            <Button Text="Berechnen" Clicked="Berechnen_Austausch"></Button>
-    </StackLayout>
+            <Button Text="Berechnen" Clicked="Berechnen_Austausch" IsVisible="{Binding Source={x:Reference start}, Path=IsVisible}" x:Name="berechnen_austausch"></Button>
+            <ActivityIndicator IsVisible="{Binding Source={x:Reference start}, Path=IsBusy}" IsRunning="{Binding Source={x:Reference start}, Path=IsBusy}" />
+        </StackLayout>
     </ScrollView>
 </ContentPage>

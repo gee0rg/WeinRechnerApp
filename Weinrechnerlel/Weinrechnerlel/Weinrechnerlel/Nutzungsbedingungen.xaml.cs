@@ -36,49 +36,47 @@ namespace Weinrechnerlel
             }
         }
 
-        void NutzungsbedingungenButton_Clicked(object sender, EventArgs e)
+        async void NutzungsbedingungenButton_Clicked(object sender, EventArgs e)
         {
-            string ids;
-            if (Application.Current.Properties.ContainsKey("id"))
-            {
+            int i = 0;
 
-
-                ids = Convert.ToString(Application.Current.Properties["id"]);
-            }
-            else
+            if (!this.IsBusy)
             {
-                ids = "0";
-            }
-            request_User param = new request_User() { Id = ids };
-            String request = JsonConvert.SerializeObject(param);
-            RESTConnector rconn = new RESTConnector();
-            User_Response erg = new User_Response() { };
-            string answer;
-            string adress = "http://10.141.77.226:4438/api/Nutzungsbedinungen";
-            //string adress = "http://localhost:50088/api/Usermanagment";
-            //bool a = Online.OnlineStatus(adress);
-
-            answer = rconn.HTTP_POST(adress, request, 5, false);
-            if (answer.Contains("REST_HTTP_ERROR"))
-            {
-                //kein Antwort vom Webservice user muss Nutzungsbedingungen zustimmen
-                //Navigation.PushModalAsync(new Nutzungsbedingungen());
-               
-                Navigation.PushModalAsync(new MasterDetailPage1());
-            }
-            else
-            {
-                Navigation.PushModalAsync(new MasterDetailPage1());
-
-                erg = JsonConvert.DeserializeObject<User_Response>(answer);
-                if (erg.EventStatus == -1)
+                try
                 {
-                    //rest aufruf war fail
-                    Navigation.PushModalAsync(new MasterDetailPage1());
+                    this.IsBusy = true;
+                    UserManagment.IsVisible = false;
+
+                    await Task.Run(() =>
+                    {
+                        string ids;
+                        if (Application.Current.Properties.ContainsKey("id"))
+                        {
+                            ids = Convert.ToString(Application.Current.Properties["id"]);
+                        }
+                        else
+                        {
+                            ids = "0";
+                        }
+                        request_User param = new request_User() { Id = ids };
+                        String request = JsonConvert.SerializeObject(param);
+                        RESTConnector rconn = new RESTConnector();
+                        User_Response erg = new User_Response() { };
+                        string answer;
+                        string adress = "http://10.141.77.226:4438/api/Nutzungsbedinungen";
+                        //string adress = "http://localhost:50088/api/Usermanagment";
+                        //bool a = Online.OnlineStatus(adress);
+
+                        answer = rconn.HTTP_POST(adress, request, 5, false);
+                    });
+
                 }
-                else
-                {
-                    Navigation.PushModalAsync(new MasterDetailPage1());
+                finally
+                {                    
+                    this.IsBusy = false;
+                    UserManagment.IsVisible = true;
+                    await Navigation.PushModalAsync(new MasterDetailPage1());
+
                 }
             }
         }

@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Weinrechnerlel.Verschnitt_Rueck">
+             x:Class="Weinrechnerlel.Verschnitt_Rueck"
+             x:Name="start">
     <ContentPage.Content>
         <ScrollView>
         <StackLayout>
@@ -14,9 +15,10 @@
                 <Label Text=" 3. Ausgehend von der Gesamtmenge" TextColor="DarkRed"></Label>
             <Label Text="Gesamtverschnittmenge" TextColor="Black"></Label>
                 <Entry x:Name="liter_ges_vw" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
-           
-            <Button Text="Berechnen" Clicked="berechnen"></Button>
-        </StackLayout>
+
+                <Button Text="Berechnen" Clicked="berechnen" IsVisible="{Binding Source={x:Reference start}, Path=IsVisible}" x:Name="berechnen_rueck"></Button>
+                <ActivityIndicator IsVisible="{Binding Source={x:Reference start}, Path=IsBusy}" IsRunning="{Binding Source={x:Reference start}, Path=IsBusy}" />
+            </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>

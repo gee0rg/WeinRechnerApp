@@ -1,23 +1,21 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Weinrechnerlel.Verschnitt_Gesamtmenge">
+             x:Class="Weinrechnerlel.Verschnitt_Gesamtmenge"
+             x:Name="start">
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout Padding="10">
-
-                
-
-
+            <StackLayout Padding="10">
                 <Label Text="Welche Menge soll der Gesamtverschnitt darstellen?" TextColor="Black" FontSize="Small"></Label>
                 <Entry  x:Name="liter_gv" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
-            <Label Text="Restzuckergehalt des Basisweines" TextColor="Black" FontSize="Small"></Label>
+                <Label Text="Restzuckergehalt des Basisweines" TextColor="Black" FontSize="Small"></Label>
                 <Entry  x:Name="restzucker_gw" Placeholder="Wert in g/l" TextColor="Black" Keyboard="Numeric"></Entry>
-            <Label Text="Restzuckergehalt des Verschnittwein/Süßreserve" TextColor="Black"  FontSize="Small"></Label>
+                <Label Text="Restzuckergehalt des Verschnittwein/Süßreserve" TextColor="Black"  FontSize="Small"></Label>
                 <Entry  x:Name="restzucker_vw" Placeholder="Wert in g/l" TextColor="Black" Keyboard="Numeric"></Entry>
-            <Label Text="Wie hoch soll der Restzucker des Verschnittes sein?" TextColor="Black" FontSize="Small" ></Label>
+                <Label Text="Wie hoch soll der Restzucker des Verschnittes sein?" TextColor="Black" FontSize="Small" ></Label>
                 <Entry  x:Name="restzucker_verschnitt" Placeholder="Wert in g/l" TextColor="Black" Keyboard="Numeric"></Entry>
-                <Button Text="Berechnen" Clicked="Berechnen"></Button>
+                <Button Text="Berechnen" Clicked="Berechnen" IsVisible="{Binding Source={x:Reference start}, Path=IsVisible}" x:Name="berechnen_gesamt"></Button>
+                <ActivityIndicator IsVisible="{Binding Source={x:Reference start}, Path=IsBusy}" IsRunning="{Binding Source={x:Reference start}, Path=IsBusy}" />
             </StackLayout>
         </ScrollView>
     </ContentPage.Content>

@@ -1,7 +1,8 @@
 ﻿<?xml version="1.0" encoding="UTF-8"?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms" 
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Weinrechnerlel.Anreicherung">
+             x:Class="Weinrechnerlel.Anreicherung"
+             x:Name="start">
     <ScrollView>
         <StackLayout>
             <Label Text="Mostgewicht (in °Oe)" TextColor="Black"></Label>
@@ -15,9 +16,8 @@
 
             <Label Text="Most/Maischmenge die angereichert werden soll" TextColor="Black"></Label>
             <Entry x:Name="maisch_menge" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
-            <Button Text="Berechnen" Clicked="berechnen_Anreich"></Button>
-            
-            
+            <Button Text="Berechnen" Clicked="berechnen_Anreich" IsVisible="{Binding Source={x:Reference start}, Path=IsVisible}" x:Name="berechnen_anreich"></Button>
+            <ActivityIndicator IsVisible="{Binding Source={x:Reference start}, Path=IsBusy}" IsRunning="{Binding Source={x:Reference start}, Path=IsBusy}" />        
         </StackLayout>
     </ScrollView>
 </ContentPage>
