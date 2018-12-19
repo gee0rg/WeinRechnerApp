@@ -7,7 +7,7 @@
         <ScrollView>
             <StackLayout Orientation="Vertical">
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Menge entsäuerungskalk in kg" TextColor="Black" ></Label>
+                    <Label Text="Menge Entsäuerungskalk in kg" TextColor="Black" ></Label>
                     <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
                         <Label  x:Name="menge_ent1" TextColor="Black" ></Label>
                     </Frame>
