@@ -7,13 +7,50 @@
 
     <ContentPage.Content>
         <ScrollView>
-        <StackLayout Orientation="Horizontal" Margin="90,0,90,0">
-            <StackLayout>
-                <Label Text="(C) Dienstleistungszentrum Ländlicher Raum Rheinhessen-Nahe-Hunsrück&#x0a; Rüdesheimer Str. 60-68&#x0a; 55545 Bad Kreuznach -------------------------------------------------
-                         Entwicklung: Achim Schick&#x0a;Abteilung Weinbau,&#x0a; Fachgruppe Önologie&#x0a; Kontakt: achim.schick@dlr-rlp.de&#x0a; www.dlr-rnh.rlp.de -------------------------------------------------
-                         Programmierung: kleeneKlitsche Tim Wirzius, Hendrik Schindler, Marvin Lokay, Georg Schwarz -------------------------------------------------" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" />
+            <StackLayout Orientation="Vertical" Margin="0,180,0,0">
+                <StackLayout>
+                    <Label Text="(C) Dienstleistungszentrum Ländlicher Raum" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand" />
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Rheinhessen-Nahe-Hunsrück" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text= "Rüdesheimer Str. 60-68" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="55545 Bad Kreuznach" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <BoxView HeightRequest="1" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Entwicklung: Achim Schick" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text ="Abt. Weinbau, Fachgruppe Önologie" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Kontakt: achim.schick@dlr-rlp.de" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="www.dlr-rnh.rlp.de" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <BoxView HeightRequest="1" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Programmierung: kleeneKlitsche" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Tim Wirzius, Hendrik Schindler," HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <Label Text="Marvin Lokay, Georg Schwarz" HorizontalTextAlignment="Center" VerticalOptions="CenterAndExpand"></Label>
+                </StackLayout>
+                <StackLayout>
+                    <BoxView HeightRequest="1" BackgroundColor="Black" HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
             </StackLayout>
-        </StackLayout>
         </ScrollView>
     </ContentPage.Content>
 </ContentPage>
