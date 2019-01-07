@@ -111,7 +111,7 @@ namespace WebApplication1.Controllers
             {
 
                 ergebnis.EventMessage = "Anreicherungsspanne von 16 g/l ist überschritten!";
-                ergebnis.EventStatus = 2;
+                ergebnis.EventStatus = 1;
                 //Ergebnisse berechnnen
                 double e1 = ag;
                 double e2 = zg - ag;
@@ -155,6 +155,7 @@ namespace WebApplication1.Controllers
 
                 int e5_int = Convert.ToInt32(e5);
                 ergebnis.menge_konz = e5_int;
+                ergebnis.EventStatus = 0;
                 return ergebnis;
             }
                 

@@ -39,49 +39,75 @@ namespace Weinrechnerlel
 
                     await Task.Run(() =>
                     {
+                        double eingabe_user_liter_gw;
+
+                        try
+                        {
+                            eingabe_user_liter_gw = Convert.ToDouble(liter_gw.Text);
+
+                        }
+                        catch
+                        {
+                            err = "Es sind Zahlen einzugeben";
+                            return;
+                        }
+                        if (string.IsNullOrEmpty(liter_gw.Text))
+                        {
+                            err = "Es sind Zahlen einzugeben";
+                            return;
+                        }
+                        if (eingabe_user_liter_gw < 0)
+                        {
+                            err = "Ihre Eingabe muss positiv sein";
+                            return;
+                        }
                         request_aust_VS param = new request_aust_VS() { liter_gw = liter_gw.Text };
                         String request = JsonConvert.SerializeObject(param);
                         RESTConnector rconn = new RESTConnector();
                         Ergebnis_gen_Vs ergebnis1 = new Ergebnis_gen_Vs() { };
                         String answer;
-                        String adress = "http://localhost:50088/api/aust_Vs";
+                        String adress = "http://10.141.69.156:4438/api/aust_VS";
 
-                        answer = rconn.HTTP_POST(adress, request, 5, false);
+                        answer = rconn.HTTP_POST(adress, request, 50, false);
                         if (answer.Contains("REST_HTTP_ERROR"))
                         {
-                            double eingabe_user_liter_gw;
+                            //Restaufruf timeout
+                            err= "Keine Verbindung zum Server";
+                            
+                            //    double eingabe_user_liter_gw;
 
-                            try
-                            {
-                                eingabe_user_liter_gw = Convert.ToDouble(liter_gw.Text);
+                            //    try
+                            //    {
+                            //        eingabe_user_liter_gw = Convert.ToDouble(liter_gw.Text);
 
-                            }
-                            catch
-                            {
-                                err = "Es sind Zahlen einzugeben";
-                                return;
-                            }
-                            if (string.IsNullOrEmpty(liter_gw.Text))
-                            {
-                                err = "Es sind Zahlen einzugeben";
-                                return;
-                            }
-                            if (eingabe_user_liter_gw < 0)
-                            {
-                                err = "Ihre Eingabe muss positiv sein";
-                                return;
-                            }
+                            //    }
+                            //    catch
+                            //    {
+                            //        err = "Es sind Zahlen einzugeben";
+                            //        return;
+                            //    }
+                            //    if (string.IsNullOrEmpty(liter_gw.Text))
+                            //    {
+                            //        err = "Es sind Zahlen einzugeben";
+                            //        return;
+                            //    }
+                            //    if (eingabe_user_liter_gw < 0)
+                            //    {
+                            //        err = "Ihre Eingabe muss positiv sein";
+                            //        return;
+                            //    }
 
-                            //Teil 1
-                            double a = Convert.ToDouble(liter_gw.Text) / 0.85 - Convert.ToDouble(liter_gw.Text);
-                            double b = Math.Floor(a);
-                            ergebnis.max_vw = Convert.ToInt32(b);
-                            //Console.WriteLine(ergebnis.max_vw);
+                            //    //Teil 1
+                            //    double a = Convert.ToDouble(liter_gw.Text) / 0.85 - Convert.ToDouble(liter_gw.Text);
+                            //    double b = Math.Floor(a);
+                            //    ergebnis.max_vw = Convert.ToInt32(b);
+                            //    //Console.WriteLine(ergebnis.max_vw);
 
-                            double c = Convert.ToDouble(liter_gw.Text) / 0.75 - (Convert.ToDouble(liter_gw.Text) + ergebnis.max_vw);
-                            double d = Math.Floor(c);
-                            ergebnis.max_sr1 = Convert.ToInt32(d);
-                            //Console.WriteLine(ergebnis.max_sr1);
+                            //    double c = Convert.ToDouble(liter_gw.Text) / 0.75 - (Convert.ToDouble(liter_gw.Text) + ergebnis.max_vw);
+                            //    double d = Math.Floor(c);
+                            //    ergebnis.max_sr1 = Convert.ToInt32(d);
+                            //    //Console.WriteLine(ergebnis.max_sr1);
+                            //}
                         }
                         else
                         {

@@ -34,7 +34,7 @@ namespace WebApplication1.Controllers
             { }
             else
             {
-                ergebnis.EventStatus = 500;
+                ergebnis.EventStatus = 2;
                 ergebnis.EventMessage = ("Parameter falsch");
 
                 return ergebnis;
@@ -43,7 +43,7 @@ namespace WebApplication1.Controllers
             { }
             else
             {
-                ergebnis.EventStatus = 500;
+                ergebnis.EventStatus = 2;
                 ergebnis.EventMessage = ("Parameter falsch");
 
                 return ergebnis;
@@ -52,7 +52,7 @@ namespace WebApplication1.Controllers
             { }
             else
             {
-                ergebnis.EventStatus = 500;
+                ergebnis.EventStatus = 2;
                 ergebnis.EventMessage = ("Parameter falsch");
 
                 return ergebnis;
@@ -66,7 +66,7 @@ namespace WebApplication1.Controllers
             }
             else
             {
-                ergebnis.EventStatus = 500;
+                ergebnis.EventStatus = 2;
                 ergebnis.EventMessage = ("Parameter falsch");
 
                 return ergebnis;
@@ -82,7 +82,7 @@ namespace WebApplication1.Controllers
                 double b = o6 / (e1 / 100);
                 ergebnis.liter_gw_prozent = 100;
                 ergebnis.liter_vw_prozent = Math.Round(b, 1);
-              
+                ergebnis.EventStatus = 0;
                 return ergebnis;
             }
             else if (x8 > 15.00 && x8 <= 25.00)
@@ -91,7 +91,7 @@ namespace WebApplication1.Controllers
                 ergebnis.liter_gw_prozent = 100;
                 ergebnis.liter_vw_prozent = Math.Round(b, 1);
                 ergebnis.EventMessage = "Falls es sich bei dem Verschnittpartner um Wein handelt, ist der max. Verschnitt von 15% überschritten";
-
+                ergebnis.EventStatus = 1;
                 return ergebnis;
 
             }
@@ -101,11 +101,11 @@ namespace WebApplication1.Controllers
                 ergebnis.liter_gw_prozent = 100;
                 ergebnis.liter_vw_prozent = Math.Round(b, 1);
                 ergebnis.EventMessage = "Falls es sich bei dem Verschnittpartner um Süßreserve handelt, ist der max. Verschnitt von 25% überschritten";
-
+                ergebnis.EventStatus = 1;
                 return ergebnis;
 
             }
-
+            ergebnis.EventStatus = 0;
             return ergebnis;
         }
     }

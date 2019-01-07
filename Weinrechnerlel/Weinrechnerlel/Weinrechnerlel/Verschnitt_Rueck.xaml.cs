@@ -36,103 +36,109 @@ namespace Weinrechnerlel
 
                     await Task.Run(() =>
                     {
+                        double eingabe_user_liter_vw;
+                        double eingabe_user_liter_sr;
+                        double eingabe_user_liter_ge_vw;
+                        try
+                        {
+                            eingabe_user_liter_vw = Convert.ToDouble(liter_vw.Text);
+                            eingabe_user_liter_sr = Convert.ToDouble(liter_sr.Text);
+                            eingabe_user_liter_ge_vw = Convert.ToDouble(liter_ges_vw.Text);
+                        }
+                        catch
+                        {
+                            err = "Es sind Zahlen einzugeben";
+                            return;
+                        }
+                        if (string.IsNullOrEmpty(liter_vw.Text))
+                        {
+                            err = "Es sind Zahlen einzugeben";
+                            return;
+                        }
+                        if (string.IsNullOrEmpty(liter_sr.Text))
+                        {
+                            err = "Es sind Zahlen einzugeben";
+                            return;
+                        }
+                        if (string.IsNullOrEmpty(liter_ges_vw.Text))
+                        {
+                            err = "Es sind Zahlen einzugeben";
+                            return;
+                        }
+                        if (eingabe_user_liter_vw < 0)
+                        {
+                            err = "Ihre Eingabe muss positiv sein";
+                            return;
+                        }
+                        if (eingabe_user_liter_sr < 0)
+                        {
+                            err = "Ihre Eingabe muss positiv sein";
+                            return;
+                        }
+                        if (eingabe_user_liter_ge_vw < 0)
+                        {
+                            err = "Ihre Eingabe muss positiv sein";
+                           return;
+                       }
 
                         request_rueck_VS param = new request_rueck_VS() { liter_vw = liter_vw.Text, liter_sr = liter_sr.Text, liter_ges_vw = liter_ges_vw.Text };
                         String request = JsonConvert.SerializeObject(param);
                         RESTConnector rconn = new RESTConnector();
                         Ergebnis_gen_Vs ergebnis1 = new Ergebnis_gen_Vs() { };
                         String answer;
-                        String adress = "http://localhost:50088/api/basis_Vs";
+                        String adress = "http://10.141.69.156:4438/api/rueck_VS";
 
-                        answer = rconn.HTTP_POST(adress, request, 5, false);
+                        answer = rconn.HTTP_POST(adress, request, 50, false);
                         if (answer.Contains("REST_HTTP_ERROR"))
                         {
+                            //logik in webservice-----nach timeout wird ein Fehler geworfen 
+                            err = "Keine Verbindung zum Server";
+                            
+                            //double eingabe_user_liter_vw;
+                            //double eingabe_user_liter_sr;
+                            //double eingabe_user_liter_ge_vw;
 
-                            double eingabe_user_liter_vw;
-                            double eingabe_user_liter_sr;
-                            double eingabe_user_liter_ge_vw;
 
-                            try
-                            {
-                                eingabe_user_liter_vw = Convert.ToDouble(liter_vw.Text);
-                                eingabe_user_liter_sr = Convert.ToDouble(liter_sr.Text);
-                                eingabe_user_liter_ge_vw = Convert.ToDouble(liter_ges_vw.Text);
-                            }
-                            catch
-                            {
-                                err = "Es sind Zahlen einzugeben";
-                                return;
-                            }
-                            if (string.IsNullOrEmpty(liter_vw.Text))
-                            {
-                                err = "Es sind Zahlen einzugeben";
-                                return;
-                            }
-                            if (string.IsNullOrEmpty(liter_sr.Text))
-                            {
-                                err = "Es sind Zahlen einzugeben";
-                                return;
-                            }
-                            if (string.IsNullOrEmpty(liter_ges_vw.Text))
-                            {
-                                err = "Es sind Zahlen einzugeben";
-                                return;
-                            }
-                            if (eingabe_user_liter_vw < 0)
-                            {
-                                err = "Ihre Eingabe muss positiv sein";
-                                return;
-                            }
-                            if (eingabe_user_liter_sr < 0)
-                            {
-                                err = "Ihre Eingabe muss positiv sein";
-                                return;
-                            }
-                            if (eingabe_user_liter_ge_vw < 0)
-                            {
-                                err = "Ihre Eingabe muss positiv sein";
-                                return;
-                            }
 
-                            //Teil1
-                            double x1 = (Convert.ToDouble(liter_vw.Text) / 15) * 85;
-                            ergebnis.be_gw_mitSr_1 = Convert.ToInt32(Math.Floor(x1));
+                            ////Teil1
+                            //double x1 = (Convert.ToDouble(liter_vw.Text) / 15) * 85;
+                            //ergebnis.be_gw_mitSr_1 = Convert.ToInt32(Math.Floor(x1));
 
-                            double x2 = x1 / 0.75 - Convert.ToDouble(liter_vw.Text) - x1;
-                            ergebnis.max_sr1 = Convert.ToInt32(Math.Floor(x2));
+                            //double x2 = x1 / 0.75 - Convert.ToDouble(liter_vw.Text) - x1;
+                            //ergebnis.max_sr1 = Convert.ToInt32(Math.Floor(x2));
 
-                            double x3 = x1 / 0.75;
-                            ergebnis.ges_menge_mitSr_1 = Convert.ToInt32(Math.Floor(x3));
+                            //double x3 = x1 / 0.75;
+                            //ergebnis.ges_menge_mitSr_1 = Convert.ToInt32(Math.Floor(x3));
 
-                            double x4 = x1;
-                            ergebnis.be_gw_ohneSr_1 = Convert.ToInt32(Math.Floor(x4));
+                            //double x4 = x1;
+                            //ergebnis.be_gw_ohneSr_1 = Convert.ToInt32(Math.Floor(x4));
 
-                            double x5 = x1 + Convert.ToDouble(liter_vw.Text);
-                            ergebnis.ges_menge_ohneSr_1 = Convert.ToInt32(Math.Floor(x5));
+                            //double x5 = x1 + Convert.ToDouble(liter_vw.Text);
+                            //ergebnis.ges_menge_ohneSr_1 = Convert.ToInt32(Math.Floor(x5));
 
-                            //Teil2
-                            double x6 = (Convert.ToDouble(liter_sr.Text) / 25) * 75;
-                            ergebnis.be_gw_2 = Convert.ToInt32(Math.Floor(x6));
+                            ////Teil2
+                            //double x6 = (Convert.ToDouble(liter_sr.Text) / 25) * 75;
+                            //ergebnis.be_gw_2 = Convert.ToInt32(Math.Floor(x6));
 
-                            double x7 = x6 / 0.75;
-                            ergebnis.ges_menge_2 = Convert.ToInt32(Math.Floor(x7));
+                            //double x7 = x6 / 0.75;
+                            //ergebnis.ges_menge_2 = Convert.ToInt32(Math.Floor(x7));
 
-                            //Teil3
-                            double x8 = (Convert.ToDouble(liter_ges_vw.Text) / 100) * 75;
-                            ergebnis.be_gw_mitSr_3 = Convert.ToInt32(Math.Floor(x8));
+                            ////Teil3
+                            //double x8 = (Convert.ToDouble(liter_ges_vw.Text) / 100) * 75;
+                            //ergebnis.be_gw_mitSr_3 = Convert.ToInt32(Math.Floor(x8));
 
-                            double x10 = x8 / 0.85 - x8;
-                            ergebnis.max_vw_mitSr_3 = Convert.ToInt32(Math.Floor(x10));
+                            //double x10 = x8 / 0.85 - x8;
+                            //ergebnis.max_vw_mitSr_3 = Convert.ToInt32(Math.Floor(x10));
 
-                            double x9 = x8 / 0.75 - x10 - x8;
-                            ergebnis.max_sr3 = Convert.ToInt32(Math.Floor(x9));
-                            //In der Ausgabereihenfolge eigentlich umgekehrt
+                            //double x9 = x8 / 0.75 - x10 - x8;
+                            //ergebnis.max_sr3 = Convert.ToInt32(Math.Floor(x9));
+                            ////In der Ausgabereihenfolge eigentlich umgekehrt
 
-                            double x11 = (Convert.ToDouble(liter_ges_vw.Text) / 100) * 85;
-                            ergebnis.be_gw_ohneSr_3 = Convert.ToInt32(Math.Floor(x11));
+                            //double x11 = (Convert.ToDouble(liter_ges_vw.Text) / 100) * 85;
+                            //ergebnis.be_gw_ohneSr_3 = Convert.ToInt32(Math.Floor(x11));
 
-                            double x12 = Convert.ToDouble(liter_ges_vw.Text) - x11;
-                            ergebnis.max_vw_ohneSr_3 = Convert.ToInt32(Math.Floor(x12));
+                            //double x12 = Convert.ToDouble(liter_ges_vw.Text) - x11;
+                            //ergebnis.max_vw_ohneSr_3 = Convert.ToInt32(Math.Floor(x12));
                         }
 
                         else

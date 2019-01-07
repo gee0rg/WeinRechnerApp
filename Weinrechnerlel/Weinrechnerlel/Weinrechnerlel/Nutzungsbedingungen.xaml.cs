@@ -38,7 +38,7 @@ namespace Weinrechnerlel
 
         async void NutzungsbedingungenButton_Clicked(object sender, EventArgs e)
         {
-            int i = 0;
+          //  int i = 0;
 
             if (!this.IsBusy)
             {
@@ -63,7 +63,7 @@ namespace Weinrechnerlel
                         RESTConnector rconn = new RESTConnector();
                         User_Response erg = new User_Response() { };
                         string answer;
-                        string adress = "http://10.141.77.226:4438/api/Nutzungsbedinungen";
+                        string adress = "http://10.141.69.156:4438/api/Nutzungsbedinungen";
                         //string adress = "http://localhost:50088/api/Usermanagment";
                         //bool a = Online.OnlineStatus(adress);
 

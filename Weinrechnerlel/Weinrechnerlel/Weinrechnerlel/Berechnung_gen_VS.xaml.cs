@@ -50,57 +50,78 @@ namespace Weinrechnerlel
 
                     await Task.Run(() =>
                     {
-
+                    double eingabe_user;
+                    try
+                    {
+                        eingabe_user = Convert.ToDouble(test.Text);
+                    }
+                    catch
+                    {
+                        err = "Es sind Zahlen einzugeben";
+                        return;
+                    }
+                    if (string.IsNullOrEmpty(test.Text))
+                    {
+                        err = "Es sind Zahlen einzugeben";
+                        return;
+                    }
+                        if (eingabe_user < 0)
+                        {
+                            err = "Ihre Eingabe muss positiv sein";
+                            return;
+                        }
                         request_gen_VS param = new request_gen_VS() { liter_gw = test.Text };
                         string request = JsonConvert.SerializeObject(param);
                         RESTConnector rconn = new RESTConnector();
                         Ergebnis_gen_Vs ergebnis1 = new Ergebnis_gen_Vs() { };
                         string answer;
-                        //string adress = "http://10.141.64.20:4438/api/gen_Vs";
-                        string adress = "http://localhost:50088/api/aust_Vs";
+                        string adress = "http://10.141.69.156:4438/api/gen_Vs";
+                        //string adress = "http://localhost:50088/api/aust_Vs";
 
-                        answer = rconn.HTTP_POST(adress, request, 50);
+                        answer = rconn.HTTP_POST(adress, request, 5);
                         if (answer.Contains("REST_HTTP_ERROR"))
                         {
-                            double eingabe_user;
-                            try
-                            {
-                                eingabe_user = Convert.ToDouble(test.Text);
-                            }
-                            catch
-                            {
-                                err = "Es sind Zahlen einzugeben";
-                                return;
-                            }
-                            if (string.IsNullOrEmpty(test.Text))
-                            {
-                                err = "Es sind Zahlen einzugeben";
-                                return;
-                            }
-                            if (eingabe_user < 0)
-                            {
-                                err = "Ihre Eingabe muss positiv sein";
-                                return;
-                            }
-                            //1. Berechnung
-                            double a;
-                            a = Convert.ToDouble(test.Text) / 0.85 - Convert.ToDouble(eingabe_user);
-                            double b = Math.Floor(a);
-                            ergebnis.max_vw = Convert.ToInt32(a);
+                           err= "Keine Verbindung zum Server";
+                            
+                            //double eingabe_user;
+                            //try
+                            //{
+                            //    eingabe_user = Convert.ToDouble(test.Text);
+                            //}
+                            //catch
+                            //{
+                            //    err = "Es sind Zahlen einzugeben";
+                            //    return;
+                            //}
+                            //if (string.IsNullOrEmpty(test.Text))
+                            //{
+                            //    err = "Es sind Zahlen einzugeben";
+                            //    return;
+                            //}
+                            //if (eingabe_user < 0)
+                            //{
+                            //    err = "Ihre Eingabe muss positiv sein";
+                            //    return;
+                            //}
+                            ////1. Berechnung
+                            //double a;
+                            //a = Convert.ToDouble(test.Text) / 0.85 - Convert.ToDouble(eingabe_user);
+                            //double b = Math.Floor(a);
+                            //ergebnis.max_vw = Convert.ToInt32(a);
 
-                            //2. Berechnung
-                            double x;
-                            x = Convert.ToDouble(test.Text) / 0.75 - Convert.ToDouble(eingabe_user);
-                            x = Math.Floor(x);
-                            ergebnis.max_sr1 = Convert.ToInt32(x);
+                            ////2. Berechnung
+                            //double x;
+                            //x = Convert.ToDouble(test.Text) / 0.75 - Convert.ToDouble(eingabe_user);
+                            //x = Math.Floor(x);
+                            //ergebnis.max_sr1 = Convert.ToInt32(x);
 
-                            //3. Berechnung
-                            //Ausgabe max_sr2
-                            double z;
-                            z = (Convert.ToDouble(test.Text) / 0.75) - (Convert.ToDouble(ergebnis.max_vw) + Convert.ToDouble(eingabe_user));
-                            z = Math.Floor(z);
-                            ergebnis.max_sr2 = Convert.ToInt32(z);
-                            ergebnis.max_vw1 = ergebnis.max_vw;
+                            ////3. Berechnung
+                            ////Ausgabe max_sr2
+                            //double z;
+                            //z = (Convert.ToDouble(test.Text) / 0.75) - (Convert.ToDouble(ergebnis.max_vw) + Convert.ToDouble(eingabe_user));
+                            //z = Math.Floor(z);
+                            //ergebnis.max_sr2 = Convert.ToInt32(z);
+                            //ergebnis.max_vw1 = ergebnis.max_vw;
                         }
                         else
                         {
