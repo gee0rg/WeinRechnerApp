@@ -17,6 +17,7 @@ namespace Weinrechnerlel
         public Konzentration()
         {
             InitializeComponent();
+            //Belegung Auswahlboxen
             ausgangsmostgewicht.Items.Add("bitte auswählen");
             ausgangsmostgewicht.Items.Add("60");
             ausgangsmostgewicht.Items.Add("61");
@@ -225,7 +226,7 @@ namespace Weinrechnerlel
         {
             zielmostgew = zielmostgewicht.Items[zielmostgewicht.SelectedIndex];
         }
-
+        //Belegung und Auswhal der Werte in den Boxen
         async void berechnen_Konz(object sender, EventArgs e)
         {
             if (!this.IsBusy)
@@ -233,9 +234,10 @@ namespace Weinrechnerlel
 
                 try
                 {
+                    //Ladebalken
                     this.IsBusy = true;
                     berechnen_konz.IsVisible = false;
-
+                    
                     await Task.Run(() =>
                     {
                         double eingabe_user_maisch_menge;
@@ -253,19 +255,19 @@ namespace Weinrechnerlel
                             err = "Ihre Eingabe muss positiv sein";
                             return;
                         }
-
+                        //Restaufruf
                         request_konz param = new request_konz() { ag = ausgangsmostgew, zg = zielmostgew, maisch_menge = maisch_menge.Text };
                         String request = JsonConvert.SerializeObject(param);
                         RESTConnector rconn = new RESTConnector();
 
                         String answer;
                         String adress = "http://10.141.69.156:4438/api/Konzentration";
-
+                        //Timeout?
                         answer = rconn.HTTP_POST(adress, request, 50, false);
                         if (answer.Contains("REST_HTTP_ERROR"))
                         {
                             err= "Keine Verbindung zum Server";
-                            
+                            //LOKALE BERECHNUNG
                             //double eingabe_user_maisch_menge;
                             //try
                             //{
@@ -596,6 +598,7 @@ namespace Weinrechnerlel
 
                         else
                         {
+                            //Restaufruf auswerten wenn kein Timeout
                             KonzRestResponse erg = new KonzRestResponse() { };
                             erg = JsonConvert.DeserializeObject<KonzRestResponse>(answer);
                             if (erg.EventStatus != 0)
@@ -609,7 +612,7 @@ namespace Weinrechnerlel
                                     err = erg.EventMessage;
                                 }
                             }
-
+                            
                             ergebnis.mg_e = erg.mg_e;
                             ergebnis.asp_e = erg.asp_e;
                             ergebnis.auf_alk = erg.auf_alk;
@@ -621,6 +624,7 @@ namespace Weinrechnerlel
             }
                 finally
             {
+                 //Weitergabe Ergebnisse an Ergebisseite für Darstellung :) 
                 this.IsBusy = false;
                 berechnen_konz.IsVisible = true;
 

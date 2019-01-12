@@ -16,6 +16,7 @@ namespace Weinrechnerlel
     {
         public Ergebnis_Rechnung_Anreich(Ergebnis_anreich ergebnis)
         {
+            //Darstellung Ergebnisse
             InitializeComponent();
             mg_e.Text = Convert.ToString(ergebnis.mg_e);
             asp_e.Text = Convert.ToString(ergebnis.asp_e);

@@ -22,7 +22,7 @@ namespace Weinrechnerlel
         }
 
         Ergebnis_ges_VS ergebnis = new Ergebnis_ges_VS() { };
-        // Ergebnis_Flaschen ergebnis2 = new Ergebnis_Flaschen() { };
+       
         string err;
         string alert;
         async void Berechnen(object sender, EventArgs e)
@@ -39,10 +39,13 @@ namespace Weinrechnerlel
 
                     await Task.Run(() =>
                     {
+
+                        // Validierungen
                         double eingabe_user_liter_gv;
                         double eingabe_user_restzucker_gw;
                         double eingabe_user_restzucker_verschnitt;
                         double eingabe_user_vw;
+
                         try
                         {
                             eingabe_user_liter_gv = Convert.ToDouble(liter_gv.Text);
@@ -75,7 +78,7 @@ namespace Weinrechnerlel
                             err = "Ihre Eingabe muss positiv sein";
                             return;
                         }
-
+                        //Aufruf Webservice
                         request_ges_VS param = new request_ges_VS() { liter_gv = liter_gv.Text, restzucker_gw = restzucker_gw.Text, restzucker_verschnitt = restzucker_verschnitt.Text, restzucker_vw = restzucker_vw.Text };
                         String request = JsonConvert.SerializeObject(param);
                         RESTConnector rconn = new RESTConnector();
@@ -88,6 +91,7 @@ namespace Weinrechnerlel
                             // Fehler keine Verbindung zum Server
                             err= "Keine Verbindung zum Server";
                             
+                            //Lokale Berechnung
                             //try
                             //{
                             //    eingabe_user_liter_gv = Convert.ToDouble(liter_gv.Text);
@@ -213,6 +217,7 @@ namespace Weinrechnerlel
                         }
                         else
                         {
+                            //Auswertung Webservice (wenn kein Timout)
                             gesVSRestResponse erg = new gesVSRestResponse() { };
                             erg = JsonConvert.DeserializeObject<gesVSRestResponse>(answer);
                             if (erg.EventStatus != 0)
@@ -228,6 +233,7 @@ namespace Weinrechnerlel
 
                                 return;
                             }
+                            //umspeichern des Webservices ergebnis Objekt in lokales ergebnis Objekt
                             ergebnis.liter_gw = erg.liter_gw;
                             ergebnis.liter_gw_prozent = erg.liter_gw_prozent;
                             ergebnis.liter_vw = erg.liter_vw;
@@ -236,6 +242,8 @@ namespace Weinrechnerlel
                     });
 
                 }
+                //Ergebnisse werden weiter an Ergebnisseite verschoben und anschließend dargestellt
+                //ggf werden Hinweise oder Fehler dargestellt
                 finally
                 {
                     this.IsBusy = false;

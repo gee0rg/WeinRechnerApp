@@ -25,8 +25,9 @@ namespace Weinrechnerlel
 
         async void StartButton_Clicked(object sender, EventArgs e)
         {
-
+            // Zählvariable wenn i == 1 sind den Nutzungsbedigungen schon zugestimmt bei 0 müssen diesen noch zugestimmt werden
             int i = 0;
+            string err;
 
             if (!this.IsBusy )
             {
@@ -50,6 +51,7 @@ namespace Weinrechnerlel
                         {
                             ids = "0";
                         }
+                        //restaufruf
                         request_User param = new request_User() { Id = ids };
                         String request = JsonConvert.SerializeObject(param);
                         RESTConnector rconn = new RESTConnector();
@@ -58,24 +60,25 @@ namespace Weinrechnerlel
                         string adress = "http://10.141.69.156:4438/api/UsersManagment";
                         //string adress = "http://localhost:50088/api/Usermanagment";
 
-
+                        //auswerten nach (timeout?)
                         answer = rconn.HTTP_POST(adress, request, 5, false);
                         if (answer.Contains("REST_HTTP_ERROR"))
                         {
                             //kein Antwort vom Webservice user muss Nutzungsbedingungen zustimmen
                             //Navigation.PushModalAsync(new Nutzungsbedingungen());
                             //erg.id = "";
-                            
 
+                            i = 2;
+                            
                             //Vereinfachung 
-                            if (Application.Current.Properties.ContainsKey("id"))
-                            {
-                                i = 1;
-                            }
-                            else
-                            {
-                                i = 0;
-                            }
+                            //if (Application.Current.Properties.ContainsKey("id"))
+                            //{
+                            //    i = 1;
+                            //}
+                            //else
+                            //{
+                            //    i = 0;
+                            //}
                             //p = new Nutzungsbedingungen(erg);
                             // Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
                         }
@@ -85,7 +88,7 @@ namespace Weinrechnerlel
                         {
 
 
-
+                           
                             erg = JsonConvert.DeserializeObject<User_Response>(answer);
                             if (erg.EventStatus == 1)
                             {
@@ -96,7 +99,7 @@ namespace Weinrechnerlel
                             if (erg.EventStatus == -1)
                             {
                                 //gab einen Fehler User wurde nicht gefunden oder in DB eingetragen --muss daher Nutzerbedignugen zustimmen
-                                //p = new Nutzungsbedingungen(erg);
+                                
                                 i = 0;
                                 //Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
 
@@ -104,14 +107,14 @@ namespace Weinrechnerlel
                             if (erg.Nutzung == true)
                             {
                                 //User wurd erkannt und hat bereits den Bedingeunen zusgestimmt er kann die App sofort nutzen
-                                //p = new MasterDetailPage1();
+                                
                                 i = 1;
                                 // Navigation.PushModalAsync(new MasterDetailPage1());
                             }
                             else
                             {
                                 //User wurde erkannt oder neu angelegt und hat den Nutzerbedignugen noch nicht zusgtstimmt und muss dies erst machen bevor er die App nutzen kann
-                                // p = new Nutzungsbedingungen();
+                              
                                 i = 0;
                                 //Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
                             }
@@ -134,9 +137,14 @@ namespace Weinrechnerlel
                         await Navigation.PushModalAsync(new Nutzungsbedingungen(er));
                     }
 
-                    else
+                    else if (i==1)
                     {
                         await Navigation.PushModalAsync(new MasterDetailPage1());
+                    }
+                    else
+                    {
+                        err = "Keine Verbindung zum Server";
+                        await DisplayAlert("Hinweis",err , "OK");
                     }
                 }
             }

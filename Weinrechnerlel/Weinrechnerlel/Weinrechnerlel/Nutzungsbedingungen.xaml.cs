@@ -38,17 +38,19 @@ namespace Weinrechnerlel
 
         async void NutzungsbedingungenButton_Clicked(object sender, EventArgs e)
         {
-          //  int i = 0;
+         
 
             if (!this.IsBusy)
             {
                 try
                 {
+                    //Ladebalken
                     this.IsBusy = true;
                     UserManagment.IsVisible = false;
 
                     await Task.Run(() =>
                     {
+                        //schaut nach id
                         string ids;
                         if (Application.Current.Properties.ContainsKey("id"))
                         {
@@ -58,19 +60,21 @@ namespace Weinrechnerlel
                         {
                             ids = "0";
                         }
+                        //restaufruf
                         request_User param = new request_User() { Id = ids };
                         String request = JsonConvert.SerializeObject(param);
                         RESTConnector rconn = new RESTConnector();
                         User_Response erg = new User_Response() { };
                         string answer;
                         string adress = "http://10.141.69.156:4438/api/Nutzungsbedinungen";
-                        //string adress = "http://localhost:50088/api/Usermanagment";
-                        //bool a = Online.OnlineStatus(adress);
+                        
+                        //Speicherung das der Nutzer den Bed. zugestimmt hat
+                        answer = rconn.HTTP_POST(adress, request, 50, false);
 
-                        answer = rconn.HTTP_POST(adress, request, 5, false);
                     });
 
                 }
+                //Weiterleitung zum Hauptmenü
                 finally
                 {                    
                     this.IsBusy = false;

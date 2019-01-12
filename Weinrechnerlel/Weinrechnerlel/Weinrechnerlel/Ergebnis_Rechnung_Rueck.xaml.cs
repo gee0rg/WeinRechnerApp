@@ -16,6 +16,7 @@ namespace Weinrechnerlel
 		public Ergebnis_Rechnung_Rueck (Ergebnis_rueck_VS ergebnis)
 		{
 			InitializeComponent ();
+            //Ausgabe Ergebnisse
             //Teil 1
             be_gw_mitSr_1.Text = Convert.ToString(ergebnis.be_gw_mitSr_1);
             max_sr1.Text = Convert.ToString(ergebnis.max_sr1);

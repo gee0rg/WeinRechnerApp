@@ -44,12 +44,14 @@ namespace Weinrechnerlel
 
                 try
                 {
+                    //Ladebalken 
                     this.IsBusy = true;
                     berechnen.IsVisible = false;
 
 
                     await Task.Run(() =>
                     {
+                        //Validierungen
                     double eingabe_user;
                     try
                     {
@@ -70,6 +72,7 @@ namespace Weinrechnerlel
                             err = "Ihre Eingabe muss positiv sein";
                             return;
                         }
+                        //restaufruf
                         request_gen_VS param = new request_gen_VS() { liter_gw = test.Text };
                         string request = JsonConvert.SerializeObject(param);
                         RESTConnector rconn = new RESTConnector();
@@ -78,11 +81,13 @@ namespace Weinrechnerlel
                         string adress = "http://10.141.69.156:4438/api/gen_Vs";
                         //string adress = "http://localhost:50088/api/aust_Vs";
 
-                        answer = rconn.HTTP_POST(adress, request, 5);
+
+                        answer = rconn.HTTP_POST(adress, request, 50);
+                        //timeout ?
                         if (answer.Contains("REST_HTTP_ERROR"))
                         {
                            err= "Keine Verbindung zum Server";
-                            
+                            //LOKALE BERECHNUNG
                             //double eingabe_user;
                             //try
                             //{
@@ -125,6 +130,7 @@ namespace Weinrechnerlel
                         }
                         else
                         {
+                            //auswerten wenn kein Timeout
                             genVSRestResponse erg = new genVSRestResponse() { };
                             erg = JsonConvert.DeserializeObject<genVSRestResponse>(answer);
                             if (erg.EventStatus != 0)

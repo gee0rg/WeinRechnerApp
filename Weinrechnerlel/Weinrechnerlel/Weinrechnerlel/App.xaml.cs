@@ -13,6 +13,7 @@ namespace Weinrechnerlel
             InitializeComponent();
             //StartViewModel sv = new StartViewModel() { };
             MainPage = new NavigationPage(new Startpage());
+
         }
 
         protected override void OnStart()

@@ -16,6 +16,7 @@ namespace Weinrechnerlel
     {
         public Anreicherung()
         {
+            //belegung der Auswahlboxen
             InitializeComponent();
             produktart.Items.Add("bitte auswählen");
             produktart.Items.Add("Most");
@@ -155,11 +156,13 @@ namespace Weinrechnerlel
 
                 try
                 {
+                    //Ladebalken
                     this.IsBusy = true;
                     berechnen_anreich.IsVisible = false;
 
                     await Task.Run(() =>
                     {
+                        //validierungen
                         double eingabe_user_maisch_menge;
                         try
                         {
@@ -175,19 +178,19 @@ namespace Weinrechnerlel
                             err = "Ihre Eingabe muss positiv sein";
                             return;
                         }
-
+                        //restaufruf
                         request_anreich param = new request_anreich() { mg = mostgew, asp = anreichspann, pa = prodart, maisch_menge = maisch_menge.Text };
                         String request = JsonConvert.SerializeObject(param);
                         RESTConnector rconn = new RESTConnector();
 
                         String answer;
                         String adress = "http://10.141.69.156:4438/api/Anreicherungs";
-
-                        answer = rconn.HTTP_POST(adress, request, 15, false);
+                        //timeout?
+                        answer = rconn.HTTP_POST(adress, request, 50, false);
                         if (answer.Contains("REST_HTTP_ERROR"))
                         {
                             err= "Keine Verbindung zum Server";
-                            
+                            //LOKALE BERECHNUNG !
                             //double eingabe_user_maisch_menge;
                             //try
                             //{
@@ -420,6 +423,7 @@ namespace Weinrechnerlel
                         }
                         else
                         {
+                            //auswerten wenn kein TImeout
                             AnreichRestResponse erg = new AnreichRestResponse() { };
                             erg = JsonConvert.DeserializeObject<AnreichRestResponse>(answer);
                             if (erg.EventStatus != 0)

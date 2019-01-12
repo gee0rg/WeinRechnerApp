@@ -13,7 +13,7 @@ namespace Weinrechnerlel
     [XamlCompilation(XamlCompilationOptions.Compile)]
     public partial class Ergebnis_Rechnung_Basis : ContentPage
     {
-       
+       //Darstellung Ergebnisse
         public Ergebnis_Rechnung_Basis(Ergebnis_grw_VS ergebnis)
         {
             InitializeComponent();
@@ -29,17 +29,18 @@ namespace Weinrechnerlel
 
         private void verw_liter1_TextChanged(object sender, TextChangedEventArgs e)
         {
+            //dynamische Flaschen/Literberechnung
             double liter1;
             double liter075;
             double liter05;
             double liter0375;
 
-
+            //Felder für Restliterflaschen werden sichtbar
             fr0.IsVisible = true;
             fr1.IsVisible = true;
             fr2.IsVisible = true;
             fr3.IsVisible = true;
-
+            //Exception Handling
             try
             {
                  liter1 = Convert.ToDouble(verw_liter1.Text);
@@ -75,7 +76,7 @@ namespace Weinrechnerlel
             }
 
             
-            
+            //Darstellung
             double a = Convert.ToDouble(liter_gw.Text) - (liter1 + liter075 * 0.75 + liter05 * 0.5 + liter0375 * 0.375);
             rest_liter = Math.Floor(a);
             double wert1 = Math.Round(rest_liter / 0.75);

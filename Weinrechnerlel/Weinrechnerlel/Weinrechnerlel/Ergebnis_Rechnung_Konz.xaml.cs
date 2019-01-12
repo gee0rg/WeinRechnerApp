@@ -17,7 +17,7 @@ namespace Weinrechnerlel
         public Ergebnis_Rechnung_Konz(Ergebnis_konz ergebnis)
         {
 
-
+            //Ausgabe Ergebnisse
 
             InitializeComponent();
             mg_e.Text = Convert.ToString(ergebnis.mg_e);

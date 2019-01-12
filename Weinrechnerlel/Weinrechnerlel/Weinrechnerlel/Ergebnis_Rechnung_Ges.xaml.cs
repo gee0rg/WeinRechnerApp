@@ -17,7 +17,7 @@ namespace Weinrechnerlel
 
         public Ergebnis_Rechnung_Ges(Ergebnis_ges_VS ergebnis, String liter_gv)
         {
-
+            //Ausgabe Ergebnisse
 
             InitializeComponent();
             liter_gw.Text = Convert.ToString(ergebnis.liter_gw);
@@ -37,16 +37,18 @@ namespace Weinrechnerlel
 
         private void verw_liter1_TextChanged(object sender, TextChangedEventArgs e)
         {
+            //dynamische Literberechnung/Flaschenberechnung
             double liter1;
             double liter075;
             double liter05;
             double liter0375;
-
+            //Felder für restliter werden sichtbar 
             fr4.IsVisible = true;
             fr5.IsVisible = true;
             fr6.IsVisible = true;
             fr7.IsVisible = true;
 
+            //Exception Handling
             try
             {
                 liter1 = Convert.ToDouble(verw_liter1.Text);
@@ -81,7 +83,7 @@ namespace Weinrechnerlel
                 liter0375 = 0;
             }
 
-
+            //Darstellung
 
             double a = Convert.ToDouble(liter_gv) - (liter1 + liter075 * 0.75 + liter05 * 0.5 + liter0375 * 0.375);
             rest_liter = a;

@@ -94,6 +94,8 @@ namespace Weinrechnerlel
                             //logik in webservice-----nach timeout wird ein Fehler geworfen 
                             err = "Keine Verbindung zum Server";
                             
+                            //BERECHNUNG LOKAL!!!!!
+
                             //double eingabe_user_liter_vw;
                             //double eingabe_user_liter_sr;
                             //double eingabe_user_liter_ge_vw;
@@ -150,7 +152,7 @@ namespace Weinrechnerlel
                                 err = erg.EventMessage;
                                 return;
                             }
-
+                            //Ergebnisse aus dem Webservice werden in lokales Ergebnis Objekt umgespeichert 
                             ergebnis.be_gw_2 = erg.be_gw_2;
                             ergebnis.be_gw_mitSr_1 = erg.be_gw_mitSr_1;
                             ergebnis.be_gw_mitSr_3 = erg.be_gw_mitSr_3;
@@ -166,6 +168,8 @@ namespace Weinrechnerlel
                         }
                     });
                 }
+                //und anschließend als Ergebnis dargestellt
+                //ggf werden Fehler ausgegeben
                 finally
                 {
                     this.IsBusy = false;

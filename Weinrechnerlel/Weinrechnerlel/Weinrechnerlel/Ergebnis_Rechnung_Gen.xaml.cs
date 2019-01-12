@@ -17,7 +17,7 @@ namespace Weinrechnerlel
         Ergebnis_gen_Vs test = new Ergebnis_gen_Vs();
         public Ergebnis_Rechnung_Gen(Ergebnis_gen_Vs ergebnis)
         {
-            
+            //Darstellung Ergebnisse
             
             
             InitializeComponent();

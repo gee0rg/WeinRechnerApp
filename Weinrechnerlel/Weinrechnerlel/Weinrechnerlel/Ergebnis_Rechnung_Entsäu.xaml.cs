@@ -15,6 +15,7 @@ namespace Weinrechnerlel
 	{
 		public Ergebnis_Rechnung_Entsäu (Ergebnis_entsäu ergebnis)
 		{
+        //Darstellung Ergebnisse
 		InitializeComponent ();
         //Teil 1
         menge_ent1.Text = Convert.ToString(ergebnis.menge_ent1);

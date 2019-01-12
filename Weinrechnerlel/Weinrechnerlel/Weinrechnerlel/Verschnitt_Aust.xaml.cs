@@ -39,6 +39,7 @@ namespace Weinrechnerlel
 
                     await Task.Run(() =>
                     {
+                        //Validierungen
                         double eingabe_user_liter_gw;
 
                         try
@@ -111,6 +112,7 @@ namespace Weinrechnerlel
                         }
                         else
                         {
+                            //Auswertung des Restaufrufes wenn kein Timout
                             AustVSRestResponse erg = new AustVSRestResponse() { };
                             erg = JsonConvert.DeserializeObject<AustVSRestResponse>(answer);
                             if (erg.EventStatus != 0)
@@ -118,12 +120,15 @@ namespace Weinrechnerlel
                                 err = erg.EventMessage;
                                 return;
                             }
+                            //umspeichern der Ergebnisse
                             ergebnis.max_sr1 = erg.max_sr1;
                             ergebnis.max_vw = erg.max_vw;
                         }
                     });
                 }
                 finally
+                //Weiterreichen der Ergebisse an Ergebnisseite zur Dartsellung
+                //ggf werden Fehler dargestellt
                 {
                     this.IsBusy = false;
                     berechnen_austausch.IsVisible = true;

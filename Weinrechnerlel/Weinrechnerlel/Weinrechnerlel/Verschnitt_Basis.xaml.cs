@@ -21,7 +21,7 @@ namespace Weinrechnerlel
             InitializeComponent();
         }
         Ergebnis_grw_VS ergebnis = new Ergebnis_grw_VS() { };
-        // Ergebnis_Flaschen ergebnis2 = new Ergebnis_Flaschen() { };
+       
         string err;
         string alert;
         async void berechnen(object sender, EventArgs e)
@@ -38,6 +38,7 @@ namespace Weinrechnerlel
 
                     await Task.Run(() =>
                     {
+                        //Validierungen
                         double eingabe_user_liter_gw;
                         double eingabe_user_restzucker_gw;
                         double eingabe_user_restzucker_sr;
@@ -75,18 +76,20 @@ namespace Weinrechnerlel
                             err = "Ihre Eingabe muss positiv sein";
                             return;
                         }
-
+                        //Restaufruf
                         request_basis_Vs param = new request_basis_Vs() { liter_gw = liter_gw.Text, restzucker_gw = restzucker_gw.Text, restzucker_sr = restzucker_sr.Text, restzucker_verschnitt = restzucker_verschnitt.Text };
                         String request = JsonConvert.SerializeObject(param);
                         RESTConnector rconn = new RESTConnector();
                         Ergebnis_gen_Vs ergebnis1 = new Ergebnis_gen_Vs() { };
                         String answer;
                         String adress = "http://10.141.69.156:4438/api/grw_VS";
-
+                        //auswertung ob Timout
                         answer = rconn.HTTP_POST(adress, request, 5, false);
                         if (answer.Contains("REST_HTTP_ERROR"))
                         {
                             err = "Keine Verbindung zum Server";
+
+                            //LOKALE BERECHNUNG
                             
                             //double eingabe_user_liter_gw;
                             //double eingabe_user_restzucker_gw;
@@ -214,6 +217,7 @@ namespace Weinrechnerlel
                         }
                         else
                         {
+                            //Auswertung Restaufruf wenn kein Timeout
                             BasisVsRestResponse erg = new BasisVsRestResponse() { };
                             erg = JsonConvert.DeserializeObject<BasisVsRestResponse>(answer);
                             if (erg.EventStatus != 0)
@@ -229,6 +233,7 @@ namespace Weinrechnerlel
 
                                 
                             }
+                            //Umspeichern der Ergebnisse 
                             ergebnis.liter_gw = erg.liter_gw;
                             ergebnis.liter_gw_prozent = erg.liter_gw_prozent;
                             ergebnis.liter_vw = erg.liter_vw;
@@ -238,6 +243,8 @@ namespace Weinrechnerlel
                     });
 
                 }
+                //Ergebnisse werden an Ergebnisseite zur Darstellung weitergereicht
+                //ggf werden Hinweise oder Fehler ausgegeben
                 finally
                 {
                     this.IsBusy = false;

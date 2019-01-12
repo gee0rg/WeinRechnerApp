@@ -83,12 +83,8 @@ namespace Weinrechnerlel
                     Stream dataStream = ex.Response.GetResponseStream();
                     StreamReader reader = new StreamReader(dataStream);
                     string responseFromServer = reader.ReadToEnd();
-                    // BioShare APIs liefern HttpStatus 250 im Fehlerfall - im Response ist dann BioShareError 
-                    // enthalten und wird weitergereicht
-                    // HttpStatus <> 250 - BioShareError mit HttpStatusCode und Message wird weitergereicht
-                    //HttpStatusCode status = ((HttpWebResponse)ex.Response).StatusCode;
-                    //if (responseFromServer == "" || (int)status != 250)
-                    //    return (JsonConvert.SerializeObject(new BioShareError((int)status, ex.Message)));
+                    
+                  
                     return responseFromServer;
                 }
                 else
@@ -100,7 +96,7 @@ namespace Weinrechnerlel
                 Out = string.Format("REST_HTTP_ERROR :: Exception beim HTTP GET Request :: {0}", ex.Message);
             }
             //_log.Debug(string.Format("HTTP_POST, URL={0} ErrorText={1}.", ServerURL, Out));
-            //return (JsonConvert.SerializeObject(new BioShareError((int)BioShareEventStatus.HttpRequestError, Out)));
+      
             return Out;
 
         }
@@ -179,12 +175,8 @@ namespace Weinrechnerlel
                     Stream dataStream = ex.Response.GetResponseStream();
                     StreamReader reader = new StreamReader(dataStream);
                     string responseFromServer = reader.ReadToEnd();
-                    // BioShare APIs liefern HttpStatus 250 im Fehlerfall - im Response ist dann BioShareError 
-                    // enthalten und wird weitergereicht
-                    // HttpStatus <> 250 - BioShareError mit HttpStatusCode und Message wird weitergereicht
-                    //HttpStatusCode status = ((HttpWebResponse)ex.Response).StatusCode;
-                    //if (responseFromServer == "" || (int)status != 250)
-                    //    return (JsonConvert.SerializeObject(new BioShareError((int)status, ex.Message)));
+                 
+       
                     return responseFromServer;
                 }
             }
@@ -193,8 +185,7 @@ namespace Weinrechnerlel
                 //_log.Error("Exception: ", ex);
                 Out = string.Format("REST_HTTP_ERROR :: Exception beim HTTP POST Request :: {0}", ex.Message);
             }
-            //_log.Debug(string.Format("HTTP_POST, URL={0} ErrorText={1}.", ServerURL, Out));
-            //return (JsonConvert.SerializeObject(new BioShareError((int)BioShareEventStatus.HttpRequestError, Out)));
+
             return Out;
         }
 
