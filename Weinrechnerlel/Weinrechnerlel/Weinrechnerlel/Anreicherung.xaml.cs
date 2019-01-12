@@ -183,7 +183,7 @@ namespace Weinrechnerlel
                         String answer;
                         String adress = "http://10.141.69.156:4438/api/Anreicherungs";
 
-                        answer = rconn.HTTP_POST(adress, request, 5, false);
+                        answer = rconn.HTTP_POST(adress, request, 15, false);
                         if (answer.Contains("REST_HTTP_ERROR"))
                         {
                             err= "Keine Verbindung zum Server";

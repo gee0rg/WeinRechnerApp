@@ -330,11 +330,11 @@ namespace Weinrechnerlel
 
         private void change_ent_spanne()
         {
-            gs2_1 = gs2_1.Replace(',', '.');
-            double gs2_1d = Convert.ToDouble(gs2_1);
+            
+            double gs2_1d = Convert.ToDouble(gs2_1, new System.Globalization.CultureInfo("de-DE"));
 
-            ws_1 = ws_1.Replace(',', '.');
-            double ws_1d = Convert.ToDouble(ws_1);
+          
+            double ws_1d = Convert.ToDouble(ws_1, new System.Globalization.CultureInfo("de-DE"));
             
            
            
@@ -455,12 +455,13 @@ namespace Weinrechnerlel
                 // Exception für ent_um einfügen
 
                 gs2_1 = gs2_1.Replace(',', '.');
-                double gs2_1d = Convert.ToDouble(gs2_1);
+                double gs2_1d = Convert.ToDouble(gs2_1, new System.Globalization.CultureInfo("en-US"));
 
-                
+
 
                 //ergebnisse berechnen
-                double e4 = gs2_1d - Convert.ToDouble(ent_um.Text);                         //E5
+                double test = Convert.ToDouble(ent_um.Text);
+                double e4 = gs2_1d - test;                         //E5
                 double e5 = ((gs2_1d - e4) * Convert.ToDouble(em2.Text) * 0.67) / 1000;     //E2
                 double e6 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 2));    //E3
                 double e7 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 3));    //E4
