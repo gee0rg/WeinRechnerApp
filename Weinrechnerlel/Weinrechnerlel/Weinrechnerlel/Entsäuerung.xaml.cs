@@ -17,7 +17,7 @@ namespace Weinrechnerlel
         public Entsäuerung()
         {
             InitializeComponent();
-           
+           //Auswahlboxen mit Werten befüllen 
             gesamtsäure_von.Items.Add("bitte auswählen");
             gesamtsäure_von.Items.Add("5,2");
             gesamtsäure_von.Items.Add("5,4");
@@ -359,10 +359,26 @@ namespace Weinrechnerlel
             }
         }
         Ergebnis_entsäu ergebnis = new Ergebnis_entsäu();
-
+        
         void berechnen_Entsäu1(object sender, EventArgs e)
         {
-
+            //Validierungen 
+            double eingabe_user_em1;
+            try
+            {
+                eingabe_user_em1 = Convert.ToDouble(em1.Text);
+            }
+            catch
+            {
+                DisplayAlert("Hinweis", "Es sind Zahlen einzugeben", "OK");
+                return;
+            }
+            if (eingabe_user_em1 < 0)
+            {
+                DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
+                return;
+            }
+            //rest aufruf
             request_entsäu param = new request_entsäu() { gs_von = gs_von_1, gs_auf = gs_auf_1, em1 = em1.Text };
             String request = JsonConvert.SerializeObject(param);
             RESTConnector rconn = new RESTConnector();
@@ -370,42 +386,28 @@ namespace Weinrechnerlel
             String answer;
             String adress = "http://localhost:50088/api/basis_Vs";
 
-            answer = rconn.HTTP_POST(adress, request, 5, false);
+            answer = rconn.HTTP_POST(adress, request, 50, false);
             if (answer.Contains("REST_HTTP_ERROR"))
             {
-                double eingabe_user_em1;
-                try
-                {
-                    eingabe_user_em1 = Convert.ToDouble(em1.Text);
-                }
-                catch
-                {
-                    DisplayAlert("Hinweis", "Es sind Zahlen einzugeben", "OK");
-                    return;
-                }
-                if (eingabe_user_em1 < 0)
-                {
-                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
-                    return;
-                }
-
-                gs_von_1= gs_von_1.Replace(',', '.');
-                double gs_von_1d = Convert.ToDouble(gs_von_1);
 
 
-                gs_auf_1 = gs_auf_1.Replace(',', '.');
-                double gs_auf_1d = Convert.ToDouble(gs_auf_1);
+                //gs_von_1= gs_von_1.Replace(',', '.');
+                //double gs_von_1d = Convert.ToDouble(gs_von_1);
+
+
+                //gs_auf_1 = gs_auf_1.Replace(',', '.');
+                //double gs_auf_1d = Convert.ToDouble(gs_auf_1);
 
 
 
                
-                //Ergebnisse berechnnen
-                double e1 = gs_von_1d - gs_auf_1d;
-                double e2 = (Convert.ToDouble(em1.Text) / 100.0) * (67.0 / 1000.0) * e1;
+                ////Ergebnisse berechnnen
+                //double e1 = gs_von_1d - gs_auf_1d;
+                //double e2 = (Convert.ToDouble(em1.Text) / 100.0) * (67.0 / 1000.0) * e1;
 
-                //Ausgabe Ergebnisse
-                ergebnis.menge_ent1 = Math.Round(e2,3);
-                ergebnis.um = e1;
+                ////Ausgabe Ergebnisse
+                //ergebnis.menge_ent1 = Math.Round(e2,3);
+                //ergebnis.um = e1;
             }
             else
             {
@@ -433,45 +435,47 @@ namespace Weinrechnerlel
 
             String answer;
             String adress = "http://localhost:50088/api/basis_Vs";
+            //Validierungen
+            double eingabe_user_em2;
+            try
+            {
+                eingabe_user_em2 = Convert.ToDouble(em2.Text);
+            }
+            catch
+            {
+                DisplayAlert("Hinweis", "Es sind Zahlen einzugeben", "OK");
+                return;
+            }
+            if (eingabe_user_em2 < 0)
+            {
+                DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
+                return;
+            }
 
-            answer = rconn.HTTP_POST(adress, request, 5, false);
+            answer = rconn.HTTP_POST(adress, request, 50, false);
             if (answer.Contains("REST_HTTP_ERROR"))
             {
-                double eingabe_user_em2;
-                try
-                {
-                    eingabe_user_em2 = Convert.ToDouble(em2.Text);
-                }
-                catch
-                {
-                    DisplayAlert("Hinweis", "Es sind Zahlen einzugeben", "OK");
-                    return;
-                }
-                if (eingabe_user_em2 < 0)
-                {
-                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
-                    return;
-                }
-                // Exception für ent_um einfügen
-
-                gs2_1 = gs2_1.Replace(',', '.');
-                double gs2_1d = Convert.ToDouble(gs2_1, new System.Globalization.CultureInfo("en-US"));
-
-
-
-                //ergebnisse berechnen
-                double test = Convert.ToDouble(ent_um.Text);
-                double e4 = gs2_1d - test;                         //E5
-                double e5 = ((gs2_1d - e4) * Convert.ToDouble(em2.Text) * 0.67) / 1000;     //E2
-                double e6 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 2));    //E3
-                double e7 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 3));    //E4
-
-                //Ausgabe Ergebnisse
                
-                ergebnis.menge_ent2 = e5;
-                ergebnis.most_ent = Convert.ToInt32(e6);
-                ergebnis.wein_ent = Convert.ToInt32(e7);
-                ergebnis.auf = e4;
+                //// Exception für ent_um einfügen
+
+                //gs2_1 = gs2_1.Replace(',', '.');
+                //double gs2_1d = Convert.ToDouble(gs2_1, new System.Globalization.CultureInfo("en-US"));
+
+
+
+                ////ergebnisse berechnen
+                //double test = Convert.ToDouble(ent_um.Text);
+                //double e4 = gs2_1d - test;                         //E5
+                //double e5 = ((gs2_1d - e4) * Convert.ToDouble(em2.Text) * 0.67) / 1000;     //E2
+                //double e6 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 2));    //E3
+                //double e7 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 3));    //E4
+
+                ////Ausgabe Ergebnisse
+               
+                //ergebnis.menge_ent2 = e5;
+                //ergebnis.most_ent = Convert.ToInt32(e6);
+                //ergebnis.wein_ent = Convert.ToInt32(e7);
+                //ergebnis.auf = e4;
 
             }
             else

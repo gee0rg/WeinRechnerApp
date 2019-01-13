@@ -167,6 +167,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\RouteConfig2.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
+    <Compile Include="App_Start\WebApiConfig2.cs" />
     <Compile Include="Areas\HelpPage\ApiDescriptionExtensions.cs" />
     <Compile Include="Areas\HelpPage\App_Start\HelpPageConfig.cs" />
     <Compile Include="Areas\HelpPage\Controllers\HelpController.cs" />
@@ -196,6 +197,8 @@
     <Compile Include="Areas\HelpPage\SampleGeneration\TextSample.cs" />
     <Compile Include="Areas\HelpPage\XmlDocumentationProvider.cs" />
     <Compile Include="Controllers\AnreicherungsController.cs" />
+    <Compile Include="Controllers\Entsäuerungst1Controller.cs" />
+    <Compile Include="Controllers\Entsäuerungst2Controller.cs" />
     <Compile Include="Controllers\KonzentrationController.cs" />
     <Compile Include="Controllers\aust_VSController.cs" />
     <Compile Include="Controllers\gen_VsController.cs" />
@@ -213,6 +216,7 @@
     <Compile Include="Logging\Log4NetAdapter.cs" />
     <Compile Include="Logging\LoggingFactory.cs" />
     <Compile Include="Models\AnreicherungsResponse.cs" />
+    <Compile Include="Models\EntsäuerungResponse.cs" />
     <Compile Include="Models\KonzentrationResponse.cs" />
     <Compile Include="Models\Mostgws.cs">
       <DependentUpon>Model1.tt</DependentUpon>
@@ -220,6 +224,7 @@
     <Compile Include="Models\Prodarts.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\request_Entsäuerung.cs" />
     <Compile Include="Models\request_Konzentration.cs" />
     <Compile Include="Models\aust_VsErgebnisResponse.cs" />
     <Compile Include="Models\Ergebnis_rueck_VS_Response.cs" />
@@ -321,7 +326,9 @@
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.min.js" />
     <Content Include="Scripts\modernizr-2.8.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
