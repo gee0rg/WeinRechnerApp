@@ -29,7 +29,7 @@ namespace Weinrechnerlel
         {
             if (!this.IsBusy)
             {
-
+                //Ladebalken startet
                 try
                 {
                     this.IsBusy = true;
@@ -242,7 +242,7 @@ namespace Weinrechnerlel
                     });
 
                 }
-                //Ergebnisse werden weiter an Ergebnisseite verschoben und anschließend dargestellt
+                //Ladebalken schließt
                 //ggf werden Hinweise oder Fehler dargestellt
                 finally
                 {
@@ -263,6 +263,7 @@ namespace Weinrechnerlel
                             alert = null;
 
                         }
+                        //Ergebnisse werden weiter an Ergebnisseite verschoben und anschließend dargestellt
                         NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Ges(ergebnis, liter_gv.Text)) { BarBackgroundColor = Color.DarkRed };
                         await Navigation.PushAsync(nav);
                     }

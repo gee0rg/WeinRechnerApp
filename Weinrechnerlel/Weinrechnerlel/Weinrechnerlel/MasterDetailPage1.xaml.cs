@@ -17,7 +17,7 @@ namespace Weinrechnerlel
             InitializeComponent();
             MasterPage.ListView.ItemSelected += ListView_ItemSelected;
         }
-
+        //Hamburgermenü
         private void ListView_ItemSelected(object sender, SelectedItemChangedEventArgs e)
         {
             var item = e.SelectedItem as MasterDetailPage1MenuItem;

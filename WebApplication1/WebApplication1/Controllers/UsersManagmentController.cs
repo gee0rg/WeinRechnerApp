@@ -14,6 +14,7 @@ namespace WebApplication1.Controllers
 {
     public class UsersManagmentController : ApiController
     {
+        //Anbindung an DB
         private guterContext db = new guterContext();
 
 
@@ -26,7 +27,7 @@ namespace WebApplication1.Controllers
         {
             User u = new User() { };
             LoginResponseModel lr = new LoginResponseModel() { };
-
+            //Prüfung, ob Nutzungsbedingungen akzeptiert wurden
             try
             {
 

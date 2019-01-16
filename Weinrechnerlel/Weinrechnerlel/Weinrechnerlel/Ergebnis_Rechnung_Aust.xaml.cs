@@ -27,7 +27,7 @@ namespace Weinrechnerlel
             fr8.IsVisible = true;
             if (Convert.ToDouble(verw_vw.Text) <= Convert.ToDouble(max_sr1e.Text))
             {
-                
+                //Berechnung
                 if (verw_vw.Text != null)
                 {
                     double x = Convert.ToDouble(max_sr1e.Text) + (Convert.ToDouble(max_vwe.Text) - Convert.ToDouble(verw_vw.Text));
@@ -39,6 +39,7 @@ namespace Weinrechnerlel
                 }
 
             }
+            //Alert
             else
             {
                 DisplayAlert("Hinweis", "Verschnittweinanteil übersteigt maximale Menge", "OK");

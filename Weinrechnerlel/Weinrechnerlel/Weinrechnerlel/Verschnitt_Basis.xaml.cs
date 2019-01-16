@@ -29,7 +29,7 @@ namespace Weinrechnerlel
            
             if (!this.IsBusy)
             {
-
+                //Ladebalken startet
                 try
                 {
                     this.IsBusy = true;
@@ -243,7 +243,7 @@ namespace Weinrechnerlel
                     });
 
                 }
-                //Ergebnisse werden an Ergebnisseite zur Darstellung weitergereicht
+                //Ladebalken schließt
                 //ggf werden Hinweise oder Fehler ausgegeben
                 finally
                 {
@@ -255,6 +255,7 @@ namespace Weinrechnerlel
                         err = null;
 
                     }
+                  
                     else
                     {
 
@@ -262,26 +263,14 @@ namespace Weinrechnerlel
                             await DisplayAlert("Hinweis", alert, "OK");
                             alert = null;
                         }
+                        //Ergebnisse werden an Ergebnisseite zur Darstellung weitergereicht
                         NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Basis(ergebnis)) { BarBackgroundColor = Color.DarkRed };
                         await Navigation.PushAsync(nav);
                     }
                 }
             }
 
-            /*void berechnen2 (Object sender, EventArgs e)
-            {
-                    double a = Convert.ToDouble(ergebnis.liter_gw) - (Convert.ToDouble(verw_liter1.Text) + Convert.ToDouble(verw_liter075.Text) * 0.75 + Convert.ToDouble(verw_liter05.Text) * 0.5 + Convert.ToDouble(verw_liter0375.Text) * 0.375);
-                    ergebnis.rest_liter = Math.Floor(a);
-                    ergebnis.verb_liter1 = Math.Floor(ergebnis.rest_liter);
-                    ergebnis.verb_liter075 = Math.Floor(ergebnis.rest_liter / 0.75);
-                    ergebnis.verb_liter05 = Math.Floor(ergebnis.rest_liter / 0.5);
-                    ergebnis.verb_liter0375 = Math.Floor(ergebnis.rest_liter / 0.375);
-
-                NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Basis(ergebnis)) { BarBackgroundColor = Color.DarkRed };
-                Navigation.PushAsync(nav);
-            }*/
-
-
+            
 
         }
     }

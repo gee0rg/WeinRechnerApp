@@ -138,6 +138,7 @@ namespace Weinrechnerlel
                                 err = erg.EventMessage;
                                 return;
                             }
+                            //ergebnisse des Webservices zuweisen
                             ergebnis.max_sr1 = erg.max_sr1;
                             ergebnis.max_sr2 = erg.max_sr2;
                             ergebnis.max_vw = erg.max_vw;
@@ -146,6 +147,7 @@ namespace Weinrechnerlel
                     });
 
                 }
+                //Ladebalken schließen
                 finally
                 {
                     this.IsBusy = false;
@@ -156,6 +158,7 @@ namespace Weinrechnerlel
                         err = null;
 
                     }
+                    // Push auf Ergebnisseite
                     else
                     {
                         NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Gen(ergebnis)) { BarBackgroundColor = Color.DarkRed };

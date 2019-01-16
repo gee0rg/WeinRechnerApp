@@ -17,7 +17,7 @@ namespace Weinrechnerlel
         public Entsäuerung()
         {
             InitializeComponent();
-           
+           // Comboboxen belgen
             gesamtsäure_von.Items.Add("bitte auswählen");
             gesamtsäure_von.Items.Add("5,2");
             gesamtsäure_von.Items.Add("5,4");
@@ -362,7 +362,7 @@ namespace Weinrechnerlel
 
         void berechnen_Entsäu1(object sender, EventArgs e)
         {
-
+            //Rest-Aufruf
             request_entsäu param = new request_entsäu() { gs_von = gs_von_1, gs_auf = gs_auf_1, em1 = em1.Text };
             String request = JsonConvert.SerializeObject(param);
             RESTConnector rconn = new RESTConnector();
@@ -421,9 +421,11 @@ namespace Weinrechnerlel
                 ergebnis.um = erg.um;
 
             }
+            //Push auf Ergebnisseite
             NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Entsäu(ergebnis)) { BarBackgroundColor = Color.DarkRed };
             Navigation.PushAsync(nav);
         }
+        //2. Berechnung
         void berechnen_Entsäu2(object sender, EventArgs e)
         {
 
@@ -484,13 +486,14 @@ namespace Weinrechnerlel
 
                     return;
                 }
-                
+                //ergebisse des Webservices zuweisen
                 ergebnis.menge_ent2 = erg.menge_ent2;
                 ergebnis.most_ent = erg.most_ent;
                 ergebnis.wein_ent = erg.wein_ent;
                 ergebnis.auf = erg.auf;
 
             }
+            //Push auf Ergebnisseite
             NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Entsäu(ergebnis)) { BarBackgroundColor = Color.DarkRed };
             Navigation.PushAsync(nav);
         }

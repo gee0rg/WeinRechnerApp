@@ -15,6 +15,7 @@ namespace WebApplication1.Controllers
         public ges_VSErgebnisResponse Post([FromBody] request_ges_VS param)
         {
 
+            //Berechnung und Exception Handling
             ges_VSErgebnisResponse ergebnis = new ges_VSErgebnisResponse();
             //1. Berechnung
             double x1 = Convert.ToDouble(param.restzucker_vw) - Convert.ToDouble(param.restzucker_verschnitt);

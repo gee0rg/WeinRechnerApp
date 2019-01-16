@@ -612,7 +612,7 @@ namespace Weinrechnerlel
                                     err = erg.EventMessage;
                                 }
                             }
-                            
+                            //Ergebnisse des Webservices zuweisen
                             ergebnis.mg_e = erg.mg_e;
                             ergebnis.asp_e = erg.asp_e;
                             ergebnis.auf_alk = erg.auf_alk;
@@ -622,9 +622,10 @@ namespace Weinrechnerlel
                     
                     });
             }
+                //Ladebalken schließen
                 finally
             {
-                 //Weitergabe Ergebnisse an Ergebisseite für Darstellung :) 
+                  
                 this.IsBusy = false;
                 berechnen_konz.IsVisible = true;
 
@@ -640,6 +641,7 @@ namespace Weinrechnerlel
                         await DisplayAlert("Hinweis", alert, "OK");
                         alert = null;
                     }
+                    //Push auf Ergebnisseite
                     NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Konz(ergebnis)) { BarBackgroundColor = Color.DarkRed };
                     await Navigation.PushAsync(nav);
                 }

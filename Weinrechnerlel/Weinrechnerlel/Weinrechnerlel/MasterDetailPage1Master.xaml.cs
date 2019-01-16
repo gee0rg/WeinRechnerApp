@@ -29,7 +29,7 @@ namespace Weinrechnerlel
         {
             public ObservableCollection<MasterDetailPage1MenuItem> MenuItems { get; set; }
             public Xamarin.Forms.SeparatorVisibility SeparatorVisibility { get; set; }
-
+            //Einträge des Hamburgermenüs
             public MasterDetailPage1MasterViewModel()
             {
                 MenuItems = new ObservableCollection<MasterDetailPage1MenuItem>(new[]
