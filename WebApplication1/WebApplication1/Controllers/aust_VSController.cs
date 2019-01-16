@@ -17,7 +17,7 @@ namespace WebApplication1.Controllers
         // POST api/aust_VS
         public aust_VsErgebnisResponse Post([FromBody] request_aust_Vs param)
         {
-
+            //Berechnung und Exception Handling
             aust_VsErgebnisResponse ergebnis = new aust_VsErgebnisResponse();
 
             double eingabe_user_liter_gw; ;

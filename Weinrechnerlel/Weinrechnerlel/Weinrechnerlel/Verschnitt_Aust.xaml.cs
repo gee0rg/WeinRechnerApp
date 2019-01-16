@@ -31,7 +31,7 @@ namespace Weinrechnerlel
 
             if (!this.IsBusy)
             {
-
+                //Ladebalken startet
                 try
                 {
                     this.IsBusy = true;
@@ -61,7 +61,8 @@ namespace Weinrechnerlel
                         {
                             err = "Ihre Eingabe muss positiv sein";
                             return;
-                        }
+                        } 
+                        //Restaufruf
                         request_aust_VS param = new request_aust_VS() { liter_gw = liter_gw.Text };
                         String request = JsonConvert.SerializeObject(param);
                         RESTConnector rconn = new RESTConnector();
@@ -126,8 +127,9 @@ namespace Weinrechnerlel
                         }
                     });
                 }
+                //Ladebalken schließt
                 finally
-                //Weiterreichen der Ergebisse an Ergebnisseite zur Dartsellung
+                
                 //ggf werden Fehler dargestellt
                 {
                     this.IsBusy = false;
@@ -137,6 +139,7 @@ namespace Weinrechnerlel
                         await DisplayAlert("Hinweis", err, "OK");
                         err = null;
                     }
+                    //Weiterreichen der Ergebisse an Ergebnisseite zur Dartsellung
                     else
                     {
                         NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Aust(ergebnis)) { BarBackgroundColor = Color.DarkRed };

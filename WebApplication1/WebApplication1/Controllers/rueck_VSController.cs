@@ -16,6 +16,7 @@ namespace WebApplication1.Controllers
       LoggingFactory.GetLogger(System.Reflection.MethodBase.GetCurrentMethod().DeclaringType);
 
         // POST api/rueck_Vs
+        //Berechnung 
         public Ergebnis_rueck_VS_Response Post([FromBody] request_rueck_Vs param)
         {
             Ergebnis_rueck_VS_Response ergebnis = new Ergebnis_rueck_VS_Response();

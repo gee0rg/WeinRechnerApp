@@ -23,7 +23,7 @@ namespace Weinrechnerlel
 
         public Nutzungsbedingungen(User_Response user = null)
         {
-
+            //anzeige der Nutzungsbedingungen
             InitializeComponent();
             if (user != null)
             {
@@ -44,7 +44,7 @@ namespace Weinrechnerlel
             {
                 try
                 {
-                    //Ladebalken
+                    //Ladebalken startet
                     this.IsBusy = true;
                     UserManagment.IsVisible = false;
 
@@ -75,6 +75,7 @@ namespace Weinrechnerlel
 
                 }
                 //Weiterleitung zum Hauptmenü
+                //Ladenbalken schließt
                 finally
                 {                    
                     this.IsBusy = false;

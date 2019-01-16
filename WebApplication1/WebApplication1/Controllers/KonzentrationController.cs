@@ -10,9 +10,11 @@ namespace WebApplication1.Controllers
 {
     public class KonzentrationController : ApiController
     {
+        //Anbindung an DB
         private guterContext db = new guterContext();
         public KonzentrationResponse Post([FromBody] request_Konzentration param)
         {
+            //Berechnung und Exception Handling
             KonzentrationResponse ergebnis = new KonzentrationResponse();
             Mostgw zgModel = new Mostgw();
             Mostgw agModel = new Mostgw();

@@ -31,7 +31,7 @@ namespace Weinrechnerlel
 
             if (!this.IsBusy )
             {
-
+                //Ladebalken startet
                 try
                 {
                     this.IsBusy = true;
@@ -126,6 +126,7 @@ namespace Weinrechnerlel
 
 
                 }
+                //Ladebalken schließt
                 finally
                 {
                     this.IsBusy = false;
@@ -141,6 +142,7 @@ namespace Weinrechnerlel
                     {
                         await Navigation.PushModalAsync(new MasterDetailPage1());
                     }
+                    //Fehlermeldung wenn keine Connection
                     else
                     {
                         err = "Keine Verbindung zum Server";

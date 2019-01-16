@@ -17,6 +17,7 @@ namespace WebApplication1.Controllers
         // POST api/gen_VS
         public gen_VsErgebnisResponse Post([FromBody] request_gen_vs param)
         {
+            //Berechnung und Exception Handling
             gen_VsErgebnisResponse ergebnis = new gen_VsErgebnisResponse();
 
             double eingabe_user;

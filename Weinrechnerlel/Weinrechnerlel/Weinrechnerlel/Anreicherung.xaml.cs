@@ -432,6 +432,7 @@ namespace Weinrechnerlel
 
                                 return;
                             }
+                            //Ergebnisse des Webservices zuweisen
                             ergebnis.mg_e = erg.mg_e;
                             ergebnis.asp_e = erg.asp_e;
                             ergebnis.auf_alk = erg.auf_alk;
@@ -443,6 +444,7 @@ namespace Weinrechnerlel
                         }
                     });
                 }
+                // Ladebalken schließen
                 finally
                 {
                     this.IsBusy = false;
@@ -451,7 +453,7 @@ namespace Weinrechnerlel
                     {
                         await DisplayAlert("Hinweis", err, "OK");
                         err = null;
-                    }
+                    }//Push auf Ergebnisseite
                     else
                     {
                         NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Anreich(ergebnis)) { BarBackgroundColor = Color.DarkRed };

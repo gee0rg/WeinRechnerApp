@@ -10,6 +10,7 @@ namespace WebApplication1.Controllers
 {
     public class AnreicherungsController : ApiController
     {
+        //Anbindung an Datenbank
         private guterContext db = new guterContext();
        
         public AnreicherungsResponse Post([FromBody] request_Anreicherung param)
@@ -19,7 +20,7 @@ namespace WebApplication1.Controllers
             Mostgw mg = new Mostgw();
 
 
-
+            //Berechnung und Exception Handling
             double eingabe_user_maisch_menge;
             try
             {
@@ -89,7 +90,7 @@ namespace WebApplication1.Controllers
             }
 
           
-
+           
 
 
             double e1 = Convert.ToDouble(mg.mg);

@@ -17,6 +17,7 @@ namespace WebApplication1.Controllers
         // POST api/grw_VS
         public grw_VSErgebnisResponse Post([FromBody] request_grw_VS param)
         {
+            //Berechnung und Exception Handling
             grw_VSErgebnisResponse ergebnis = new grw_VSErgebnisResponse();
 
             //1. Berechnung

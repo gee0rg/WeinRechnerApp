@@ -10,10 +10,12 @@ namespace WebApplication1.Controllers
 {
     public class NutzungsbedinungenController : ApiController
     {
+        //Anbindung an DB
         private guterContext db = new guterContext();
 
         public LoginResponseModel Post([FromBody] request_login param)
         {
+            //Zustimmung der Nutzungsbedingungen
             User u = new User() { };
             LoginResponseModel lr = new LoginResponseModel() { };
             try
