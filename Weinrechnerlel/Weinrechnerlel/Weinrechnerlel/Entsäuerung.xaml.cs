@@ -390,7 +390,7 @@ namespace Weinrechnerlel
                     await Task.Run(() =>
                     {
                         //Validieren
-                        if (em1.Text=="" || gs_von_1== "bitte auswählen" || gs_auf_1== "bitte auswählen" || gs_von_1 == null)
+                        if (em1.Text=="" || gs_von_1== "bitte auswählen" || gs_auf_1== "bitte auswählen" || em1.Text == null)
                         {
                             err = "bitte füllen Sie alle Felder aus";
                             return;
@@ -424,7 +424,7 @@ namespace Weinrechnerlel
                         RESTConnector rconn = new RESTConnector();
 
                         String answer;
-                        String adress = "http://10.141.69.156:4438/api/Entsäuerungteil1";
+                        String adress = "http://192.168.178.41:4438/api/Entsäuerungteil1";
 
                         answer = rconn.HTTP_POST(adress, request, 5, false);
                         if (answer.Contains("REST_HTTP_ERROR"))
@@ -537,7 +537,7 @@ namespace Weinrechnerlel
                         RESTConnector rconn = new RESTConnector();
 
                         String answer;
-                        String adress = "http://10.141.69.156:4438/api/EntsäuerungsTeil2";
+                        String adress = "http://192.168.178.41:4438/api/EntsäuerungsTeil2";
 
                         answer = rconn.HTTP_POST(adress, request, 5, false);
                         if (answer.Contains("REST_HTTP_ERROR"))

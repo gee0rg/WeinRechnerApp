@@ -240,6 +240,12 @@ namespace Weinrechnerlel
                     
                     await Task.Run(() =>
                     {
+                        //Validierungen
+                        if (maisch_menge.Text == "" || zielmostgew == "bitte auswählen" || ausgangsmostgew == "bitte auswählen" || maisch_menge.Text == null )
+                        {
+                            err = "bitte füllen Sie alle Felder aus";
+                            return;
+                        }
                         double eingabe_user_maisch_menge;
                         try
                         {

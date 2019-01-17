@@ -163,6 +163,13 @@ namespace Weinrechnerlel
                     await Task.Run(() =>
                     {
                         //validierungen
+
+                        if (maisch_menge.Text == "" || mostgew == "bitte auswählen" || anreichspann == "bitte auswählen" || maisch_menge.Text == null || prodart == "bitte auswählen")
+                        {
+                            err = "bitte füllen Sie alle Felder aus";
+                            return;
+                        }
+
                         double eingabe_user_maisch_menge;
                         try
                         {
@@ -184,6 +191,7 @@ namespace Weinrechnerlel
                         RESTConnector rconn = new RESTConnector();
 
                         String answer;
+
                         String adress = "http://10.141.69.156:4438/api/Anreicherungs";
                         //timeout?
                         answer = rconn.HTTP_POST(adress, request, 50, false);
