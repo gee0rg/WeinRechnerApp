@@ -1,7 +1,9 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="Weinrechnerlel.Entsäuerung">
+             x:Class="Weinrechnerlel.Entsäuerung"
+             x:Name="start"
+             >
     <ContentPage.Content>
         <ScrollView>
         <StackLayout>
@@ -14,7 +16,9 @@
 
                 <Label Text="zu entsäuernde Menge" TextColor="Black"></Label>
                 <Entry x:Name="em1" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
-                <Button Text="Berechnen" Clicked="berechnen_Entsäu1"></Button>
+
+                <Button Text="Berechnen" Clicked="berechnen_Entsäu1"  IsVisible="{Binding Source={x:Reference start}, Path=IsVisible}" x:Name="Entsäuerungteil1"/>
+                <ActivityIndicator IsVisible="{Binding Source={x:Reference start}, Path=IsBusy}" IsRunning="{Binding Source={x:Reference start}, Path=IsBusy}" />
 
                 <Label Text="2. Doppelsalzentsäuerung" TextColor="DarkRed"></Label>
 
@@ -32,7 +36,10 @@
 
                 <Label Text="entsäuern um g/l" TextColor="Black"></Label>
                 <Entry x:Name="ent_um" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
-                <Button Text="Berechnen" Clicked="berechnen_Entsäu2"></Button>
+                <Button Text="Berechnen" Clicked="berechnen_Entsäu2" IsVisible="{Binding Source={x:Reference start}, Path=IsVisible}" x:Name="Entsäuerungteil2"></Button>
+                <ActivityIndicator IsVisible="{Binding Source={x:Reference start}, Path=IsBusy}" IsRunning="{Binding Source={x:Reference start}, Path=IsBusy}" />
+
+
 
 
             </StackLayout>

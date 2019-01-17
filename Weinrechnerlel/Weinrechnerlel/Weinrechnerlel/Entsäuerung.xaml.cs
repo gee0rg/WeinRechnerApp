@@ -330,18 +330,35 @@ namespace Weinrechnerlel
 
         private void change_ent_spanne()
         {
-            
-            double gs2_1d = Convert.ToDouble(gs2_1, new System.Globalization.CultureInfo("de-DE"));
+            bool validationvariableA=true;
+            bool validationvariableB=true;
+            if (gs2_1 == "bitte auswählen")
+            {
+                validationvariableA = false;
+            }
+            if (ws_1 == "bitte auswählen")
+            {
+                validationvariableB = false;
+            }
+            if(validationvariableA==true && validationvariableB == true) { 
 
-          
-            double ws_1d = Convert.ToDouble(ws_1, new System.Globalization.CultureInfo("de-DE"));
-            
-           
-           
+                double gs2_1d = Convert.ToDouble(gs2_1, new System.Globalization.CultureInfo("de-DE"));
+
+
+                double ws_1d = Convert.ToDouble(ws_1, new System.Globalization.CultureInfo("de-DE"));
+
+                double e3 = Math.Round(gs2_1d * (ws_1d - 0.5) / (gs2_1d - ws_1d), 1);
+                ent_spanne.Text = Convert.ToString(e3);
+            }
+            else
+            {
+                ent_spanne.Text = "";
+            }
+
 
             //ergebnisse berechnen
-            double e3 = Math.Round(gs2_1d * (ws_1d - 0.5) / (gs2_1d - ws_1d), 1);
-            ent_spanne.Text = Convert.ToString(e3);
+      
+            
 
         }
 
@@ -360,142 +377,232 @@ namespace Weinrechnerlel
         }
         Ergebnis_entsäu ergebnis = new Ergebnis_entsäu();
 
-        void berechnen_Entsäu1(object sender, EventArgs e)
+        async void berechnen_Entsäu1(object sender, EventArgs e)
         {
-            //Rest-Aufruf
-            request_entsäu param = new request_entsäu() { gs_von = gs_von_1, gs_auf = gs_auf_1, em1 = em1.Text };
-            String request = JsonConvert.SerializeObject(param);
-            RESTConnector rconn = new RESTConnector();
-
-            String answer;
-            String adress = "http://localhost:50088/api/basis_Vs";
-
-            answer = rconn.HTTP_POST(adress, request, 5, false);
-            if (answer.Contains("REST_HTTP_ERROR"))
+            //Ladebalken aktiviern
+            string err = null;
+            if (!this.IsBusy)
             {
-                double eingabe_user_em1;
                 try
                 {
-                    eingabe_user_em1 = Convert.ToDouble(em1.Text);
+                    this.IsBusy = true;
+                    Entsäuerungteil1.IsVisible = false;
+                    await Task.Run(() =>
+                    {
+                        //Validieren
+                        if (em1.Text=="" || gs_von_1== "bitte auswählen" || gs_auf_1== "bitte auswählen" || gs_von_1 == null)
+                        {
+                            err = "bitte füllen Sie alle Felder aus";
+                            return;
+                        }
+                        double eingabe_user_em1;
+                        try
+                        {
+                            eingabe_user_em1 = Convert.ToDouble(em1.Text);
+
+                        }
+                        catch
+                        {
+                            err = "Es sind Zahlen einzugeben";
+                            return;
+                        }
+                        if (eingabe_user_em1 < 0)
+                        {
+                        err = "Ihre Eingabe muss positiv sein";
+                            return;
+                        }
+
+                        gs_von_1 = gs_von_1.Replace(',', '.');
+                        double gs_von_1d = Convert.ToDouble(gs_von_1);
+
+
+                        gs_auf_1 = gs_auf_1.Replace(',', '.');
+                        double gs_auf_1d = Convert.ToDouble(gs_auf_1);
+                        //Rest-Aufruf
+                        request_entsäu param = new request_entsäu() { gs_von = gs_von_1, gs_auf = gs_auf_1, em1 = em1.Text };
+                        String request = JsonConvert.SerializeObject(param);
+                        RESTConnector rconn = new RESTConnector();
+
+                        String answer;
+                        String adress = "http://10.141.69.156:4438/api/Entsäuerungteil1";
+
+                        answer = rconn.HTTP_POST(adress, request, 5, false);
+                        if (answer.Contains("REST_HTTP_ERROR"))
+                        {
+
+                            err = "Keine Verbindung zum Server";
+
+
+
+                            //Ergebnisse berechnnen
+                            //double e1 = gs_von_1d - gs_auf_1d;
+                            //double e2 = (Convert.ToDouble(em1.Text) / 100.0) * (67.0 / 1000.0) * e1;
+
+                            ////Ausgabe Ergebnisse
+                            //ergebnis.menge_ent1 = Math.Round(e2,3);
+                            //ergebnis.um = e1;
+                        }
+                        else
+                        {
+                            EntsäuRestResponse erg = new EntsäuRestResponse() { };
+                            erg = JsonConvert.DeserializeObject<EntsäuRestResponse>(answer);
+                            if (erg.EventStatus != 0)
+                            {
+                                err = erg.EventMessage;
+
+                                return;
+                            }
+                            ergebnis.menge_ent1 = erg.menge_ent1;
+                            ergebnis.um = erg.um;
+
+                        }
+                    });
                 }
-                catch
+                finally
                 {
-                    DisplayAlert("Hinweis", "Es sind Zahlen einzugeben", "OK");
-                    return;
+                    //Ladenbalken schließen
+                   this.IsBusy = false;
+                    Entsäuerungteil1.IsVisible = true;
+                    //Push auf Ergebnisseite
+                    if (!string.IsNullOrEmpty(err))
+                    {
+                        await DisplayAlert("Hinweis", err, "OK");
+                        err = null;
+
+                    }
+                    // Push auf Ergebnisseite
+                    else
+                    {
+                        NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Entsäu(ergebnis)) { BarBackgroundColor = Color.DarkRed };
+                        await Navigation.PushAsync(nav);
+                    }
                 }
-                if (eingabe_user_em1 < 0)
-                {
-                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
-                    return;
-                }
-
-                gs_von_1= gs_von_1.Replace(',', '.');
-                double gs_von_1d = Convert.ToDouble(gs_von_1);
-
-
-                gs_auf_1 = gs_auf_1.Replace(',', '.');
-                double gs_auf_1d = Convert.ToDouble(gs_auf_1);
-
-
-
-               
-                //Ergebnisse berechnnen
-                double e1 = gs_von_1d - gs_auf_1d;
-                double e2 = (Convert.ToDouble(em1.Text) / 100.0) * (67.0 / 1000.0) * e1;
-
-                //Ausgabe Ergebnisse
-                ergebnis.menge_ent1 = Math.Round(e2,3);
-                ergebnis.um = e1;
             }
-            else
-            {
-                EntsäuRestResponse erg = new EntsäuRestResponse() { };
-                erg = JsonConvert.DeserializeObject<EntsäuRestResponse>(answer);
-                if (erg.EventStatus != 0)
-                {
-                    DisplayAlert("Hinweis", erg.EventMessage, "OK");
-
-                    return;
-                }
-                ergebnis.menge_ent1 = erg.menge_ent1;
-                ergebnis.um = erg.um;
-
-            }
-            //Push auf Ergebnisseite
-            NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Entsäu(ergebnis)) { BarBackgroundColor = Color.DarkRed };
-            Navigation.PushAsync(nav);
         }
         //2. Berechnung
-        void berechnen_Entsäu2(object sender, EventArgs e)
+        async void berechnen_Entsäu2(object sender, EventArgs e)
         {
-
-            request_entsäu param = new request_entsäu() { gs2 = gs2_1, ws = ws_1, em2 = em2.Text, ent_um = ent_um.Text };
-            String request = JsonConvert.SerializeObject(param);
-            RESTConnector rconn = new RESTConnector();
-
-            String answer;
-            String adress = "http://localhost:50088/api/basis_Vs";
-
-            answer = rconn.HTTP_POST(adress, request, 5, false);
-            if (answer.Contains("REST_HTTP_ERROR"))
+            string err = null;
+            if (!this.IsBusy)
             {
-                double eingabe_user_em2;
                 try
                 {
-                    eingabe_user_em2 = Convert.ToDouble(em2.Text);
+                    this.IsBusy = true;
+                    Entsäuerungteil2.IsVisible = false;
+                    await Task.Run(() =>
+                    {
+                        //Validiern
+                        if (em2.Text == "" || ent_um.Text=="" || ws_1 == "bitte auswählen" || gs2_1 == "bitte auswählen" || em2.Text == null || ent_um.Text == null)
+                        {
+                            err = "bitte füllen Sie alle Felder aus";
+                            return;
+                        }
+                        if (em2.Text == "")
+                        {
+                            err = "bitte füllen sie alle Felder aus";
+                        }
+                        double eingabe_user_em2;
+                        double eingabe_user_ent_um;
+                        try
+                        {
+                            eingabe_user_ent_um = Convert.ToDouble(ent_um.Text);
+                        }
+                        catch
+                        {
+                            err = "Es sind Zahlen einzugeben";
+                            return;
+                        }
+                        if (eingabe_user_ent_um < 0)
+                        {
+                            err = "Ihre Eingabe muss positiv sein";
+                            return;
+                        }
+                        try
+                        {
+                            eingabe_user_em2 = Convert.ToDouble(em2.Text);
+                        }
+                        catch
+                        {
+                            err = "Es sind Zahlen einzugeben";
+                            return;
+                        }
+                        if (eingabe_user_em2 < 0)
+                        {
+                            err = "Ihre Eingabe muss positiv sein";
+                            return;
+                        }
+
+                        request_entsäu param = new request_entsäu() { gs2 = gs2_1, ws = ws_1, em2 = em2.Text, ent_um = ent_um.Text };
+                        String request = JsonConvert.SerializeObject(param);
+                        RESTConnector rconn = new RESTConnector();
+
+                        String answer;
+                        String adress = "http://10.141.69.156:4438/api/EntsäuerungsTeil2";
+
+                        answer = rconn.HTTP_POST(adress, request, 5, false);
+                        if (answer.Contains("REST_HTTP_ERROR"))
+                        {
+
+                            err = "Keine Verbindung zum Server";
+                            //LOKALE BRECHNUNG
+                            //gs2_1 = gs2_1.Replace(',', '.');
+                            //double gs2_1d = Convert.ToDouble(gs2_1, new System.Globalization.CultureInfo("en-US"));
+
+
+
+                            ////ergebnisse berechnen
+                            //double test = Convert.ToDouble(ent_um.Text);
+                            //double e4 = gs2_1d - test;                         //E5
+                            //double e5 = ((gs2_1d - e4) * Convert.ToDouble(em2.Text) * 0.67) / 1000;     //E2
+                            //double e6 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 2));    //E3
+                            //double e7 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 3));    //E4
+
+                            ////Ausgabe Ergebnisse
+
+                            //ergebnis.menge_ent2 = e5;
+                            //ergebnis.most_ent = Convert.ToInt32(e6);
+                            //ergebnis.wein_ent = Convert.ToInt32(e7);
+                            //ergebnis.auf = e4;
+
+                        }
+                        else
+                        {
+                            EntsäuRestResponse erg = new EntsäuRestResponse() { };
+                            erg = JsonConvert.DeserializeObject<EntsäuRestResponse>(answer);
+                            if (erg.EventStatus != 0)
+                            {
+                                err = erg.EventMessage;
+
+                                return;
+                            }
+                            //ergebisse des Webservices zuweisen
+                            ergebnis.menge_ent2 = erg.menge_ent2;
+                            ergebnis.most_ent = erg.most_ent;
+                            ergebnis.wein_ent = erg.wein_ent;
+                            ergebnis.auf = erg.auf;
+
+                        }
+                    });
                 }
-                catch
+                finally {
+                    //Ladenbalken schließen
+                    this.IsBusy = false;
+                    Entsäuerungteil2.IsVisible = true;
+                    //Push auf Ergebnisseite
+                    if (!string.IsNullOrEmpty(err))
                 {
-                    DisplayAlert("Hinweis", "Es sind Zahlen einzugeben", "OK");
-                    return;
+                    await DisplayAlert("Hinweis", err, "OK");
+                    err = null;
+
                 }
-                if (eingabe_user_em2 < 0)
+                // Push auf Ergebnisseite
+                else
                 {
-                    DisplayAlert("Hinweis", "Ihre Eingabe muss positiv sein", "OK");
-                    return;
+                    NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Entsäu(ergebnis)) { BarBackgroundColor = Color.DarkRed };
+                    await Navigation.PushAsync(nav);
                 }
-                // Exception für ent_um einfügen
-
-                gs2_1 = gs2_1.Replace(',', '.');
-                double gs2_1d = Convert.ToDouble(gs2_1, new System.Globalization.CultureInfo("en-US"));
-
-
-
-                //ergebnisse berechnen
-                double test = Convert.ToDouble(ent_um.Text);
-                double e4 = gs2_1d - test;                         //E5
-                double e5 = ((gs2_1d - e4) * Convert.ToDouble(em2.Text) * 0.67) / 1000;     //E2
-                double e6 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 2));    //E3
-                double e7 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 3));    //E4
-
-                //Ausgabe Ergebnisse
-               
-                ergebnis.menge_ent2 = e5;
-                ergebnis.most_ent = Convert.ToInt32(e6);
-                ergebnis.wein_ent = Convert.ToInt32(e7);
-                ergebnis.auf = e4;
-
+                }
             }
-            else
-            {
-                EntsäuRestResponse erg = new EntsäuRestResponse() { };
-                erg = JsonConvert.DeserializeObject<EntsäuRestResponse>(answer);
-                if (erg.EventStatus != 0)
-                {
-                    DisplayAlert("Hinweis", erg.EventMessage, "OK");
-
-                    return;
-                }
-                //ergebisse des Webservices zuweisen
-                ergebnis.menge_ent2 = erg.menge_ent2;
-                ergebnis.most_ent = erg.most_ent;
-                ergebnis.wein_ent = erg.wein_ent;
-                ergebnis.auf = erg.auf;
-
-            }
-            //Push auf Ergebnisseite
-            NavigationPage nav = new NavigationPage(new Ergebnis_Rechnung_Entsäu(ergebnis)) { BarBackgroundColor = Color.DarkRed };
-            Navigation.PushAsync(nav);
         }
 
        
