@@ -23,7 +23,7 @@ namespace WebApplication1.Controllers
 
                  
                 //ergebnisse berechnen
-                double test = Convert.ToDouble(param.ent_um, new System.Globalization.CultureInfo("en-US"));
+                double test = Convert.ToDouble(param.ent_um);
                 double e4 = gs2_1d - test;                         //E5
                 double e5 = ((gs2_1d - e4) * Convert.ToDouble(param.em2) * 0.67) / 1000;     //E2
                 double e6 = Convert.ToDouble(param.em2, new System.Globalization.CultureInfo("en-US")) * ((gs2_1d - e4) / (gs2_1d - 2));    //E3
