@@ -464,43 +464,43 @@ namespace Weinrechnerlel
                         gs_auf_1 = gs_auf_1.Replace(',', '.');
                         double gs_auf_1d = Convert.ToDouble(gs_auf_1);
                         //Rest-Aufruf
-                        request_entsäu param = new request_entsäu() { gs_von = gs_von_1, gs_auf = gs_auf_1, em1 = em1.Text };
-                        String request = JsonConvert.SerializeObject(param);
-                        RESTConnector rconn = new RESTConnector();
+                        //request_entsäu param = new request_entsäu() { gs_von = gs_von_1, gs_auf = gs_auf_1, em1 = em1.Text };
+                        //String request = JsonConvert.SerializeObject(param);
+                        //RESTConnector rconn = new RESTConnector();
 
-                        String answer;
-                        String adress = "http://192.168.178.41:4438/api/Entsäuerungteil1";
+                        //String answer;
+                        //String adress = "http://192.168.178.41:4438/api/Entsäuerungteil1";
 
-                        answer = rconn.HTTP_POST(adress, request, 5, false);
-                        if (answer.Contains("REST_HTTP_ERROR"))
-                        {
+                        //answer = rconn.HTTP_POST(adress, request, 5, false);
+                        //if (answer.Contains("REST_HTTP_ERROR"))
+                        //{
 
-                            err = "Keine Verbindung zum Server";
+                        //    err = "Keine Verbindung zum Server";
 
 
 
-                            //Ergebnisse berechnnen
-                            //double e1 = gs_von_1d - gs_auf_1d;
-                            //double e2 = (Convert.ToDouble(em1.Text) / 100.0) * (67.0 / 1000.0) * e1;
+                        //Ergebnisse berechnnen
+                        double e1 = gs_von_1d - gs_auf_1d;
+                        double e2 = (Convert.ToDouble(em1.Text) / 100.0) * (67.0 / 1000.0) * e1;
 
-                            ////Ausgabe Ergebnisse
-                            //ergebnis.menge_ent1 = Math.Round(e2,3);
-                            //ergebnis.um = e1;
-                        }
-                        else
-                        {
-                            EntsäuRestResponse erg = new EntsäuRestResponse() { };
-                            erg = JsonConvert.DeserializeObject<EntsäuRestResponse>(answer);
-                            if (erg.EventStatus != 0)
-                            {
-                                err = erg.EventMessage;
+                        //Ausgabe Ergebnisse
+                        ergebnis.menge_ent1 = Math.Round(e2, 3);
+                        ergebnis.um = e1;
+                    //}
+                    //    else
+                    //    {
+                    //        EntsäuRestResponse erg = new EntsäuRestResponse() { };
+                    //        erg = JsonConvert.DeserializeObject<EntsäuRestResponse>(answer);
+                    //        if (erg.EventStatus != 0)
+                    //        {
+                    //            err = erg.EventMessage;
 
-                                return;
-                            }
-                            ergebnis.menge_ent1 = erg.menge_ent1;
-                            ergebnis.um = erg.um;
+                    //            return;
+                    //        }
+                    //        ergebnis.menge_ent1 = erg.menge_ent1;
+                    //        ergebnis.um = erg.um;
 
-                        }
+                    //    }
                     });
                 }
                 finally
@@ -577,56 +577,56 @@ namespace Weinrechnerlel
                             return;
                         }
 
-                        request_entsäu param = new request_entsäu() { gs2 = gs2_1, ws = ws_1, em2 = em2.Text, ent_um = ent_um.Text };
-                        String request = JsonConvert.SerializeObject(param);
-                        RESTConnector rconn = new RESTConnector();
+                        //request_entsäu param = new request_entsäu() { gs2 = gs2_1, ws = ws_1, em2 = em2.Text, ent_um = ent_um.Text };
+                        //String request = JsonConvert.SerializeObject(param);
+                        //RESTConnector rconn = new RESTConnector();
 
-                        String answer;
-                        String adress = "http://192.168.178.41:4438/api/EntsäuerungsTeil2";
+                        //String answer;
+                        //String adress = "http://192.168.178.41:4438/api/EntsäuerungsTeil2";
 
-                        answer = rconn.HTTP_POST(adress, request, 5, false);
-                        if (answer.Contains("REST_HTTP_ERROR"))
-                        {
+                        //answer = rconn.HTTP_POST(adress, request, 5, false);
+                        //if (answer.Contains("REST_HTTP_ERROR"))
+                        //{
 
-                            err = "Keine Verbindung zum Server";
-                            //LOKALE BRECHNUNG
-                            //gs2_1 = gs2_1.Replace(',', '.');
-                            //double gs2_1d = Convert.ToDouble(gs2_1, new System.Globalization.CultureInfo("en-US"));
+                        //    err = "Keine Verbindung zum Server";
+                        //LOKALE BRECHNUNG
+                        gs2_1 = gs2_1.Replace(',', '.');
+                        double gs2_1d = Convert.ToDouble(gs2_1, new System.Globalization.CultureInfo("en-US"));
 
 
 
-                            ////ergebnisse berechnen
-                            //double test = Convert.ToDouble(ent_um.Text);
-                            //double e4 = gs2_1d - test;                         //E5
-                            //double e5 = ((gs2_1d - e4) * Convert.ToDouble(em2.Text) * 0.67) / 1000;     //E2
-                            //double e6 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 2));    //E3
-                            //double e7 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 3));    //E4
+                        //ergebnisse berechnen
+                        double test = Convert.ToDouble(ent_um.Text);
+                        double e4 = gs2_1d - test;                         //E5
+                        double e5 = ((gs2_1d - e4) * Convert.ToDouble(em2.Text) * 0.67) / 1000;     //E2
+                        double e6 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 2));    //E3
+                        double e7 = Convert.ToDouble(em2.Text) * ((gs2_1d - e4) / (gs2_1d - 3));    //E4
 
-                            ////Ausgabe Ergebnisse
+                        //Ausgabe Ergebnisse
 
-                            //ergebnis.menge_ent2 = e5;
-                            //ergebnis.most_ent = Convert.ToInt32(e6);
-                            //ergebnis.wein_ent = Convert.ToInt32(e7);
-                            //ergebnis.auf = e4;
+                        ergebnis.menge_ent2 = e5;
+                        ergebnis.most_ent = Convert.ToInt32(e6);
+                        ergebnis.wein_ent = Convert.ToInt32(e7);
+                        ergebnis.auf = e4;
 
-                        }
-                        else
-                        {
-                            EntsäuRestResponse erg = new EntsäuRestResponse() { };
-                            erg = JsonConvert.DeserializeObject<EntsäuRestResponse>(answer);
-                            if (erg.EventStatus != 0)
-                            {
-                                err = erg.EventMessage;
+                    //}
+                        //else
+                        //{
+                        //    EntsäuRestResponse erg = new EntsäuRestResponse() { };
+                        //    erg = JsonConvert.DeserializeObject<EntsäuRestResponse>(answer);
+                        //    if (erg.EventStatus != 0)
+                        //    {
+                        //        err = erg.EventMessage;
 
-                                return;
-                            }
-                            //ergebisse des Webservices zuweisen
-                            ergebnis.menge_ent2 = erg.menge_ent2;
-                            ergebnis.most_ent = erg.most_ent;
-                            ergebnis.wein_ent = erg.wein_ent;
-                            ergebnis.auf = erg.auf;
+                        //        return;
+                        //    }
+                        //    //ergebisse des Webservices zuweisen
+                        //    ergebnis.menge_ent2 = erg.menge_ent2;
+                        //    ergebnis.most_ent = erg.most_ent;
+                        //    ergebnis.wein_ent = erg.wein_ent;
+                        //    ergebnis.auf = erg.auf;
 
-                        }
+                        //}
                     });
                 }
                 finally {

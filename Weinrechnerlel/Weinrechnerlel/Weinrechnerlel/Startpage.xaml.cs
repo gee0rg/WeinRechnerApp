@@ -41,35 +41,47 @@ namespace Weinrechnerlel
                     await Task.Run(() =>
                     {
                         string ids;
-                        if (Application.Current.Properties.ContainsKey("id"))
+                        if (Application.Current.Properties.ContainsKey("Zst"))
                         {
 
 
-                            ids = Convert.ToString(Application.Current.Properties["id"]);
+                            ids = Convert.ToString(Application.Current.Properties["Zst"]);
                         }
                         else
                         {
-                            ids = "0";
+                            ids = "false";
                         }
                         //restaufruf
-                        request_User param = new request_User() { Id = ids };
-                        String request = JsonConvert.SerializeObject(param);
-                        RESTConnector rconn = new RESTConnector();
-                        User_Response erg = new User_Response() { };
-                        string answer;
-                        string adress = "http://192.168.178.41:4438/api/UsersManagment";
+                        //request_User param = new request_User() { Id = ids };
+                        //String request = JsonConvert.SerializeObject(param);
+                        //RESTConnector rconn = new RESTConnector();
+                        //User_Response erg = new User_Response() { };
+                        //string answer;
+                        //string adress = "http://192.168.178.41:4438/api/UsersManagment";
                         //string adress = "http://localhost:50088/api/Usermanagment";
 
 
                         //auswerten nach (timeout?)
-                        answer = rconn.HTTP_POST(adress, request, 5, false);
-                        if (answer.Contains("REST_HTTP_ERROR"))
-                        {
+                       // answer = rconn.HTTP_POST(adress, request, 5, false);
+                        //if (answer.Contains("REST_HTTP_ERROR"))
+                        //{
                             //kein Antwort vom Webservice user muss Nutzungsbedingungen zustimmen
                             //Navigation.PushModalAsync(new Nutzungsbedingungen());
                             //erg.id = "";
 
-                            i = 2;
+                            
+                            if (ids=="false")
+                        {
+                            i = 0;
+                        }
+                            if (ids == "false")
+                        {
+                            i = 0;
+                        }
+                            if (ids == "true")
+                        {
+                            i = 1;
+                        }
                             
                             //Vereinfachung 
                             //if (Application.Current.Properties.ContainsKey("id"))
@@ -82,45 +94,45 @@ namespace Weinrechnerlel
                             //}
                             //p = new Nutzungsbedingungen(erg);
                             // Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
-                        }
+                       // }
 
 
-                        else
-                        {
+                        //else
+                        //{
 
 
                            
-                            erg = JsonConvert.DeserializeObject<User_Response>(answer);
-                            if (erg.EventStatus == 1)
-                            {
-                                Application.Current.Properties.Clear();
-                                Application.Current.Properties.Add("id", erg.id);
-                                Application.Current.SavePropertiesAsync();
-                            }
-                            if (erg.EventStatus == -1)
-                            {
-                                //gab einen Fehler User wurde nicht gefunden oder in DB eingetragen --muss daher Nutzerbedignugen zustimmen
+                        //    erg = JsonConvert.DeserializeObject<User_Response>(answer);
+                        //    if (erg.EventStatus == 1)
+                        //    {
+                        //        Application.Current.Properties.Clear();
+                        //        Application.Current.Properties.Add("id", erg.id);
+                        //        Application.Current.SavePropertiesAsync();
+                        //    }
+                        //    if (erg.EventStatus == -1)
+                        //    {
+                        //        //gab einen Fehler User wurde nicht gefunden oder in DB eingetragen --muss daher Nutzerbedignugen zustimmen
                                 
-                                i = 0;
-                                //Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
+                        //        i = 0;
+                        //        //Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
 
-                            }
-                            if (erg.Nutzung == true)
-                            {
-                                //User wurd erkannt und hat bereits den Bedingeunen zusgestimmt er kann die App sofort nutzen
+                        //    }
+                        //    if (erg.Nutzung == true)
+                        //    {
+                        //        //User wurd erkannt und hat bereits den Bedingeunen zusgestimmt er kann die App sofort nutzen
                                 
-                                i = 1;
-                                // Navigation.PushModalAsync(new MasterDetailPage1());
-                            }
-                            else
-                            {
-                                //User wurde erkannt oder neu angelegt und hat den Nutzerbedignugen noch nicht zusgtstimmt und muss dies erst machen bevor er die App nutzen kann
+                        //        i = 1;
+                        //        // Navigation.PushModalAsync(new MasterDetailPage1());
+                        //    }
+                        //    else
+                        //    {
+                        //        //User wurde erkannt oder neu angelegt und hat den Nutzerbedignugen noch nicht zusgtstimmt und muss dies erst machen bevor er die App nutzen kann
                               
-                                i = 0;
-                                //Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
-                            }
+                        //        i = 0;
+                        //        //Navigation.PushModalAsync(new Nutzungsbedingungen(erg));
+                        //    }
 
-                        }
+                        //}
 
 
                     });
@@ -144,11 +156,11 @@ namespace Weinrechnerlel
                         await Navigation.PushModalAsync(new MasterDetailPage1());
                     }
                     //Fehlermeldung wenn keine Connection
-                    else
-                    {
-                        err = "Keine Verbindung zum Server";
-                        await DisplayAlert("Hinweis",err , "OK");
-                    }
+                    //else
+                    //{
+                    //    err = "Keine Verbindung zum Server";
+                    //    await DisplayAlert("Hinweis",err , "OK");
+                    //}
                 }
             }
 

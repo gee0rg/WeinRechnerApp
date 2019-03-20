@@ -11,7 +11,7 @@
             <Label Text="Anreicherungsspanne (in g/l)" TextColor="Black"></Label>
             <Picker x:Name="anreicherungsspanne" SelectedIndexChanged="Anreicherungsspanne_SelectedIndexChanged"></Picker>
 
-            <Label Text="Produktart" TextColor="Black"></Label>
+            <Label Text="Anreicherungsfaktor" TextColor="Black"></Label>
             <Picker x:Name="produktart" SelectedIndexChanged="Produktart_SelectedIndexChanged"></Picker>
 
             <Label Text="Most/Maischmenge die angereichert werden soll" TextColor="Black"></Label>

@@ -25,12 +25,22 @@ namespace Weinrechnerlel
         private void Verw_vw_TextChanged(object sender, TextChangedEventArgs e)
         {
             fr8.IsVisible = true;
-            if (Convert.ToDouble(verw_vw.Text) <= Convert.ToDouble(max_sr1e.Text))
+            double verw_vws;
+            //Berechnung
+            try
             {
-                //Berechnung
+                verw_vws = Convert.ToDouble(verw_vw.Text);
+            }
+            catch
+            {
+                verw_vws = 0;
+            }
+            if (verw_vws <= Convert.ToDouble(max_sr1e.Text))
+            {
+
                 if (verw_vw.Text != null)
                 {
-                    double x = Convert.ToDouble(max_sr1e.Text) + (Convert.ToDouble(max_vwe.Text) - Convert.ToDouble(verw_vw.Text));
+                    double x = Convert.ToDouble(max_sr1e.Text) + (Convert.ToDouble(max_vwe.Text) - verw_vws);
                     double y = Math.Floor(x);
                     int i;
                     i = Convert.ToInt32(y);

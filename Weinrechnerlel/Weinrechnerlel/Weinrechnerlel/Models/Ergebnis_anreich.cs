@@ -9,7 +9,7 @@ namespace Weinrechnerlel.Models
         public double mg_e { get; set; }
         public double asp_e { get; set; }
         public double auf_alk { get; set; }
-        public String pa_e { get; set; }
+        public double pa_e { get; set; }
         public double sach { get; set; }
         public double sach_ges { get; set; }
         public int mehr_an { get; set; }

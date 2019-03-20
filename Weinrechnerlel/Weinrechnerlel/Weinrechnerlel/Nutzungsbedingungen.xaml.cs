@@ -51,25 +51,36 @@ namespace Weinrechnerlel
                     await Task.Run(() =>
                     {
                         //schaut nach id
-                        string ids;
-                        if (Application.Current.Properties.ContainsKey("id"))
+                        bool ids;
+                        if (Application.Current.Properties.ContainsKey("Zst"))
                         {
-                            ids = Convert.ToString(Application.Current.Properties["id"]);
+                            ids = Convert.ToBoolean(Application.Current.Properties["Zst"]);
+
+                           
                         }
                         else
                         {
-                            ids = "0";
+                            ids = false;
                         }
+                        if (ids == false)
+                        {
+                            ids = true;
+                        }
+                        if (ids == true) {
+                            Application.Current.Properties.Clear();
+                            Application.Current.Properties["Zst"] = "true";
+                            }
+
                         //restaufruf
-                        request_User param = new request_User() { Id = ids };
-                        String request = JsonConvert.SerializeObject(param);
-                        RESTConnector rconn = new RESTConnector();
-                        User_Response erg = new User_Response() { };
-                        string answer;
-                        string adress = "http://192.168.178.41:4438/api/Nutzungsbedinungen";
-                        
+                        //request_User param = new request_User() { Id = ids };
+                        //String request = JsonConvert.SerializeObject(param);
+                        //RESTConnector rconn = new RESTConnector();
+                        //User_Response erg = new User_Response() { };
+                        //string answer;
+                        //string adress = "http://192.168.178.41:4438/api/Nutzungsbedinungen";
+
                         //Speicherung das der Nutzer den Bed. zugestimmt hat
-                        answer = rconn.HTTP_POST(adress, request, 50, false);
+                        //answer = rconn.HTTP_POST(adress, request, 50, false);
 
                     });
 

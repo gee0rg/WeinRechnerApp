@@ -25,7 +25,7 @@
                     </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Produktart:" TextColor="Black" ></Label>
+                    <Label Text="Anreicherungsfaktor:" TextColor="Black" ></Label>
                     <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
                         <Label  x:Name="pa_e" TextColor="Black" ></Label>
                     </Frame>

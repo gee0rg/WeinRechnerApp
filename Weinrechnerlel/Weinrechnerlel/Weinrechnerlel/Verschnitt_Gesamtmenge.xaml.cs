@@ -79,166 +79,166 @@ namespace Weinrechnerlel
                             return;
                         }
                         //Aufruf Webservice
-                        request_ges_VS param = new request_ges_VS() { liter_gv = liter_gv.Text, restzucker_gw = restzucker_gw.Text, restzucker_verschnitt = restzucker_verschnitt.Text, restzucker_vw = restzucker_vw.Text };
-                        String request = JsonConvert.SerializeObject(param);
-                        RESTConnector rconn = new RESTConnector();
+                        //request_ges_VS param = new request_ges_VS() { liter_gv = liter_gv.Text, restzucker_gw = restzucker_gw.Text, restzucker_verschnitt = restzucker_verschnitt.Text, restzucker_vw = restzucker_vw.Text };
+                        //String request = JsonConvert.SerializeObject(param);
+                        //RESTConnector rconn = new RESTConnector();
 
-                        String answer;
-                        String adress = "http://10.141.69.156:4438/api/ges_Vs";
-                        answer = rconn.HTTP_POST(adress, request, 5, false);
-                        if (answer.Contains("REST_HTTP_ERROR"))
+                        //String answer;
+                        //String adress = "http://10.141.69.156:4438/api/ges_Vs";
+                        //answer = rconn.HTTP_POST(adress, request, 5, false);
+                        //if (answer.Contains("REST_HTTP_ERROR"))
+                        //{
+                        //    Fehler keine Verbindung zum Server
+                        //   err = "Keine Verbindung zum Server";
+
+                        
+                        //try
+                        //{
+                        //    eingabe_user_liter_gv = Convert.ToDouble(liter_gv.Text);
+                        //    eingabe_user_restzucker_gw = Convert.ToDouble(restzucker_gw.Text);
+                        //    eingabe_user_restzucker_verschnitt = Convert.ToDouble(restzucker_verschnitt.Text);
+                        //    eingabe_user_vw = Convert.ToDouble(restzucker_vw.Text);
+                        //}
+                        //catch
+                        //{
+                        //    err = "Es sind Zahlen einzugeben";
+                        //    return;
+                        //}
+                        //if (eingabe_user_liter_gv < 0)
+                        //{
+                        //    err = "Ihre Eingabe muss positiv sein";
+                        //    return;
+                        //}
+                        //if (eingabe_user_restzucker_gw < 0)
+                        //{
+                        //    err = "Ihre Eingabe muss positiv sein";
+                        //    return;
+                        //}
+                        //if (eingabe_user_restzucker_verschnitt < 0)
+                        //{
+                        //    err = "Ihre Eingabe muss positiv sein";
+                        //    return;
+                        //}
+                        //if (eingabe_user_vw < 0)
+                        //{
+                        //    err = "Ihre Eingabe muss positiv sein";
+                        //    return;
+                        //}
+                        //1.Berechnung
+                        double x1 = Convert.ToDouble(restzucker_vw.Text) - Convert.ToDouble(restzucker_verschnitt.Text);
+                        double x2 = Convert.ToDouble(restzucker_verschnitt.Text) - Convert.ToDouble(restzucker_gw.Text);
+                        double x3 = x1 + x2;
+                        double x4 = Convert.ToDouble(liter_gv.Text) / x3;
+                        double x5 = x4 * x1;
+                        double x6 = x4 * x2;
+                        // double x7 = x5 + x6;
+
+                        //2. Prüfung
+                        if (Convert.ToDouble(restzucker_gw.Text) <= Convert.ToDouble(restzucker_verschnitt.Text))
+                        { }
+                        else
                         {
-                            // Fehler keine Verbindung zum Server
-                            err= "Keine Verbindung zum Server";
-                            
-                            //Lokale Berechnung
-                            //try
-                            //{
-                            //    eingabe_user_liter_gv = Convert.ToDouble(liter_gv.Text);
-                            //    eingabe_user_restzucker_gw = Convert.ToDouble(restzucker_gw.Text);
-                            //    eingabe_user_restzucker_verschnitt = Convert.ToDouble(restzucker_verschnitt.Text);
-                            //    eingabe_user_vw = Convert.ToDouble(restzucker_vw.Text);
-                            //}
-                            //catch
-                            //{
-                            //    err = "Es sind Zahlen einzugeben";
-                            //    return;
-                            //}
-                            //if (eingabe_user_liter_gv < 0)
-                            //{
-                            //    err = "Ihre Eingabe muss positiv sein";
-                            //    return;
-                            //}
-                            //if (eingabe_user_restzucker_gw < 0)
-                            //{
-                            //    err = "Ihre Eingabe muss positiv sein";
-                            //    return;
-                            //}
-                            //if (eingabe_user_restzucker_verschnitt < 0)
-                            //{
-                            //    err = "Ihre Eingabe muss positiv sein";
-                            //    return;
-                            //}
-                            //if (eingabe_user_vw < 0)
-                            //{
-                            //    err = "Ihre Eingabe muss positiv sein";
-                            //    return;
-                            //}
-                            //1. Berechnung
-                            //double x1 = Convert.ToDouble(restzucker_vw.Text) - Convert.ToDouble(restzucker_verschnitt.Text);
-                            //double x2 = Convert.ToDouble(restzucker_verschnitt.Text) - Convert.ToDouble(restzucker_gw.Text);
-                            //double x3 = x1 + x2;
-                            //double x4 = Convert.ToDouble(liter_gv.Text) / x3;
-                            //double x5 = x4 * x1;
-                            //double x6 = x4 * x2;
-                            //// double x7 = x5 + x6;
+                            err = "Eingabe prüfen";
+                            return;
 
-                            ////2. Prüfung
-                            //if (Convert.ToDouble(restzucker_gw.Text) <= Convert.ToDouble(restzucker_verschnitt.Text))
-                            //{ }
-                            //else
-                            //{
-                            //    err = "Eingabe prüfen";
-                            //    return;
+                        }
+                        if (x1 >= 0)
+                        { }
+                        else
+                        {
+                            err = "Eingabe prüfen";
+                            return;
+                        }
+                        if (x2 >= 0)
+                        { }
+                        else
+                        {
+                            err = "Eingabe prüfen";
+                            return;
+                        }
+                        if (x1 > 0 && x2 > 0)
+                        {
+                            ergebnis.liter_gw = Convert.ToInt32(x5);
+                            ergebnis.liter_vw = Convert.ToInt32(x6);
+                            Console.WriteLine(ergebnis.liter_gw);
+                            Console.WriteLine(ergebnis.liter_vw);
 
-                            //}
-                            //if (x1 >= 0)
-                            //{ }
-                            //else
-                            //{
-                            //    err = "Eingabe prüfen";
-                            //    return;
-                            //}
-                            //if (x2 >= 0)
-                            //{ }
-                            //else
-                            //{
-                            //    err = "Eingabe prüfen";
-                            //    return;
-                            //}
-                            //if (x1 > 0 && x2 > 0)
-                            //{
-                            //    ergebnis.liter_gw = Convert.ToInt32(x5);
-                            //    ergebnis.liter_vw = Convert.ToInt32(x6);
-                            //    Console.WriteLine(ergebnis.liter_gw);
-                            //    Console.WriteLine(ergebnis.liter_vw);
-
-                            //}
-                            //else
-                            //{
-                            //    err = "Eingabe prüfen";
-                            //    return;
-                            //}
-
-
-
-
-                            ////3. % Prüfung
-                            //double x8 = x6 / (Convert.ToDouble(liter_gv.Text) / 100);
-                            //if (x8 <= 15.00)
-                            //{
-                            //    double a = x5 / (Convert.ToDouble(liter_gv.Text) / 100);
-                            //    double b = x6 / (Convert.ToDouble(liter_gv.Text) / 100);
-                            //    ergebnis.liter_gw_prozent = Math.Round(a, 1);
-                            //    ergebnis.liter_vw_prozent = Math.Round(b, 1);
-                            //    // Console.WriteLine(ergebnis.liter_gw_prozent + " %");
-                            //    //Console.WriteLine(ergebnis.liter_vw_prozent + " %");
-
-
-
-                            //}
-                            //else if (x8 > 15.00 && x8 <= 25.00)
-                            //{
-                            //    double a = x5 / (Convert.ToDouble(liter_gv.Text) / 100);
-                            //    double b = x6 / (Convert.ToDouble(liter_gv.Text) / 100);
-                            //    ergebnis.liter_gw_prozent = Math.Round(a, 1);
-                            //    ergebnis.liter_vw_prozent = Math.Round(b, 1);
-                            //    // Console.WriteLine(ergebnis.liter_gw_prozent + " %");
-                            //    // Console.WriteLine(ergebnis.liter_vw_prozent + " %");
-                            //    //Console.WriteLine("15% Meldung");
-                            //    alert = "Falls es sich beim Verschnittpartner um Wein handelt, ist der max. Verschnitt von 15% überschritten";
-
-
-
-                            //}
-                            //else if (x8 > 25.00)
-                            //{
-                            //    double a = x5 / (Convert.ToDouble(liter_gv.Text) / 100);
-                            //    double b = x6 / (Convert.ToDouble(liter_gv.Text) / 100);
-                            //    ergebnis.liter_gw_prozent = Math.Round(a, 1);
-                            //    ergebnis.liter_vw_prozent = Math.Round(b, 1);
-                            //    //Console.WriteLine(ergebnis.liter_gw_prozent + " %");
-                            //    //Console.WriteLine(ergebnis.liter_vw_prozent + " %");
-                            //    //Console.WriteLine("25% Meldung");
-                            //    alert = "Falls es sich beim Verschnittpartner um Süßreserve handelt, ist der max. Verschnitt von 25% überschritten";
-
-
-                            // }
                         }
                         else
                         {
-                            //Auswertung Webservice (wenn kein Timout)
-                            gesVSRestResponse erg = new gesVSRestResponse() { };
-                            erg = JsonConvert.DeserializeObject<gesVSRestResponse>(answer);
-                            if (erg.EventStatus != 0)
-                            {
-                                if (erg.EventStatus==1)
-                                {
-                                    alert = erg.EventMessage;
-                                }
-                                else
-                                {
-                                    err = erg.EventMessage;
-                                }
-
-                                return;
-                            }
-                            //umspeichern des Webservices ergebnis Objekt in lokales ergebnis Objekt
-                            ergebnis.liter_gw = erg.liter_gw;
-                            ergebnis.liter_gw_prozent = erg.liter_gw_prozent;
-                            ergebnis.liter_vw = erg.liter_vw;
-                            ergebnis.liter_vw_prozent = erg.liter_vw_prozent;
+                            err = "Eingabe prüfen";
+                            return;
                         }
+
+
+
+
+                        //3. % Prüfung
+                        double x8 = x6 / (Convert.ToDouble(liter_gv.Text) / 100);
+                        if (x8 <= 15.00)
+                        {
+                            double a = x5 / (Convert.ToDouble(liter_gv.Text) / 100);
+                            double b = x6 / (Convert.ToDouble(liter_gv.Text) / 100);
+                            ergebnis.liter_gw_prozent = Math.Round(a, 1);
+                            ergebnis.liter_vw_prozent = Math.Round(b, 1);
+                            // Console.WriteLine(ergebnis.liter_gw_prozent + " %");
+                            //Console.WriteLine(ergebnis.liter_vw_prozent + " %");
+
+
+
+                        }
+                        else if (x8 > 15.00 && x8 <= 25.00)
+                        {
+                            double a = x5 / (Convert.ToDouble(liter_gv.Text) / 100);
+                            double b = x6 / (Convert.ToDouble(liter_gv.Text) / 100);
+                            ergebnis.liter_gw_prozent = Math.Round(a, 1);
+                            ergebnis.liter_vw_prozent = Math.Round(b, 1);
+                            // Console.WriteLine(ergebnis.liter_gw_prozent + " %");
+                            // Console.WriteLine(ergebnis.liter_vw_prozent + " %");
+                            //Console.WriteLine("15% Meldung");
+                            alert = "Falls es sich beim Verschnittpartner um Wein handelt, ist der max. Verschnitt von 15% überschritten";
+
+
+
+                        }
+                        else if (x8 > 25.00)
+                        {
+                            double a = x5 / (Convert.ToDouble(liter_gv.Text) / 100);
+                            double b = x6 / (Convert.ToDouble(liter_gv.Text) / 100);
+                            ergebnis.liter_gw_prozent = Math.Round(a, 1);
+                            ergebnis.liter_vw_prozent = Math.Round(b, 1);
+                            //Console.WriteLine(ergebnis.liter_gw_prozent + " %");
+                            //Console.WriteLine(ergebnis.liter_vw_prozent + " %");
+                            //Console.WriteLine("25% Meldung");
+                            alert = "Falls es sich beim Verschnittpartner um Süßreserve handelt, ist der max. Verschnitt von 25% überschritten";
+
+
+                        }
+                    //}
+                    //    else
+                    //    {
+                    //        //Auswertung Webservice (wenn kein Timout)
+                    //        gesVSRestResponse erg = new gesVSRestResponse() { };
+                    //        erg = JsonConvert.DeserializeObject<gesVSRestResponse>(answer);
+                    //        if (erg.EventStatus != 0)
+                    //        {
+                    //            if (erg.EventStatus==1)
+                    //            {
+                    //                alert = erg.EventMessage;
+                    //            }
+                    //            else
+                    //            {
+                    //                err = erg.EventMessage;
+                    //            }
+
+                    //            return;
+                    //        }
+                    //        //umspeichern des Webservices ergebnis Objekt in lokales ergebnis Objekt
+                    //        ergebnis.liter_gw = erg.liter_gw;
+                    //        ergebnis.liter_gw_prozent = erg.liter_gw_prozent;
+                    //        ergebnis.liter_vw = erg.liter_vw;
+                    //        ergebnis.liter_vw_prozent = erg.liter_vw_prozent;
+                    //    }
                     });
 
                 }

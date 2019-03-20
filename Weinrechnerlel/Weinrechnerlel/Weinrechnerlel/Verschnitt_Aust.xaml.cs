@@ -39,92 +39,92 @@ namespace Weinrechnerlel
 
                     await Task.Run(() =>
                     {
-                        //Validierungen
-                        double eingabe_user_liter_gw;
+                        ////Validierungen
+                        //double eingabe_user_liter_gw;
 
-                        try
-                        {
-                            eingabe_user_liter_gw = Convert.ToDouble(liter_gw.Text);
+                        //try
+                        //{
+                        //    eingabe_user_liter_gw = Convert.ToDouble(liter_gw.Text);
 
-                        }
-                        catch
-                        {
-                            err = "Es sind Zahlen einzugeben";
-                            return;
-                        }
-                        if (string.IsNullOrEmpty(liter_gw.Text))
-                        {
-                            err = "Es sind Zahlen einzugeben";
-                            return;
-                        }
-                        if (eingabe_user_liter_gw < 0)
-                        {
-                            err = "Ihre Eingabe muss positiv sein";
-                            return;
-                        } 
-                        //Restaufruf
-                        request_aust_VS param = new request_aust_VS() { liter_gw = liter_gw.Text };
-                        String request = JsonConvert.SerializeObject(param);
-                        RESTConnector rconn = new RESTConnector();
-                        Ergebnis_gen_Vs ergebnis1 = new Ergebnis_gen_Vs() { };
-                        String answer;
-                        String adress = "http://10.141.69.156:4438/api/aust_VS";
+                        //}
+                        //catch
+                        //{
+                        //    err = "Es sind Zahlen einzugeben";
+                        //    return;
+                        //}
+                        //if (string.IsNullOrEmpty(liter_gw.Text))
+                        //{
+                        //    err = "Es sind Zahlen einzugeben";
+                        //    return;
+                        //}
+                        //if (eingabe_user_liter_gw < 0)
+                        //{
+                        //    err = "Ihre Eingabe muss positiv sein";
+                        //    return;
+                        //} 
+                        ////Restaufruf
+                        //request_aust_VS param = new request_aust_VS() { liter_gw = liter_gw.Text };
+                        //String request = JsonConvert.SerializeObject(param);
+                        //RESTConnector rconn = new RESTConnector();
+                        //Ergebnis_gen_Vs ergebnis1 = new Ergebnis_gen_Vs() { };
+                        //String answer;
+                        //String adress = "http://10.141.69.156:4438/api/aust_VS";
 
-                        answer = rconn.HTTP_POST(adress, request, 50, false);
-                        if (answer.Contains("REST_HTTP_ERROR"))
-                        {
-                            //Restaufruf timeout
-                            err= "Keine Verbindung zum Server";
-                            
-                            //    double eingabe_user_liter_gw;
+                        //answer = rconn.HTTP_POST(adress, request, 50, false);
+                        //if (answer.Contains("REST_HTTP_ERROR"))
+                        //{
+                        //    //Restaufruf timeout
+                        //    err= "Keine Verbindung zum Server";
 
-                            //    try
-                            //    {
-                            //        eingabe_user_liter_gw = Convert.ToDouble(liter_gw.Text);
+                            double eingabe_user_liter_gw;
 
-                            //    }
-                            //    catch
-                            //    {
-                            //        err = "Es sind Zahlen einzugeben";
-                            //        return;
-                            //    }
-                            //    if (string.IsNullOrEmpty(liter_gw.Text))
-                            //    {
-                            //        err = "Es sind Zahlen einzugeben";
-                            //        return;
-                            //    }
-                            //    if (eingabe_user_liter_gw < 0)
-                            //    {
-                            //        err = "Ihre Eingabe muss positiv sein";
-                            //        return;
-                            //    }
-
-                            //    //Teil 1
-                            //    double a = Convert.ToDouble(liter_gw.Text) / 0.85 - Convert.ToDouble(liter_gw.Text);
-                            //    double b = Math.Floor(a);
-                            //    ergebnis.max_vw = Convert.ToInt32(b);
-                            //    //Console.WriteLine(ergebnis.max_vw);
-
-                            //    double c = Convert.ToDouble(liter_gw.Text) / 0.75 - (Convert.ToDouble(liter_gw.Text) + ergebnis.max_vw);
-                            //    double d = Math.Floor(c);
-                            //    ergebnis.max_sr1 = Convert.ToInt32(d);
-                            //    //Console.WriteLine(ergebnis.max_sr1);
-                            //}
-                        }
-                        else
-                        {
-                            //Auswertung des Restaufrufes wenn kein Timout
-                            AustVSRestResponse erg = new AustVSRestResponse() { };
-                            erg = JsonConvert.DeserializeObject<AustVSRestResponse>(answer);
-                            if (erg.EventStatus != 0)
+                            try
                             {
-                                err = erg.EventMessage;
+                                eingabe_user_liter_gw = Convert.ToDouble(liter_gw.Text);
+
+                            }
+                            catch
+                            {
+                                err = "Es sind Zahlen einzugeben";
                                 return;
                             }
-                            //umspeichern der Ergebnisse
-                            ergebnis.max_sr1 = erg.max_sr1;
-                            ergebnis.max_vw = erg.max_vw;
-                        }
+                            if (string.IsNullOrEmpty(liter_gw.Text))
+                            {
+                                err = "Es sind Zahlen einzugeben";
+                                return;
+                            }
+                            if (eingabe_user_liter_gw < 0)
+                            {
+                                err = "Ihre Eingabe muss positiv sein";
+                                return;
+                            }
+
+                            //Teil 1
+                            double a = Convert.ToDouble(liter_gw.Text) / 0.85 - Convert.ToDouble(liter_gw.Text);
+                            double b = Math.Floor(a);
+                            ergebnis.max_vw = Convert.ToInt32(b);
+                            //Console.WriteLine(ergebnis.max_vw);
+
+                            double c = Convert.ToDouble(liter_gw.Text) / 0.75 - (Convert.ToDouble(liter_gw.Text) + ergebnis.max_vw);
+                            double d = Math.Floor(c);
+                            ergebnis.max_sr1 = Convert.ToInt32(d);
+                            //Console.WriteLine(ergebnis.max_sr1);
+                       // }
+                   // }
+                        //else
+                        //{
+                        //    //Auswertung des Restaufrufes wenn kein Timout
+                        //    AustVSRestResponse erg = new AustVSRestResponse() { };
+                        //    erg = JsonConvert.DeserializeObject<AustVSRestResponse>(answer);
+                        //    if (erg.EventStatus != 0)
+                        //    {
+                        //        err = erg.EventMessage;
+                        //        return;
+                        //    }
+                        //    //umspeichern der Ergebnisse
+                        //    ergebnis.max_sr1 = erg.max_sr1;
+                        //    ergebnis.max_vw = erg.max_vw;
+                        //}
                     });
                 }
                 //Ladebalken schließt
