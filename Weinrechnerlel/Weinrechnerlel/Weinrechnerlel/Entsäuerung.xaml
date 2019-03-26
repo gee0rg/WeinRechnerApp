@@ -35,7 +35,7 @@
                 <Label  x:Name="ent_spanne" TextColor="Black" ></Label>
 
                 <Label Text="entsäuern um g/l" TextColor="Black"></Label>
-                <Entry x:Name="ent_um" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric"></Entry>
+                <Entry x:Name="ent_um" Placeholder="Wert" TextColor="Black" Keyboard="Numeric"></Entry>
                 <Button Text="Berechnen" Clicked="berechnen_Entsäu2" IsVisible="{Binding Source={x:Reference start}, Path=IsVisible}" x:Name="Entsäuerungteil2"></Button>
                 <ActivityIndicator IsVisible="{Binding Source={x:Reference start}, Path=IsBusy}" IsRunning="{Binding Source={x:Reference start}, Path=IsBusy}" />
 

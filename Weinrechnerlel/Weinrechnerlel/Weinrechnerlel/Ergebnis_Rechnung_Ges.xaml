@@ -9,27 +9,27 @@
         <StackLayout Orientation="Vertical">
             <StackLayout Orientation="Horizontal">
                 <Label Text="Benötigte Basisweinmenge:" TextColor="Black" ></Label>
-                <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
-                    <Label  x:Name="liter_gw" TextColor="Black" ></Label>
-                </Frame>
+                <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
+                <Label  x:Name="liter_gw" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                <!--</Frame>-->
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Benötigte Basisweinmenge in Prozent:" TextColor="Black" ></Label>
-                <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
-                    <Label  x:Name="liter_gw_prozent" TextColor="Black" ></Label>
-                </Frame>
+                <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
+                <Label  x:Name="liter_gw_prozent" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                <!--</Frame>-->
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Benötigte Menge an Verschnittwein/Süßreserve:" TextColor="Black" ></Label>
-                <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
-                    <Label  x:Name="liter_vw" TextColor="Black" ></Label>
-                </Frame>
+                <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
+                <Label  x:Name="liter_vw" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                <!--</Frame>-->
             </StackLayout>
             <StackLayout Orientation="Horizontal">
                 <Label Text="Benötigte Menge an Verschnittwein/Süßreserve in Prozent:" TextColor="Black" ></Label>
-                <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
-                    <Label  x:Name="liter_vw_prozent" TextColor="Black" ></Label>
-                </Frame>
+                <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
+                <Label  x:Name="liter_vw_prozent" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                <!--</Frame>-->
             </StackLayout>
             <StackLayout>
                 <BoxView HeightRequest="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand"/>
@@ -42,7 +42,7 @@
             <StackLayout Orientation="Horizontal">
                 <Label Text="1,0 Liter Flaschen:" TextColor="Black" FontSize="Small"></Label>
                 <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand" x:Name="fr4" IsVisible="False">
-                    <Label x:Name="verw_liter1_erg" ></Label>
+                <Label x:Name="verw_liter1_erg" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
                 </Frame>
             </StackLayout>
             <Entry  x:Name="verw_liter1" Placeholder="1,0 Liter" TextColor="Black" TextChanged="verw_liter1_TextChanged" Keyboard="Numeric"></Entry>
@@ -50,7 +50,7 @@
             <StackLayout Orientation="Horizontal">
                 <Label Text="0,75 Liter Flaschen:" TextColor="Black" FontSize="Small"></Label>
                 <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand" x:Name="fr5" IsVisible="False">
-                    <Label x:Name="verw_liter075_erg" ></Label>
+                <Label x:Name="verw_liter075_erg" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
                 </Frame>
             </StackLayout>
             <Entry  x:Name="verw_liter075" Placeholder="0,75 Liter" TextColor="Black" TextChanged="verw_liter1_TextChanged" Keyboard="Numeric"></Entry>
@@ -58,7 +58,7 @@
             <StackLayout Orientation="Horizontal">
                 <Label Text="0,5 Liter Flaschen:" TextColor="Black" FontSize="Small"></Label>
                 <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand" x:Name="fr6" IsVisible="False">
-                    <Label x:Name="verw_liter05_erg" ></Label>
+                <Label x:Name="verw_liter05_erg" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
                 </Frame>
             </StackLayout>
             <Entry  x:Name="verw_liter05" Placeholder="0,5 Liter" TextColor="Black" TextChanged="verw_liter1_TextChanged" Keyboard="Numeric"></Entry>
@@ -66,7 +66,7 @@
             <StackLayout Orientation="Horizontal">
                 <Label Text="0,375 Liter Flaschen:" TextColor="Black" FontSize="Small" ></Label>
                 <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand" x:Name="fr7" IsVisible="False">
-                    <Label x:Name="verw_liter0375_erg" ></Label>
+                    <Label x:Name="verw_liter0375_erg" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
                 </Frame>
             </StackLayout>
             <Entry  x:Name="verw_liter0375" Placeholder="0,375 Liter" TextColor="Black" TextChanged="verw_liter1_TextChanged" Keyboard="Numeric"></Entry>
