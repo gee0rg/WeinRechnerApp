@@ -7,41 +7,41 @@
         <ScrollView>
             <StackLayout Orientation="Vertical">
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Menge Entsäuerungskalk in kg" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="menge_ent1" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
-                    <!--</Frame>-->
+                    <Label Text="Entsäuerungskalk in kg" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="menge_ent1" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="um" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="um" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
-                    <!--</Frame>-->
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="um" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Menge Entsäuerungskalk in kg" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="menge_ent2" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
-                    <!--</Frame>-->
+                    <Label Text="Entsäuerungskalk in kg" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="menge_ent2" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                    </Frame>
                 </StackLayout>
                 <Label Text="zu entsäuernde Teilmenge in Liter" TextColor="Black" ></Label>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Mostentsäuerung" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="most_ent" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
-                    <!--</Frame>-->
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="most_ent" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Weinentsäuerung" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="wein_ent" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
-                    <!--</Frame>-->
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="wein_ent" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="auf" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="auf" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
-                    <!--</Frame>-->
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="auf" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                    </Frame>
                 </StackLayout>
 
             </StackLayout>

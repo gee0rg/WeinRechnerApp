@@ -484,8 +484,8 @@ namespace Weinrechnerlel
                         double e2 = (Convert.ToDouble(em1.Text) / 100.0) * (67.0 / 1000.0) * e1;
 
                         //Ausgabe Ergebnisse
-                        ergebnis.menge_ent1 = Math.Round(e2, 3);
-                        ergebnis.um = e1;
+                        ergebnis.menge_ent1 = Math.Round(e2, 2);
+                        ergebnis.um = Math.Round(e1, 3);
                     //}
                     //    else
                     //    {
@@ -604,7 +604,7 @@ namespace Weinrechnerlel
 
                         //Ausgabe Ergebnisse
 
-                        ergebnis.menge_ent2 = e5;
+                        ergebnis.menge_ent2 = Math.Round(e5,2);
                         ergebnis.most_ent = Convert.ToInt32(e6);
                         ergebnis.wein_ent = Convert.ToInt32(e7);
                         ergebnis.auf = e4;

@@ -8,51 +8,51 @@
             <StackLayout Orientation="Vertical">
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Mostgewicht in g/l Alkohol:" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="mg_e" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
-                    <!--</Frame>-->
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="mg_e" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Anreicherungsspanne um g/l Alkohol:" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="asp_e" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
-                    <!--</Frame>-->
+                    <Label Text="Anreich.spanne um g/l Alkohol:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="asp_e" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="auf g/l Alkohol:" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="auf_alk" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
-                    <!--</Frame>-->
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="auf_alk" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Anreicherungsfaktor:" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="pa_e" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
-                    <!--</Frame>-->
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="pa_e" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Saccharosebedarf in kg pro hl:" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="sach" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
-                    <!--</Frame>-->
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="sach" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Saccharosebedarf in kg gesamt:" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="sach_ges" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
-                    <!--</Frame>-->
+                    <Label Text="Saccharosebedarf in kg ges.:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="sach_ges" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Mehrung durch Anreicherung in Liter:" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="mehr_an" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
-                    <!--</Frame>-->
+                    <Label Text="Mehrung durch Anreich. in l.:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="mehr_an" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Menge nach Anreicherung in Liter:" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="menge_an" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
-                    <!--</Frame>-->
+                    <Label Text="Menge nach Anreich. in l.:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="menge_an" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                    </Frame>
                 </StackLayout>
             </StackLayout>
         </ScrollView>

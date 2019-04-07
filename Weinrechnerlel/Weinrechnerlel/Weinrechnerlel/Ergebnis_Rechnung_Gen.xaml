@@ -12,10 +12,10 @@
 
             <Label Text = "1. Verschnittberechnung: Basiswein + Verschnittwein" TextColor="DarkRed"></Label>
             <StackLayout Orientation="Horizontal">
-                <Label Text="max. mögliche Menge an Verschnittwein:" TextColor="Black" ></Label>
-                <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                <Label  x:Name="max_vwe" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
-                <!--</Frame>-->
+                <Label Text="max. Menge Verschnittwein:" TextColor="Black" ></Label>
+                <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                    <Label  x:Name="max_vwe" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                </Frame>
             </StackLayout>
             <StackLayout>
                 <BoxView HeightRequest="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand"/>
@@ -23,10 +23,10 @@
 
             <Label Text = "2. Verschnittberechnung: Basiswein + Süßreserve" TextColor="DarkRed"></Label>
             <StackLayout Orientation="Horizontal">
-                <Label Text="max. mögliche Menge an Süßreserve:" TextColor="Black" ></Label>
-                <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray"  HorizontalOptions="EndAndExpand">-->
-                <Label  x:Name="max_sr1e" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
-                <!--</Frame>-->
+                <Label Text="max. Menge Süßreserve:" TextColor="Black" ></Label>
+                <Frame Padding="8,3,8,3" BackgroundColor="LightGray"  HorizontalOptions="EndAndExpand">
+                    <Label  x:Name="max_sr1e" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
+                </Frame>
             </StackLayout>
             <StackLayout>
                 <BoxView HeightRequest="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand"/>
@@ -34,17 +34,17 @@
 
             <Label Text= "3. Verschnittberechnung: Basiswein + Verschnittwein + Süßreserve" TextColor="DarkRed"></Label>
             <StackLayout Orientation="Horizontal">
-                <Label Text="max. mögliche Menge an Verschnittwein:" TextColor="Black" ></Label>
-                <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray"  HorizontalOptions="EndAndExpand">-->
-                <Label  x:Name="max_vwe1" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
-                <!--</Frame>-->
+                <Label Text="max. Menge Verschnittwein:" TextColor="Black" ></Label>
+                <Frame Padding="8,3,8,3" BackgroundColor="LightGray"  HorizontalOptions="EndAndExpand">
+                    <Label  x:Name="max_vwe1" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
+                </Frame>
             </StackLayout>
 
             <StackLayout Orientation="Horizontal">
-                <Label Text="max. mögliche Menge an Süßreserve:" TextColor="Black" ></Label>
-                <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray"  HorizontalOptions="EndAndExpand">-->
-                <Label  x:Name="max_sr2e" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
-                <!--</Frame>-->
+                <Label Text="max. Menge Süßreserve:" TextColor="Black" ></Label>
+                <Frame Padding="8,3,8,3" BackgroundColor="LightGray"  HorizontalOptions="EndAndExpand">
+                    <Label  x:Name="max_sr2e" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
+                </Frame>
             </StackLayout>
 
 

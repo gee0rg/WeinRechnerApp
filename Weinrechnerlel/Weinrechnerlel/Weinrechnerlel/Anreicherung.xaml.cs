@@ -436,7 +436,7 @@ namespace Weinrechnerlel
                         ergebnis.auf_alk = e3;
                         ergebnis.pa_e = e4;
                         ergebnis.sach = e5;
-                        ergebnis.sach_ges = e6;
+                        ergebnis.sach_ges = Math.Round(e6,2);
                         ergebnis.mehr_an = e7_int;
                         ergebnis.menge_an = e8_int;
                     //}

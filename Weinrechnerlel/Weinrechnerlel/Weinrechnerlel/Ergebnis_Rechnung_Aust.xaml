@@ -8,16 +8,16 @@
         <ScrollView>
             <StackLayout Orientation="Vertical">
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="max. mögliche Menge an Verschnittwein:" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="max_vwe" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
-                    <!--</Frame>-->
+                    <Label Text="max. Menge Verschnittwein:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="max_vwe" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="max. mögliche Menge an bezeichnungsungleicher SR:" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="max_sr1e" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
-                    <!--</Frame>-->
+                    <Label Text="max. Menge bezeich.ungl. SR:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="max_sr1e" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout>
                     <BoxView HeightRequest="1" BackgroundColor="Black" HorizontalOptions="FillAndExpand"/>
@@ -28,7 +28,7 @@
 
                 <Entry x:Name="verw_vw" Placeholder="Menge in Liter" TextColor="Black" Keyboard="Numeric" TextChanged="Verw_vw_TextChanged"></Entry>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="max. mögliche Menge an bezeichnungsungleicher SR:" TextColor="Black" ></Label>
+                    <Label Text="max. Menge bezeich.ungl. SR:" TextColor="Black" ></Label>
                     <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand" x:Name="fr8" IsVisible="False">
                     <Label  x:Name="max_sr2e" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
                     </Frame>

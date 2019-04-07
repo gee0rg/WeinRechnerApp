@@ -8,33 +8,33 @@
             <StackLayout Orientation="Vertical">
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Mostgewicht in g/l Alkohol:" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="mg_e"  TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
-                    <!--</Frame>-->
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="mg_e"  TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand"></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Anreicherungsspanne um g/l Alkohol:" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="asp_e" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
-                    <!--</Frame>-->
+                    <Label Text="Anreich.spanne um g/l Alkohol:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="asp_e" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="auf g/l Alkohol:" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="auf_alk" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
-                    <!--</Frame>-->
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="auf_alk" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
                     <Label Text="Permeatentzug in:" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="perm_entzug" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
-                    <!--</Frame>-->
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="perm_entzug" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                    </Frame>
                 </StackLayout>
                 <StackLayout Orientation="Horizontal">
-                    <Label Text="Menge nach Konzentration in Liter:" TextColor="Black" ></Label>
-                    <!--<Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">-->
-                    <Label  x:Name="menge_konz" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
-                    <!--</Frame>-->
+                    <Label Text="Menge nach Konz. in l.:" TextColor="Black" ></Label>
+                    <Frame Padding="8,3,8,3" BackgroundColor="LightGray" HorizontalOptions="EndAndExpand">
+                        <Label  x:Name="menge_konz" TextColor="DarkGreen" Font="Bold" HorizontalOptions="EndAndExpand" ></Label>
+                    </Frame>
                 </StackLayout>
             </StackLayout>
         </ScrollView>
