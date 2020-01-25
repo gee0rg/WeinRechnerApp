@@ -481,8 +481,9 @@ namespace Weinrechnerlel
 
                         //Ergebnisse berechnnen
                         double e1 = gs_von_1d - gs_auf_1d;
-                        double e2 = (Convert.ToDouble(em1.Text) / 100.0) * (67.0 / 1000.0) * e1;
-
+                        //double e2 = (Convert.ToDouble(em1.Text) / 100 * (67.0 / 1000.0) * e1;
+            
+                        double e2 = (Convert.ToDouble(em1.Text) * 0.67 * e1) / 1000.0;
                         //Ausgabe Ergebnisse
                         ergebnis.menge_ent1 = Math.Round(e2, 2);
                         ergebnis.um = Math.Round(e1, 3);

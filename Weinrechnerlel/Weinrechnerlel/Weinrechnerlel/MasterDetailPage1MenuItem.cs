@@ -15,7 +15,17 @@ namespace Weinrechnerlel
 
         public MasterDetailPage1MenuItem()
         {
-            
+            //this.Id = id;
+            //this.Title = title;
+            //this.TargetType = targetType;
+
+        }
+
+        public MasterDetailPage1MenuItem(int id, string title, Type type)
+        {
+            this.Id = id;
+            this.Title = title;
+            this.TargetType = type;
        
         }
        
